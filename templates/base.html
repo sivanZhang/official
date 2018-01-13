@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>{% block pagetitle%}{% endblock%}</title>
+    <!-- Bootstrap -->
+    <link type="text/css" href="/static/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="/static/css/base.css"  rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/static/css/m_jquery.message.css">
+    <!--扩展css开始-->
+    {% block css %} 
+    {% endblock %}
+    <!--扩展css结束-->
+</head>
+
+<body>
+        {% if request.user.is_anonymous %}
+        <input type="hidden" id="userlogin" value="0" />
+        {% else %}
+        <input type="hidden" id="userlogin" value="1" />
+        {% endif %}
+    {% block menu %}
+    <!--菜单开始-->
+    <div class="menu-holder">
+        <table class="menu" >
+          <tr>
+          <td>
+              <div>
+                <a href="/">
+                <img class="logo" src="/static/img/logo.png"/>
+                </a>
+              </div>
+          </td>
+          <td>
+              <div class="pull-right">
+                    <table>
+                      <tr>
+                          <td class="{% if productpage %}active{% endif %} a_product" >
+                            <a href="产品图.html" >Cast</a>
+                            <div class="point"></div>
+                        </td>
+                        <td class="{% if servicepage %}active{% endif %} ">
+                            <a href="服务.html" >服务</a>
+                            <div class="point"></div>
+                          </td>
+                          <td class="{% if storepage %}active{% endif %} ">
+                            <a href="" class="a_store">体验店</a>
+                            <div class="point"></div>
+                        </td>
+                          <td class="{% if communitypage %}active{% endif %} ">
+                            <a href="" >社区</a>
+                            <div class="point"></div>
+                        </td> 
+                          <td class="{% if mallpage %}active{% endif %} ">
+                            <a href="企业图.html" >商城</a>
+                            <div class="point"></div>
+                          </td>
+   
+                          <td class="small-padding">
+                            
+                            <a href="" >中文|EN</a>
+                          </td> 
+                        
+                      </tr>
+                    </table>
+                    <div class="line">
+                    </div>
+                   
+              </div><!-- 左侧菜单结束-->
+          </td>
+          </tr>
+        </table>
+      
+         <div class="panel panel-default sec_menu store_sec_menu panel-body-transparent">
+                      <div class="panel-body "> 
+                        <div>
+                          <a class="a_img" href="成为授权经销商.html"> 
+                            <img class="store_img_hove"  src="/static/img/store.png" />
+                            </a>
+                          <a class="a_img" href="体验店.html" > 
+                            <img class="bussiness_img_hove" src="/static/img/bussiness.png" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+        <div class="panel panel-default sec_menu product_sec_menu panel-body-transparent">
+          <div class="panel-body "> 
+            <div>
+              <a class="a_img" href="{% url 'product:cast2' %}"> 
+                <img class="cast_img_hove" src="/static/img/cast.png" />
+                </a>
+              <a class="a_img" href="{% url 'product:castdock' %}" > 
+                <img  class="castdock_img_hove" src="/static/img/castdock.png" />
+              </a>
+            </div>
+          </div>
+        </div> 
+  
+      </div>
+    <!--菜单结束-->
+    {% endblock %} 
+
+   <!--主要内容开始-->
+    {% block content %} 
+    {% endblock %}  
+    <!--主要内容结束-->
+    
+    <!--底部开始-->
+    {% block footer %} 
+        <footer>
+          <div class="pull-left">
+            Beijing ASU Tech Co.Ltd 北京一数科技有限公司|法律声明|隐私条款 <a href="">京ICP备15036919号-1 </a>
+          </div>
+           <div class="pull-right">
+             <a href=""><img src="/static/img/iconsfooter.png" /></a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+     
+    <div class="wechat_div">
+        <img src="/static/img/code_big.png"/>
+    </div>
+    <!--底部结束-->
+    {% endblock %}
+    <script type="text/javascript" src="/static/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.message.js"></script>
+    <script type="text/javascript" src="/static/js/base.js"></script> 
+    <!--扩展js开始-->
+    {% block js %}
+    {% endblock %}
+    <!---扩展js结束-->
+</body>
+
+</html>

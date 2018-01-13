@@ -1,0 +1,307 @@
+body {
+    background-color:#f6f6f6;
+}
+
+
+/* 头部 */
+
+header {
+    background-color: rgb(201,22,35);
+    position: relative;
+    color: #fff;
+    height: 40px;
+}
+
+header i.fa {
+    height: 100%;
+    line-height: 40px;
+    margin: 0 10px;
+}
+
+.list-title {
+    width: 40%;
+    line-height: 40px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+}
+
+.btn-sub {
+    border: 0px;
+    background: none;
+    outline: 0px;
+}
+
+li {
+    list-style-type: none;
+}
+
+li i {
+    height: auto;
+}
+
+
+/*--------------------------------------------------------------------------------- */
+
+
+/* 购买数量 */
+
+.fa-jpy {
+    font-size: 10px;
+    color: rgb(201,22,35);
+}
+
+div.carlist {
+    margin: 4px 4px 4px 0px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    background-color: #fff;
+    width:100%;
+    overflow: hidden;
+    position: relative;
+    padding:5px 0;
+ }
+.carlist_name{
+    font-size:14px;
+}
+div.carlist>div {
+    padding: 0;
+}
+
+.img_parent img {
+    width: 90%;
+}
+
+.number {
+    border-left: 1px solid #ddd;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .23), 0 3px 10px rgba(0, 0, 0, .16);
+}
+
+a {
+    display: inline-block;
+}
+
+.carlist>div.list_center {
+    padding-right: 5px;
+}
+
+.list_center wares_name {
+    max-height: 60%;
+    min-height: 60%;
+}
+
+.price {
+    color: rgb(201,22,35);
+    font-size: 20px;
+}
+
+
+/*--------------------------------------------------------------------------------- */
+
+
+/*推荐 */
+
+.recommend {
+    position: relative;
+    left: 4px;
+    bottom: 4px;
+}
+
+.ware-wrap {
+    border-radius: 6px;
+    margin: 2px 0;
+    position: relative;
+}
+
+.ware-msg {
+    background-color: #fff;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid #eee;
+}
+
+.ware_img{
+    width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+svg.list-btn {
+    position: absolute;
+    bottom: 3px;
+    right: 4px;
+}
+
+.ware_title {
+    min-height: 40px;
+    max-height: 40px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.row {
+    margin: 0px;
+}
+
+.container-fluid {
+    padding: 0 4px;
+}
+
+
+
+/*--------------------------------------------------------------------------------- */
+
+
+/* 结算按钮 */
+
+#footer {
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+#footer div {
+    box-sizing: border-box;
+}
+
+.menu-left {
+    width: 70%;
+    padding-right: 20px;
+    padding-left: 10px;
+    line-height: 50px;
+    height: 100%;
+    font-size: 16px;
+    text-align: left;
+}
+
+.menu-right {
+    width: 30%;
+    background-color: rgb(201,22,35);
+    position: relative;
+    height: 100%;
+    line-height: 50px;
+    color: #fff;
+    font-family: '微软雅黑';
+    font-size: 16px;
+    text-align: center;
+}
+
+input[type=text]{
+    outline: 0px;
+    border: 0px;
+    text-align: center;
+    width:50px;
+    font-size: 14px;
+}
+
+/*--------------------------------------------------------------------------------- */
+
+
+/*加载更多 */
+
+.btn_more {
+    margin: 30px auto;
+    transform: translateY(-50%);
+    border-radius: 0px;
+}
+
+.fa-angle-double-right {
+    margin-left: 10px;
+}
+
+
+
+/* checkbox 自定义样式 
+<label class="demo--label">
+                <input  id="all_checked" class="demo--radio checked" type="checkbox" name="demo-radio">
+                <span class="demo--radioInput"></span>
+            </label>*/
+.demo--radio{display:none}
+.radio_input{background-color:#fff;border:1px solid #ddd;border-radius:100%;display:inline-block;height:14px;margin-right:5px;margin-top:-1px;vertical-align:middle;width:14px;line-height:14px;position: relative;
+}
+.demo--radio:checked + .radio_input:after{background-color:rgb(201,22,35);border-radius:100%;content:"";display:inline-block;height:8px;width:8px;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%,-50%);
+}
+
+/* checkbox 自定义样式 END*/
+.check_style{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%)
+}
+.glyphicon-plus,.glyphicon-minus{
+    padding:5px 10px;
+    color:#333;
+}
+.carnum_parent{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1px;
+}
+.item_main{
+    width:100%;
+    overflow: hidden;
+    position: relative;
+    bottom: 0px;
+transform: translateY(50%);
+}
+.ware-wrap {
+        border-radius: 6px;
+        margin: 4px;
+        position: relative;
+    }
+    
+    .ware-msg {
+        background-color: #fff;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius:4px;
+        width: 100%;
+        border-top: 1px solid #ddd;
+    }
+    
+    .ware_img {
+        width: 100%;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+    
+    svg.list-btn {
+        position: absolute;
+        bottom: 3px;
+        right: 4px;
+    }
+    
+    .ware_title {
+        min-height: 40px;
+        max-height: 40px;
+        overflow: hidden;
+        font-size: 14px;
+    }
+    
+    .row {
+        margin: 0px;
+    }
+    
+    .container-fluid {
+        padding: 0 px;
+    }
+    
+    .row .col-xs-6,
+    .row .col-sm-4 {
+        padding:0px;
+    }
+    

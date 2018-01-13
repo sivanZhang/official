@@ -1,0 +1,348 @@
+.content
+{ 
+    width: 100%;
+    background-color: #3C3D3F;
+}
+
+.swiper-container
+{ 
+    z-index: -1;
+}
+
+.swiper-slide
+{ 
+     
+     text-align: center;
+}
+.p_title{
+    font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    font-size: 40px; 
+}
+
+.white_span{
+    color: white;
+}
+
+.yellow_span
+{
+    color: rgb(233, 85, 19);
+}
+.sider1
+{ 
+    position: absolute;
+     bottom: 40px;
+     width: 100%;
+    text-align: center;
+}
+.right-sider-bar
+{
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    right: 20px;
+}
+.fa{
+    color:white;
+}
+ 
+.second-menu table{
+    width: 100%;
+}
+.tb_secondmenu td{
+    padding-left:10px;
+    padding-right:10px;
+}
+.container-second-menu
+{
+   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    width: 100%;
+}
+.second-menu
+{
+    line-height: 60px;
+    
+}
+.second-menu a{
+    color: black;
+}
+.buy
+{
+    background-color:rgb(233, 85, 19); 
+    text-align: center; 
+    padding-left: 10px;
+    padding-right: 20px;
+}
+.buy a{
+     color:white;
+}
+
+.productimg, .items
+{
+    width: 100%;
+}
+
+.items
+{
+    margin-top: 5px;
+    background-color: rgb(177, 177, 178);
+}
+
+.sub-item
+{
+    background-color: white;
+}
+
+.tb_secondmenu .active a{
+    color: rgb(233, 85, 19); 
+    text-decoration: none;
+}
+
+.menu-hidden
+{
+    display: none;
+}
+
+.second-menu-fixed
+{
+    position: fixed;
+    top: 0;
+    background-color: white;
+    width: 100%;
+    z-index: 2; 
+}
+.linkitems a
+{
+    color: gray;
+}
+
+.linkitems tr{
+    line-height:30px;
+}
+.linkitems
+{
+    margin-top: 40px;
+}
+
+.titleline
+{
+    height: 120px;
+    background-color: #d6d6d6;
+    font-size: 20px;
+    margin-top:5px;
+}
+
+.titleline a{
+    color: black;
+    font-size: 14px;
+}
+.yellowcolor
+{ 
+    color: rgb(233, 85, 19);
+    font-weight: bold;
+}
+
+.col-para
+{ 
+    margin-top:15px; 
+    min-height: 400px; 
+    text-align: left;
+}
+.parameters_png
+{
+    
+}
+.col-right
+{
+    margin-left: 35px;
+}
+
+.scene_img img {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.panel-menu, .fitting-panel-menu
+{
+    position: absolute;
+    top: 120px;
+    width: 120px;
+}
+.panel-menu tr 
+{
+    line-height: 40px;
+}
+
+.panel-menu tr a  {
+    color: gray;
+}
+
+.panel-menu tr.active {
+    border-bottom: 4px solid rgb(233, 85, 19);
+}
+
+.panel-menu tr.active a {
+    color: rgb(233, 85, 19);
+}
+
+.fitting-panel-menu .fitting-item
+{
+    width: 200px;
+    height: 70px;
+    color: black;
+    padding-top: 60px;
+}
+.white_a
+{
+    color: white;
+}
+.roll-tip
+{
+    width: 40px; 
+    height: 40px; 
+    border-radius: 30px;
+    background-color: white;
+    cursor: pointer;
+    margin: 0 auto;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+.roll-tip td, .roll-tip-holder{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.roll-tip .fa{  
+    color:#d6d6d6;
+    margin-top: 5px;
+}
+.roll-tip a{ 
+    line-height: 40px;
+    color: white;
+}
+
+.roll-tip-up
+{  
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    padding: 5px 2px 5px 6px;
+    background-color: rgb(177, 177, 178);
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.panel-menu-fixed
+{
+    position: fixed;
+    top: 100px;
+    z-index: 2;
+}
+
+.panel-vedio
+{
+    position: absolute;
+    bottom: 60px;
+    right: 30px;
+    height: 200px;
+    width: 420px;
+    padding: 80px 160px;
+}
+
+.subproductimg, .subimg
+{
+    text-align: center;
+}
+
+.items_holder
+{
+     padding-top: 40px;
+}
+.textholder-left
+{
+    position: absolute;
+    top:  30%;
+    left: 10%;
+}
+
+.textholder-right
+{
+    position: absolute;
+    top:  30%;
+    right: 10%;
+}
+
+.title
+{
+    font-size: 40px;
+    color: gray;
+}
+.buyitems
+{
+    color:rgb(233, 85, 19);
+}
+.price{
+    font-size: 35px;
+}
+
+.btn-learnmore
+{
+    background-color: rgb(233,85,19);
+    border-radius: 10px;
+    margin-left: 10px;
+    padding: 0 15px ;
+}
+
+.scroll-tip
+{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 40px; 
+}
+
+.scroll-up, .scroll-down{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    text-align: center;
+    margin:5px 0;
+    -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,.4);
+    box-shadow: 0px 1px 3px rgba(0,0,0,.4);
+    cursor: pointer;
+}
+
+.scroll-up .fa, .scroll-down .fa{
+    color: gray;
+    line-height: 40px;
+    font-size: 20px;
+}
+.container-center
+{
+    text-align: center;
+}
+
+.img360_holder
+{
+    background-color: #000201;
+    text-align: center;
+}
+
+.img360_holder>div
+{ 
+    margin: 0 10% 0 14%;
+}
+
+.img360{
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+.p_title_2
+{
+    font-size: 24px;
+}

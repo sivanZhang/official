@@ -1,0 +1,10 @@
+*.pptx
+*.pyc
+*.txt
+*.docx
+*.docs
+proxytest.py
+*.tmp
+*/migrations/*
+*.json
+*.md

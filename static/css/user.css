@@ -1,0 +1,38 @@
+li {
+    display: inline;
+}
+
+button.btn-block:hover{
+    color: #eee;
+}
+
+form#signup-Form {
+width: 30%;
+min-width: 400px;
+margin: 0 auto;
+}
+
+button.btn {
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #17324D;
+    color: #fff;
+}
+
+.btn,
+.form-control {
+    height: 47px;
+}
+
+#app-name {
+    color: rgb(201,22,35);
+}
+
+label.error {
+    color: #d9534f;
+    margin: 0px;
+}
+
+input.error {
+    border-color: #d9534f;
+}

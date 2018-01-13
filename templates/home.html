@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+ {% block css %}
+ <link href="/static/css/hostpage.css"  rel="stylesheet">
+ <link rel="stylesheet" href="/static/css/swiper.css">
+{% endblock %} 
+{% block content %}
+<div class="container content">
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                <div class="sider1">
+                    <h1 class="h1_product_name" >ASU Cast II</h1>
+                    <h3 class="h3_product_name" >ASU Cast II</h3>
+                    <p class="p_title" ><span class="white_span">高科技</span><span class="yellow_span">精密陶瓷</span></p>
+                    <a class="learn_more"  href="产品图.html">了解更多</a> 
+                </div>
+                </div><!-- slider 1 end-->
+                <div class="swiper-slide">
+                <div class="sider1">
+                    <h1 class="h1_product_name" >ASU Cast II</h1>
+                    <h3 class="h3_product_name" >ASU Cast II</h3>
+                    <p class="p_title" ><span class="white_span">高科技2</span><span class="yellow_span">精密陶瓷</span></p>
+                    <a class="learn_more"  href="产品图.html">了解更多</a> 
+                </div>
+                </div><!-- slider 2 end-->
+                <div class="swiper-slide">
+                <div class="sider1">
+                    <h1 class="h1_product_name" >ASU Cast II</h1>
+                    <h3 class="h3_product_name" >ASU Cast II</h3>
+                    <p class="p_title" ><span class="white_span">高科技3</span><span class="yellow_span">精密陶瓷</span></p>
+                    <a class="learn_more"  href="产品图.html">了解更多</a> 
+                </div>
+                </div><!-- slider 3 end-->
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+        <!-- end swiper -->
+</div>
+{% endblock %} 
+{% block js %}
+<script type="text/javascript " src="/static/js/swiper-3.4.2.jquery.min.js "></script>
+<script type="text/javascript " src="/static/js/homepage.js "></script> 
+{% endblock %}

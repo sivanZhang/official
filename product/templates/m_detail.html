@@ -1,0 +1,164 @@
+{% extends 'm_base.html' %} {% block css %} {% load staticfiles %}
+<link href="/static/products/css/m_products.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.css"> {% endblock %} {% block content %} {%csrf_token%}
+<header class="header">
+    <i class="fa fa-angle-left pull-left back f26" aria-hidden="true"></i>
+    <i class="fa fa-external-link pull-right f20"></i>
+</header>
+<!-- swiper -->
+<div id="swiper-container" class="swiper-container text-center">
+    <div class="swiper-wrapper">
+        {% for pic in product.productpic_set.all %}
+        <div class="swiper-slide slide-1">
+            <img src='{{mediaroot}}{{pic.url}}' /> </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- swiper end-->
+<input type="hidden" id="productid" value="{{product.id}}" />
+<!-- 子导航栏-->
+<div class="sub-nav f14">
+    <nav id="myTab" class="nav nav-tabs" role="tablist">
+        <ul id="myTab">
+            <li class="active">
+                <a href="#main" data-toggle="tab">商品</a>
+            </li>
+            <li>
+                <a href="#details" data-toggle="tab">详情</a>
+            </li>
+            <li>
+                <a href="#com_wrap" data-toggle="tab">评价</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<!-- 子导航栏  结束-->
+
+<div id="myTabContent" class="tab-content">
+
+    <!-- 商品页 -->
+    <div class="tab-pane fade in active" id="main">
+        <div class="main-top">
+            <div class="item_name f18">
+                {{product.title|truncatechars:"100"}}
+            </div>
+            <div class="msg">{{product.description|default:''}} {{product.adaptorrule_set.all.0.name }} {{product.adaptorrule_set.all.0.unit }}</div>
+            <div class="price"><i class="fa fa-jpy" aria-hidden="true"></i>{{product.adaptorrule_set.all.0.price }}
+            </div>
+        </div>
+       
+            <div class="choose f14">
+                商品规格选择
+                <i class="glyphicon glyphicon-option-horizontal pull-right"></i>
+            </div>
+
+        {% include 'recommend.html' %}
+    </div>
+
+    <!--详情页-->
+    <div class="tab-pane fade " id="details">
+        <div class="tb-wrap ">
+            <table class="table table-bordered pro-table">
+                <tr><td></td></tr>
+            </table>
+        </div>
+        <div class="illustrate">
+            {{ product.detail|default:''|safe}}
+        </div>
+    </div>
+
+    <!--评价页-->
+    <div class="tab-pane fade" id="com_wrap">
+    </div>   
+</div>
+
+{% endblock %} {% block menu %}
+<!--footer-->
+<footer class="text-center " id="footer ">
+    <div class="pull-left menu-left ">
+        <ul>
+            <li><i class="fa fa-commenting f18" aria-hidden="true"></i>
+                <div>联系卖家</div>
+            </li>
+            <li>
+                <i class="fa fa-heart f18" aria-hidden="true "></i>
+                <div>收藏</div>
+            </li>
+            <a href="{% url 'shopcar:shopcar_detail' %}">
+                <li>
+                    <i class="fa fa-shopping-cart f18" aria-hidden="true"></i>
+                    <div>购物车</div>
+                </li>
+            </a>
+        </ul>
+    </div>
+
+    <a href="javascript:; ">
+        <div class="pull-right menu-right add-cart">加入购物车</div>
+    </a>
+</footer>
+
+<!-- hide div -->
+<div class="hide_box_wrap">
+    <div class="hide_box_void"></div>
+    <div class="hide_box_content">
+        <img class="thumbnail hide_box_thumbnail" src="{{mediaroot}}{{product.thumbnail}}">
+        <div class="hide_box_price">
+            <i class="fa fa-jpy" aria-hidden="true"></i>
+            <span class="price" id="total_price"> </span>
+            <i class="fa fa-times pull-right" aria-hidden="true"></i>
+            <div class="font-grey">库存：<span class="stock_copy">--</span></div>
+        </div>
+        <table class="table">
+            {% if product.adaptorrule_set.all %}
+            <tr>
+                <th>规格</th>
+                <th>价格</th>
+                <th>库存</th>
+                <th>单位</th>
+            </tr>
+            {% for rule in product.adaptorrule_set.all %}
+            <tr class="rule_tr" ruleid="{{rule.id}}">
+                <td class="rule_name">{{rule.name}}</td>
+                <td class="unit-price">{{rule.price}}</td>
+                <td class="stock">{{rule.available_inventory}}</td>
+                <td>{{rule.unit}}</td>
+            </tr>
+            {% endfor %} {% endif %}
+        </table>
+
+        <div class="rule_wrap clearfix">
+          
+                <div class="font-grey pull-left">数量</div>
+                <div class="btn-group btn-group-sm pull-right" role="group">
+                    <button class="btn btn-default addition">+</button>
+                    <div class="carnum" id="carnum">1</div>
+                    <button class="btn btn-default subtraction">-</button>
+                </div>
+          
+        </div>
+
+        <div class="submit">
+            <button class="btn btn-info pull-left buy-now" type="button">立即购买</button>
+            <button class="btn btn-danger btn-danger-confirm" type="button">确定</button>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %} {% block js %}
+<script type="text/javascript " src="/static/js/swiper-3.4.2.jquery.min.js "></script>
+<script type="text/javascript " src="/static/products/js/m_detail.js"></script>
+<script>
+var items = {{product.parameters|safe}};
+    var html = '';
+    for (var i = 0; i < items.length; i++) {
+        html = ' <tr ">' +
+            '<td class="key ">' + items[i]['key'] + '</td>' +
+            '<td class="value ">' + items[i]['value'] + '</td>' +
+
+            '</tr>';
+        $('.pro-table').append(html);
+    }
+
+</script>
+{% endblock %}

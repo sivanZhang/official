@@ -1,0 +1,14 @@
+input.inp_search{
+    background-color: rgb(250, 255, 189);
+}
+.search_wrap{
+    margin:20px 20%;
+}
+
+.main{
+    margin-top: 20px;
+}
+
+.main>row div{
+    padding: 20px 10px;
+}

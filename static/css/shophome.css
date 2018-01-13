@@ -1,0 +1,93 @@
+/* 
+ *图标样式定义
+ */
+.fa-angle-down {
+    margin-left: 8px;
+}
+
+.fa-angle-right {
+    margin-left: 20px;
+}
+/* 
+ *轮播图图片
+ */
+#swiper-container img {
+    width: 100%;
+}
+/* 
+ *VIDEO
+ */
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+    border-radius: 6px;
+}
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}   
+.demo{
+    position: absolute;
+    top:50%;
+    left: 10%;
+    z-index: 10;
+}
+
+
+.in_video{
+    background-color:transparent;
+    border-color:rgba(255, 255, 255,.5); 
+    border-width: 2px;
+    color:#fefefe;
+    border-radius: 50%;
+    width:250px;
+    height: 150px;
+    text-align: center;
+  padding-top:30px;
+}
+.in_video a:link,.panel-default a:link{
+    text-decoration: underline;
+}
+.main_top,.homepage-hero-module{
+    margin-top: 20px;
+}
+.panel-default{
+    margin: 0 -15px;
+}
+#swiper-container{
+    border-radius: 6px;
+    margin: 0 -5px;
+}

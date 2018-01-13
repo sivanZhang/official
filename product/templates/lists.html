@@ -1,0 +1,89 @@
+{% extends 'base.html' %}{% block pagetitle%}商品列表{% endblock%} {% block css %} {% load staticfiles %}
+<link href="/static/products/css/list.css" rel="stylesheet"> {% endblock %} {% block content %}
+<div class="container main">
+    <!-- 路径导航 -->
+    <ol class="breadcrumb row">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li class="active">搜索结果</li>
+
+        <form class="input-group search_wrap">
+            <input type="search" class="form-control inp_search" name="keywords" placeholder="Search">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit" title="点击搜索">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </span>
+        </form>
+    </ol>
+ 
+        <div class="row row_margin">
+            {% for product in products %}
+            <div class="col-sm-4 col-md-3">
+                    <div class="thumbnail">
+                        <img src="{{mediaroot}}{{product.thumbnail}}" alt="...">
+                        <div class="caption">
+                            <h4>{{product.title}}</h4>
+                            <p class="price">
+                                <i class="fa fa-jpy" aria-hidden="true"></i>
+                                {{product.adaptorrule_set.all.0.price}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="col-sm-4 col-md-3">
+                <div class="thumbnail">
+                    <img src="/static/img/list3.jpg" alt="...">
+                    <div class="caption">
+                        <h4>Thumbnail label</h4>
+                        <p class="price">
+                            <i class="fa fa-jpy" aria-hidden="true"></i>
+                            20.00
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3">
+                <div class="thumbnail ">
+                    <img src="/static/img/list3.jpg" alt="...">
+                    <div class="caption">
+                        <h4>Thumbnail label</h4>
+                        <p class="price">
+                            <i class="fa fa-jpy" aria-hidden="true"></i>
+                            20.00
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3">
+                <div class="thumbnail">
+                    <img src="/static/img/list3.jpg" alt="...">
+                    <div class="caption">
+                        <h4>Thumbnail label</h4>
+                        <p class="price">
+                            <i class="fa fa-jpy" aria-hidden="true"></i>
+                            20.00
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3">
+                    <div class="thumbnail">
+                        <img src="/static/img/list3.jpg" alt="...">
+                        <div class="caption">
+                            <h4>Thumbnail label</h4>
+                            <p class="price">
+                                <i class="fa fa-jpy" aria-hidden="true"></i>
+                                20.00
+                            </p>
+                        </div>
+                    </div>
+                </div>
+           
+        </div>
+    </div>
+
+{% endblock %} {% block js %}
+<script type="text/javascript" src="/static/js/list.js"></script> {% endblock %}

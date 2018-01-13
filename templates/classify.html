@@ -1,0 +1,150 @@
+<div class="container">
+    <div class="main_top row">
+        <div class="col-sm-6 col-md-2 col-lg-2 sidebar">
+            <ul>
+                <li class="main_menu">分类
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li class="main_menu">分类
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li class="main_menu">分类
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li class="main_menu">分类
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li class="main_menu">分类
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li class="main_menu">分类
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-6 col-md-10 col-lg-10 detailed_menu">
+            <ul>
+                <li>总菜单
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li>分类
+                </li>
+                <li>分类
+                </li>
+                <li>分类
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="col-sm-6 col-md-10 col-lg-10 detailed_menu">
+            <ul>
+                <li>总菜单1
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li>分类
+                </li>
+                <li>分类
+                </li>
+                <li>分类
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="col-sm-6 col-md-10 col-lg-10 detailed_menu">
+            <ul>
+                <li>总菜单2
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li>分类
+                </li>
+                <li>分类
+                </li>
+                <li>分类
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="col-sm-10 col-md-10 col-lg-10 detailed_menu">
+            <ul>
+                <li>总菜单3
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li>分类
+                </li>
+                <li>分类
+                </li>
+                <li>分类
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="col-sm-10 col-md-10 col-lg-10 detailed_menu">
+            <ul>
+                <li>总菜单4
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li>分类
+                </li>
+                <li>分类
+                </li>
+                <li>分类
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="col-sm-10 col-md-10 col-lg-10 detailed_menu">
+            <ul>
+                <li>总菜单
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </li>
+                <li>分类
+                </li>
+                <li>分类
+                </li>
+                <li>分类
+                </li>
+            </ul>
+        </div>
+        <!-- 轮播图 -->
+        <div class="col-sm-12 col-md-8 col-lg-8">
+                <div id="swiper-container" class="swiper-container">
+                    <div class="swiper-wrapper">
+                            {% for site in sitecontents %}
+                                {% if site.mark == 'lunbotu' %}
+                                   {% for siteitem in site.adaptorbaseblockitem_set.all %}
+                                    <div class="swiper-slide">
+                                        <a href="{{siteitem.url}}">
+                                        <img src="{{mediaroot}}{{siteitem.pic}}">{{siteitem.pic}}</a>
+                                    </div>
+                                    {% endfor %} 
+                                {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div> 
+        <div class="col-sm-12 col-md-2 col-lg-2"> 
+            <div class="panel panel-default">
+                {% for site in sitecontents %}
+                
+                {% if site.mark == 'gonggao' %}
+                <div class="panel-heading">{{site.title}} </div>
+                <ul class="panel-body">
+                        {% for siteitem in site.adaptorbaseblockitem_set.all %}
+                            <li>
+                                <a href="{{siteitem.url}}">{{siteitem.title}}</a>
+                            </li>
+                        {% endfor %} 
+                    </ul> 
+                    {% endif %}
+                {% endfor %}
+          </div>
+       </div>
+       
+        <!-- 轮播图结束 -->
+    </div>
+</div>

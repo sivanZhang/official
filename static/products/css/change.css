@@ -1,0 +1,112 @@
+div.submit {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    padding-top: 8px;
+    border: 1px solid #ddd;
+}
+
+.my-btn {
+    width: 150px;
+}
+
+span.btn-group {
+    display: inline-block;
+}
+
+i.fa-shopping-cart {
+    margin-right: 5px;
+}
+
+.breadcrumb {
+    width: 1080px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 0px;
+}
+
+.format {
+    padding: 12px 12px;
+    color: #333;
+}
+
+.gray-white {
+    background: linear-gradient(to bottom, #fff, #f7f8f9)
+}
+
+.form-horizontal .control-label {
+    text-align: center;
+}
+
+.btn-info {
+    margin-right: 100px;
+}
+
+.form-horizontal .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+table {
+    margin: 20px 0;
+}
+
+table:first-child {
+    text-align: center;
+}
+
+i.fa-trash-o {
+    color: rgb(201,22,35);
+}
+
+.fa-trash-o {
+    cursor: pointer;
+}
+
+.ta-wrap span {
+    position: absolute;
+    right: 20px;
+    bottom: 8px;
+    color: #AAA;
+}
+
+.alert-text {
+    color: red;
+    padding: 0 10px;
+}
+/* .fa-floppy-o{
+    cursor: pointer;
+    color: #204d74;
+} */
+td>input{
+    border: 0px;
+    outline: 0px;
+    background-color: transparent;
+  display: inline-block;
+}
+
+.operate{
+min-width: 50px;
+text-align: center;
+}
+/* 铅笔样式 */
+.fa-pencil{
+    color: #bbb;
+margin-left:10px; 
+}
+.bill{
+    min-width: 90px;
+ width: 90px;
+}
+/* td.price>input{
+   
+} */
+
+.table_error{
+    background-color: orangered;
+    color: white;
+    font-weight: 700;
+}
