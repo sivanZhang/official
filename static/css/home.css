@@ -1,0 +1,24 @@
+/* base */
+.a-style {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+/* deteil */
+.a_product {
+  color: #ea5014;
+}
+.sider1 .ad-img {
+  width: 100%;
+}
+.sider1 a:link,
+.sider1 a:hover,
+.sider1 a:focus,
+.sider1 a:visited {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+.sider1 .shop-link {
+  color: #fff;
+}

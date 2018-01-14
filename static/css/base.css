@@ -1,13 +1,13 @@
-
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+}
 /* 菜单设置开始*/
 .menu, .menu-holder{
     min-height: 60px;
     line-height: 60px; 
     width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000; 
-    margin-bottom: 5px;
 }
 .menu table
 {
@@ -26,7 +26,7 @@
 }
 
 .menu td{
-    padding: 0 20px;
+    padding: 0 18px;
     line-height: 40px;
 }
 
@@ -63,18 +63,18 @@
 .point{
     width: 5px;
     height:5px;
-    border-radius: 3px;
+    border-radius: 50%;
     margin: 0 auto;
     background-color:#D6D6D6;
 }
 
-.menu .line{
+.bottom-line{
     position: relative;
     top: -31px;
-    left: 40px;
     overflow: hidden;
     border-top: 1px solid #D6D6D6;
     z-index: -1;
+
 }
 
 .menu .active *{
@@ -217,8 +217,7 @@ footer{
 
 .logo
 {
-    width: 150px;
-    height: 45px;
+    height: 34px;
 }
  
 td.td-bar-point
@@ -252,4 +251,10 @@ td.td-bar-point
 {
     text-align: center;
     margin: 0 auto;
+}
+.menu-holder{
+    position: fixed;
+    top: 0;
+    z-index: 1000; 
+    margin-bottom: 5px;
 }

@@ -28,6 +28,7 @@
     {% block menu %}
     <!--菜单开始-->
     <div class="menu-holder">
+      <div class="container nav-container">
         <table class="menu" >
           <tr>
           <td>
@@ -41,67 +42,70 @@
               <div class="pull-right">
                     <table>
                       <tr>
-                          <td class="{% if productpage %}active{% endif %} a_product" >
-                            <a href="产品图.html" >Cast</a>
-                            <div class="point"></div>
+                        <td class="{% if productpage %}active{% endif %} a_product">
+                          <a href="产品图.html">Watch</a>
+                          <div class="point"></div>
                         </td>
                         <td class="{% if servicepage %}active{% endif %} ">
-                            <a href="服务.html" >服务</a>
-                            <div class="point"></div>
-                          </td>
-                          <td class="{% if storepage %}active{% endif %} ">
-                            <a href="" class="a_store">体验店</a>
-                            <div class="point"></div>
+                          <a href="服务.html">服务</a>
+                          <div class="point"></div>
                         </td>
-                          <td class="{% if communitypage %}active{% endif %} ">
-                            <a href="" >社区</a>
-                            <div class="point"></div>
-                        </td> 
-                          <td class="{% if mallpage %}active{% endif %} ">
-                            <a href="企业图.html" >商城</a>
-                            <div class="point"></div>
-                          </td>
-   
-                          <td class="small-padding">
-                            
-                            <a href="" >中文|EN</a>
-                          </td> 
-                        
+                        <td class="{% if storepage %}active{% endif %} ">
+                          <a href="" class="a_store">体验店</a>
+                          <div class="point"></div>
+                        </td>
+                        <td class="{% if communitypage %}active{% endif %} ">
+                          <a href="">社区</a>
+                          <div class="point"></div>
+                        </td>
+                        <td class="{% if mallpage %}active{% endif %} ">
+                          <a href="企业图.html">商城</a>
+                          <div class="point"></div>
+                        </td>
+                    
+                        <td class="small-padding">
+                    
+                          <a href="">中文|EN</a>
+                        </td>
+                    
                       </tr>
                     </table>
-                    <div class="line">
+                    
+                    
                     </div>
-                   
-              </div><!-- 左侧菜单结束-->
-          </td>
-          </tr>
-        </table>
+                    <!-- 左侧菜单结束-->
+                    </td>
+                    </tr>
+                    </table>
       
-         <div class="panel panel-default sec_menu store_sec_menu panel-body-transparent">
-                      <div class="panel-body "> 
-                        <div>
-                          <a class="a_img" href="成为授权经销商.html"> 
-                            <img class="store_img_hove"  src="/static/img/store.png" />
-                            </a>
-                          <a class="a_img" href="体验店.html" > 
-                            <img class="bussiness_img_hove" src="/static/img/bussiness.png" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-        <div class="panel panel-default sec_menu product_sec_menu panel-body-transparent">
-          <div class="panel-body "> 
+        <div class="panel panel-default sec_menu store_sec_menu panel-body-transparent">
+          <div class="panel-body">
             <div>
-              <a class="a_img" href="{% url 'product:cast2' %}"> 
-                <img class="cast_img_hove" src="/static/img/cast.png" />
-                </a>
-              <a class="a_img" href="{% url 'product:castdock' %}" > 
-                <img  class="castdock_img_hove" src="/static/img/castdock.png" />
+              <a class="a_img" href="成为授权经销商.html">
+                <img class="store_img_hove" src="/static/img/store.png" />
+              </a>
+              <a class="a_img" href="体验店.html">
+                <img class="bussiness_img_hove" src="/static/img/bussiness.png" />
               </a>
             </div>
           </div>
-        </div> 
-  
+        </div>
+        <div class="panel panel-default sec_menu product_sec_menu panel-body-transparent">
+          <div class="panel-body">
+            <div>
+              <a class="a_img" href="{% url 'product:cast2' %}">
+                <img class="cast_img_hove" src="/static/img/cast.png" />
+              </a>
+              <a class="a_img" href="{% url 'product:castdock' %}">
+                <img class="castdock_img_hove" src="/static/img/castdock.png" />
+              </a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="bottom-line">
+        </div>
       </div>
     <!--菜单结束-->
     {% endblock %} 
