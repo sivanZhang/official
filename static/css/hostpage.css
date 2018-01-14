@@ -1,5 +1,6 @@
 .content
 { 
+    padding:0px;
 }
 
 .swiper-container
@@ -13,9 +14,6 @@
 }
 
 
-.fa{
-    color:white;
-}
 
 .fa-side{
     color:gray;
@@ -53,3 +51,20 @@
     margin:0;
 }
 
+.swiper-button-warp{
+    overflow: hidden;
+    height: 100%!important;
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 120px!important;
+    left: 0;
+    width: 100%;
+}
+.swiper-button-prev{
+    left: 10% !important;
+}
+
+.swiper-button-next{
+    right: 10% !important;
+}

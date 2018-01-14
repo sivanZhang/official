@@ -1,52 +1,72 @@
 {% extends 'base.html' %}
  {% block css %}
  <link href="/static/css/hostpage.css"  rel="stylesheet">
- <link href="/static/css/home.css"  rel="stylesheet">
  <link rel="stylesheet" href="/static/css/swiper.css">
+ <link rel="stylesheet/less" type="text/css" href="/static/css/styles.less" />
+ <script src="http://cdn.bootcss.com/less.js/1.7.0/less.min.js"></script>
 {% endblock %} 
 {% block content %}
 <div class="container-fluid content">
-        <!-- Swiper -->
-        <div class="swiper-container row">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="sider1">
-                        <img class="ad-img" src="/static/img/slider1.jpg" />
-                        <div class="shop-link">
-                            <a class="learn_more" href="产品图.html">了解更多</a>
-                            <a class="now-bye btn" href="javascript;">现在购买</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- slider 1 end-->
-                <div class="swiper-slide">
-                    <div class="sider1">
-                        <img class="ad-img" src="/static/img/slider2.jpg" />
+    <!-- Swiper -->
+    <div class="swiper-container row">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="sider1">
+                    <img class="ad-img" src="/static/img/slider1.jpg" />
+                    <div class="shop-link">
                         <a class="learn_more" href="产品图.html">了解更多</a>
+                        <a class="now-bye common-btn" href="javascript;">现在购买
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
-                <!-- slider 2 end-->
-                <div class="swiper-slide">
-                    <div class="sider1">
-                        <img class="ad-img" src="/static/img/slider3.jpg" />
+            </div>
+            <!-- slider 1 end-->
+            <div class="swiper-slide">
+                <div class="sider1">
+                    <img class="ad-img" src="/static/img/slider2.jpg" />
+                    <div class="shop-link">
                         <a class="learn_more" href="产品图.html">了解更多</a>
+                        <a class="now-bye common-btn" href="javascript;">现在购买
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
-                <!-- slider 3 end-->
-                <div class="swiper-slide">
-                    <div class="sider1">
-                        <img class="ad-img" src="/static/img/slider4.jpg" />
+            </div>
+            <!-- slider 2 end-->
+            <div class="swiper-slide">
+                <div class="sider1">
+                    <img class="ad-img" src="/static/img/slider3.jpg" />
+                    <div class="shop-link">
                         <a class="learn_more" href="产品图.html">了解更多</a>
+                        <a class="now-bye common-btn" href="javascript;">现在购买
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
-                <!-- slider 4 end-->
+            </div>
+            <!-- slider 3 end-->
+            <div class="swiper-slide">
+                <div class="sider1">
+                    <img class="ad-img" src="/static/img/slider4.jpg" />
+                    <div class="shop-link">
+                        <a class="learn_more" href="产品图.html">了解更多</a>
+                        <a class="now-bye common-btn" href="javascript;">现在购买
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- slider 4 end-->
+            <div class="swiper-slide">
                 <div class="sider1">
                     <img class="ad-img" src="/static/img/slider5.jpg" />
-                    <p class="p_title">
-                        <span class="white_span">高科技3</span>
-                        <span class="yellow_span">精密陶瓷</span>
-                    </p>
-                    <a class="learn_more" href="产品图.html">了解更多</a>
+                    <div class="shop-link">
+                        <a class="learn_more" href="产品图.html">了解更多</a>
+                        <a class="now-bye common-btn" href="javascript;">现在购买
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             <!-- slider 5 end-->
@@ -54,10 +74,12 @@
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
         <!-- Add Navigation -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-warp container">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-        <!-- end swiper -->
+    </div>
+    <!-- end swiper -->
 </div>
 {% endblock %} 
 {% block js %}
