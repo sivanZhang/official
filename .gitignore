@@ -3,6 +3,7 @@
 *.txt
 *.docx
 *.docs
+settings.py
 proxytest.py
 *.tmp
 */migrations/*
