@@ -3,9 +3,9 @@
 *.txt
 *.docx
 *.docs
-settings.py
 proxytest.py
 *.tmp
 */migrations/*
+media/*
 *.json
 *.md
