@@ -50,31 +50,6 @@ $('.submit button').click(function() {
     var categoryid = $('#sel-category').val();
     var taobaourl = $('#taobaourl').val();
 
-    var obj = {};
-    var rules = Array();
-
-    
-    var rules_tr = $('.tr_rule');
-    rules_tr.each(function() {
-        //新建
-        obj['name'] =$(this).find('.name').text();
-        obj['unit'] = $(this).find('.unit').text();
-        obj['price'] = $(this).find('.price').text();
-        obj['inv'] = $(this).find('.inv').text();
-        rules.push(obj);
-        obj = {};
-    });
-    var parameters = Array();
-    var parameters_tr = $('.parameter_tr');
-    var obj_para = {};
-    parameters_tr.each(function() {
-        obj_para['key'] = $(this).find('.key').text();
-        obj_para['value'] = $(this).find('.value').text(); 
-        parameters.push(obj_para);
-        obj_para = {};
-    });
-   
-
     data = {
         'method': 'create',
         'categoryid': categoryid,
@@ -82,20 +57,10 @@ $('.submit button').click(function() {
         'description': desc,
         'detail': detail,
         'taobaourl' :taobaourl,
-        'rules': JSON.stringify(rules),
-        'parameters': JSON.stringify(parameters),
         'status': $(this).attr('status'),
         'csrfmiddlewaretoken': getCookie('csrftoken'),
     };
-    /*2017年11月1日18:00:35
-    
-    if (product.length > 0){
-        //3
-        data['id'] = product.val();
-        data['method'] = 'put'; //修改产品
-    }
-    */
-
+  
     var html = '<div class="alert alert-danger" role="alert">####</div>';
     $.ajax({
         type: 'post',
