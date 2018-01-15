@@ -22,6 +22,7 @@ class CodeManager(models.Manager):
             code    = ''.join(random.choice(string.ascii_lowercase + string.digits) for i in range(4))
             Subject = settings.PROJECTNAME+'注册邮箱验证' 
             content = '您好， 欢迎您注册， 欢迎加入我们， 您的邮箱验证码是： ' + code
+            print(code)
             try:
                 self.email.send_text_email(Subject, content, email)
                 try:

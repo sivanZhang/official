@@ -22,5 +22,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^product/', include('product.urls', namespace="product")),
+    url(r'^pic/', include('piclab.urls', namespace="piclab")),
     url(r'^$', views.home, name='home'),
+    url(r'^users/', include('appuser.urls', namespace="users")),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -91,9 +91,8 @@ def logout(request):
 def register(request):
     isMble  = dmb.process_request(request)
     content = {}
-
-    if request.method == "POST":
-        return HttpResponseRedirect(reverse('users:login'))
+    
+    if request.method == "POST":  
         username = request.POST['username'].strip()
         email = request.POST['email'].strip()
         password = request.POST['password'].strip()

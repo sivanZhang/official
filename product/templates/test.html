@@ -1,1 +1,43 @@
-
+{% extends 'base.html' %}
+{% load i18n %}
+{% block pagetitle%}创建商品信息{% endblock%}
+ {% block css %}
+<link href="/static/products/css/new.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/static/css/HoldOn.css">  {% endblock %} 
+{% block content %} 
+<form>
+    {{ form.media }}
+    {{ form.as_p }}
+    <input type="submit"/>
+</form>
+{% endblock %} {% block js %}
+<script src="/static/plugins/ckeditor_4.8.0_standard/ckeditor.js "></script> 
+<script type="text/javascript" src="/static/js/HoldOn.min.js"></script>
+ 
+<script> 
+     
+    //var data = CKEDITOR.instances.editor1.getData();
+    /*
+    CKEDITOR.on('dialogDefinition', function (ev) {
+        var dialogName = ev.data.name;
+        var dialogDefinition = ev.data.definition;
+        if (dialogName == 'image') {
+            dialogDefinition.removeContents('Upload');
+            dialogDefinition.addContents({
+            title: "Upload",
+            id: "upload",
+            label: "Upload",
+            elements: [{
+                type: "html",
+                html: '<form action="/pic/pics/" method="POST" enctype="multipart/form-data">'+
+                    '<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}" >'+
+                    '<input id="imageupload" type="file" name="pic" accept="image//">'+
+                ' <input type="submit" value="上传"/></form>'
+            }]
+            });
+        }
+    });*/
+</script>
+<script src="/static/products/js/new.js " rel="stylesheet "></script>
+ 
+{% endblock %}

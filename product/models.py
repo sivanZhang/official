@@ -9,7 +9,8 @@ from django.utils.translation import ugettext_lazy as _
 from product.manager import AdaptorProductManager, AdaptorRuleManager
 from basedatas.models import BaseDate, Pic
 from django.db.models import F
- 
+from ckeditor_uploader.fields import RichTextUploadingField
+
 """
 全局锁，锁住的时候，不允许进行任何库存的写操作
 """
@@ -43,7 +44,7 @@ class Product(BaseDate):
     # 3 删除状态 代表用户已经执行了删除操作，但是系统没有从数据库中永久删除
     status = models.SmallIntegerField(default=DRAFT)
     # 详情
-    detail = models.TextField(_('Detail'), null=True)
+    detail = RichTextUploadingField(_('Detail'), null=True)
     # 所属类别
     category = models.ForeignKey(Category)
     thumbnail = models.CharField(_('thumbnail'), max_length = 2048, null=True)

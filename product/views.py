@@ -31,6 +31,15 @@ from mobile.detectmobilebrowsermiddleware import DetectMobileBrowser
 
 dmb     = DetectMobileBrowser()
 
+from django import forms
+
+ 
+
+class AdaptorProductForm(forms.ModelForm):
+
+    class Meta:
+        model = AdaptorProduct
+        fields = ('detail', 'title',)
 
 @login_required 
 @permission_required('product.manage_product')
@@ -154,12 +163,13 @@ class ProductView(View):
             products = AdaptorProduct.objects.filter(title__icontains = keywords)
             content['products'] = products
          
-     
+        form = AdaptorProductForm()
+        content['form'] = form
         if 'new' in request.GET:
             if isMobile:
                 return render(request, 'm_new.html', content)
             else:
-                return render(request, 'new.html', content)
+                return render(request, 'test.html', content)
         if 'test' in request.GET:
             if isMobile:
                 return render(request, 'm_new.html', content)
@@ -396,14 +406,14 @@ def cast2(request):
     isMobile  = dmb.process_request(request)
     content = {'productpage':_('Watch')}
     if isMobile:
-        return render(request, 'product\cast2.html', content)
+        return render(request, 'product/cast2.html', content)
     else:
-        return render(request, 'product\cast2.html', content)
+        return render(request, 'product/cast2.html', content)
 
 def castdock(request):
     isMobile  = dmb.process_request(request)
     content = {'productpage':_('CASTDOCK')}
     if isMobile:
-        return render(request, 'product\castdock.html', content)
+        return render(request, 'product/castdock.html', content)
     else:
-        return render(request, 'product\castdock.html', content)
+        return render(request, 'product/castdock.html', content)
