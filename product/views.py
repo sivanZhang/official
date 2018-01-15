@@ -39,7 +39,7 @@ class AdaptorProductForm(forms.ModelForm):
 
     class Meta:
         model = AdaptorProduct
-        fields = ('detail', 'title',)
+        fields = ('detail',)
 
 @login_required 
 @permission_required('product.manage_product')
@@ -166,6 +166,11 @@ class ProductView(View):
         form = AdaptorProductForm()
         content['form'] = form
         if 'new' in request.GET:
+            if isMobile:
+                return render(request, 'm_new.html', content)
+            else:
+                return render(request, 'new.html', content)
+        if 'form' in request.GET:
             if isMobile:
                 return render(request, 'm_new.html', content)
             else:

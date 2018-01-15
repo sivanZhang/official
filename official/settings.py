@@ -179,9 +179,7 @@ CKEDITOR_CONFIGS = {
             '/',  # put this to force next toolbar on new line
             {'name': 'yourcustomtools', 'items': [
                 # put the name of your editor.ui.addButton here
-                'Preview',
-                'Maximize',
-
+                'Preview',  
             ]},
         ],
         'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here

@@ -59,7 +59,7 @@ class Product(BaseDate):
         abstract = True
 
 
-class StoreProduct(Product):
+class OfficialProduct(Product):
     """商城类的Product适配器""" 
     def fallback(self ):
         """下架商品"""
@@ -118,7 +118,7 @@ class StoreProduct(Product):
     class Meta:
         abstract = True  
 
-class AdaptorProduct(StoreProduct):
+class AdaptorProduct(OfficialProduct):
     """Product 适配器""" 
     objects = AdaptorProductManager() 
     
@@ -139,114 +139,3 @@ class ProductPic(Pic):
     class Meta:
         db_table = 'pic'
      
- 
-class Rule(models.Model):
-    """
-    商品的规格：如：电脑商品 名称：8G/价格：6999/库存：100/单位：台
-    """
-    OP_REDUCE_TYPE_AVAIL = 0 # 减可用库存
-    OP_REDUCE_TYPE_REAL = 1  # 减物理库存
-    OP_REDUCE_TYPE_ALL = 2   # 同时减少可用库存和物理库存
-    
-    product = models.ForeignKey(AdaptorProduct)
-    # 名称 ：8G
-    name = models.CharField(_('name'), max_length=1024, null=True)
-    # 价格:6999
-    price = models.DecimalField(_('price'), max_digits=9, decimal_places=2, null=True)
-
-    # 如果可以随便增加、删除库存，那么没有办法核对库存信息。
-    # 要可以核对库存信息，则还需要完善的入库操作
-    # 物理库存：100
-    real_inventory = models.PositiveIntegerField(_('real inventory'), default = 0, null=True)
-    # 可用库存：100
-    available_inventory = models.PositiveIntegerField(_('available inventory'), default = 0, null=True)
-
-    # 单位：台
-    unit = models.CharField(_('unit'), max_length=128, null=True)
-    
-    # 标记这个规格在用户修改的过程中是否被删除了
-    # 算法：
-    #     1 修改商品前将商品的所有规格的deleted字段设置为1
-    #     2 修改的过程中设置为0
-    #     3 删除那些deleted字段仍为1的规格记录
-    deleted = models.PositiveIntegerField(default = 0)
-     
-    def _reduce(self, num, inventory_type = OP_REDUCE_TYPE_AVAIL):
-        """
-        减少库存
-        inventory_type表示减少库存的类型，当=0时，代表减少可用库存
-        =1 时代表减少物理库存
-        """ 
-        status = {} 
-        # 减库存
-        if inventory_type == self.OP_REDUCE_TYPE_AVAIL:
-            # 减可用库存
-            
-            if self.available_inventory - num < 0:
-                status['result'] = 'error'
-                status['msg'] = '错误：可用库存不足'
-            else: 
-                self.available_inventory = F('available_inventory') - num
-                self.save()
-                status['result'] = 'ok'
-                status['msg'] = 'Done'
-        elif inventory_type == self.OP_REDUCE_TYPE_REAL:
-            # 减物理库存
-            if self.real_inventory - num < 0:
-                status['result'] = 'error'
-                status['msg'] = '错误：物理库存不足'
-            else:
-                self.real_inventory = F('real_inventory') - num
-                self.save()
-                status['result'] = 'ok'
-                status['msg'] = 'Done'
-        elif inventory_type == self.OP_REDUCE_TYPE_ALL:
-            # 同时减少可用库存和物理库存
-            # 减物理库存
-            if self.real_inventory - num < 0 or self.available_inventory - num < 0:
-                status['result'] = 'error'
-                status['msg'] = '错误：库存不足'
-            else:
-                self.available_inventory = F('available_inventory') - num
-                self.real_inventory = F('real_inventory') - num
-                self.save()
-                status['result'] = 'ok'
-                status['msg'] = 'Done'
-        else:
-            status['result'] = 'error'
-            status['msg'] = 'inventory type invalid'
-     
-        return status
-
-    def _add(self, num):
-        """同时增加可用库存和物理库存""" 
-        # +库存 
-        self.available_inventory = F('available_inventory') + num
-        self.real_inventory = F('real_inventory') + num
-        self.save()
-
-    def billlist(self):
-        """
-        # 判断本条规格是否有订单产生，如果有，返回订单列表，否则返回空的列表
-        """ 
-        from bill.models import AdaptorBill
-        bills = self.adaptorbillitem_set.filter(bill__status = AdaptorBill.STATUS_PAYED)
-        return bills
-
-    def has_unpayedbill(self):
-        """
-        查看是否有未支付的订单
-        如果有，返回未支付订单锁定的数量，否则，返回0
-        """
-        # 如果可用库存和实物库存不一致，那么就有未支付的订单
-        return self.real_inventory - self.available_inventory 
-
-    class Meta:
-        abstract = True
-
-class AdaptorRule(Rule):
-    """Rule 适配器"""
-    objects = AdaptorRuleManager()
-    def __str__(self):
-        return self.name  
-
