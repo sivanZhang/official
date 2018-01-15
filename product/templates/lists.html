@@ -1,11 +1,12 @@
-{% extends 'base.html' %}{% block pagetitle%}商品列表{% endblock%} {% block css %} {% load staticfiles %}
+{% extends 'base.html' %}
+{% block fixed_menu_class %}fixed_menu_class{%endblock%}
+{% block pagetitle%}商品列表{% endblock%} 
+{% block css %} {% load staticfiles %}
 <link href="/static/products/css/list.css" rel="stylesheet"> {% endblock %} {% block content %}
 <div class="container main">
     <!-- 路径导航 -->
     <ol class="breadcrumb row">
-        <li>
-            <a href="#">Home</a>
-        </li>
+       
         <li class="active">搜索结果</li>
 
         <form class="input-group search_wrap">
@@ -21,67 +22,14 @@
         <div class="row row_margin">
             {% for product in products %}
             <div class="col-sm-4 col-md-3">
-                    <div class="thumbnail">
-                        <img src="{{mediaroot}}{{product.thumbnail}}" alt="...">
+                    <div class="thumbnail"> 
                         <div class="caption">
-                            <h4>{{product.title}}</h4>
-                            <p class="price">
-                                <i class="fa fa-jpy" aria-hidden="true"></i>
-                                {{product.adaptorrule_set.all.0.price}}
-                            </p>
+                            <h4><a href="{% url 'product:detail' product.id %}" >{{product.title}}</a></h4>
+                            
                         </div>
                     </div>
                 </div>
-            {% endfor %}
-            <div class="col-sm-4 col-md-3">
-                <div class="thumbnail">
-                    <img src="/static/img/list3.jpg" alt="...">
-                    <div class="caption">
-                        <h4>Thumbnail label</h4>
-                        <p class="price">
-                            <i class="fa fa-jpy" aria-hidden="true"></i>
-                            20.00
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3">
-                <div class="thumbnail ">
-                    <img src="/static/img/list3.jpg" alt="...">
-                    <div class="caption">
-                        <h4>Thumbnail label</h4>
-                        <p class="price">
-                            <i class="fa fa-jpy" aria-hidden="true"></i>
-                            20.00
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3">
-                <div class="thumbnail">
-                    <img src="/static/img/list3.jpg" alt="...">
-                    <div class="caption">
-                        <h4>Thumbnail label</h4>
-                        <p class="price">
-                            <i class="fa fa-jpy" aria-hidden="true"></i>
-                            20.00
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3">
-                    <div class="thumbnail">
-                        <img src="/static/img/list3.jpg" alt="...">
-                        <div class="caption">
-                            <h4>Thumbnail label</h4>
-                            <p class="price">
-                                <i class="fa fa-jpy" aria-hidden="true"></i>
-                                20.00
-                            </p>
-                        </div>
-                    </div>
-                </div>
-           
+            {% endfor %} 
         </div>
     </div>
 
