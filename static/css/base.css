@@ -298,3 +298,6 @@ footer{
     z-index: 1000;
     padding:15px 0;
 }
+.fixed_menu_class {
+    position: unset !important;
+}

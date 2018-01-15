@@ -13,7 +13,7 @@ from django.http import Http404, QueryDict
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from category.models import Category
-from product.models import AdaptorProduct, AdaptorRule, ProductPic
+from product.models import AdaptorProduct,  ProductPic
 from common.fileupload import FileUpload
 from django.utils.decorators import method_decorator
 from django.views.generic.detail import DetailView
@@ -273,10 +273,7 @@ class ProductView(View):
                 if 'taobaourl' in request.POST:
                     taobaourl = request.POST['taobaourl'].strip()
                     product.taobaourl = taobaourl
-                 
-                if 'rules' in request.POST:  
-                    rules = request.POST['rules'].strip()
-                    AdaptorRule.objects.mul_create(rules, product)
+                  
                 product.save()
                 result['id'] = product.id
                 result['status'] ='ok'
@@ -331,20 +328,7 @@ class ProductView(View):
                 if 'taobaourl' in request.POST:
                     taobaourl = request.POST['taobaourl'].strip()
                     product.taobaourl = taobaourl
-
-                if 'rules' in request.POST:   
-                    rules = request.POST['rules'].strip()
-                    
-                    product.set_undeleted() 
-                    error_list = AdaptorRule.objects.mul_modify(rules, product) 
-                    if len(error_list) > 0:
-                        result['error_list'] = error_list
-                        result['error_list_msg'] = _('The new inventory cannot satisfied with the unpayed bill')
-                    undeleted_list = product.delete_droped_rules() 
-                    if len(undeleted_list) > 0:
-                        result['undeleted_list'] = undeleted_list
-                        result['undeleted_msg'] = _('There are unpayed bill for this item')
-                
+ 
                 product.save() 
                 result['status'] ='ok'
                 result['msg'] = _('Modified sucessfully')
