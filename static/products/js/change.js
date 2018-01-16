@@ -1,41 +1,4 @@
 
-//  规格设置    >>> 删除行
-$('#tb_rule').on('click', '.fa-trash-o', function () {
-    $(this).parents('tr').remove();
-});
-
-//  规格设置    >>> 添加
-var rule_el, name, price, rule, inventory,newhtml,html;
-//表单数字输入验证
-fnLimited($('#price,#inventory,.inv>input,.price>input'));
-
-$('.add-inp input').focus(function(){
-    $(".alert-text").remove();
-})
-
-$('.add-rule').click(function () {
-    rule_el = document.getElementById('tb_rule');
-    name = $('#name').val();
-    price = $('#price').val();
-    rule = $('#rule').val();
-    inventory = $('#inventory').val();
-    newhtml = ' <tr class="tr_rule" ruleid="-1">' +
-    '<td class="hasbiil">无</td>'+
-    '<td class="name"><input type="text" value="' + name + '"/></td>' +
-    '<td class="unit"><input type="text" value="' + rule + '"/></td>' +
-    '<td class="price"><input type="text" value="' + price + '"/></td>' +
-    '<td class="inv" ><input type="text" value="' + inventory + '"/></td>' +
-    '<td class="operate"><i class="fa fa-trash-o" aria-hidden="true"></i></td>' +
-    '</tr>';
-
-    if (name.length == 0 || price.length == 0 || rule.length == 0 || inventory.length == 0) {
-        var html = '<div class="alert-text">内容不能为空!</div>';
-        $('#tb_rule').before(html);
-    }else {
-        rule_el.innerHTML = rule_el.innerHTML + newhtml;
-    };
-    
-});
 
 //  发表+存稿按钮    >>> 点击事件
 $('.submit button').click(function () {
@@ -50,52 +13,17 @@ $('.submit button').click(function () {
     var categoryid = $('#sel-category').val();
     var title = $('#title').val();
     var desc = $('#desc').val();
-    var detail = tinymce.get("detail").getContent();
-    var taobaourl = $('#taobaourl').val();
-    var obj = {};
-    var rules = Array();
+    var detail = CKEDITOR.instances['id_detail'].getData();
+    var taobaourl = $('#taobaourl').val(); 
     var product = $('#productid');
-    var rules_tr = $('.tr_rule');
-    rules_tr.each(function () {
-        if (product.length > 0) {
-            // 修改
-            obj['ruleid'] = $(this).attr('ruleid');
-            obj['name'] = $(this).find('.name>input').val();
-            obj['unit'] = $(this).find('.unit>input').val();
-            obj['price'] = $(this).find('.price>input').val();
-            obj['inv'] = $(this).find('.inv>input').val();
-        }
-        else {
-            //新建
-            obj['name'] = $(this).find('.name').text();
-            obj['unit'] = $(this).find('.unit').text();
-            obj['price'] = $(this).find('.price').text();
-            obj['inv'] = $(this).find('.inv').text();
-        }
-
-        rules.push(obj);
-        obj = {};
-    });
-    var parameters = Array();
-    var parameters_tr = $('.parameter_tr');
-    var obj_para = {};
-    parameters_tr.each(function () {
-        obj_para['key'] = $(this).find('.key>input').val();
-        obj_para['value'] = $(this).find('.value>input').val();
-        parameters.push(obj_para);
-        obj_para = {};
-    });
-
-
+       
     data = {
         'method': 'create',
         'categoryid': categoryid,
         'title': title,
         'description': desc,
         'detail': detail,
-        'taobaourl' :taobaourl,
-        'rules': JSON.stringify(rules),
-        'parameters': JSON.stringify(parameters),
+        'taobaourl' :taobaourl, 
         'status': $(this).attr('status'),
         'csrfmiddlewaretoken': getCookie('csrftoken'),
     };

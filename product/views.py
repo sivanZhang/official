@@ -42,7 +42,7 @@ class AdaptorProductForm(forms.ModelForm):
         fields = ('detail',)
 
 @login_required 
-@permission_required('product.manage_product')
+#@permission_required('product.manage_product')
 def change(request, pk):
     isMobile  = dmb.process_request(request)
     content = {}
@@ -54,6 +54,8 @@ def change(request, pk):
         try:
              product = AdaptorProduct.objects.get(pk=pk)
              content['product'] =product 
+             form = AdaptorProductForm(instance=product)
+             content['form'] = form
         except AdaptorProduct.DoesNotExist:
             raise Http404
         if 'pic' in request.GET:

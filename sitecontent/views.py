@@ -206,13 +206,11 @@ class BlockItemContentView(View):
                 return render(request, 'sitecontent/testitem.html', content)
             else:
                 return render(request, 'sitecontent/testitem.html', content)
-
         if 'detail' in request.GET:
             if isMble:
                 return render(request, 'sitecontent/m_detail.html', content)
             else:
                 return render(request, 'sitecontent/m_detail.html', content)
-       
         else:
             if isMble:
                 return render(request, 'sitecontent/m_lists.html', content)
