@@ -12,6 +12,7 @@
     <link type="text/css" href="/static/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
     <link href="/static/css/base.css"  rel="stylesheet">
+    <link href="/static/css/footer.css"  rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="/static/css/m_jquery.message.css">
     <!--扩展css开始-->
     {% block css %} 
@@ -114,7 +115,156 @@
     {% block content %} 
     {% endblock %}  
     <!--主要内容结束-->
-    
+    {% block links %}
+    <!-- start link footer -->
+    <div class="linkitems"> 
+      <table>
+        <tr >
+          <td class="first">
+              <a href="企业图.html" >ASU品牌</a>
+          </td>
+          <td class="first">
+              <a href="">媒体中心</a>
+          </td>
+          <td class="first">
+              <a href="">ASU生态</a>
+          </td>
+          <td class="first">
+              <a href="">购买渠道</a>
+          </td>
+          <td class="first">
+              <a href="">售后服务</a>
+          </td>
+          <td class="first">
+              <a href="">一群</a>
+          </td>
+          <td class="first">
+              <a href="">Cast客户端</a>
+          </td>  
+          <td rowspan="7" class="td_online">
+            <div class="online-div">
+              <img class="online-img" src="/static/img/online.png" alt="" />
+              <p class="phone">400-820-5555</p>
+              <p>{24小时服务热线}</p>
+            </div>
+          </td>
+        </tr>
+         <tr >
+          <td>
+            <a href="{% url 'page:page' 'asubrand'  'aboutus' %}">关于我们</a>
+          </td>
+          <td>
+            <a href="新闻.html">新闻</a>
+          </td>
+          
+          <td>
+            <a href="">卡片投影</a>
+          </td>
+          <td>
+            <a href="">官方商城</a>
+          </td>
+          <td>
+            <a href="服务.html" >自助服务</a>
+          </td>
+           <td>
+            <a href="">一群论坛</a>
+          </td>
+           <td>
+            <a href="">兴趣小组</a>
+          </td> 
+        </tr>
+         <tr >
+          <td>
+            <a href="理念.html">ASU理念</a>
+          </td>
+          <td>
+            <a href="媒体报道.html">媒体报道</a>
+          </td>
+          <td>
+            <a href="">冰箱模组</a>
+          </td>
+          <td><a href="体验店.html">店面查询</a></td>
+          <td><a href="保修政策.html">保修政策</a></td>
+          <td><a href="">官方活动</a> </td>
+          <td><a href="下载页面.html">客户端下载</a>  </td>
+        </tr>
+         <tr >
+          <td>
+            <a href="精彩活动.html">精彩活动</a>
+          </td>
+          <td>
+            <a href="高清美图.html">高清美图</a>
+          </td>
+          <td>
+            <a href=""> </a>
+          </td>
+          <td>
+            <a href="">天猫旗舰店</a>
+          </td>
+          <td>
+           
+          </td>
+          <td>
+            <a href="">QQ群</a>
+          </td>
+          
+        </tr>
+         <tr >
+          <td>
+            <a href="大事记.html">大事记</a>
+          </td>
+          <td>
+            <a href="炫酷视频.html">炫酷视频</a>
+          </td>
+          <td>
+           
+          </td>
+          <td>
+            <a href="">京东旗舰店</a>
+          </td>
+          <td>
+            <a href=""></a>
+          </td>
+          <td> 
+            <a href="">开发者论坛</a>
+          </td>
+          <td> </td>
+          <td> 
+          </td>
+        </tr>
+         <tr >
+          <td>
+            <a href="加入我们.html">加入我们</a>
+          </td>
+          <td>
+            <a href="">使用手册下载</a>
+          </td>
+          <td> 
+          </td>
+          <td>
+            <a href="">苏宁旗舰店</a>
+          </td>
+          <td> </td>
+          <td> </td>
+          <td>  </td>
+        </tr>
+         <tr >
+          <td>
+            <a href="联系我们.html">联系我们</a>
+          </td>
+          <td> 
+          </td>
+          <td> 
+          </td>
+          <td>  </td>
+          <td>  </td>
+          <td> </td>
+          <td>  </td>
+        </tr>
+      </table>
+</div><!-- end items -->
+<!-- end link footer --> 
+    {% endblock %}
     <!--底部开始-->
     {% block footer %} 
         <footer>

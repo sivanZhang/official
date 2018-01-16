@@ -44,6 +44,8 @@ class BaseBlockItem(models.Model):
     title = models.CharField(max_length = 512) 
     # item状态：显示或隐藏
     status = models.SmallIntegerField(default = STATUS_SHOW) 
+    # 标记被显示在什么位置：如主轮播图中
+    mark = models.CharField(max_length = 128) 
     class Meta:
         abstract = True
      

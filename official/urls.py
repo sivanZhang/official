@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^category/', include('category.urls', namespace="category")),
     url(r'^sitecontent/', include('sitecontent.urls', namespace="sitecontent")),
+    url(r'^page/', include('page.urls', namespace="page")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
