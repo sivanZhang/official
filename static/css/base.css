@@ -259,7 +259,12 @@ td.td-bar-point
 {
     color:#d6d6d6;
 }
-
+.container-fluid{
+    padding: 0px;
+}
+.container{
+    width: 1200px!important;
+}
 .container-center
 {
     text-align: center;
