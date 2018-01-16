@@ -305,4 +305,5 @@ footer{
 }
 .fixed_menu_class {
     position: unset !important;
+    overflow: hidden;
 }
