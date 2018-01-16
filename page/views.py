@@ -1,10 +1,6 @@
 #! -*- coding:utf-8 -*-
 import pdb
-import json
-import random
-import string
-import os
-from datetime import datetime
+import re
 
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -33,7 +29,21 @@ class PageView(View):
         content = {}   
         content['mediaroot'] = settings.MEDIA_URL
         if 'asubrand' == blockname and 'aboutus' == pagename:
-            products = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname, mark=pagename)
+            if len(pages) == 0:
+                raise Http404
+            page_item = pages[0]
+            url = page_item.url
+            match = re.search('\d+', url)
+            if match:
+                productid = match.group()
+                try:
+                    product = AdaptorProduct.objects.get(id=productid)
+                    content['product'] = product
+                    content['page'] = page_item
+                    content['blockname'] = blockname
+                except AdaptorProduct.DoesNotExist:
+                    raise Http404
             if isMble:
                 return render(request, 'page/aboutus.html', content)
             else:

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block fixed_menu_class %}fixed_menu_class{%endblock%}
 {% load i18n %}
 {% block pagetitle%}修改商品信息{% endblock%}
  {% block css %}
@@ -56,7 +57,7 @@
         <div class="form-group">
             <label for="message" class="col-sm-2 control-label">商品详情：</label>
             <div class="col-sm-10">
-                <textarea class="form-control" id="detail" rows="3">{{product.detail|default:''}}</textarea>
+                {{ form.as_p }} 
             </div>
 
         </div>
@@ -68,101 +69,7 @@
                 </div>
     
         </div>
-        <div class="form-group gray-white">
-            <label for="message" class="col-sm-2 control-label">规格设置：</label>
-            <div class="col-sm-10 format">
-
-                <div class="form-inline add-inp">
-
-                    <div class="form-group">
-                         <input type="text" class="form-control" id="name" placeholder="名称">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="rule" placeholder="规格">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="price" placeholder="价格">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="inventory" placeholder="库存">
-                    </div>
-                    <button type="button" class="btn btn-primary add-rule blue-btn"><i class="fa fa-plus" aria-hidden="true"></i></button>
-
-                </div>
-                {% if product %}
-                <table class="table table-hover table-bordered" id="tb_rule">
-                    <tr>
-                        <th colspan="6">
-                            <div>
-                                <h4>规格修改时应注意：</h4>
-                                有订单时：<br/>
-                                有未支付的订单:不能删除，可以修改，但新库存数不能低于锁定的库存数量。<br/>
-                                订单均已完成:	可以修改、删除。删除之后已完成的订单只可查询当时的商品名称和价格，不能查看商品的链接。<br/>
-                                无订单时:可删除、修改 <br/> 
-                            </div> 
-                        </th>
-                    </tr>
-                    <tr>
-                        <th class="bill">是否有订单</th>
-                        <th>名称<i class="fa fa-pencil" aria-hidden="true"></i></th>
-                        <th>规格<i class="fa fa-pencil" aria-hidden="true"></i></th>
-                        <th>价格<i class="fa fa-pencil" aria-hidden="true"></i></th> 
-                        <th>实物库存<i class="fa fa-pencil" aria-hidden="true"></i></th>
-                        <th>操作</th>
-                    </tr>
-
-                    {% for rule in product.adaptorrule_set.all %}
-                    <tr class="tr_rule" ruleid="{{rule.id}}">
-                        {% if rule.adaptorbillitem_set.all %}
-                        <td class="hasbiil">有</td>
-                        {% else  %}
-                        <td class="hasbiil">无</td>
-                        {% endif  %}
-                        <td class="name" ><input type="text" value="{{rule.name}}" title="点击修改"/></td>
-                        <td class="unit"><input type="text" value="{{rule.unit}}" title="点击修改"/></td>
-                        <td class="price"> <input type="text" value="{{rule.price}}" title="点击修改"/></td> 
-                        <td class="inv" available_inventory="{{rule.available_inventory}}" >
-                                <input type="text" value="{{rule.real_inventory}}" title="点击修改"/></td>
-                        <td class="operate">
-                            <i class="fa fa-trash-o " aria-hidden="true" title="删除"></i>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </table> 
-                {% endif %}
-                <table class="table_error table">
-
-                </table>
-            </div>
-        </div>
-
-        <div class="form-group gray-white">
-            <label for="message" class="col-sm-2 control-label">属性设置：</label>
-            <div class="col-sm-10 format">
-                <div class="form-inline"> 
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="pro" placeholder="属性名称">
-                    </div>
-                    <div class="form-group">
-
-                        <input type="text" class="form-control" id="val" placeholder="属性内容">
-                    </div>
-                    <button id="add-pro" type="button " class="btn btn-primary blue-btn">
-                        <i class="fa fa-plus " aria-hidden="true "></i>
-                    </button>
-
-                </div>
-                <table class="table table-hover table-bordered " id="pro-table">
-                    <tr>
-                        <th>属性名称<i class="fa fa-pencil" aria-hidden="true"></i></th>
-                        <th>属性内容<i class="fa fa-pencil" aria-hidden="true"></i></th>
-                        <th>删除</th>
-                    </tr>
-                    
-                </table>
-            </div>
-
-        </div>
+        
 
     </div>
     <div class="msg "> </div>
@@ -176,44 +83,14 @@
      </span>
     </div>
 </section>
-{% endblock %} {% block js %}
-<script src="/static/plugins/tinymce_4.6.6/tinymce/tinymce.min.js "></script>
-<script src="/static/plugins/tinymce_4.6.6/tinymce/languages/zh_CN.js "></script>
+{% endblock %} {% block js %} 
+{{ form.media }} 
 <script type="text/javascript" src="/static/js/HoldOn.min.js"></script>
 {% if product %}
-<script>
-    var items = {{product.parameters|safe}};
-    var html =''; 
-    for(var i = 0 ; i < items.length; i++){
-        html= ' <tr class="parameter_tr ">'+
-            '<td class="key"><input type="text" value="' + items[i]['key'] + '"/> </td>'+
-            '<td class="value"><input type="text" value="' + items[i]['value'] + '"/> </td>'+
-            '<td><i class="fa fa-trash-o " aria-hidden="true "></i></td>'+
-        '</tr>';
-        $('#pro-table>tbody').append(html);
-    }
-    
-</script>
+ 
 {% endif %}
 <script>
-    tinymce.init({
-    selector: 'textarea',
-    height: 500,
-    menubar: false,
-    plugins: [
-        'advlist autolink lists link image charmap print preview anchor textcolor',
-        'searchreplace visualblocks code fullscreen',
-        'insertdatetime media table contextmenu paste code help'
-    ],
-    toolbar: 'insert | undo redo |  styleselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
-    content_css: [
-        '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-        '//www.tinymce.com/css/codepen.min.css'
-    ]
-});
-tinymce.addI18n('zh_CN', {
-
-});
+ 
 </script>
 <script src="/static/products/js/change.js " rel="stylesheet "></script>
  
