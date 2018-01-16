@@ -2,6 +2,8 @@
 {% block css %}
 <link href="/static/css/footer.css"  rel="stylesheet">
 <link href="/static/css/cast2.css"  rel="stylesheet">
+<link rel="stylesheet/less" type="text/css" href="/static/css/styles.less" />
+<script src="http://cdn.bootcss.com/less.js/1.7.0/less.min.js"></script>
 {% endblock %} 
 {% block content %} 
     <div class="img360_holder"> 
@@ -10,16 +12,16 @@
         <!-- <span class="white_span">欢迎"触摸"</span> -->
         <span class="yellow_span">未来/一“触”即现</span>
       </p> 
-       <p class="p_title_2" > Cast II </p>
+       <p class="p_title_2" ><i class="fa fa-angle-double-down" aria-hidden="true"></i></p>
     </div>
-    <div class="container container-second-menu ">
-      <div class="row second-menu ">
-        <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="container-fluid container-second-menu ">
+      <div class="container second-menu ">
+        <div class="col-xs-12">
          <table >
             <tr>
                 <td>
                     <div>
-                       <span >Cast II </span>
+                       <span >ASU Watch</span>
                     </div>
                 </td>
                 <td>
@@ -36,7 +38,7 @@
                               <a href="#" class="a_secondmenu_item " target="advice">安全使用建议</a>
                             </td> 
                             <td class="buy"  >
-                              <a href="" >立即购买</a>
+                              <a href="javascript:;" >立即购买</a>
                             </td> 
                         </tr>
                       </table>
@@ -47,9 +49,8 @@
         </div>
       </div>
     </div> <!-- second menu container -->
-    <div class="character">
-        <div class="container items"> 
-              <img class="productimg" src="/static/img/product0.jpg"/> 
+    <div class="character container-fluid">
+        <section class="container-fluid sec1-show items"> 
               <div class="roll-tip-holder" >
                <a href="" class="white_a product_pic_1"  target="sub-item11"> 
                  <div class="roll-tip"> 
@@ -58,8 +59,8 @@
                 了解更多
               </a>
               </div><!-- roll tip end-->  
-        </div><!-- end items -->
-        <div class="container items sub-item " id="sub-item11"> 
+        </section><!-- end items -->
+        <section class="container-fluid sec1-hide items sub-item " id="sub-item11"> 
               <div class="roll-tip-up" >
                    <table>
                      <tr>
@@ -69,13 +70,9 @@
                      </tr> 
                    </table>
               </div><!-- roll tip up end--> 
-              <div class="subimg">
-              <img class="subproductimg" src="/static/img/subitem.png"/> 
-              </div>
                
-        </div><!-- end sub items -->
-         <div class="container items"> 
-              <img class="productimg" src="/static/img/product1.png"/> 
+        </section><!-- end sub items -->
+         <section class="container-fluid sec2-show"> 
               <div class="roll-tip-holder" >
                <a href="" class="white_a product_pic_1"  target="sub-item1"> 
                  <div class="roll-tip"> 
@@ -84,8 +81,8 @@
                 了解更多
               </a>
               </div><!-- roll tip end-->  
-        </div><!-- end items -->
-        <div class="container items sub-item " id="sub-item1"> 
+        </section><!-- end items -->
+        <section class="container-fluid sec2-hide items sub-item " id="sub-item1"> 
               <div class="roll-tip-up" >
                    <table>
                      <tr>
@@ -95,21 +92,17 @@
                      </tr> 
                    </table>
               </div><!-- roll tip up end--> 
-              <div class="subimg">
-              <img class="subproductimg" src="/static/img/subitem.png"/> 
-              </div>
                
-        </div><!-- end sub items -->
-        <div class="container items"> 
-              <img class="productimg" src="/static/img/product2.png"/> 
+        </section><!-- end sub items -->
+        <section class="container-fluid items sec3-show"> 
               <div class="roll-tip-holder" >
                <a href="" class="white_a product_pic_2"  target="sub-item2"> <div class="roll-tip"> 
                       <i class="fa fa-sort fa-2x" aria-hidden="true"></i>  
                 </div>
                 了解更多</a>
               </div><!-- roll tip end--> 
-
-              <div class="container items sub-item " id="sub-item2"> 
+            </section>
+              <section class="container-fluid items sec3-hide sub-item " id="sub-item2"> 
                   <div class="roll-tip-up" >
                       <table>
                         <tr>
@@ -119,25 +112,20 @@
                         </tr> 
                       </table>
                   </div><!-- roll tip up end--> 
-                  <div class="subimg">
-                  <img class="subproductimg" src="/static/img/subitem.png"/> 
-                  </div>
-                  
-            </div><!-- end sub items -->
+            </section><!-- end sub items -->
 
-        </div><!-- end items -->
+        
         
 
-         <div class="container items"> 
-              <img class="productimg" src="/static/img/product3.png"/> 
+         <section class="container-fluid items sec4-show"> 
               <div class="roll-tip-holder" >
                <a href="" class="white_a product_pic_2"  target="sub-item3"> <div class="roll-tip"> 
                       <i class="fa fa-sort fa-2x" aria-hidden="true"></i>  
                 </div>
                 了解更多</a>
               </div><!-- roll tip end--> 
-
-              <div class="container items sub-item " id="sub-item3"> 
+            </section><!-- end items -->
+              <section class="container-fluid items sub-item sec4-hide" id="sub-item3"> 
                   <div class="roll-tip-up" >
                       <table>
                         <tr>
@@ -147,47 +135,15 @@
                         </tr> 
                       </table>
                   </div><!-- roll tip up end--> 
-                  <div class="subimg">
-                  <img class="subproductimg" src="/static/img/subitem.png"/> 
-                  </div>
                   
-            </div><!-- end sub items -->
+            </section><!-- end sub items -->
+      </div><!-- 特性介绍结束 -->
 
-        </div><!-- end items -->
-
-         <div class="container items"> 
-              <img class="productimg" src="/static/img/product4.png"/> 
-              <div class="roll-tip-holder" >
-               <a href="" class="white_a product_pic_2"  target="sub-item4"> <div class="roll-tip"> 
-                      <i class="fa fa-sort fa-2x" aria-hidden="true"></i>  
-                </div>
-                了解更多</a>
-              </div><!-- roll tip end--> 
-
-              <div class="container items sub-item " id="sub-item4"> 
-                  <div class="roll-tip-up" >
-                      <table>
-                        <tr>
-                          <td>
-                              <i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i>
-                          </td>
-                        </tr> 
-                      </table>
-                  </div><!-- roll tip up end--> 
-                  <div class="subimg">
-                  <img class="subproductimg" src="/static/img/subitem.png"/> 
-                  </div>
-                  
-            </div><!-- end sub items -->
-
-        </div><!-- end items -->
-    </div><!-- 特性介绍结束 -->
-
-    <div class="parameter">
+    <section class="parameter">
       <div class="second_menu_holder">
       <div class="container second_menu">
         <div class="row" >
-          <div class="col-sm-12 col-md-12 col-lg-12 ">
+          <div class="col-xs-12 ">
               <div class="titleline">  
                 <div class="items_holder">
                   <span class="yellowcolor">技术参数</span>
@@ -205,17 +161,17 @@
       <div class="container  "> 
              <img src="/static/img/parameters.png" class="parameters_png" /> 
       </div>
-    </div><!-- 技术特性介绍结束 -->
+    </section><!-- 技术特性介绍结束 -->
 
-    <div class="scene">
+    <section class="scene">
       <div class="container ">
         <div class="row" >
-          <div class="col-sm-12 col-md-12 col-lg-12 ">
+          <div class="col-xs-12 ">
               <div class="titleline">
                   Cast II / <span class="yellowcolor" >应用场景</span>
               </div>
            </div>
-          <div class="col-sm-12 col-md-12 col-lg-12 scene_img"> 
+          <div class="col-xs-12 scene_img"> 
                  <img src="/static/img/scene.png" > 
                  <div class="panel panel-default panel-menu">
                    <div class="panel-body">
@@ -291,14 +247,14 @@
               <div class="col-sm-5 col-md-5 col-lg-5 col-para pull-right">
               </div> 
       </div>
-    </div><!-- 应用场景介绍结束 -->
+    </section><!-- 应用场景介绍结束 -->
 
     
-    <div class="fitting">
+    <section class="fitting">
       <div class="second_menu_holder">
       <div class="container ">
         <div class="row" >
-          <div class="col-sm-12 col-md-12 col-lg-12 ">
+          <div class="col-xs-12 ">
               <div class="titleline">
                   <div class="items_holder">
                     <span class="yellowcolor">精品配件</span>
@@ -314,7 +270,7 @@
       </div>
       <div class="container ">
         <div class="row" >
-          <div class="col-sm-12 col-md-12 col-lg-12 scene_img"> 
+          <div class="col-xs-12 scene_img"> 
                  <img src="/static/img/fitting.png" > 
                  <div class="textholder-left " >
                   <p class="title" >ASU Cast II DOCK</p>
@@ -323,7 +279,7 @@
                   <button class="btn btn-warning btn-learnmore">了解更多>></button></p>
                 </div><!-- textholder-left  end -->
            </div> <!-- end  scene_img -->
-           <div class="col-sm-12 col-md-12 col-lg-12 scene_img"> 
+           <div class="col-xs-12 scene_img"> 
                  <img src="/static/img/fitting-left.png" > 
                  <div class="textholder-right " >
                   <p class="title" >首个全金属外壳蓝牙耳机</p>
@@ -332,7 +288,7 @@
                   <button class="btn btn-warning btn-learnmore">了解更多>></button></p>
                 </div><!-- textholder-left  end -->
            </div> <!-- end  scene_img -->
-            <div class="col-sm-12 col-md-12 col-lg-12 scene_img"> 
+            <div class="col-xs-12 scene_img"> 
                  <img src="/static/img/fitting.png" > 
                  <div class="textholder-left " >
                   <p class="title" >个性表带</p>
@@ -344,14 +300,14 @@
          </div>
       </div>
      
-    </div><!-- 配件介绍结束 -->
+    </section><!-- 配件介绍结束 -->
     
 
     <div class="advice">
      <div class="second_menu_holder">
       <div class="container ">
         <div class="row" >
-          <div class="col-sm-12 col-md-12 col-lg-12 ">
+          <div class="col-xs-12 ">
               <div class="titleline">
                  <div class="items_holder">
                     <span class="yellowcolor">安全使用建议</span>
@@ -368,7 +324,7 @@
             <div class="container container-center">  
                  <img src="/static/img/advice.png" class="parameters_png" /> 
             </div>
-        
+            
     </div><!-- 安全使用建议介绍结束 -->
     <div class="scroll-tip">
       <div class="scroll-up">

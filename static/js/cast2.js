@@ -157,6 +157,11 @@ $('.product_pic_1').click(function(e){
         $($this.parent()).addClass('active'); 
         sec_menu(sec );
     })
+        /* 
+         *板块高度
+         */
+            var windowHeight=window.screen.availHeight;
+            $('section').css('height',windowHeight-50+'px'); 
 })
 
 

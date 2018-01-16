@@ -11,11 +11,14 @@ $('.content').height(height);
         debugger: true
     });
 });
+
+$(document).ready(function(){
 /* 
  *隐藏菜单切换 
  */
-$(document).ready(function(){
     $('#show-btn').click(function(){
-        $('.btn-list').slideToggle();
+        $('.btn-list li').slideToggle();
     })
 })
+
+
