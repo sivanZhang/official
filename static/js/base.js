@@ -119,11 +119,13 @@ $(document).ready(function(){
                 }
             });
    
+    
+})
+$(document).ready(function(){
     /* 菜单下边线的样式 */
     var leftValue =$('.point:first').offset().left;
     $('.bottom-line').css('left',leftValue+'px');
 })
-
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie != '') {

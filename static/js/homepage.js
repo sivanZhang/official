@@ -19,6 +19,10 @@ $(document).ready(function(){
     $('#show-btn').click(function(){
         $('.btn-list li').slideToggle();
     })
+    /* 轮播图箭头位置 */
+    var abslut = $('.logo').offset().left;
+    $('.swiper-button-prev').css('left', abslut+'px')
+    $('.swiper-button-next').css('right', abslut+'px')
 })
 
 

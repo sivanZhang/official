@@ -65,9 +65,11 @@
     text-align: center; 
     padding-left: 10px;
     padding-right: 20px;
+    
+}
+.second-menu .buy>a{
     color:#fff;
 }
-
 
 
 
@@ -112,19 +114,10 @@
 {
     height: 120px;
     background-color: #d6d6d6;
-    font-size: 20px;
-    margin-top:5px;
 }
 
-.titleline a{
-    color: black;
-    font-size: 14px;
-}
-.yellowcolor
-{ 
-    color: rgb(233, 85, 19);
-    font-weight: bold;
-}
+
+
 
 .col-para
 { 
@@ -132,10 +125,7 @@
     min-height: 400px; 
     text-align: left;
 }
-.parameters_png
-{
-    
-}
+
 .col-right
 {
     margin-left: 35px;
@@ -199,7 +189,7 @@
 }
 .roll-tip td, .roll-tip-holder{
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .roll-tip .fa{  
     color:#d6d6d6;
@@ -245,7 +235,7 @@
 
 .items_holder
 {
-     padding-top: 40px;
+     padding: 30px 0;
 }
 .textholder-left
 {
@@ -286,30 +276,26 @@
 {
     position: fixed;
     bottom: 10px;
-    right: 10px;
-    width: 40px; 
+    right: 10%;
+    width: auto; 
 }
 
-.scroll-up, .scroll-down{
+.scroll-up{
     width: 40px;
     height: 40px;
     border-radius: 20px;
     background-color: white;
     text-align: center;
     margin:5px 0;
-    -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,.4);
-    box-shadow: 0px 1px 3px rgba(0,0,0,.4);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
     cursor: pointer;
 }
 
-.scroll-up .fa, .scroll-down .fa{
+.scroll-up .fa,{
     color: gray;
     line-height: 40px;
     font-size: 20px;
-}
-.container-center
-{
-    text-align: center;
 }
 
 .img360_holder

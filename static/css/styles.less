@@ -1,5 +1,9 @@
 /* base */
 @base-color:rgb(234,80,20);
+@grey-font:#6c6c6c;
+.fixed-position{
+    position: relative;
+}
 //间隙
 .round{
     border-radius: 50%;
@@ -24,7 +28,6 @@
     user-select: none;
     background-image: none;
     border: 1px solid transparent;
-    border-radius: 4px;
 }
 .a-style{
     text-decoration: none;
@@ -35,7 +38,7 @@ ul{
     padding: 0px;
     margin: 0px;
 }
-li{
+li{ 
     list-style-type: none;
 }
 a:link,a:hover,a:focus,a:visited{
@@ -77,4 +80,87 @@ section {
         background: url(/static/img/product/sc4hide.jpg) no-repeat center;
       } 
   }
-  
+  .roll-tip-up{
+      .fa-chevron-up{
+          color: #fff;
+      }
+  }
+  .btn-list{
+    text-align: right;
+    position: absolute;
+    right: 0px;
+    bottom: 90px;
+    width: 200px;
+    padding-right: 5px;
+    li{
+        display: none;
+        padding: 10px 0px;
+        font-size: 12px;
+        color: #fff;
+        img{
+            width: 30px;
+            height: 30px;
+            .round;
+            padding: 4px;
+            background-color: #fff;
+            -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+        }
+      }
+      a:link,a:hover,a:focus,a:visited{
+        color: inherit;
+    }
+      
+  }
+  #show-btn{
+    img{
+     width: 40px;
+     height: 40px;
+     .round;
+     padding: 10px;
+     background-color: #fff; 
+     -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    }
+}
+.advertising,.parts-img,.summary,.advice-details{
+    width: 100%;
+    height: auto;
+}
+.cut-off{
+    margin: 20px 0 ;
+}
+.cut-off>div{
+    border-bottom: 1px solid #ddd;
+}
+.list-wrap,.cut-off{
+    .col-xs-9{
+        margin-left: 60px;
+    }
+}
+.list-wrap>.col-xs-9>div{
+    margin-bottom: 15px;
+}
+.yellowcolor{
+    color: @base-color;
+    font-size: 24px;
+}
+.titleline a{
+    color:@grey-font;
+    font-size: 14px;
+}
+
+.learn_more{
+    .common-btn;
+    background-color: @base-color;
+    border-radius: 15px;
+    position: absolute;
+    top: 47%;
+    left: 45%;
+    .fa-angle-right{
+        font-size: 18px;
+    }
+    &:link,&:hover,&:visited,&:active{
+        color: #fff;
+    }
+}
