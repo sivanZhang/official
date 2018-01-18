@@ -18,7 +18,7 @@ body{
 }
 .menu a{
     font-size: 14px;
-    color: #D6D6D6;
+    color: #bfc0c0;
 }
 
 .menu a:hover, .a_img:hover{
@@ -74,14 +74,14 @@ body{
     height:5px;
     border-radius: 50%;
     margin: 0 auto;
-    background-color:#D6D6D6;
+    background-color:#bfc0c0;
 }
 
 .bottom-line{
     position: relative;
     top: -31px;
     overflow: hidden;
-    border-top: 1px solid #D6D6D6;
+    border-top: 1px solid #bfc0c0;
     z-index: -1;
 
 }
@@ -280,7 +280,6 @@ td.td-bar-point
     position: fixed;
     top: 0;
     z-index: 1000; 
-    margin-bottom: 5px;
 }
 footer .pull-left{
     font-size: 12px;
