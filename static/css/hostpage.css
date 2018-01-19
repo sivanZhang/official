@@ -173,7 +173,7 @@
     padding: 10px 15px;
   }
   .hide-menu .btn-list li a {
-    color: #fff;
+    color: rgb(181, 182, 182);
   }
   .hide-menu #show-btn {
     position: absolute;

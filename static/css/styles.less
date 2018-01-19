@@ -54,18 +54,23 @@ a:link,a:hover,a:focus,a:visited{
 }
 
     section.main {
+        padding-top: 100px;
         position: relative;
         background-attachment: fixed;
         background-size: 100% 100%;
         background: url(/static/img/idea/main.jpg) no-repeat center;
+        color: #fff;
       }
     .down{
         width: 100%;
         position: absolute;
-        bottom: 15px;
-        font-size: 30px;
-        color: #fff;
+        bottom: 30px;
+        text-align: center;
+        img{
+            width: 30px;
+        }
     }
+    
     .sider {
         height: 100%;
         width: 100%;
@@ -74,4 +79,36 @@ a:link,a:hover,a:focus,a:visited{
       }
       .sider0{
         background: url(/static/img/idea/slider1.jpg) no-repeat center;
+      }
+      .f12{
+          font-size: 12px;
+      }
+      .sider-text{
+        font-size: 32px;
+        background-color: rgb(122, 122, 122);
+        color: #fff;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        line-height: 30px;
+        .container{
+            padding: 30px;
+            height: 90px;
+            div{
+                padding: 0px;
+                span{
+                    font-size: 14px;
+                }
+            }
+            .text-deteil{
+                font-size: 12px;
+                line-height: 1.2;
+            }
+        }
+      }
+      .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{
+          bottom: 120px;
+      }
+      .swiper-wrapper{
+          padding-bottom: 90px;
       }

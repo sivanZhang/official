@@ -315,10 +315,9 @@
     
 }
 
-.p_title_2
+.p_title_2 img
 {
-    font-size: 26px;
-    color: #fff;
+    width: 30px;
 }
 /* base */
 .fixed-position {
@@ -370,7 +369,7 @@
   }
   /* deteil */
   .p_title {
-    font-size: 24px;
+    font-size: 26px;
   }
   section {
     position: relative;
@@ -416,7 +415,7 @@
     display: none;
     padding: 10px 0px;
     font-size: 12px;
-    color: #fff;
+    color: rgb(182, 182, 182);
   }
   .btn-list li img {
     width: 30px;

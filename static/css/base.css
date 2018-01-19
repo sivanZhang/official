@@ -18,7 +18,7 @@ body{
 }
 .menu a{
     font-size: 14px;
-    color: #bfc0c0;
+    color: rgb(181, 182, 182);
 }
 
 .menu a:hover, .a_img:hover{
@@ -74,14 +74,14 @@ body{
     height:5px;
     border-radius: 50%;
     margin: 0 auto;
-    background-color:#bfc0c0;
+    background-color:rgb(181, 182, 182);
 }
 
 .bottom-line{
     position: relative;
     top: -31px;
     overflow: hidden;
-    border-top: 1px solid #bfc0c0;
+    border-top: 1px solid rgb(181, 182, 182);
     z-index: -1;
 
 }
@@ -289,12 +289,12 @@ footer .pull-left{
 }
 footer .round-btn{
     display: inline-block!important;
-    width: 20px;
-    height: 20px;
-    padding: 2px;
+    width: 24px;
+    height: 24px;
+    padding: 3px;
     background-color: #fff;
     border-radius: 50%;
-    color: #6c6c6c!important;
+    color: rgb(181, 182, 182)!important;
     text-align: center;
 }
 .round-btn i{
@@ -315,8 +315,4 @@ footer{
 .btn-list li img{
     -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-}
-.btn-list li{
-    text-shadow: -1px 0 black, 0 1px black,
-      1px 0 black, 0 -1px black;
 }
