@@ -43,8 +43,8 @@
               <div class="pull-right menu-list">
                     <table>
                       <tr>
-                        <td class="{% if productpage %}active{% endif %} a_product">
-                          <a href="产品图.html">Watch</a>
+                        <td class="{% if productpage %}active{% endif %}">
+                          <a href="{% url 'product:cast2' %}">Watch</a>
                           <div class="point"></div>
                         </td>
                         <td class="{% if servicepage %}active{% endif %} ">
@@ -91,19 +91,6 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default sec_menu product_sec_menu panel-body-transparent">
-          <div class="panel-body">
-            <div>
-              <a class="a_img" href="{% url 'product:cast2' %}">
-                <img class="cast_img_hove" src="/static/img/cast.png" />
-              </a>
-              <a class="a_img" href="{% url 'product:castdock' %}">
-                <img class="castdock_img_hove" src="/static/img/castdock.png" />
-              </a>
-            </div>
-          </div>
-        </div>
-        
       </div>
       <div class="bottom-line">
         </div>
