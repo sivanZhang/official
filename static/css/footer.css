@@ -99,6 +99,9 @@ a.custom-service{
     border: 1px solid #ea5014;
     font-size: 14px;
 }
+a.custom-service:link{
+    color: #ea5014;
+}
 .custom-service img{
     height: 18px;
 }
