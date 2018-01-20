@@ -54,11 +54,34 @@ class PageView(View):
                 return render(request, 'page/faith.html', content)
             else:
                 return render(request, 'page/faith.html', content)
-        if 'service' == blockname and  'list' == pagename:
+        if 'service' == blockname and 'list' == pagename:
             if isMble:
                 return render(request, 'page/service.html', content)
             else:
                 return render(request, 'page/service.html', content)
+        if 'active' == blockname and  'list' == pagename:
+            # 获得所有精彩活动列表
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark = blockname)
+            if len(pages) == 0:
+                raise Http404
+            page_item = pages[0]
+            url = page_item.url
+            match = re.search('\d+', url)
+            if match:
+                productid = match.group()
+                try:
+                    product = AdaptorProduct.objects.get(id=productid)
+                    content['product'] = product
+                    page_item.pic = page_item.pic.replace('\\','/')
+                    content['page'] = page_item
+                    content['blockname'] = blockname
+                except AdaptorProduct.DoesNotExist:
+                    raise Http404
+
+            if isMble:
+                return render(request, 'page/activelist.html', content)
+            else:
+                return render(request, 'page/activelist.html', content)
         if 'detail' == pagename:
             if isMble:
                 return render(request, 'page/m_detail.html', content)
