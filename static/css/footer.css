@@ -5,23 +5,43 @@
 
 table .first{
     font-weight: bold;
-    color:#d6d6d6; 
 }
 
 table .first a{ 
-    font-size: 15px;
+    font-size: 14px;
+    color: #333;
 }
 
 .linkitems a
 {
-    color: gray;
-    font-size: 13px;
+    font-size: 12px;
+    color:rgb(181, 182, 182);
 }
 
 .linkitems tr{
     line-height:30px;
 }
+
 .linkitems
 {
-    margin-top: 40px;
-} 
+    padding: 30px 0;
+   background-image: url('../img/bk.png');
+     background-repeat:repeat; 
+     background-size:100% 100%;
+     -moz-background-size:100% 100%;
+}
+.lable{
+    color: #fff;
+    background-color: #ea5014;
+    padding: 2px 8px;
+    position: relative;
+}
+.lable:after{content:'';position:absolute;top:100%;left:21px;width:11px;height:10px;border-width:0;border-style:solid;border-color:transparent;margin-top:-2px;border-right-width:5px;border-right-color:currentColor;border-radius:0 0 22px 0;color:#ea5014;}
+footer a{
+    color: inherit;
+    margin-left: 10px;
+}
+
+footer a:hover{
+    color: inherit;
+}

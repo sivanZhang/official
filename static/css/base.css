@@ -1,3 +1,9 @@
+.orange{
+    color:#ea5014
+}
+.grey{
+    color: rgb(181, 182, 182);
+}
 body{
     margin: 0px;
     padding: 0px;
@@ -50,7 +56,7 @@ body{
     height: 60px;
     padding:0;
     border-radius: 30px;
-    background-color: rgb(233, 85, 19);
+    background-color: #ea5014;
 }
 .menu-unfixed
 {
@@ -58,12 +64,12 @@ body{
 }
 .orange
 {
-    color: rgb(233, 85, 19);
+    color: #ea5014;
 }
 
 .orange-bg
 {
-    background-color: rgb(233, 85, 19);
+    background-color: #ea5014;
 }
 .menu  .td_mall a{
         margin-left: 13px;
@@ -87,26 +93,18 @@ body{
 }
 
 .menu .active *{
-    color: rgb(233, 85, 19);
+    color: #ea5014;
     
 }
 .menu .active .point{
-    background-color: rgb(233, 85, 19);
+    background-color: #ea5014;
 }
 /* 菜单设置结束*/
 
 
-footer a{
-    color: inherit;
-    margin-left: 10px;
-}
-footer a:link,footer a:hover,footer a:focus,footer a:visited{
+a:link,a:hover,a:focus,address:visited{
     text-decoration: none;
     outline: none;
-    
-}
-footer a:hover{
-    color: rgb(234,80,20);
 }
 .f-logo{
     width: 14px;
@@ -250,15 +248,6 @@ td.td-bar-point
 {
     width: 100%;
     background-color:#d6d6d6;
-}
-
-.linkitems
-{
-    padding: 40px;
-   background-image: url('../img/bk.png');
-     background-repeat:repeat; 
-     background-size:100% 100%;
-     -moz-background-size:100% 100%;
 }
 
 .fa-search

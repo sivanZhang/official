@@ -5,6 +5,11 @@
 {% block css %}
 <link href="/static/page/css/pagebase.css" rel="stylesheet">
 <link href="/static/page/css/aboutus.css" rel="stylesheet">
+<style>
+        .top-slide{
+          background-image: url('{{mediaroot}}{{page.pic|safe}}');
+        }
+</style>
  {% endblock %}
 {% block content %}
 <div class="top-slide"> 
@@ -12,15 +17,15 @@
       <h1 >企业图</h1> 
     </div>
   </div> 
-<div class="  container-title" >
+<div class=" container-title" >
     <div class="container ">
         <h1></h1>
         <div class="items_holder">
-                    <span class="yellowcolor">{% trans 'About Us' %} </span>
+                    <span class="title orange">{% trans 'About Us' %} </span>
                     <br/>
-                    <a href="首页.html">{% trans 'Home' %}</a>
-                    <a href="服务.html">/ASU {% trans 'Brand' %}</a> 
-                    <a href="服务.html">/{% trans 'About Us' %}</a> 
+                    <a href="/">{% trans 'Home' %}</a>
+                    <a href="">/ASU {% trans 'Brand' %}</a> 
+                    <a href="">/{% trans 'About Us' %}</a> 
         </div> 
     </div> 
 </div>

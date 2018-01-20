@@ -40,6 +40,7 @@ class PageView(View):
                 try:
                     product = AdaptorProduct.objects.get(id=productid)
                     content['product'] = product
+                    page_item.pic = page_item.pic.replace('\\','/')
                     content['page'] = page_item
                     content['blockname'] = blockname
                 except AdaptorProduct.DoesNotExist:
