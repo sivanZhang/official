@@ -2,17 +2,41 @@
 {% block fixed_menu_class %}fixed_menu_class{%endblock%}
 {% load i18n %}
 {% block css %} 
+<link rel="stylesheet" href="/static/book/css/book.css">
  {% endblock %}
  {% block content %}
- <form action="" method="post"  enctype="multipart/form-data">
-    {%csrf_token%} 
-    <input type="hidden" name="method" value="detail_file" /> 
-    {% if block_instance %}
-    <input type="hidden" name="blockid" id="blockid" value="{{block_instance.id}}" /> 
-    {% endif %}
-</form>
+<div class="buy-container container">
+    <div class="text-center">
+        <h1 class="orange"><i class="fa fa-shopping-cart" aria-hidden="true"></i> 预约购买</h1>
+        <h5>注：首批商品已售罄, 即可预约我们将提前通知您进行购买</h5>
+    </div>
 
- 
+    <div class="info ">
+        <form action="" method="post">
+            {%csrf_token%}  
+            <input type="hidden"   method="method" value="create" />
+            <table>
+                <tr><td>预约姓名</td><td>联系电话</td></tr>
+                <tr>
+                    <td><input class="form-control" id="name" name="name" placeholder="请输入您的姓名"></td>
+                    <td><input class="form-control" id="phone" name="phone" placeholder="xxx-xxxx-xx"></td>
+                </tr>
+                <tr><td>您的邮箱</td><td>详细地址</td></tr>
+                <tr>
+                    <td><input class="form-control" id="email" name="email" placeholder="请输入您的邮箱"></td>
+                    <td><input class="form-control" id="address" name="address" placeholder="请输入您的地址"></td>
+                </tr>
+                <tr ><td colspan="2" class="booking-money" >预约需提前交<span class="orange">200元</span></td></tr>
+                <tr ><td colspan="2" class="select-pay-way" >选择植发方式</td></tr>
+                <tr ><td colspan="2" class="pay-way" ><input type="radio" name="payway" value="zhifubao" />支付宝<input type="radio" name="payway" value="weixin" />微信</td></tr>
+                <tr>
+                        <td><img class="buy-code" src="/static/img/qrcode.png"/>
+                        <td><input class="form-control" id="address" name="address" placeholder="请输入您的地址"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
 
 {% endblock %} 
 {% block js %}

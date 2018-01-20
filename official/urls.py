@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^sitecontent/', include('sitecontent.urls', namespace="sitecontent")),
     url(r'^page/', include('page.urls', namespace="page")),
     url(r'^book/', include('book.urls', namespace="book")),
+    url(r'^bussiness/', include('bussiness.urls', namespace="bussiness")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

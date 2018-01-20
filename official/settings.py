@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'page',
     'book',
+    'bussiness',
 ]
 
 MIDDLEWARE = [

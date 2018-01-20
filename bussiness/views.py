@@ -26,9 +26,7 @@ from book import models
 from mobile.detectmobilebrowsermiddleware import DetectMobileBrowser
 dmb     = DetectMobileBrowser()
 
-class BookView(View):
-
-    @method_decorator(login_required)
+class BussinessView(View): 
     def get(self, request):
         isMble  = dmb.process_request(request)
         content = {} 
@@ -37,25 +35,25 @@ class BookView(View):
         content['books'] = books
         if 'new' in request.GET:
             if isMble:
-                return render(request, 'book/m_blocknew.html', content)
+                return render(request, 'bussiness/m_blocknew.html', content)
             else:
-                return render(request, 'book/blocknew.html', content)
+                return render(request, 'bussiness/blocknew.html', content)
 
         if 'test' in request.GET:
             if isMble:
-                return render(request, 'book/test.html', content)
+                return render(request, 'bussiness/test.html', content)
             else:
-                return render(request, 'book/test.html', content)
+                return render(request, 'bussiness/test.html', content)
         if 'detail' in request.GET:
             if isMble:
-                return render(request, 'book/m_detail.html', content)
+                return render(request, 'bussiness/m_detail.html', content)
             else:
-                return render(request, 'book/m_detail.html', content)
+                return render(request, 'bussiness/m_detail.html', content)
         else:
             if isMble:
-                return render(request, 'book/buy.html', content)
+                return render(request, 'bussiness/new.html', content)
             else:
-                return render(request, 'book/buy.html', content)
+                return render(request, 'bussiness/new.html', content)
 
     
     @method_decorator(csrf_exempt)
