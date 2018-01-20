@@ -134,7 +134,9 @@
 .sider4{
   background: url(/static/img/slider/slider5.jpg) no-repeat center;
 }
-  
+.sider5{
+  background: url(/static/img/slider/slider6.jpg) no-repeat center;
+}
   .sider .shop-link {
     color: #fff;
     position: absolute;
