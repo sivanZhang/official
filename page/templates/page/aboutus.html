@@ -14,18 +14,19 @@
 {% block content %}
 <div class="top-slide"> 
     <div class="top-tips">
-      <h1 >企业图</h1> 
+      <h1 class="orange " >{% trans '真诚服务， 如友相伴' %}</h1> 
+      <h5 >{% trans '欢迎使用我们的产品' %}</h5>
     </div>
   </div> 
 <div class=" container-title" >
     <div class="container ">
         <h1></h1>
         <div class="items_holder">
-                    <span class="title orange">{% trans 'About Us' %} </span>
-                    <br/>
+                    <h1 class="title orange">{{product.title}} </h1>
+                     
                     <a href="/">{% trans 'Home' %}</a>
-                    <a href="">/ASU {% trans 'Brand' %}</a> 
-                    <a href="">/{% trans 'About Us' %}</a> 
+                    <a href="javasrcipt:;">/ASU {% trans 'Brand' %}</a> 
+                    <a href="javasrcipt:;">/{% trans 'About Us' %}</a> 
         </div> 
     </div> 
 </div>

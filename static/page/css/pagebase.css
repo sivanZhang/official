@@ -71,15 +71,20 @@
 }
 .top-slide
 {
-     height: 400px;
-     text-align: center;
-     background-image: url('../img/tu-1.jpg');
+     height: 300px;
+     text-align: center; 
      background-repeat:no-repeat; 
      background-size:100% 100%;
      -moz-background-size:100% 100%;
+     padding-right: 30% !important;
 }
-.top-tips h1{
-    color: white;
+.top-tips h1{ 
+    left: 25%;
+}
+.top-tips h5{ 
+    left: 30%;
+    font-weight: bold;
+    line-height: 70px;
 }
 
 .top-tips span{
@@ -88,10 +93,10 @@
 
 .top-tips
 {
-    padding-top: 160px;
+    padding-top: 100px;
 }
 .container-title {
-    background-color: #d6d6d6;
+    background-color: rgb(249,249,249);
     color: #ea5014;
     width: 100%;
 }
