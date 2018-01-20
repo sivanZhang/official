@@ -49,12 +49,16 @@ class PageView(View):
                 return render(request, 'page/aboutus.html', content)
             else:
                 return render(request, 'page/aboutus.html', content)
-
         if 'asubrand' == blockname and  'faith' == pagename:
             if isMble:
                 return render(request, 'page/faith.html', content)
             else:
                 return render(request, 'page/faith.html', content)
+        if 'service' == blockname and  'list' == pagename:
+            if isMble:
+                return render(request, 'page/service.html', content)
+            else:
+                return render(request, 'page/service.html', content)
         if 'detail' == pagename:
             if isMble:
                 return render(request, 'page/m_detail.html', content)
