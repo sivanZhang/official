@@ -35,6 +35,7 @@ class BookView(View):
         books = models.AdaptorBook.objects.all()
      
         content['books'] = books
+        content['number'] = len(books)
         if 'new' in request.GET:
             if isMble:
                 return render(request, 'book/m_blocknew.html', content)
@@ -70,48 +71,61 @@ class BookView(View):
             elif method == 'delete': # 删除
                 return self.delete(request) 
         else:
-            self.create(request)
-            return self.get(request)
+            return self.create(request)
+            
 
     def create(self, request):
         """预约""" 
-        # 预约时 
-        user = request.user
+        # 预约时  
         result = {} 
-        
-        if 'name' in request.POST and  'phone' in request.POST: 
-            title = request.POST['title'].strip() 
+        isMble  = dmb.process_request(request)
+        content = {} 
+        if 'name' in request.POST and  'phone' in request.POST and  'email' in request.POST \
+            and  'address' in request.POST: 
+            name = request.POST['name'].strip() 
+            phone = request.POST['phone'].strip()
+            address = request.POST['address'].strip()
+            email = request.POST['email'].strip()
+            code    = ''.join(random.choice(string.digits) for i in range(4))
+            billno = datetime.now().strftime('%Y%m%d%H%M%S')+str(code) 
+            
+            if name == '' or phone == '' or address =='': 
+                books = models.AdaptorBook.objects.all()
+                content['number'] = len(books)
+                content['error'] = 'error' 
+                content['msg'] = _('Name, Phone and Address cannot be empty!') 
 
-            # 预约Block 
-            block = models.AdaptorBook.objects.create(user=user, title=title )
-            
-            if 'url' in request.POST  :
-                url = request.POST['url'].strip()
-                block.url = url
-  
-            if 'pic' in request.FILES:
-                pic = request.FILES['pic'] 
-                pic_url = handle_uploaded_file(pic, user.id)
-                block.pic = pic_url
-            
-            if 'mark' in request.POST:
-                mark = request.POST['mark'].strip() 
-                if mark:
-                    block.mark = mark
-            
-            if 'status' in request.POST:
-                status = request.POST['status'].strip() 
-                if int(status):
-                    block.status = int(status)
-    
-            block.save()
-            result['id'] = block.id
-            result['status'] ='ok'
-            result['msg'] = _('Saved completely!') 
+                content['name'] = 'name' 
+                content['phone'] = 'phone' 
+                content['email'] = 'email' 
+                content['address'] = 'address' 
+
+                if isMble:
+                    return render(request, 'book/buy.html', content)
+                else:
+                    return render(request, 'book/buy.html', content)
+            else:
+                # 预约 
+                book = models.AdaptorBook.objects.create(name=name, phone=phone, \
+                            billno=billno, address=address )
+                if email:
+                    book.email = email
+                book.save()
+                content['billno'] = book.billno
+                result['status'] ='ok'
+                result['msg'] = _('Saved completely!') 
+                if isMble:
+                    return render(request, 'book/success.html', content)
+                else:
+                    return render(request, 'book/success.html', content)
         else:
-            result['status'] ='error'
-            result['msg'] ='Need title  in POST'
-        return self.httpjson(result)
+            content['status'] ='error'
+            content['msg'] ='Need title  in POST' 
+            if isMble:
+                return render(request, 'book/buy.html', content)
+            else:
+                return render(request, 'book/buy.html', content)
+         
     
     def put(self, request):
         """修改""" 

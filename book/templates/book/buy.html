@@ -8,11 +8,11 @@
 <div class="buy-container container">
     <div class="text-center">
         <h1 class="orange"><i class="fa fa-shopping-cart" aria-hidden="true"></i> 预约购买</h1>
-        <h5>注：首批商品已售罄, 即可预约我们将提前通知您进行购买</h5>
+        <h5 class="grey">注：首批商品已售罄, 即可预约我们将提前通知您进行购买</h5>
     </div>
 
     <div class="info ">
-        <form action="" method="post">
+        <form action="" class="buy-form" method="post">
             {%csrf_token%}  
             <input type="hidden"   method="method" value="create" />
             <table>
@@ -26,12 +26,17 @@
                     <td><input class="form-control" id="email" name="email" placeholder="请输入您的邮箱"></td>
                     <td><input class="form-control" id="address" name="address" placeholder="请输入您的地址"></td>
                 </tr>
-                <tr ><td colspan="2" class="booking-money" >预约需提前交<span class="orange">200元</span></td></tr>
-                <tr ><td colspan="2" class="select-pay-way" >选择植发方式</td></tr>
-                <tr ><td colspan="2" class="pay-way" ><input type="radio" name="payway" value="zhifubao" />支付宝<input type="radio" name="payway" value="weixin" />微信</td></tr>
+                <tr ><td colspan="2" class="booking-money" ><span class="pre-payed">预约需提前交<span class="orange">200元</span>订金</span></td></tr>
+                <tr ><td colspan="2" class="select-pay-way" >选择支付方式</td></tr>
+                <tr ><td colspan="2" class="pay-way" >
+                    <input type="radio" name="payway" class="rdo-payway" value="zhifubao" checked="checked" />
+                    <span class="payname">支付宝</span>
+                    <input type="radio" name="payway" class="rdo-payway" value="weixin" /><span>微信</span></td>
+                </tr>
                 <tr>
-                        <td><img class="buy-code" src="/static/img/qrcode.png"/>
-                        <td><span class="grey">您前面已有{{number|default:'0'}}位预约了！</span><input type="submit" value="预约提交" class="btn-text-white orange-bg  common-btn"></td>
+                    <td><img class="buy-code" src="/static/img/code_big.png"/>
+                    <td><span class="grey">您前面已有{{number|default:'0'}}位预约了！</span><input type="submit" value="预约提交" 
+                        class="btn-text-white orange-bg  common-btn buy-btn"></td>
                 </tr>
             </table>
         </form>
@@ -39,6 +44,5 @@
 </div>
 
 {% endblock %} 
-{% block js %}
-<script type="text/javascript " src="/static/sitecontent/js/new.js"></script>
+{% block js %} 
  {% endblock %}
