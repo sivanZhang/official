@@ -122,9 +122,9 @@
   .sider .shop-link {
     color: #fff;
     position: absolute;
-    left: 50%;
+    left: 66%;
     transform: translateX(-50%);
-    top: 84%;
+    bottom: 30%;
   }
   .sider .shop-link .now-bye {
     background-color: #ea5014;

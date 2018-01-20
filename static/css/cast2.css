@@ -181,20 +181,24 @@
    
     width: 40px; 
     height: 40px; 
+    padding: 8px;
     border-radius: 50%;
     background-color: white;
     cursor: pointer;
-    margin: 0 auto 6px;
+    margin: 0 auto 10px;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
 }
 .roll-tip td, .roll-tip-holder{
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
-.roll-tip .fa{  
-    color:#d6d6d6;
-    margin-top: 5px;
+.up_down{
+    height: 100%;
+}
+.up{
+    width: 100%;
+    vertical-align: unset;
 }
 .roll-tip a{ 
     line-height: 30px;
@@ -205,11 +209,13 @@
 {  
     width: 40px;
     height: 40px;
-    border-radius: 30px;
-    padding: 5px 2px 5px 6px;
-    background-color: rgb(177, 177, 178);
+    border-radius: 50%;
+    padding: 10px;
+    background-color: rgb(220 , 220, 220);
     margin: 20px auto;
     cursor: pointer;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
 }
 
 .panel-menu-fixed
@@ -284,8 +290,9 @@
 .scroll-up{
     width: 40px;
     height: 40px;
-    border-radius: 20px;
-    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgb(220, 220, 220);
     text-align: center;
     margin:5px 0;
     -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
@@ -293,11 +300,6 @@
     cursor: pointer;
 }
 
-.scroll-up .fa,{
-    color: gray;
-    line-height: 40px;
-    font-size: 20px;
-}
 
 .img360_holder
 {
@@ -394,9 +396,7 @@
   section.sec4-hide {
     background: url(/static/img/product/sc4hide.jpg) no-repeat center;
   }
-  .roll-tip-up .fa-chevron-up {
-    color: #fff;
-  }
+
   .btn-list {
     text-align: right;
     position: absolute;
@@ -421,9 +421,10 @@
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   }
   .btn-list a:link,
+  .btn-list a:visited,
   .btn-list a:hover,
-  .btn-list a:focus,
-  .btn-list a:visited {
+  .btn-list a:active
+ {
     color: inherit;
   }
   #show-btn img {

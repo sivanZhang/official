@@ -234,11 +234,7 @@ a:focus{
     box-shadow: none;
 }
 
-.scroll-up .fa, .scroll-down .fa{
-    color: gray;
-    line-height: 33px;
-    font-size: 20px;
-}
+
 
 .circle {
     width: 40px;
