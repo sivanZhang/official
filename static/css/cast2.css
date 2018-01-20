@@ -360,14 +360,7 @@
   li {
     list-style-type: none;
   }
-  a:link,
-  a:hover,
-  a:focus,
-  a:visited {
-    text-decoration: none;
-    outline: none;
-    color: inherit;
-  }
+
   /* deteil */
   .p_title {
     font-size: 26px;
@@ -502,4 +495,6 @@
   .learn_more:active {
     color: #fff;
   }
-  
+  .roll-tip-holder a:visited,.roll-tip-holder a:hover{
+      color: inherit;
+  }

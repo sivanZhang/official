@@ -7,6 +7,7 @@
 body{
     margin: 0px;
     padding: 0px;
+    width: 100%;
     font-family: arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
 }
 /* 菜单设置开始*/
@@ -88,8 +89,7 @@ body{
     top: -31px;
     overflow: hidden;
     border-top: 1px solid rgb(181, 182, 182);
-    z-index: -1;
-
+z-index: -1;
 }
 
 .menu .active *{
@@ -102,8 +102,10 @@ body{
 /* 菜单设置结束*/
 
 
-a:link,a:hover,a:focus,address:visited{
+a:link,a:visited,a:hover,a:active{
     text-decoration: none;
+}
+a:focus{
     outline: none;
 }
 .f-logo{
@@ -265,7 +267,7 @@ td.td-bar-point
 .menu-holder{
     position: fixed;
     top: 0;
-    z-index: 1000; 
+    z-index: 10; 
 }
 footer .pull-left{
     font-size: 12px;
