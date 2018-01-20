@@ -1,0 +1,18 @@
+.top-slide{
+    height: 420px;
+}
+.number
+{ 
+    font-size: 30px;  
+}
+.img_title
+{
+    font-size: 16px;
+}
+.img-holder{
+    overflow: hidden;
+}
+.img-holder, .active-img  { 
+    
+    height: 140px;
+} 

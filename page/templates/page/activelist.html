@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
 {% block fixed_menu_class %}fixed_menu_class{%endblock%}
 {% load i18n %}
-{% block pagetitle%}{% trans 'About Us' %}{% endblock%}
+{% block pagetitle%}{{contentblock.title}}{% endblock%}
 {% block css %}
 <link href="/static/page/css/pagebase.css" rel="stylesheet">
-<link href="/static/page/css/active.css" rel="stylesheet"> 
-<link href="/static/page/css/service.css"  rel="stylesheet">
+<link href="/static/page/css/active.css" rel="stylesheet">   
 <style>
         .top-slide{
-          background-image: url('{{mediaroot}}{{pages.0.block.pic|safe}}');
+          background-image: url('{{mediaroot}}{{img|safe}}');
         }
 </style>
  {% endblock %}
@@ -22,19 +21,40 @@
     <div class="container ">
         <h1></h1>
         <div class="items_holder">
-                    <h1 class="title orange">{{product.title}} </h1>
+                    <h1 class="title orange">{{contentblock.title}} </h1>
                      
                     <a href="/">{% trans 'Home' %}</a>
                     <a href="javasrcipt:;">/ASU {% trans 'Brand' %}</a> 
-                    <a href="javasrcipt:;">/{{product.title}}</a> 
+                    <a href="javasrcipt:;">/{{contentblock.title}}</a> 
         </div> 
     </div> 
 </div>
 <div class="container  ">
     <div class="row  "> 
-      <div class="col-sm-12 col-md-12 col-lg-12">
-         {{product.detail|safe}}
-      </div> 
+        {% for activeyear in activeyears %}
+             
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <table class="active-tip">
+                    <tr>
+                    <td><span class="number orange">{{activeyear.year}} </span></td>
+                    <td class="td_line"><hr> </td>
+                    <td class="td_fa"> </td>
+                    </tr>
+                </table>
+            </div>
+   
+            <div class="col-sm-12 col-md-12 col-lg-12 col-active-list text-center">
+                    {% for product in activeyear.products %}
+                    <div class="col-sm-12 col-md-4 col-lg-4"> 
+                            <div class="img-holder">
+                                <img class="active-img" src="{{mediaroot}}{{product.pageurl}}"/>
+                            </div>
+                            <a class="img_title orange" href="{% url 'product:detail' product.id %}" title="{{product.title}}">{{product.title|truncatechars:12}}</a>
+                            <p>{{product.date| date:"Y-m-d"}}</p> 
+                    </div> 
+                    {% endfor %}
+            </div>
+        {% endfor %}
     </div>
 </div>  
 {% endblock%}

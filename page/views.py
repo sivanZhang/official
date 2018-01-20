@@ -59,25 +59,53 @@ class PageView(View):
                 return render(request, 'page/service.html', content)
             else:
                 return render(request, 'page/service.html', content)
+        if 'news' == blockname :
+            # 媒体报道
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
+            content['pages'] = pages 
+            if isMble:
+                return render(request, 'page/news.html', content)
+            else:
+                return render(request, 'page/news.html', content)
         if 'active' == blockname and  'list' == pagename:
             # 获得所有精彩活动列表
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark = blockname)
+            
             if len(pages) == 0:
                 raise Http404
+            content['pages'] = pages
+            content['img'] = pages[0].block.pic.replace('\\','/')
+            content['contentblock'] = pages[0].block
+            content['activeyears'] = []
             page_item = pages[0]
-            url = page_item.url
-            match = re.search('\d+', url)
-            if match:
-                productid = match.group()
-                try:
-                    product = AdaptorProduct.objects.get(id=productid)
-                    content['product'] = product
-                    page_item.pic = page_item.pic.replace('\\','/')
-                    content['page'] = page_item
-                    content['blockname'] = blockname
-                except AdaptorProduct.DoesNotExist:
-                    raise Http404
-
+            for page in pages: 
+                url = page.url
+                match = re.search('\d+', url)
+                if match:
+                    productid = match.group()
+                    try:
+                        product = AdaptorProduct.objects.get(id=productid)
+                        year = product.date.year
+                        mark = False
+                        for activeyear in content['activeyears']:
+                            if activeyear['year'] == year:
+                                product.pageurl = page.pic
+                                activeyear['products'].append(product)
+                                mark = True
+                                break
+                        if mark == False:
+                            # 表示当前年份还没有被加入content['activeyears']这个列表
+                            product.pageurl = page.pic
+                            tmp = {
+                                'year':year,
+                                'products':[product]
+                            }
+                            content['activeyears'].append(tmp)
+                   
+                    except AdaptorProduct.DoesNotExist:
+                        # 忽略用户设置错误的活动
+                        pass 
+     
             if isMble:
                 return render(request, 'page/activelist.html', content)
             else:
