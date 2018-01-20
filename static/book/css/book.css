@@ -1,11 +1,53 @@
 .text-center h5{
-    line-height: 70px;
+    line-height: 65px;
     font-weight: bold;
 }
-.info form{
-    margin: 30px auto;
+ 
+.buy-code{
+    width: 130px;
+    height: 120px;
+}
+.buy-form{ 
+    text-align: center;
+}
+.buy-form table{
+    margin: 0 auto;
+    text-align: left;
+}
+ 
+.billno{
+    margin-right: 20px;
+}
+.buy-form .form-control{
+   min-width: 270px;
 }
 .buy-code{
     width: 130px;
     height: 120px;
+}
+.buy-form td{
+    padding: 5px;
+}
+.rdo-payway{
+    margin-right: 5px !important;
+}
+.select-pay-way, .h5billno{
+    border-bottom: 1px solid rgb(181, 182, 182);
+}
+.buy-btn{
+    margin-left: 23px;
+}
+.pre-payed{
+    font-size: 26px;
+}
+.payname{
+    margin-right: 20px;
+}
+
+span.grey{
+    line-height: 50px;
+
+}
+.return-btn{
+    margin-bottom: 30px;
 }
