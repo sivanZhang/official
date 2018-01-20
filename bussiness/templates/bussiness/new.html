@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% load i18n %}
 {% block pagetitle%}{% trans 'About Us' %}{% endblock%}
 {% block css %}
@@ -7,16 +6,14 @@
 <link rel="stylesheet/less" type="text/css" href="/static/css/styles.less" />
 <script src="http://cdn.bootcss.com/less.js/1.7.0/less.min.js"></script>
 <style>
-        .top-slide{
-          background-image: url('/static/img/dealer/top.png');
-        }
+       
 </style>
  {% endblock %}
-{% block content %}
-<div class="top-slide"> 
-    <div class="top-tips">
-      <h1 class="orange " >{% trans '真诚服务， 如友相伴' %}</h1> 
-      <h5 >{% trans '欢迎使用我们的产品' %}</h5>
+{% block content%}
+<div class="top-pic"> 
+    <div class="white text-center">
+      <h2>{% trans '真诚服务， 如友相伴' %}</h2> 
+      <h5>{% trans '欢迎使用我们的产品' %}</h5>
     </div>
   </div> 
 <div class=" container-title" >
