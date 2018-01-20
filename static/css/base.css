@@ -63,10 +63,7 @@ body{
 {
     position: static !important;
 }
-.orange
-{
-    color: #ea5014;
-}
+
 
 .orange-bg
 {
@@ -327,4 +324,15 @@ footer{
 .btn-list li img,.hide-menu img{
     -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+}
+.fixed_menu_class .bottom-line{
+        z-index: unset;
+}
+.error{
+    border: #ea5014;
+}
+
+.grey-btn{
+    color:#333;
+    background-color: #e5e5e5;
 }

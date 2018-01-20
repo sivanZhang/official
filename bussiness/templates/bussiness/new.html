@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
-{% block fixed_menu_class %}fixed_menu_class{%endblock%}
+
 {% load i18n %}
 {% block pagetitle%}{% trans 'About Us' %}{% endblock%}
 {% block css %}
 <link href="/static/page/css/pagebase.css" rel="stylesheet">
-<link href="/static/page/css/aboutus.css" rel="stylesheet">
+<link rel="stylesheet/less" type="text/css" href="/static/css/styles.less" />
+<script src="http://cdn.bootcss.com/less.js/1.7.0/less.min.js"></script>
 <style>
         .top-slide{
-          background-image: url('{{mediaroot}}{{page.pic|safe}}');
+          background-image: url('/static/img/dealer/top.png');
         }
 </style>
  {% endblock %}
@@ -20,9 +21,8 @@
   </div> 
 <div class=" container-title" >
     <div class="container ">
-        <h1></h1>
         <div class="items_holder">
-                    <h1 class="title orange">{{product.title}} </h1>
+                    <h1 class="title orange">成为授权经销商</h1>
                      
                     <a href="/">{% trans 'Home' %}</a>
                     <a href="javasrcipt:;">/ASU {% trans 'Brand' %}</a> 
@@ -30,11 +30,30 @@
         </div> 
     </div> 
 </div>
-<div class="container  ">
-    <div class="row  "> 
-      <div class="col-sm-12 col-md-12 col-lg-12">
-         {{product.detail|safe}}
-      </div> 
+<div class="container info-form">
+    <div class="row"> 
+      <form class="col-sm-8 col-md-8 col-lg-8">
+          <label for="">申请企业基本信息</label>
+          <input type="text" placeholder="公司贸易名称*">
+          <input type="text" placeholder="公司注册名称*">
+          <label for="">公司地址信息</label>
+          <input type="text" placeholder="注册地址*">
+          <input type="text" placeholder="账单地址*">
+          <input type="text" placeholder="收货地址*">
+          <label for="">企业网站信息</label>
+          <input type="text" placeholder="企业网站地址*">
+          <input type="text" placeholder="电商网址">
+          <input type="text" placeholder="其他">
+          <label for="">申请人信息</label>
+          <input type="text" placeholder="名*">
+          <input type="text" placeholder="姓*">
+          <input type="text" placeholder="职位*">
+          <input type="text" placeholder="电话*">
+          <input type="text" placeholder="传真*">
+          <input type="text" placeholder="电子邮件*">
+          <input type="text" placeholder="输入验证码*">
+          <div class="text-right"><button class="orange-bg btn-text-white common-btn" type="submit">提交</button></div>
+      </form> 
     </div>
 </div>  
 {% endblock%}
