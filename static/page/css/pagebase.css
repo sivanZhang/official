@@ -67,7 +67,7 @@
 .service_active a
 {
     font-weight: bold;
-    color:rgb(233, 85, 19);
+    color:#ea5014;
 }
 .top-slide
 {
@@ -92,14 +92,14 @@
 }
 .container-title {
     background-color: #d6d6d6;
-    color: rgb(233, 85, 19);
+    color: #ea5014;
     width: 100%;
 }
 .items_holder {
     padding-bottom: 25px;
 }
 .yellowcolor {
-    color: rgb(233, 85, 19);
+    color: #ea5014;
     font-size: 30px;
 }
 .items_holder a {
