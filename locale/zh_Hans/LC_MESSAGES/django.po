@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-16 23:57+0800\n"
+"POT-Creation-Date: 2018-01-21 23:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,35 +21,187 @@ msgstr ""
 msgid "L2 tools management"
 msgstr ""
 
-#: .\page\templates\page\aboutus.html:4 .\page\templates\page\aboutus.html:19
-#: .\page\templates\page\aboutus.html:23
+#: .\book\models.py:13
+msgid "name"
+msgstr "名称"
+
+#: .\book\models.py:14
+msgid "phone"
+msgstr "电话"
+
+#: .\book\models.py:16
+msgid "bill No."
+msgstr "订单号"
+
+#: .\book\models.py:17
+#, fuzzy
+#| msgid "Detail"
+msgid "email"
+msgstr "邮箱"
+
+#: .\book\models.py:18 .\book\models.py:27
+msgid "address"
+msgstr "地址"
+
+#: .\book\models.py:26
+msgid "payed way"
+msgstr "支付方式"
+
+#: .\book\templates\book\blocknew.html:4 .\book\templates\book\testitem.html:3
+#: .\sitecontent\templates\sitecontent\blocknew.html:4
+#: .\sitecontent\templates\sitecontent\test.html:3
+#: .\sitecontent\templates\sitecontent\testitem.html:3
+msgid "Homepage Content Management"
+msgstr "主页内容管理"
+
+#: .\book\templates\book\blocknew.html:27
+#: .\book\templates\book\blocknew.html:29
+#: .\book\templates\book\blocknew.html:78 .\product\models.py:33
+#: .\sitecontent\templates\sitecontent\blocknew.html:27
+#: .\sitecontent\templates\sitecontent\blocknew.html:29
+#: .\sitecontent\templates\sitecontent\blocknew.html:78
+#: .\sitecontent\templates\sitecontent\new.html:32
+#: .\sitecontent\templates\sitecontent\new.html:34
+#: .\sitecontent\templates\sitecontent\new.html:89
+msgid "title"
+msgstr "标题"
+
+#: .\book\templates\book\blocknew.html:41
+#: .\book\templates\book\blocknew.html:81
+#: .\sitecontent\templates\sitecontent\blocknew.html:41
+#: .\sitecontent\templates\sitecontent\blocknew.html:81
+#: .\sitecontent\templates\sitecontent\new.html:46
+#: .\sitecontent\templates\sitecontent\new.html:92
+msgid "status"
+msgstr "状态"
+
+#: .\book\templates\book\blocknew.html:52
+#: .\book\templates\book\blocknew.html:82
+#: .\sitecontent\templates\sitecontent\blocknew.html:52
+#: .\sitecontent\templates\sitecontent\blocknew.html:82
+#: .\sitecontent\templates\sitecontent\new.html:57
+#: .\sitecontent\templates\sitecontent\new.html:93
+msgid "mark"
+msgstr "备注"
+
+#: .\book\templates\book\blocknew.html:68
+#: .\book\templates\book\testitem.html:19
+#: .\book\templates\book\testitem.html:33
+#: .\sitecontent\templates\sitecontent\blocknew.html:68
+#: .\sitecontent\templates\sitecontent\new.html:79
+#: .\sitecontent\templates\sitecontent\test.html:15
+#: .\sitecontent\templates\sitecontent\test.html:26
+#: .\sitecontent\templates\sitecontent\testitem.html:19
+#: .\sitecontent\templates\sitecontent\testitem.html:33
+msgid "submit"
+msgstr "提交"
+
+#: .\book\templates\book\blocknew.html:79
+#: .\sitecontent\templates\sitecontent\blocknew.html:79
+#: .\sitecontent\templates\sitecontent\new.html:90
+#, fuzzy
+#| msgid "price"
+msgid "picture"
+msgstr "价格"
+
+#: .\book\templates\book\testitem.html:14
+#: .\book\templates\book\testitem.html:28
+#: .\sitecontent\templates\sitecontent\test.html:10
+#: .\sitecontent\templates\sitecontent\test.html:21
+#: .\sitecontent\templates\sitecontent\testitem.html:14
+#: .\sitecontent\templates\sitecontent\testitem.html:28
+msgid "hot product"
+msgstr "热销产品"
+
+#: .\book\views.py:95
+msgid "Name, Phone and Address cannot be empty!"
+msgstr "名字，电话号码和地址不能为空！"
+
+#: .\book\views.py:115 .\book\views.py:165 .\bussiness\views.py:108
+#: .\bussiness\views.py:150 .\sitecontent\views.py:111
+#: .\sitecontent\views.py:153 .\sitecontent\views.py:276
+#: .\sitecontent\views.py:325
+msgid "Saved completely!"
+msgstr "保存完成！"
+
+#: .\book\views.py:180 .\bussiness\views.py:165 .\sitecontent\views.py:168
+#: .\sitecontent\views.py:340
+msgid "Done"
+msgstr "完成"
+
+#: .\book\views.py:183 .\bussiness\views.py:168 .\sitecontent\views.py:171
+#: .\sitecontent\views.py:279 .\sitecontent\views.py:343
+msgid "Not found"
+msgstr "没有找到"
+
+#: .\bussiness\templates\bussiness\new.html:3
+#: .\page\templates\page\aboutus.html:4 .\page\templates\page\faith.html:4
+#: .\page\templates\page\service.html:3
 msgid "About Us"
 msgstr "关于我们"
 
-#: .\page\templates\page\aboutus.html:21
+#: .\bussiness\templates\bussiness\new.html:24
+#: .\page\templates\page\aboutus.html:27
+#: .\page\templates\page\activelist.html:24
+#: .\page\templates\page\eventlist.html:26
+#: .\page\templates\page\joinus.html:25
+#: .\page\templates\page\positions.html:25
+#: .\page\templates\page\service.html:24 .\page\templates\page\video.html:25
 msgid "Home"
 msgstr "首页"
 
-#: .\page\templates\page\aboutus.html:22
+#: .\bussiness\templates\bussiness\new.html:25
+#: .\page\templates\page\aboutus.html:28
+#: .\page\templates\page\activelist.html:25
+#: .\page\templates\page\eventlist.html:27
+#: .\page\templates\page\joinus.html:26
+#: .\page\templates\page\positions.html:26
+#: .\page\templates\page\service.html:25 .\page\templates\page\video.html:26
 msgid "Brand"
 msgstr "品牌"
 
+#: .\page\templates\page\aboutus.html:17 .\page\templates\page\service.html:16
+msgid "真诚服务， 如友相伴"
+msgstr ""
+
+#: .\page\templates\page\aboutus.html:18 .\page\templates\page\service.html:17
+msgid "欢迎使用我们的产品"
+msgstr ""
+
+#: .\page\templates\page\positions.html:42
+msgid "Position Name"
+msgstr "职位名称"
+
+#: .\page\templates\page\positions.html:43
+msgid "Job Type"
+msgstr "工作类型"
+
+#: .\page\templates\page\positions.html:44
+msgid "Location"
+msgstr "地点"
+
+#: .\page\templates\page\positions.html:45
+msgid "Published Date"
+msgstr "发布日期"
+
+#: .\page\templates\page\positions.html:47
+#: .\page\templates\page\positions.html:57
+#, fuzzy
+#| msgid "name"
+msgid "Manage"
+msgstr "名称"
+
+#: .\page\templates\page\positions.html:82
+msgid "Apply"
+msgstr "申请"
+
 #: .\piclab\views.py:51
 msgid "Uploaded..."
-msgstr ""
+msgstr "已上传..."
 
 #: .\piclab\views.py:63
 msgid "Please select image first..."
-msgstr ""
-
-#: .\product\models.py:33 .\sitecontent\templates\sitecontent\blocknew.html:27
-#: .\sitecontent\templates\sitecontent\blocknew.html:29
-#: .\sitecontent\templates\sitecontent\blocknew.html:78
-#: .\sitecontent\templates\sitecontent\new.html:31
-#: .\sitecontent\templates\sitecontent\new.html:33
-#: .\sitecontent\templates\sitecontent\new.html:82
-msgid "title"
-msgstr "标题"
+msgstr "请先选择一张图片"
 
 #: .\product\models.py:40
 msgid "Product Parameters"
@@ -69,12 +221,17 @@ msgstr "产品管理权限"
 
 #: .\product\models.py:114
 msgid "taobao url"
-msgstr ""
+msgstr "淘宝地址"
 
 #: .\product\templates\change.html:49 .\product\templates\new.1.html:44
-#: .\product\templates\new.html:45
 msgid "Product Detail"
 msgstr "产品详情"
+
+#: .\product\templates\detail.html:15
+#: .\sitecontent\templates\sitecontent\new.html:63
+#: .\sitecontent\templates\sitecontent\new.html:94
+msgid "Time"
+msgstr "时间"
 
 #: .\product\views.py:112
 #, fuzzy
@@ -94,91 +251,31 @@ msgstr "添加成功..."
 msgid "Upload sucessfully"
 msgstr "添加成功..."
 
-#: .\product\views.py:282
+#: .\product\views.py:267
 #, fuzzy
 #| msgid "Delete successfully...."
 msgid "Created sucessfully"
 msgstr "删除成功..."
 
-#: .\product\views.py:336
+#: .\product\views.py:321
 #, fuzzy
 #| msgid "Add successfully...."
 msgid "Modified sucessfully"
 msgstr "添加成功..."
 
-#: .\product\views.py:359 .\product\views.py:379
+#: .\product\views.py:344 .\product\views.py:364
 #, fuzzy
 #| msgid "Delete successfully...."
 msgid "Done sucessfully"
 msgstr "删除成功..."
 
-#: .\product\views.py:398
+#: .\product\views.py:383
 msgid "Watch"
 msgstr ""
 
-#: .\product\views.py:406
+#: .\product\views.py:391
 msgid "CASTDOCK"
 msgstr ""
-
-#: .\sitecontent\templates\sitecontent\blocknew.html:4
-#: .\sitecontent\templates\sitecontent\test.html:3
-#: .\sitecontent\templates\sitecontent\testitem.html:3
-msgid "Homepage Content Management"
-msgstr "主页内容管理"
-
-#: .\sitecontent\templates\sitecontent\blocknew.html:41
-#: .\sitecontent\templates\sitecontent\blocknew.html:81
-#: .\sitecontent\templates\sitecontent\new.html:45
-#: .\sitecontent\templates\sitecontent\new.html:85
-msgid "status"
-msgstr "状态"
-
-#: .\sitecontent\templates\sitecontent\blocknew.html:52
-#: .\sitecontent\templates\sitecontent\blocknew.html:82
-#: .\sitecontent\templates\sitecontent\new.html:56
-#: .\sitecontent\templates\sitecontent\new.html:86
-msgid "mark"
-msgstr "备注"
-
-#: .\sitecontent\templates\sitecontent\blocknew.html:68
-#: .\sitecontent\templates\sitecontent\new.html:72
-#: .\sitecontent\templates\sitecontent\test.html:15
-#: .\sitecontent\templates\sitecontent\test.html:26
-#: .\sitecontent\templates\sitecontent\testitem.html:19
-#: .\sitecontent\templates\sitecontent\testitem.html:33
-msgid "submit"
-msgstr "提交"
-
-#: .\sitecontent\templates\sitecontent\blocknew.html:79
-#: .\sitecontent\templates\sitecontent\new.html:83
-#, fuzzy
-#| msgid "price"
-msgid "picture"
-msgstr "价格"
-
-#: .\sitecontent\templates\sitecontent\test.html:10
-#: .\sitecontent\templates\sitecontent\test.html:21
-#: .\sitecontent\templates\sitecontent\testitem.html:14
-#: .\sitecontent\templates\sitecontent\testitem.html:28
-msgid "hot product"
-msgstr "热销产品"
-
-#: .\sitecontent\views.py:111 .\sitecontent\views.py:153
-#: .\sitecontent\views.py:272 .\sitecontent\views.py:317
-msgid "Saved completely!"
-msgstr "保存完成！"
-
-#: .\sitecontent\views.py:168 .\sitecontent\views.py:332
-msgid "Done"
-msgstr "完成"
-
-#: .\sitecontent\views.py:171 .\sitecontent\views.py:275
-#: .\sitecontent\views.py:335
-msgid "Not found"
-msgstr "没有找到"
-
-#~ msgid "phone"
-#~ msgstr "电话"
 
 #~ msgid "reciever"
 #~ msgstr "收货人"
@@ -218,9 +315,6 @@ msgstr "没有找到"
 
 #~ msgid "Need id in POST"
 #~ msgstr "post中需要id参数"
-
-#~ msgid "name"
-#~ msgstr "名称"
 
 #~ msgid "real inventory"
 #~ msgstr "实物库存"

@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'page',
     'book',
     'bussiness',
+    'area',
+    'dept',
 ]
 
 MIDDLEWARE = [
