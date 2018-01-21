@@ -50,30 +50,42 @@ class PageView(View):
             else:
                 return render(request, 'page/aboutus.html', content)
         if 'asubrand' == blockname and 'join' == pagename:
-            if 'position' in request.GET:
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname, mark=pagename)
+            if len(pages) == 0:
+                raise Http404 
+            page_item = pages[0]
+            page_item.pic = page_item.pic.replace('\\','/')
+             
+            url = page_item.url
+            match = re.search('\d+', url)
+            if match:
+                productid = match.group()
+                try:
+                    product = AdaptorProduct.objects.get(id=productid)
+                    content['product'] = product
+                    page_item.pic = page_item.pic.replace('\\','/')
+                    content['page'] = page_item
+                    content['blockname'] = blockname
+                except AdaptorProduct.DoesNotExist:
+                    raise Http404 
+            if 'position' in request.GET and 'category' in request.GET:
                 # 说明是在查看职位列表
-                pass
-            else:
-                pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname, mark=pagename)
-                if len(pages) == 0:
-                    raise Http404
-                page_item = pages[0]
-                url = page_item.url
-                match = re.search('\d+', url)
-                if match:
-                    productid = match.group()
-                    try:
-                        product = AdaptorProduct.objects.get(id=productid)
-                        content['product'] = product
-                        page_item.pic = page_item.pic.replace('\\','/')
-                        content['page'] = page_item
-                        content['blockname'] = blockname
-                    except AdaptorProduct.DoesNotExist:
-                        raise Http404 
+                category = request.GET['category']
+                content['page'] = page_item
+                perm = False
+                if request.user:
+                    perm = request.user.has_perm('product.manage_product')
+                content['perm'] = perm
+                products = AdaptorProduct.objects.filter(category__parent__id = category)
+                content['products'] = products
                 if isMble:
-                    return render(request, 'page/joinus.html', content)
+                    return render(request, 'page/positions.html', content)
                 else:
-                    return render(request, 'page/joinus.html', content)
+                    return render(request, 'page/positions.html', content)
+            if isMble:
+                return render(request, 'page/joinus.html', content)
+            else:
+                return render(request, 'page/joinus.html', content)
         if 'asubrand' == blockname and  'faith' == pagename:
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
             content['page'] = pages[0]

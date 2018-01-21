@@ -144,22 +144,7 @@ class ProductView(View):
         content['products'] = products
         content['categories'] = categories
         content['mediaroot'] = settings.MEDIA_URL 
-        obj = {
-            'name':'12dd21',
-            'age':23,
-        }
-        obj2 = {
-            'name':'1ddd221',
-            'age':233,
-        }
-        obj3 = {
-            'name':'dss',
-            'age':213,
-        }
-        ls1 = [12222,32,4343]
-        ls2 = [12111,32,4343]
-        ls3 = [124444,32,4343]
-        list_names = [ls1, ls2,ls3 ]
+         
         if 'keywords' in request.GET:
             keywords = request.GET['keywords'].strip()
             products = AdaptorProduct.objects.filter(title__icontains = keywords)
@@ -172,20 +157,20 @@ class ProductView(View):
                 return render(request, 'm_new.html', content)
             else:
                 return render(request, 'new.html', content)
+        if 'newposition' in request.GET and 'parentid' in request.GET: 
+            parentid = request.GET['parentid']
+            categories = categories.filter(parent__id = parentid)
+            content['categories'] = categories
+            if isMobile:
+                return render(request, 'm_new.html', content)
+            else:
+                return render(request, 'newposition.html', content)
         if 'form' in request.GET:
             if isMobile:
                 return render(request, 'm_new.html', content)
             else:
                 return render(request, 'test.html', content)
-        if 'test' in request.GET:
-            if isMobile:
-                return render(request, 'm_new.html', content)
-            else:
-                content['first_name'] = '继伟121'
-                content['last_name'] = '张iiS'
-                content['myvar'] = 0
-                content['list_names'] = list_names
-                return render(request, 'test.html', content)
+       
         if 'pic' in request.GET:
             if isMobile:
                 return render(request, 'm_pic.html', content)

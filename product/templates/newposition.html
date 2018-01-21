@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block fixed_menu_class %}fixed_menu_class{%endblock%}
+{% load i18n %}
+{% block pagetitle%}创建职位{% endblock%}
+ {% block css %}
+<link href="/static/products/css/new.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/static/css/HoldOn.css">  {% endblock %} 
+{% block content %}
+<form action="" method="post">
+    {%csrf_token%} 
+    <input type="hidden" name="method" value="detail_file" /> 
+     
+</form>
+
+<section>
+    <!-- 路径导航 -->
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="{% url 'product:products' %}">页面列表{{request.user}}</a></li>
+        <li class="active">发布页面</li>
+        <li class="active">修改页面信息</li> 
+    </ol>
+
+
+    <div  class="form-horizontal">
+        <div class="form-group">
+            <label for="id" class="col-sm-2 control-label"></label>
+            <div class="col-sm-3"> 
+                    职位类型： <select class="form-control " id="sel-category">
+                    {% for category in categories %} 
+                        <option value ="{{category.id}}"  >{{category.name}}</option>
+                    {% endfor%}
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="id" class="col-sm-2 control-label">
+            </label>
+            <div class="col-sm-5">
+                    职位名称：<input type="text" class="form-control" name="title" id="title" value="{{product.title}}" placeholder="">
+            </div>
+
+        </div>
+        
+        <div class="form-group">
+            <label for="name" class="col-sm-2 control-label"></label>
+            <div class="col-sm-5 ta-wrap">
+                    工作地址:<input type="text" class="form-control" name="desc" value="{{product.description|default:''}}" id="desc" placeholder="">
+                <span>0/50</span>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="message" class="col-sm-2 control-label"> </label>
+            <div class="col-sm-10">
+                {{ form.as_p }} 
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="message" class="col-sm-2 control-label"> </label>
+                <div class="col-sm-10">
+                        <input type="hidden" class="form-control"   value="{{product.taobaourl|default:''}}" id="taobaourl" placeholder="">
+                </div>
+    
+        </div> 
+        <div class="form-group">
+                <div class="msg "> </div>
+                <div class="submit"> 
+                        <span class="btn-group " role="group " aria-label="... ">
+                            <button type="button" class="btn btn-primary product-btn " status="1 ">发布</button>
+                          
+                            <button type="button " class="btn btn-default ">
+                            <i class="fa fa-file-text-o " aria-hidden="true "></i>
+                             
+                        </button>
+                     </span>
+                </div>
+    
+        </div> 
+    </div>
+   
+    
+</section>
+{% endblock %} 
+{% block js %} 
+<script type="text/javascript" src="/static/js/HoldOn.min.js"></script>
+<script>
+    //var data = CKEDITOR.instances.editor1.getData(); 
+</script>
+{{ form.media }}
+<script src="/static/products/js/new.js " rel="stylesheet "></script>
+ 
+{% endblock %}
