@@ -28,11 +28,11 @@ $(document).ready(function () {
         var scrollheight = $(document).scrollTop();
         if (scrollheight > 100) {
             ////显示快捷按钮
-            $('.scroll-tip').show('slow');
+            $('.scroll-tip').fadeIn('slow');
         }
         else {
             ////移除 top menu的fix
-            $('.scroll-tip').hide('slow');
+            $('.scroll-tip').fadeOut('slow');
         }
 
         if (scrollheight > height - 60) {
