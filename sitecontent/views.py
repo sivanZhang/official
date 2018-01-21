@@ -267,7 +267,7 @@ class BlockItemContentView(View):
                         item.status = status
                 if 'date' in request.POST:
                     date = request.POST['date'].strip() 
-                    if status:
+                    if date:
                         item.date = date
 
                 item.save()
@@ -314,6 +314,10 @@ class BlockItemContentView(View):
                 status = request.POST['status'].strip() 
                 if status:
                     item.status = status
+            if 'date' in request.POST:
+                    date = request.POST['date'].strip() 
+                    if date:
+                        item.date = date
                  
             item.save()
             result['id'] = item.id
