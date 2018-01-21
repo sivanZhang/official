@@ -5,14 +5,14 @@
 {% endblock %} 
 {% block content %} 
     <div class="img360_holder"> 
+        <section class="img360-text">
+            <h1 class="text-center orange" >未来/一“触”即现
+            </h1> 
+             <p class="p_title_2 text-center" ><img src="/static/img/icon/down.svg" /></p>
+          </section>
       <img src="/static/img/360pics/1.png" id="img360" class="img360"/>
-      <p class="p_title" >
-        <!-- <span class="white_span">欢迎"触摸"</span> -->
-        <span class="yellow_span">未来/一“触”即现</span>
-      </p> 
-       <p class="p_title_2 text-center" ><img src="/static/img/icon/down.svg" /></p>
     </div>
-    <div class="container-fluid container-second-menu ">
+    <div class="container-second-menu ">
       <div class="container second-menu ">
          <table >
             <tr>
@@ -423,7 +423,7 @@
      <!-- Initialize Swiper -->
     <script>
       $(document).ready(function(){
-        var height = $(window).height();
+        var height = window.innerHeight;
         $('.img360_holder').height(height);
       });
       var images = [];

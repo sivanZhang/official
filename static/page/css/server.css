@@ -1,0 +1,39 @@
+/* base */
+.relative {
+  position: relative;
+}
+/* deteil */
+.items_holder h2 {
+  margin-top: 26px;
+  margin-bottom: 6px;
+}
+.top-slide {
+  padding: 90px 0 0!important;
+  position: relative;
+}
+.top-slide .white {
+  padding-left: 334px;
+}
+.links {
+  padding: 40px 160px;
+}
+.links .col-xs-3 {
+  padding: 15px;
+}
+.links .col-xs-3 a {
+  display: block;
+  padding: 20px 0px;
+  background-color: #f7f8f9;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  color: inherit;
+}
+.links .col-xs-3 a img {
+  width: 40px;
+  height: 58px;
+  margin-bottom: 10px;
+}
+.menu-holder {
+  position: absolute;
+}
