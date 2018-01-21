@@ -8,7 +8,7 @@ body{
     margin: 0px;
     padding: 0px;
     width: 100%;
-    font-family: arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, STHeiti, "Microsoft Yahei", sans-serif;
 }
 /* 菜单设置开始*/
 .menu, .menu-holder{

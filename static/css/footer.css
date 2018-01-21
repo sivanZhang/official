@@ -36,7 +36,7 @@ table .first a{
     width:0; height:0;
     border-width:2px;
     border-style:solid; 
-    border-color:#ea5014 #ffffff #ffffff #ea5014;
+    border-color:#ea5014 transparent transparent #ea5014;
 }
 .linkitems td{
     min-width: 120px;

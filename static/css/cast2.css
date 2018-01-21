@@ -369,32 +369,34 @@
   }
   section {
     position: relative;
-    background-attachment: fixed;
-    background-size: 100% 100%;
+    background-attachment: fixed!important;
+    background-size: auto 100%!important;
+    background-position:top center!important;
+    background-repeat:no-repeat!important;
   }
   section.sec1-show {
-    background: url(/static/img/product/sc1.jpg) no-repeat center;
+    background: url(/static/img/product/sc1.jpg);
   }
   section.sec1-hide {
-    background: url(/static/img/product/sc1hide.jpg) no-repeat center;
+    background: url(/static/img/product/sc1hide.jpg);
   }
   section.sec2-show {
-    background: url(/static/img/product/sc2.jpg) no-repeat center;
+    background: url(/static/img/product/sc2.jpg);
   }
   section.sec2-hide {
-    background: url(/static/img/product/sc2hide.jpg) no-repeat center;
+    background: url(/static/img/product/sc2hide.jpg);
   }
   section.sec3-show {
-    background: url(/static/img/product/sc3.jpg) no-repeat center;
+    background: url(/static/img/product/sc3.jpg);
   }
   section.sec3-hide {
-    background: url(/static/img/product/sc3hide.jpg) no-repeat center;
+    background: url(/static/img/product/sc3hide.jpg);
   }
   section.sec4-show {
-    background: url(/static/img/product/sc4.jpg) no-repeat center;
+    background: url(/static/img/product/sc4.jpg);
   }
   section.sec4-hide {
-    background: url(/static/img/product/sc4hide.jpg) no-repeat center;
+    background: url(/static/img/product/sc4hide.jpg);
   }
 
   .btn-list {
