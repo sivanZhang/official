@@ -185,7 +185,20 @@ CKEDITOR_CONFIGS = {
                 'Preview',  
             ]},
         ],
-        'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
+        'toolbar': (
+            ['div','Source','-','Save','NewPage','Preview','-','Templates'], 
+            ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print','SpellChecker','Scayt'], 
+            ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'], 
+            ['Form','Checkbox','Radio','TextField','Textarea','Select','Button', 'ImageButton','HiddenField'], 
+            ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'], 
+            ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'], 
+            ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'], 
+            ['Link','Unlink','Anchor'], 
+            ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'], 
+            ['Styles','Format','Font','FontSize'], 
+            ['TextColor','BGColor'], 
+            ['Maximize','ShowBlocks','-','About', 'pbckcode'],
+        ),  # put selected toolbar config here
         # 'toolbarGroups': [{ 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] }],
         # 'height': 291,
         # 'width': '100%',
@@ -200,6 +213,7 @@ CKEDITOR_CONFIGS = {
             'font',
             'autolink',
             'autoembed',
+             
             'embedsemantic',
             'autogrow',
             # 'devtools',
