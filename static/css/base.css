@@ -124,11 +124,8 @@ z-index: -1;
 }
 a:link,a:visited,a:hover,a:active{
     text-decoration: none;
-    
 }
-a:visited,a:hover,a:active{
-color: #ea5014;
-}
+
 a:focus{
     outline: none;
 }
