@@ -1,173 +1,336 @@
 /*!
- * jQuery.threesixty Image rotation plug-in for jQuery version 0.6
- * http://www.mathieusavard.info/threesixty/
- *
- * Copyright 2008-2010 Mathieu Dumais-Savard
- * Licensed under the MIT lice
- * http://www.opensource.org/licenses/mit-license.php
- * *
- * Date: Tue Aug 9
+ * ThreeSixty: A jQuery plugin for generating a draggable 360 preview from an image sequence.
+ * Version: 0.1.2
+ * Original author: @nick-jonas
+ * Website: http://www.workofjonas.com
+ * Licensed under the MIT license
  */
 
-jQuery.fn.threesixty = function(options){
-	options = options || {};
-	options.images = options.images || [];
-	options.method = options.method || "click" //can be click, mouse move or auto
-	options.cycle = options.cycle || 1;
-	options.resetMargin = options.resetMargin || 0;
-	options.direction = options.direction || "forward";
-	options.sensibility = options.sensibility || options.cycle * 0.35;
-	options.autoscrollspeed = options.autoscrollspeed || 500;
+;(function ( $, window, document, undefined ) {
 
 
-	if (options.direction == "backward")
-		options.images.reverse();
+var scope,
+    pluginName = 'threeSixty',
+    defaults = {
+        dragDirection: 'horizontal',
+        useKeys: false,
+        draggable: true
+    },
+    dragDirections = ['horizontal', 'vertical'],
+    options = {},
+    $el = {},
+    data = [],
+    total = 0,
+    loaded = 0;
 
-    return this.each(function(){
-		var imgArr = [];
-		var pic = $(this);
+    /**
+     * Constructor
+     * @param {jQuery Object} element       main jQuery object
+     * @param {Object} customOptions        options to override defaults
+     */
+    function ThreeSixty( element, customOptions ) {
+        scope = this;
+        this.element = element;
+        options = options = $.extend( {}, defaults, customOptions) ;
+        this._defaults = defaults;
+        this._name = pluginName;
 
-	$(function() {
-		var cache = [];
-		var parent = $("<div>");
-		parent.css({height:pic.height(), width:pic.width(), overflow:"hidden", position:"relative"});
-		pic.wrap(parent).css({position:"relative",top:0,left:0});
-		parent = pic.parent();
-		//Binding the progress bar
-		var progressBg = $("<div></div>").css({width:parent.width()-200, height:10, backgroundColor:"black", position:"absolute","bottom":60,left:100 }).addClass("progressBg");
-		var progressBar = $("<div></div>").css({width:0, height:10, backgroundColor:"white", position:"absolute","bottom":60,left:100 }).data("progress",0).addClass("progressBar");
-		var overlay;
-		try {
-		 overlay = $("<div></div>").css({cursor:"wait", width:pic.width(), background:"RGBA(0,0,0,0.7)", height:pic.height(),  position:"absolute","top":0,left:0 }).addClass("overlay");
-		}
-		catch (e)
-		{
-		 overlay = $("<div></div>").css({cursor:"wait", width:pic.width(), height:pic.height(), backgroundColor:"black", filter:"alpha(opacity=70)",  position:"absolute","top":0,left:0 }).addClass("overlay");		
-		}
+        // make sure string input for drag direction is valid
+        if($.inArray(options.dragDirection, dragDirections) < 0){
+            options.dragDirection = defaults.dragDirection;
+        }
 
-		//Nasty overlay capturing all the events :P
-		overlay.click(function(e) { e.preventDefault(); e.stopPropagation(); });
-		overlay.mousedown(function(e) { e.preventDefault(); e.stopPropagation(); });
+        this.init();
+    }
 
-		parent.append(overlay).append(progressBg).append(progressBar);
-		pic.css({cursor:"all-scroll"});
-		
+    // PUBLIC API -----------------------------------------------------
 
-		var totalProgress = 0;
-		var loaded=false;
-		//ask browser to load all images.. I know this could be better but is just a POC
+    $.fn.destroy = ThreeSixty.prototype.destroy = function(){
+        if(options.useKeys === true) $(document).unbind('keydown', this.onKeyDown);
+        $(this).removeData();
+        $el.html('');
+    };
 
-		$.each(options.images, function(index, record) {
-			var o =$("<img>").attr("src",record).load(function() {
-				if (index>pic.data("tempIndex"))
-				{
-					pic.data("tempIndex", index)
-					pic.attr("src", $(this).attr("src"))
-				}	
+    $.fn.nextFrame = ThreeSixty.prototype.nextFrame = function(){
+        $(this).each(function(i){
+            var $this = $(this),
+                val = $this.data('lastVal') || 0,
+                thisTotal = $this.data('count');
 
-				var progress = pic.parent().find(".progressBar");
-				totalProgress++;
-				var maxsize = pic.parent().find(".progressBg").width();
-				var newWidth = (totalProgress/options.images.length)*maxsize;
-				progress.stop(true,true).animate({width:newWidth},250);
-				if (totalProgress == options.images.length-1)
-				{	loaded=true;
-					pic.parent().find(".overlay, .progressBar, .progressBg").remove();
-				}
-			});
-			cache.push(o); 
-		});
+            val = val + 1;
 
-	})
-		
+            $this.data('lastVal', val);
 
-		for (var x=1; x<=options.cycle; x++)
-			for (var y=0; y<options.images.length; y++)
-				imgArr.push(options.images[y]);
+            if(val >= thisTotal) val = val % (thisTotal - 1);
+            else if(val <= -thisTotal) val = val % (thisTotal - 1);
+            if(val > 0) val = thisTotal - val;
 
-		pic.data("currentIndex",0).data("tempIndex",0);
-		pic.data("scaled",false);
-		pic.data("touchCount",0);
-		var originalHeight = pic.height();
-		var originalWidth = pic.width();
+            val = Math.abs(val);
 
-		function determineIndex(e)	//e represent the event for newIndex
-		{
-			return Math.floor((e.pageX - pic.offset().left) / (pic.width()/imgArr.length))
-		}
+            $this.find('.threesixty-frame').css({display: 'none'});
+            $this.find('.threesixty-frame:eq(' + val + ')').css({display: 'block'});
+        });
+    };
 
-		function moveInViewport(e) //e represents the finger in question
-		{		$("#debug").text("left:" + e.pageX);
-				var newTop = pic.data("refLocY") - pic.data("refTouchY") + e.pageY;
-				var newLeft = pic.data("refLocX") - pic.data("refTouchX") + e.pageX;
-				if (newLeft>0) newLeft=0;
-				if (pic.parent().width() + Math.abs(newLeft) > pic.width())
-					newLeft = -1*pic.width()+pic.parent().width();
-				if (newTop>0) newTop=0;
-				if (pic.parent().height() + Math.abs(newTop) > pic.height())
-					newTop = -1*pic.height()+pic.parent().height();
-	
-				pic.css({left:newLeft, top:newTop});
-		}
+    $.fn.prevFrame = ThreeSixty.prototype.prevFrame = function(){
+        $(this).each(function(i){
+            var $this = $(this),
+                val = $this.data('lastVal') || 0,
+                thisTotal = $this.data('count');
 
-		pic.mousemove(function(evt) {
-			if (!!pic.data("refTouchX") === false)
-			{
-				pic.data("refTouchX",evt.pageX);
-				pic.data("refTouchY",evt.pageY);
-				pic.data("refLocX",parseInt(pic.css("left")));
-				pic.data("refLocY",parseInt(pic.css("top")));
-			
-			}
+            val = val - 1;
 
- 			evt.preventDefault();
- 			if (pic.data("enabled")=="1" || options.method == "mousemove")
-			{	
-				if (evt.preventDefault) evt.preventDefault();
-	
-				var e = evt;
-				if (pic.data("scaled") == false)
-				{
-					var distance = e.pageX - pic.data("refTouchX");	//distance hold the distance traveled with the finger so far..
-					stripeSize = Math.floor(originalWidth / imgArr.length);
-					var newIndex = pic.data("currentIndex") + Math.floor(distance*options.sensibility/stripeSize)
-					if (newIndex < 0) 
-					{
-						newIndex = imgArr.length-1;
-						pic.data("currentIndex",newIndex);
-					}
-					newIndex = newIndex % imgArr.length;
-					if (newIndex == pic.data("currentIndex"))
-						return;
-					pic.attr("src",imgArr[newIndex]);
-					pic.data("tempIndex",newIndex);		
-				}
-				else {	//The image needs to be moved in its viewport..
-					moveInViewport(e);
-				} 
-				return;
-			}	
-		})
-		
-		if (options.method == "click")
-		{  //Certain binding will be done if and only if the method is "click" instead of "mousemove"
-			pic.mousedown(function(e) {
-				e.preventDefault(); 
-				pic.data("enabled","1"); 	
-			});	
-	
-			$("body").mouseup(function(e) {
-	 			e.preventDefault();
-	 			pic.data("enabled","0");
-				pic.data("currentIndex",pic.data("tempIndex"));
-			});
-		}
-		
-		if (options.method == "auto") {
-			var speed = options.autoscrollspeed;
-			var newIndex=0;
-			window.setInterval(function() { pic.attr("src", imgArr[++newIndex % imgArr.length])} , speed);
-		}
-	});			
-};
+            $this.data('lastVal', val);
 
+            if(val >= thisTotal) val = val % (thisTotal - 1);
+            else if(val <= -thisTotal) val = val % (thisTotal - 1);
+            if(val > 0) val = thisTotal - val;
+
+            val = Math.abs(val);
+
+            $this.find('.threesixty-frame').css({display: 'none'});
+            $this.find('.threesixty-frame:eq(' + val + ')').css({display: 'block'});
+        });
+    };
+
+
+
+    // PRIVATE METHODS -------------------------------------------------
+
+    /**
+     * Initializiation, called once from constructor
+     * @return null
+     */
+    ThreeSixty.prototype.init = function () {
+        var $this = $(this.element);
+
+        // setup main container
+        $el = $this;
+
+        // store data attributes for each 360
+        $this.each(function(){
+            var $this = $(this),
+                path = $this.data('path'),
+                count = $this.data('count');
+            data.push({'path': path, 'count': count, 'loaded': 0, '$el': $this});
+            total += count;
+        });
+
+        _disableTextSelectAndDragIE8();
+
+        this.initLoad();
+    };
+
+    /**
+     * Start loading all images
+     * @return null
+     */
+    ThreeSixty.prototype.initLoad = function() {
+        var i = 0, len = data.length, url, j;
+        $el.addClass('preloading');
+        for(i; i < len; i++){
+            j = 0;
+            for(j; j < data[i].count; j++){
+                url = data[i].path.replace('{index}', j);
+                $('<img/>').data('index', i).attr('src', url).load(this.onLoadComplete);
+            }
+        }
+    };
+
+    ThreeSixty.prototype.onLoadComplete = function(e) {
+        var index = $(e.currentTarget).data('index'),
+            thisObj = data[index];
+        thisObj.loaded++;
+        if(thisObj.loaded === thisObj.count){
+            scope.onLoadAllComplete(index);
+        }
+    };
+
+    ThreeSixty.prototype.onLoadAllComplete = function(objIndex) {
+        var $this = data[objIndex].$el,
+            html = '',
+            l = data[objIndex].count,
+            pathTemplate = data[objIndex].path,
+            i = 0;
+
+        // remove preloader
+        $this.html('');
+        $this.removeClass('preloading');
+
+        // add 360 images
+        for(i; i < l; i++){
+            var display = (i === 0) ? 'block' : 'none';
+            html += '<img class="threesixty-frame" style="display:' + display + ';" data-index="' + i + '" src="' + pathTemplate.replace('{index}', i) + '"/>';
+        }
+        $this.html(html);
+
+        this.attachHandlers(objIndex);
+    };
+
+    var startY = 0,
+        thisTotal = 0,
+        $downElem = null,
+        lastY = 0,
+        lastX = 0,
+        lastVal = 0,
+        isMouseDown = false;
+    ThreeSixty.prototype.attachHandlers = function(objIndex) {
+        var that = this;
+        var $this = data[objIndex].$el;
+
+        // add draggable events
+        if(options.draggable){
+            // if touch events supported, use
+            if(typeof document.ontouchstart !== 'undefined' &&
+                typeof document.ontouchmove !== 'undefined' &&
+                typeof document.ontouchend !== 'undefined' &&
+                typeof document.ontouchcancel !== 'undefined'){
+                var elem = $this.get()[0];
+                elem.addEventListener('touchstart', that.onTouchStart);
+                elem.addEventListener('touchmove', that.onTouchMove);
+                elem.addEventListener('touchend', that.onTouchEnd);
+                elem.addEventListener('touchcancel', that.onTouchEnd);
+            }
+        }
+
+        // mouse down
+        $this.mousedown(function(e){
+            e.preventDefault();
+            thisTotal = $(this).data('count');
+            $downElem = $(this);
+            startY = e.screenY;
+            lastVal = $downElem.data('lastVal') || 0;
+            lastX = $downElem.data('lastX') || 0;
+            lastY = $downElem.data('lastY') || 0;
+            isMouseDown = true;
+            $downElem.trigger('down');
+        });
+
+        // arrow keys
+        if(options.useKeys === true){
+            $(document).bind('keydown', that.onKeyDown);
+        }
+
+        // mouse up
+        $(document, 'html', 'body').mouseup(that.onMouseUp);
+        $(document).blur(that.onMouseUp);
+        $('body').mousemove(function(e){
+            that.onMove(e.screenX, e.screenY);
+        });
+    };
+
+    ThreeSixty.prototype.onTouchStart = function(e) {
+        var touch = e.touches[0];
+        e.preventDefault();
+        $downElem = $(e.target).parent();
+        thisTotal = $downElem.data('count');
+        startX = touch.pageX;
+        startY = touch.pageY;
+        lastVal = $downElem.data('lastVal') || 0;
+        lastX = $downElem.data('lastX') || 0;
+        lastY = $downElem.data('lastY') || 0;
+        isMouseDown = true;
+        $downElem.trigger('down');
+    };
+
+    ThreeSixty.prototype.onTouchMove = function(e) {
+        e.preventDefault();
+        var touch = e.touches[0];
+        scope.onMove(touch.pageX, touch.pageY);
+    };
+
+    ThreeSixty.prototype.onTouchEnd = function(e) {
+
+    };
+
+    ThreeSixty.prototype.onMove = function(screenX, screenY){
+        if(isMouseDown){
+            var x = screenX,
+                y = screenY,
+                val = 0;
+
+            $downElem.trigger('move');
+
+            if(options.dragDirection === 'vertical'){
+                if(y > lastY){
+                    val = lastVal + 1;
+                }else{
+                    val = lastVal - 1;
+                }
+            }else{
+                if(x > lastX){
+                    val = lastVal + 1;
+                }else if(x === lastX){
+                    return;
+                }else{
+                    val = lastVal - 1;
+                }
+            }
+
+            lastVal = val;
+            lastY = y;
+            lastX = x;
+
+            $downElem.data('lastY', lastY);
+            $downElem.data('lastX', lastX);
+            $downElem.data('lastVal', lastVal);
+
+            if(val >= thisTotal) val = val % (thisTotal - 1);
+            else if(val <= -thisTotal) val = val % (thisTotal - 1);
+            if(val > 0) val = thisTotal - val;
+
+            val = Math.abs(val);
+
+            $downElem.find('.threesixty-frame').css({display: 'none'});
+            $downElem.find('.threesixty-frame:eq(' + val + ')').css({display: 'block'});
+        }
+    };
+
+    ThreeSixty.prototype.onKeyDown = function(e) {
+        switch(e.keyCode){
+            case 37: // left
+                $el.prevFrame();
+                break;
+            case 39: // right
+                $el.nextFrame();
+                break;
+        }
+    };
+
+    ThreeSixty.prototype.onMouseUp = function(e) {
+        isMouseDown = false;
+        $downElem.trigger('up');
+    };
+
+    /**
+     * Disables text selection and dragging on IE8 and below.
+     */
+    var _disableTextSelectAndDragIE8 = function() {
+      // Disable text selection.
+      document.body.onselectstart = function() {
+          return false;
+      };
+
+      // Disable dragging.
+      document.body.ondragstart = function() {
+          return false;
+      };
+    };
+
+
+    /**
+     * A really lightweight plugin wrapper around the constructor,
+        preventing against multiple instantiations
+     * @param  {Object} options
+     * @return {jQuery Object}
+     */
+    $.fn[pluginName] = function ( options ) {
+        return this.each(function () {
+            if (!$.data(this, 'plugin_' + pluginName)) {
+                $.data(this, 'plugin_' + pluginName,
+                new ThreeSixty( this, options ));
+            }
+        });
+    };
+
+})( jQuery, window, document );
