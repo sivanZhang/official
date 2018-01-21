@@ -26,6 +26,7 @@ $("#fileUpload").on('change', function () {
       $('#title').val(oTr.children('.b_title').children().text());
       $('#url').val(oTr.children('.b_url').children().text());
       $('#mark').val(oTr.children('.b_mark').text());
+      $('#date').val(oTr.children('.b_date').text());
       var itemid= oTr.children('.b_itemid').text();
       $('#add_input').prepend('<input type="hidden" name="itemid" id="itemid" value="'+itemid
         +'"/>'
@@ -54,6 +55,14 @@ $("#fileUpload").on('change', function () {
             alert('server is down!')
         }
     })
+});
+$(document).ready(function(){
+$( "#date" ).datepicker({  
+            changeMonth: true,
+            changeYear: true,
+            language:'zh-CN', 
+            format:'yyyy-mm-dd', 
+        }); 
 });
 
 

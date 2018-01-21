@@ -67,6 +67,39 @@ class PageView(View):
                 return render(request, 'page/news.html', content)
             else:
                 return render(request, 'page/news.html', content)
+        if 'event' == blockname and  'list' == pagename:
+            # 获得所有大事记
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark = blockname)
+            
+            if len(pages) == 0:
+                raise Http404
+            content['pages'] = pages
+            content['img'] = pages[0].block.pic.replace('\\','/')
+            content['contentblock'] = pages[0].block
+            content['eventyears'] = []
+            page_item = pages[0]
+            for page in pages: 
+                if page.date:
+                    year = page.date.year
+                    mark = False
+                    for activeyear in content['eventyears']:
+                        if activeyear['year'] == year:
+                            activeyear['pages'].append(page)
+                            mark = True
+                            break
+                    if mark == False:
+                        # 表示当前年份还没有被加入content['eventyears']这个列表
+                        
+                        tmp = {
+                            'year':year,
+                            'pages':[page]
+                        }
+                        content['eventyears'].append(tmp)
+          
+            if isMble:
+                return render(request, 'page/eventlist.html', content)
+            else:
+                return render(request, 'page/eventlist.html', content)
         if 'active' == blockname and  'list' == pagename:
             # 获得所有精彩活动列表
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark = blockname)

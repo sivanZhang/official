@@ -2,6 +2,7 @@
 {% block fixed_menu_class %}fixed_menu_class{%endblock%}
 {% load i18n %}
 {% block css %}
+<link href="/static/vendors/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
 <link href="/static/sitecontent/css/blocknew.css" rel="stylesheet">
  {% endblock %}
  {% block content %}
@@ -57,6 +58,12 @@
                             </div>
                     </div>
                     <div class="form-group">
+                            <label for="mark" class="col-sm-2 control-label">日期</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="date" name="date" title="{% trans "Time" %}" placeholder="{% trans "Time" %}">
+                            </div>
+                    </div>
+                    <div class="form-group">
                     
                         <div id="wrapper" class="col-sm-2">
                             <input class="hide" id="fileUpload" type="file" name="pic" />
@@ -84,6 +91,7 @@
                                     <th>链接</th>
                                     <th>{% trans "status" %}</th>
                                     <th>{% trans "mark" %}</th>
+                                    <th>{% trans "Time" %}</th>
                                     <th>操作</th>
                                 </tr>
                             {% for item in block_instance.adaptorbaseblockitem_set.all %}
@@ -98,6 +106,7 @@
                                     <td class="b_status">发布</td>
                                     {% endif %}
                                     <td class="b_mark">{{item.mark}}</td>
+                                    <td class="b_date">{{item.date|date:"Y-m-d"}}</td>
                                 <td class="text-center">
                                     <i class="fa fa-pencil-square-o edit" aria-hidden="true" title="编辑"></i>
                                     <i class="fa fa-trash-o" aria-hidden="true" title='删除'></i>
@@ -111,5 +120,7 @@
 
 {% endblock %} 
 {% block js %}
+<script src="/static/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="/static/vendors/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js" charset="UTF-8"></script>
 <script type="text/javascript " src="/static/sitecontent/js/new.js"></script>
  {% endblock %}

@@ -265,7 +265,11 @@ class BlockItemContentView(View):
                     status = request.POST['status'].strip() 
                     if status:
                         item.status = status
-        
+                if 'date' in request.POST:
+                    date = request.POST['date'].strip() 
+                    if status:
+                        item.date = date
+
                 item.save()
                 result['id'] = item.id
                 result['status'] ='ok'

@@ -46,6 +46,9 @@ class BaseBlockItem(models.Model):
     status = models.SmallIntegerField(default = STATUS_SHOW) 
     # 标记被显示在什么位置：如主轮播图中
     mark = models.CharField(max_length = 128) 
+    # 日期，可手动修改的日期
+    date = models.DateTimeField(null=True)
+    
     class Meta:
         abstract = True
      
