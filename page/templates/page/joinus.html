@@ -37,11 +37,21 @@
 </div>  
 <div class="container  ">
     <div class="row  "> 
-      <div class="col-xs-12 text-">
-         {{product.detail|safe}}
+      <div class="col-xs-12 text-center">
+          <button id="position" class=" orange-bg common-btn btn-text-white">选择职位</button>
+         
       </div> 
     </div>
 </div>  
+<br/>
+<br/>
 {% endblock%}
 {% block js %} 
+<script>
+$( document ).ready(function() {
+      $('#position').click(function(){
+           location.href="{% url 'page:page' 'asubrand' 'join' %}?position";
+      });
+  });
+  </script>
 {% endblock %}

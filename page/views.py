@@ -50,26 +50,30 @@ class PageView(View):
             else:
                 return render(request, 'page/aboutus.html', content)
         if 'asubrand' == blockname and 'join' == pagename:
-            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname, mark=pagename)
-            if len(pages) == 0:
-                raise Http404
-            page_item = pages[0]
-            url = page_item.url
-            match = re.search('\d+', url)
-            if match:
-                productid = match.group()
-                try:
-                    product = AdaptorProduct.objects.get(id=productid)
-                    content['product'] = product
-                    page_item.pic = page_item.pic.replace('\\','/')
-                    content['page'] = page_item
-                    content['blockname'] = blockname
-                except AdaptorProduct.DoesNotExist:
-                    raise Http404
-            if isMble:
-                return render(request, 'page/joinus.html', content)
+            if 'position' in request.GET:
+                # 说明是在查看职位列表
+                pass
             else:
-                return render(request, 'page/joinus.html', content)
+                pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname, mark=pagename)
+                if len(pages) == 0:
+                    raise Http404
+                page_item = pages[0]
+                url = page_item.url
+                match = re.search('\d+', url)
+                if match:
+                    productid = match.group()
+                    try:
+                        product = AdaptorProduct.objects.get(id=productid)
+                        content['product'] = product
+                        page_item.pic = page_item.pic.replace('\\','/')
+                        content['page'] = page_item
+                        content['blockname'] = blockname
+                    except AdaptorProduct.DoesNotExist:
+                        raise Http404 
+                if isMble:
+                    return render(request, 'page/joinus.html', content)
+                else:
+                    return render(request, 'page/joinus.html', content)
         if 'asubrand' == blockname and  'faith' == pagename:
             if isMble:
                 return render(request, 'page/faith.html', content)
@@ -88,6 +92,38 @@ class PageView(View):
                 return render(request, 'page/news.html', content)
             else:
                 return render(request, 'page/news.html', content)
+        if 'video' == blockname :
+            # 媒体报道
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
+            content['pages'] = pages 
+            if isMble:
+                return render(request, 'page/video.html', content)
+            else:
+                return render(request, 'page/video.html', content)
+        if 'contactus' == blockname :
+            # 媒体报道
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
+            content['pages'] = pages 
+            if isMble:
+                return render(request, 'page/contactus.html', content)
+            else:
+                return render(request, 'page/contactus.html', content)
+        if 'report' == blockname :
+            # 媒体报道
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
+            content['pages'] = pages 
+            if isMble:
+                return render(request, 'page/report.html', content)
+            else:
+                return render(request, 'page/report.html', content)
+        if 'pic' == blockname :
+            # 媒体报道
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
+            content['pages'] = pages 
+            if isMble:
+                return render(request, 'page/pic.html', content)
+            else:
+                return render(request, 'page/pic.html', content)
         if 'event' == blockname and  'list' == pagename:
             # 获得所有大事记
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark = blockname)
@@ -156,14 +192,7 @@ class PageView(View):
                                 'products':[product]
                             }
                             
-                            content['activeyears'].append(tmp)
-                            tmp ={}
-                            tmp = {
-                                'year':'2017',
-                                'products':[product]
-                            }
-                            content['activeyears'].append(tmp)
-                   
+                            content['activeyears'].append(tmp) 
                     except AdaptorProduct.DoesNotExist:
                         # 忽略用户设置错误的活动
                         pass  

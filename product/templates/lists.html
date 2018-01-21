@@ -25,13 +25,15 @@
                     <div class="thumbnail"> 
                         <div class="caption">
                             <h4><a href="{% url 'product:detail' product.id %}" >{{product.title}}</a></h4>
-                            
                         </div>
+                        <a href="{% url 'product:change' product.id %}" target="__blank">修改</a>
                     </div>
-                </div>
+            </div>
             {% endfor %} 
         </div>
     </div>
 
-{% endblock %} {% block js %}
-<script type="text/javascript" src="/static/js/list.js"></script> {% endblock %}
+{% endblock %} 
+{% block js %}
+<script type="text/javascript" src="/static/js/list.js"></script> 
+{% endblock %}
