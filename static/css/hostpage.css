@@ -126,15 +126,40 @@
   .sider .shop-link {
     color: #fff;
     position: absolute;
-    left: 66%;
+    
+  }
+  .shop-link1{
+    left: 59%;
+    bottom: 40%;
+  }
+  .shop-link2{
+    left: 50%;
+    bottom: 20%;
     transform: translateX(-50%);
-    bottom: 30%;
+  }
+  .shop-link3{
+    left: 24%;
+    bottom: 39%;
+  }
+  .shop-link4{
+    left: 54%;
+    bottom: 62%;
+  }
+  .shop-link5{
+    left: 56%;
+    bottom: 40%;
+  }
+  .shop-link6{
+    left: 26%;
+    bottom: 36%;
+  }
+  .shop-link3 a:first-child,.shop-link6 a:first-child{
+    color: #333;
   }
   .sider .shop-link .now-bye {
-    background-color: #ea5014;
     margin-left: 10px;
   }
-  .sider .shop-link .now-bye .fa-angle-right {
+  .sider .shop-link .common-btn .fa-angle-right {
     font-size: 120%;
     margin-left: 4px;
   }
