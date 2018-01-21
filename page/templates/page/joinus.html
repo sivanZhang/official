@@ -21,17 +21,23 @@
     <div class="container ">
         <h1></h1>
         <div class="items_holder">
-                    <h1 class="title orange">{{product.title}} </h1>
-                     
-                    <a href="/">{% trans 'Home' %}</a>
-                    <a href="javasrcipt:;">/ASU {% trans 'Brand' %}</a> 
-                    <a href="javasrcipt:;">/{{product.title}}</a> 
+              <h1 class="title orange">{{product.title}} </h1>
+              <a href="/">{% trans 'Home' %}</a>
+              <a href="javasrcipt:;">/ASU {% trans 'Brand' %}</a> 
+              <a href="javasrcipt:;">/{{product.title}}</a> 
         </div> 
     </div> 
 </div>
 <div class="container  ">
     <div class="row  "> 
-      <div class="col-sm-12 col-md-12 col-lg-12">
+      <div class="col-xs-12 ">
+         {{product.detail|safe}}
+      </div> 
+    </div>
+</div>  
+<div class="container  ">
+    <div class="row  "> 
+      <div class="col-xs-12 text-">
          {{product.detail|safe}}
       </div> 
     </div>

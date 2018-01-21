@@ -147,6 +147,7 @@ class PageView(View):
                                 activeyear['products'].append(product)
                                 mark = True
                                 break
+                            
                         if mark == False:
                             # 表示当前年份还没有被加入content['activeyears']这个列表
                             product.pageurl = page.pic
@@ -154,12 +155,18 @@ class PageView(View):
                                 'year':year,
                                 'products':[product]
                             }
+                            
+                            content['activeyears'].append(tmp)
+                            tmp ={}
+                            tmp = {
+                                'year':'2017',
+                                'products':[product]
+                            }
                             content['activeyears'].append(tmp)
                    
                     except AdaptorProduct.DoesNotExist:
                         # 忽略用户设置错误的活动
-                        pass 
-     
+                        pass  
             if isMble:
                 return render(request, 'page/activelist.html', content)
             else:
