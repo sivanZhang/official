@@ -309,11 +309,11 @@
 
 .img360_holder>div
 { 
-    margin: 0 10% 0 14%;
+    margin: 0 auto;
 }
 
 .img360{
-    width: 80%;
+    height: 90%;
     margin: 0 auto;
     
 }

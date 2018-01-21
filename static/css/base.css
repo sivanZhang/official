@@ -285,6 +285,7 @@ td.td-bar-point
     position: fixed;
     top: 0;
     z-index: 10; 
+    overflow: hidden;
 }
 footer .pull-left{
     font-size: 12px;
@@ -336,4 +337,11 @@ footer{
 }
 .white{
     color: #fff;
+}
+ul{
+    padding: 0px;
+    margin: 0px;
+}
+li{ 
+    list-style-type: none;
 }
