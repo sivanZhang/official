@@ -369,7 +369,6 @@
   }
   section {
     position: relative;
-    background-attachment: fixed!important;
     background-size: auto 100%!important;
     background-position:top center!important;
     background-repeat:no-repeat!important;

@@ -1,5 +1,7 @@
 .top-slide{
     height: 420px;
+    background-size: 100% auto;
+    background-position: top center;
 }
 .number
 { 
@@ -17,7 +19,7 @@
     height: 140px;
 }
 .years-wrap{
-    padding: 0 180px;
+    padding: 40px 180px;
 }
 .years{
     position: relative;
@@ -29,14 +31,16 @@
     right: 100%;
     bottom: 100%;
     font-size: 26px;
+    cursor: pointer;
 }
 .act span{
     color: #ea5014;
 }
 .col-active-list{
     margin: 20px 0;
+    display: none;
 }
-.years:after {
+.down {
     content: '';
     position: absolute;
     top: 100%;
@@ -47,7 +51,8 @@
     border-style: solid;
     border-color: #cdcdcd transparent transparent;
     margin-left: 4px;
+    cursor: pointer;
 }
 .mt100{
-    margin-top: 100px;
+    margin-top: 80px;
 }
