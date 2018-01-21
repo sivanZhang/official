@@ -30,13 +30,11 @@
 </div>
 <div class="container  ">
     <div class="row  "> 
-        {% for page in pages %}
-      <div class="col-xs-12 ">
+     {% for page in pages %} 
          {{page.title}}
          {{page.url}} 
          {{mediaroot}}{{page.pic|safe}}
-         {{page.date| date:"Y-m-d"}}
-      </div> 
+         {{page.date| date:"Y-m-d"}} 
       {% endfor %}
     </div>
 </div>  

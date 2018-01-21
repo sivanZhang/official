@@ -75,11 +75,17 @@ class PageView(View):
                 else:
                     return render(request, 'page/joinus.html', content)
         if 'asubrand' == blockname and  'faith' == pagename:
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
+            content['page'] = pages[0]
+            content['pages'] = replace_slide(pages)
             if isMble:
                 return render(request, 'page/faith.html', content)
             else:
                 return render(request, 'page/faith.html', content)
         if 'service' == blockname and 'list' == pagename:
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
+            content['page'] = pages[0]
+            content['pages'] = replace_slide(pages)
             if isMble:
                 return render(request, 'page/service.html', content)
             else:
@@ -87,7 +93,8 @@ class PageView(View):
         if 'news' == blockname :
             # 媒体报道
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
-            content['pages'] = pages 
+            content['page'] = pages[0]
+            content['pages'] = replace_slide(pages)
             if isMble:
                 return render(request, 'page/news.html', content)
             else:
@@ -95,7 +102,8 @@ class PageView(View):
         if 'video' == blockname :
             # 媒体报道
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
-            content['pages'] = pages 
+            content['page'] = pages[0]
+            content['pages'] = replace_slide(pages)
             if isMble:
                 return render(request, 'page/video.html', content)
             else:
@@ -103,7 +111,8 @@ class PageView(View):
         if 'contactus' == blockname :
             # 媒体报道
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
-            content['pages'] = pages 
+            content['page'] = pages[0]
+            content['pages'] = replace_slide(pages) 
             if isMble:
                 return render(request, 'page/contactus.html', content)
             else:
@@ -111,7 +120,8 @@ class PageView(View):
         if 'report' == blockname :
             # 媒体报道
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
-            content['pages'] = pages 
+            content['page'] = pages[0]
+            content['pages'] = replace_slide(pages)
             if isMble:
                 return render(request, 'page/report.html', content)
             else:
@@ -119,7 +129,8 @@ class PageView(View):
         if 'pic' == blockname :
             # 媒体报道
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
-            content['pages'] = pages 
+            content['page'] = pages[0]
+            content['pages'] = replace_slide(pages)
             if isMble:
                 return render(request, 'page/pic.html', content)
             else:
@@ -208,4 +219,10 @@ class PageView(View):
         else:
             raise Http404
 
-     
+def replace_slide(pages):
+    for page in pages:
+        page.pic = page.pic.replace('\\','/')
+    
+    return pages
+
+        
