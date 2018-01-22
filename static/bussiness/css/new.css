@@ -45,17 +45,24 @@ a:visited {
   outline: none;
 }
 /* deteil */
+
 .info-form form {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding:30px 0;
+  width: 50%;
+  margin: 0 auto;
 }
+label{
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
 .info-form form input {
   display: block;
   width: 100%;
   border-color: #ddd;
   border-width: 0 0 1px 0;
-  line-height: 2;
-  margin-bottom: 15px;
+  padding: 5px 0;
+  margin-bottom: 18px;
 }
 .info-form form input:focus {
   outline: none;

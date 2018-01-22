@@ -235,6 +235,9 @@
 {
      padding: 30px 0;
 }
+.items_holder h2{
+    margin: 0 0 4px!important;
+}
 .textholder-left
 {
     position: absolute;
@@ -298,12 +301,8 @@
     position: relative;
 }
 
-.img360_holder>div
-{ 
-    padding-top: 30px;
-    margin: 0 auto;
-    height: 100%!important;
-}
+
+
 
 .img360{
     
@@ -458,11 +457,10 @@
   }
   .yellowcolor {
     color: #ea5014;
-    font-size: 24px;
   }
   .titleline a {
-    color: #6c6c6c;
-    font-size: 14px;
+    color: grey;
+    font-size: 12px;
   }
   .learn_more {
     display: inline-block;
@@ -499,3 +497,11 @@
   .roll-tip-holder a:visited,.roll-tip-holder a:hover{
       color: inherit;
   }
+  .threesixty img{
+      margin: 0 auto;
+      height: 80%!important;
+  }
+  div.threesixty
+{
+  height: 80%!important;
+}
