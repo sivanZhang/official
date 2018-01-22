@@ -2,24 +2,46 @@
 {% block title2%}用户登录 {% endblock%} {% block css %}
 <link href="/static/css/user.css" rel="stylesheet"> {% endblock %} {% block content %}
 
-<header class="text-center h3" id="app-name">shop App name</header>
+<div class="login-wrap">
+    <header class="text-center orange">
+        <img src="/static/img/noavatar.png">
+        <h4>登录</h4>
+    </header>
 
-<form id="signup-Form" class="loginform" action="" method="post">
-    <input class="form-control " type="text" name="email" placeholder="邮箱" id="username" value="{{email}}" />
-    <input type="password" class="form-control" id="password" name="password" placeholder="密码" />
-    <ul>
-        <a href="#">
-            <li>找回密码 </li>
-        </a>
-        <a href="{% url 'users:register' %}">
-            <li class="pull-right">注册账号 </li>
+    <form id="signup-Form" class="loginform" action="" method="post">
+        <div class="relative">
+        <input type="text" name="email" placeholder="邮箱" id="username" value="{{email}}" />
+        <img src="/static/img/icon/account.svg" alt="">
+        </div>
+        <div class="relative">
+            <input type="password" id="password" name="password" placeholder="密码" />
 
-        </a>
-    </ul>
-    <button type="submit" class="btn btn-block btn-hover">登录</button> {% if status == 'error' %}
-    <div class="alert alert-danger">{{msg}}</div>
-    {% endif %}
-</form>
+            <img src="/static/img/icon/password.svg" alt="">
+        </div>
+        
+        <button type="submit" class="btn btn-block btn-hover orange-bg">登录</button> {% if status == 'error' %}
+        <div class="alert alert-danger">{{msg}}</div>
+        {% endif %}
+    </form>
+    <div class="links clearfix">
+        <input type="checkbox">自动登录
+        <div class="pull-right">
+                <a href="javascript:;">
+                        <li>找回密码</li>
+                    </a>
+                    <a href="{% url 'users:register' %}">
+                        <li class="pull-right">注册账号 </li>
+            
+                    </a>
+        </div>
+    </div>
+    <div class="otherwise">
+        其他方式登录
+        <a href="javascript:;"><i class="fa fa-weixin" aria-hidden="true"></i></a>
+        <a href="javascript:;"><i class="fa fa-qq" aria-hidden="true"></i></a>
+        <a href="javascript:;"><i class="fa fa-weibo" aria-hidden="true"></i></a>
+    </div>
+</div>
 
 <input type="hidden" name="next" value="{{next_url}}" /> {% endblock %}{% block jslogin %}
 {% endblock %} {% block js %}
@@ -66,7 +88,7 @@
             }
         });
     });
-    $('#signup-Form').children().css("margin", "30px auto 5px");
+
 </script>
 
 {% endblock %}

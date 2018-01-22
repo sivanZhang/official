@@ -1,25 +1,44 @@
-{% extends 'base.html' %} {% block title2%}用户注册{% endblock%} {% block css %}
+{% extends 'base.html' %}
+{% block fixed_menu_class %}fixed_menu_class{%endblock%} {% block title2%}用户注册{% endblock%} {% block css %}
 <link href="/static/css/user.css" rel="stylesheet"> {% endblock %} {% block content %}
-<header class="text-center h3" id="app-name">shop App name</header>
 {% csrf_token %}
-<form id="signup-Form" action="{% url 'users:register' %}" method="post">
+<div class="login-wrap">
+        <header class="text-center orange">
+                <img src="/static/img/noavatar.png">
+                <h4>注册</h4>
+            </header>
+        <form id="signup-Form"  class="loginform" action="{% url 'users:register' %}" method="post">
 
-    <input class="form-control" type="text" placeholder="用户名" name="username" id="username" value="{{username}}" />
-
-    <input class="form-control" type="email" placeholder="邮箱" name="email" id="email" value="{{email}}" />
-    <input class="form-control" type="text" placeholder="邮箱验证码" name="emailcode" id="emailcode" />
-
-    <input class="form-control" type="password" placeholder="密码" name="password" id="password" />
-
-    <input class="form-control" type="password" placeholder="再次输入密码" name="confirm_password" id="confirm_password">
-
-    <button type="submit" class="btn btn-block">注册</button> {% if result %} {% if result == 'ok' %}
-    <div class="alert alert-success" role="alert">{{msg}}</div>
-    {% else %}
-    <div class="alert alert-danger" role="alert">{{msg}}</div>
-    {% endif %} {% endif %}
-    <div class="msg"></div>
-</form>
+                <div class="relative">
+                        <input type="text" placeholder="用户名" name="username" id="username" value="{{username}}" />
+                        <img src="/static/img/icon/shouji.svg" alt="">
+                        </div>
+                        <div class="relative">
+                                <input type="email" placeholder="邮箱" name="email" id="email" value="{{email}}" />
+                        <img class="email" src="/static/img/icon/duanxin.svg" alt="">
+                        </div>
+                        <div class="relative">
+                                <input type="password" placeholder="密码" name="password" id="password" />
+                        <img src="/static/img/icon/password.svg" alt="">
+                        </div>
+                        <div class="relative">
+                                <input type="password" placeholder="再次输入密码" name="confirm_password" id="confirm_password">
+                        <img src="/static/img/icon/queren.svg" alt="">
+                        </div>
+                <input type="text" placeholder="邮箱验证码" name="emailcode" id="emailcode" />
+            
+                
+            
+                
+            
+                <button type="submit" class="btn btn-block orange-bg">注册</button> {% if result %} {% if result == 'ok' %}
+                <div class="alert alert-success" role="alert">{{msg}}</div>
+                {% else %}
+                <div class="alert alert-danger" role="alert">{{msg}}</div>
+                {% endif %} {% endif %}
+                <div class="msg"></div>
+            </form>
+</div>
 
 
 {% endblock %} {% block js %}
