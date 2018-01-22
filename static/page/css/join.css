@@ -8,7 +8,9 @@
   .ml10 {
     margin-left: 10px;
   }
-  
+  .close img{
+    width: 22px;
+  }
   .a-style {
     text-decoration: none;
     outline: none;
@@ -91,4 +93,33 @@
   .swiper-wrapper {
     padding-bottom: 70px;
   }
-  
+  .modal-header{
+    background-color: rgb(242, 242, 242);
+    border-bottom: unset;
+  }
+  .modal-content{
+    border-radius: unset;
+  }
+  .modal-title{
+    font-size: 16px;
+  }
+  .table-striped>tbody>tr:nth-of-type(odd){
+    background-color: unset;
+  }
+  .table>tbody>tr:first-child>td{
+    border-top: 0!important;
+  }
+  .table>thead>tr>th{
+    border-bottom: 0;
+  }
+  .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    padding: 15px 8px;
+  }
+  .table th:first-child,.table td:first-child{
+    width: 50%;
+    text-align: left;
+    padding-left: 60px;
+  }
+  .table{
+    text-align: center;
+  }

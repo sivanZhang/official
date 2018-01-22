@@ -36,19 +36,22 @@
         </div>  
         
       <div class="col-xs-12 ">
-         <table class="table">
-             <tr >
-                 <th>{% trans 'Position Name' %}</th>
-                 <th>{% trans 'Job Type' %}</th>
-                 <th>{% trans 'Location' %}</th>
-                 <th>{% trans 'Published Date' %}</th>
+         <table class="table table-striped">
+            <thead>
+             <tr class="active">
+                 <th >{% trans 'Position Name' %}</th>
+                 <th class="text-center">{% trans 'Job Type' %}</th>
+                 <th class="text-center">{% trans 'Location' %}</th>
+                 <th class="text-center">{% trans 'Published Date' %}</th>
                  {% if perm %}
-                 <th>{% trans 'Manage' %}</th>
+                 <th class="text-center">{% trans 'Manage' %}</th>
                  {% endif %}
              </tr>
+            </thead>
+            <tbody>
              {% for product in products %}
              <tr class="productitem" detail="{{product.detail}}" title="{{product.title}}">
-                    <td>{{product.title}}</td>
+                    <td >{{product.title}}</td>
                     <td>{{product.category.name}}</td>
                     <td>{{product.description}}</td>
                     <td>{{product.date|date:"Y-m-d"}}</td>
@@ -57,6 +60,7 @@
                     {% endif %}
             </tr>
             {% endfor %}
+            </tbody>
              
 
          </table>
@@ -69,10 +73,10 @@
 <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+            <div class="modal-header clearfix">
+              <h5 class="modal-title pull-left" id="exampleModalLabel"></h5>
+              <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
+                <img src="/static/img/icon/close.svg">
               </button>
             </div>
             <div class="modal-body" id="modal-body"> 
