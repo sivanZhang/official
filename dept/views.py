@@ -5,7 +5,7 @@ import random
 import string
 import os
 from datetime import datetime
-
+from django.shortcuts import redirect 
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
@@ -21,6 +21,7 @@ from rest_framework import status
 from django.utils.translation import ugettext as _
 
 from dept import models 
+from area.models import Area
 
 from mobile.detectmobilebrowsermiddleware import DetectMobileBrowser
 dmb     = DetectMobileBrowser()
@@ -33,18 +34,24 @@ class DeptForm(forms.ModelForm):
         fields = ('detail',)
 
 class DeptView(View):
+    """
+    """
+
     @method_decorator(login_required)
     def get(self, request):
         isMble  = dmb.process_request(request)
         content = {} 
-        blocks = models.Dept.objects.all()
+        depts = models.Dept.objects.all()
      
-        content['blocks'] = blocks
+        content['depts'] = depts
         content['mediaroot'] = settings.MEDIA_URL
         #form = DeptForm(instance=product)
         form = DeptForm()
         content['form'] = form
         if 'new' in request.GET:
+            if request.user.is_anonymous(): 
+                return redirect('users/login/?next=dept/list?new')
+
             if isMble:
                 return render(request, 'dept/new.html', content)
             else:
@@ -56,10 +63,16 @@ class DeptView(View):
             else:
                 return render(request, 'dept/test.html', content)
         if 'detail' in request.GET:
+            deptid =  request.GET['detail']
+            try:
+                dept = models.Dept.objects.get(pk = deptid)
+            except models.Dept.DoesNotExist:
+                dept = dept[0]
+            content['dept'] = dept
             if isMble:
-                return render(request, 'dept/m_detail.html', content)
+                return render(request, 'dept/detail.html', content)
             else:
-                return render(request, 'dept/m_detail.html', content)
+                return render(request, 'dept/detail.html', content)
         else:
             if isMble:
                 return render(request, 'dept/list.html', content)
@@ -88,75 +101,70 @@ class DeptView(View):
         user = request.user
         result = {} 
         
-        if 'title' in request.POST : 
-            title = request.POST['title'].strip() 
+        if 'name' in request.POST and 'storetype' in request.POST and \
+           'phone' in request.POST and 'detail' in request.POST \
+            and 'address' in request.POST  and 'area' in request.POST: 
+            name = request.POST['name'].strip() 
+            storetype = request.POST['storetype'].strip() 
+            phone = request.POST['phone'].strip() 
+            detail = request.POST['detail'].strip() 
+            address = request.POST['address'].strip() 
+            areaid = request.POST['area'].strip() 
+            area = Area.objects.get(id = areaid)
 
             # 创建Block 
-            block = models.Dept.objects.create(user=user, title=title )
-            
-            if 'url' in request.POST  :
-                url = request.POST['url'].strip()
-                block.url = url
-  
-            if 'pic' in request.FILES:
-                pic = request.FILES['pic'] 
-                pic_url = handle_uploaded_file(pic, user.id)
-                block.pic = pic_url
-            
-            if 'mark' in request.POST:
-                mark = request.POST['mark'].strip() 
-                if mark:
-                    block.mark = mark
-            
-            if 'status' in request.POST:
-                status = request.POST['status'].strip() 
-                if int(status):
-                    block.status = int(status)
-    
-            block.save()
-            result['id'] = block.id
+            dept = models.Dept.objects.create(
+                user = user, 
+                name = name ,
+                dept_type = int(storetype) ,
+                phone = phone ,
+                detail = detail,
+                area = area,
+                address = address
+            ) 
+            result['id'] = dept.id
             result['status'] ='ok'
             result['msg'] = _('Saved completely!') 
         else:
             result['status'] ='error'
-            result['msg'] ='Need title  in POST'
+            result['msg'] ='Need parameter in POST'
         return self.httpjson(result)
     
     def put(self, request):
         """修改""" 
-        # 修改时：blockid字段是必须的,title\url\pic\mark\status是可选字段
+        # 修改时：deptid字段是必须的,title\url\pic\mark\status是可选字段
         user = request.user
         result = {}
-        if 'blockid' in request.POST : 
-            blockid = request.POST['blockid'].strip() 
+        if 'deptid' in request.POST : 
+            deptid = request.POST['deptid'].strip() 
 
             # 创建Block 
-            block = models.Dept.objects.get(pk = blockid)
+            block = models.Dept.objects.get(pk = deptid)
             
             if  'title' in request.POST  :
                 title = request.POST['title'].strip()
-                block.title = title
+                dept.title = title
             
             if 'pic' in request.FILES:
                 pic = request.FILES['pic'] 
                 pic_url = handle_uploaded_file(pic, user.id)
-                block.pic = pic_url
+                dept.pic = pic_url
 
             if  'url' in request.POST  :
                 url = request.POST['url'].strip()
-                block.url = url
+                dept.url = url
             
             if 'mark' in request.POST:
                 mark = request.POST['mark'].strip() 
                 if mark:
-                    block.mark = mark
+                    dept.mark = mark
             
             if 'status' in request.POST:
                 status = request.POST['status'].strip()   
-                block.status = int(status)
+                dept.status = int(status)
             
-            block.save()
-            result['id'] = block.id
+            dept.save()
+            result['id'] = dept.id
             result['status'] ='ok'
             result['msg'] = _('Saved completely!') 
         else:
@@ -168,10 +176,10 @@ class DeptView(View):
         user = request.user
         result = {}
         if 'id' in request.POST : 
-            blockid = request.POST['id'].strip() 
+            deptid = request.POST['id'].strip() 
             try:
-                block = models.Dept.objects.get(pk = blockid)
-                block.delete()
+                dept = models.Dept.objects.get(pk = deptid)
+                dept.delete()
                 result['status'] ='ok'
                 result['msg'] = _('Done')
             except models.Dept.DoesNotExist:

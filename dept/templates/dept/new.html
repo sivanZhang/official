@@ -1,92 +1,96 @@
 {% extends 'base.html' %}
 {% block fixed_menu_class %}fixed_menu_class{%endblock%}
 {% load i18n %}
-{% block pagetitle%}创建职位{% endblock%}
- {% block css %}
-<link href="/static/products/css/new.css" rel="stylesheet">
-<link type="text/css" rel="stylesheet" href="/static/css/HoldOn.css">  {% endblock %} 
+{% block pagetitle%}体验店{% endblock%}
+ {% block css %} 
+<link type="text/css" rel="stylesheet" href="/static/css/HoldOn.css"> 
+ {% endblock %} 
 {% block content %}
+{% if perm %}
 <form action="" method="post">
     {%csrf_token%} 
-    <input type="hidden" name="method" value="detail_file" /> 
-     
+    <input type="hidden" name="method" value="create" /> 
+    
+    {{ form.as_p }} 
 </form>
-
-<section>
-    <!-- 路径导航 -->
-    <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="{% url 'product:products' %}">页面列表{{request.user}}</a></li>
-        <li class="active">发布页面</li>
-        <li class="active">修改页面信息</li> 
-    </ol> 
-    <div  class="form-horizontal">
-        <div class="form-group">
-            <label for="id" class="col-sm-2 control-label"></label>
-            <div class="col-sm-3"> 
-                    职位类型： <select class="form-control " id="sel-category">
-                    {% for category in categories %} 
-                        <option value ="{{category.id}}"  >{{category.name}}</option>
-                    {% endfor%}
-                </select>
-            </div>
+{% endif %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+                <h1></h1>
         </div>
-        <div class="form-group">
-            <label for="id" class="col-sm-2 control-label">
-            </label>
-            <div class="col-sm-5">
-                    职位名称：<input type="text" class="form-control" name="title" id="title" value="{{product.title}}" placeholder="">
-            </div>
-
-        </div>
-        
-        <div class="form-group">
-            <label for="name" class="col-sm-2 control-label"></label>
-            <div class="col-sm-5 ta-wrap">
-                    工作地址:<input type="text" class="form-control" name="desc" value="{{product.description|default:''}}" id="desc" placeholder="">
-                <span>0/50</span>
-            </div>
-
-        </div>
-
-        <div class="form-group">
-            <label for="message" class="col-sm-2 control-label"> </label>
-            <div class="col-sm-10">
-                {{ form.as_p }} 
-            </div>
-        </div>
-        <div class="form-group">
-                <label for="message" class="col-sm-2 control-label"> </label>
-                <div class="col-sm-10">
-                        <input type="hidden" class="form-control"   value="{{product.taobaourl|default:''}}" id="taobaourl" placeholder="">
-                </div>
-    
-        </div> 
-        <div class="form-group">
-                <div class="msg "> </div>
-                <div class="submit"> 
-                        <span class="btn-group " role="group " aria-label="... ">
-                            <button type="button" class="btn btn-primary product-btn " status="1 ">发布</button>
-                          
-                            <button type="button " class="btn btn-default ">
-                            <i class="fa fa-file-text-o " aria-hidden="true "></i>
-                             
-                        </button>
-                     </span>
-                </div>
-    
-        </div> 
     </div>
-   
-    
-</section>
+</div>
+<div class="container">
+    {% if not perm %}
+        <div class="row"> 
+            <div class="col-xs-4">
+                <input type="text" class="" id="name" placeholder="店名" value=""/>
+            </div> 
+            <div class="col-xs-2">
+                <select   class="" id="storetype"  >
+                    <option value="2">旗舰店</option>
+                    <option value="1">经销店</option>
+                    <option value="3">加盟店</option>
+                </select>   
+            </div> 
+            <div class="col-xs-2">
+                    <input type="text" class="" id="phone" placeholder="电话" value=""/>   
+            </div> 
+        </div>
+        <div class="row"> 
+                <div class="col-xs-1">
+                    <select   class="" id="provice" > 
+                    </select>
+                </div> 
+                <div class="col-xs-1">
+                    <select   class="" id="city"  > 
+                    </select>   
+                </div> 
+                <div class="col-xs-1">
+                        <select   class="" id="county"  > 
+                            </select>    
+                </div> 
+                <div class="col-xs-5">
+                        <input type="text" class="" id="address" placeholder="详细地址" value=""/>   
+                </div> 
+            </div>
+        <div class="row">
+            <div class="col-xs-12">
+                    {{ form.as_p }} 
+            </div> 
+            <div class="col-xs-12 ">
+                    <input type="button" class="btn-text-white orange-bg  common-btn buy-btn"
+                    id="add"  value="+{% trans 'Add' %}"/> 
+            </div>  
+        </div>
+    {% endif %}
+    <div class="row">
+            <div class="col-xs-12 ">
+            <table class="table">
+                {% for dept in depts %} 
+                            <tr >
+                                <td><a href="{% url "dept:list" %}?detail={{dept.id}}" >{{dept.name}}</a></td>
+                                <td>{{dept.get_dept_type_display}}</td>
+                                <td>{{dept.area.short_name}}</td>
+                                <td>{{dept.address}}</td>
+                                <td>{{dept.phone}}</td> 
+                                <td> <input type="button" deptid="{{dept.id}}" class="btn-text-white orange-bg  common-btn delete"
+                                       value="+{% trans 'Delete' %}"/> </td> 
+                            </tr> 
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+ 
+
 {% endblock %} 
 {% block js %} 
-<script type="text/javascript" src="/static/js/HoldOn.min.js"></script>
-<script>
-    //var data = CKEDITOR.instances.editor1.getData(); 
-</script>
-{{ form.media }}
-<script src="/static/products/js/new.js " rel="stylesheet "></script>
  
+{{ form.media }}
+<script src="/static/area/js/area.js " rel="stylesheet "></script>
+<script type="text/javascript" src="/static/js/HoldOn.min.js"></script>
+<script src="/static/dept/js/add.js " rel="stylesheet "></script>
 {% endblock %}

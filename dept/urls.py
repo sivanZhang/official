@@ -3,5 +3,5 @@ from dept.views import DeptView
 
  
 urlpatterns = [  
-    url(r'^list/$', DeptView.as_view(), name='blockcontents'),             
+    url(r'^list/$', DeptView.as_view(), name='list'),             
 ]

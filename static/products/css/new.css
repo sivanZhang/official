@@ -41,15 +41,7 @@ i.fa-shopping-cart {
     margin-right: 0px;
     margin-left: 0px;
 }
-
-table {
-    margin: 20px 0;
-}
-
-table:first-child {
-    text-align: center;
-}
-
+ 
 i.fa-trash-o {
     color: rgb(201,22,35);
 }

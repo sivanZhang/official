@@ -28,7 +28,7 @@ class Dept(BaseDate):
     name = models.CharField(_('title'), max_length = 2048)
     # 地址
     area = models.ForeignKey(Area)
-    detail = models.CharField(_('detail address'), max_length = 2048, null = True)
+    address = models.CharField(_('detail address'), max_length = 2048, null = True)
     # 创建者
     user = models.ForeignKey(User)
     
