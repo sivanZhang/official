@@ -48,9 +48,7 @@ a:visited {
 /* deteil */
 
 .info-form form {
-  padding:30px 0;
-  width: 50%;
-  margin: 0 auto;
+  padding:15px 15px 30px;
 }
 label{
   margin-top: 20px;
