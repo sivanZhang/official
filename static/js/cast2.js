@@ -148,6 +148,36 @@ $(document).ready(function () {
      */
     var windowHeight = window.innerHeight;
     $('section,.img360_holder').css('height', windowHeight - 50 + 'px');
-})
-
-
+});
+/* function elementInViewport2(el) {
+    var top = el.offsetTop;
+    var left = el.offsetLeft;
+    var width = el.offsetWidth;
+    var height = el.offsetHeight;
+  
+    while(el.offsetParent) {
+      el = el.offsetParent;
+      top += el.offsetTop;
+      left += el.offsetLeft;
+    }
+  
+    return (
+      top < (window.pageYOffset + window.innerHeight) &&
+      left < (window.pageXOffset + window.innerWidth) &&
+      (top + height) > window.pageYOffset &&
+      (left + width) > window.pageXOffset
+    );
+  } */
+/*   var eTop=$('.image-text').offset().top,
+     eHeight=$('.image-text').height();
+  
+  var wTop=$(window).height();
+  window.onresize = function(){
+    var wTop=$(window).height();
+  }
+  $(window).scroll(function(){
+    var dTop = $(document).scrollTop();
+    if(dTop+wTop-600> eTop){
+        $('.image-text').parents('section').addClass('move');
+    }
+  }) */
