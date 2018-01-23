@@ -167,6 +167,7 @@
     bottom: 0px;
     color:#fff;
 }
+/* 漂浮动画 */
 .roll-tip
 {
    
@@ -176,9 +177,26 @@
     border-radius: 50%;
     background-color: white;
     cursor: pointer;
-    margin: 0 auto 10px;
+    transform: translateX(-50%);
+    position: absolute;
+    top: -56px;
+    left: 50%;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    -webkit-animation: opener 1s ease-in-out alternate infinite;
+    animation: opener 1s ease-in-out alternate infinite;
+    -webkit-transition: opacity .2s ease-in-out, transform .5s ease-in-out .2s;
+    transition: opacity .2s ease-in-out, transform .5s ease-in-out .2s;
+}
+@-webkit-keyframes opener {
+    100% {
+        top: -48px;
+    }
+}
+@keyframes opener {
+    100% {
+        top: -48px;
+    }
 }
 .roll-tip td, .roll-tip-holder{
     text-align: center;
@@ -295,21 +313,13 @@
 }
 
 
-.img360_holder
+.img360_holder.img360_holder
 {
+    padding-top: 30px;
     background-color: #000201;
     position: relative;
 }
 
-
-
-
-.img360{
-    
-    height: 80%;
-    margin: 0 auto;
-    
-}
 .img360-text{
     height: unset!important;
     position: absolute;
@@ -320,7 +330,9 @@
 .p_title_2 img
 {
     width: 30px;
+    
 }
+
 /* base */
 .fixed-position {
     position: relative;
@@ -368,33 +380,33 @@
   }
   section {
     position: relative;
-    background-size: auto 100%!important;
+    background-size:cover!important;
     background-position:top center!important;
     background-repeat:no-repeat!important;
   }
   section.sec1-show {
-    background: url(/static/img/product/sc1.jpg);
+    background: url(/static/img/product/sc1.png);
   }
   section.sec1-hide {
-    background: url(/static/img/product/sc1hide.jpg);
+    background: url(/static/img/product/sc1hide.png);
   }
   section.sec2-show {
-    background: url(/static/img/product/sc2.jpg);
+    background: url(/static/img/product/sc2.png);
   }
   section.sec2-hide {
-    background: url(/static/img/product/sc2hide.jpg);
+    background: url(/static/img/product/sc2hide.png);
   }
   section.sec3-show {
-    background: url(/static/img/product/sc3.jpg);
+    background: url(/static/img/product/sc3.png);
   }
   section.sec3-hide {
-    background: url(/static/img/product/sc3hide.jpg);
+    background: url(/static/img/product/sc3hide.png);
   }
   section.sec4-show {
-    background: url(/static/img/product/sc4.jpg);
+    background: url(/static/img/product/sc4.png);
   }
   section.sec4-hide {
-    background: url(/static/img/product/sc4hide.jpg);
+    background: url(/static/img/product/sc4hide.png);
   }
 
   .btn-list {
@@ -499,9 +511,65 @@
   }
   .threesixty img{
       margin: 0 auto;
-      height: 80%!important;
+      height: 60%!important;
   }
-  div.threesixty
+  .threesixty-frame{
+    height: 60%!important;
+  }
+  .image-text table{
+      text-align: center;
+  }
+  .image-text table td{
+      width: 100px;
+      padding: 6px 0;
+  }
+  .image-text img{
+      width: 40px;
+  }
+  .image-text table{
+    margin-top: 120px;
+  }
+  .show1,.show3{
+      position: absolute;
+      top: 50%;
+      left:60%;
+      transform: translateY(-50%);
+  }
+  .show2,.show4{
+    position: absolute;
+    top: 50%;
+    left:10%;
+    transform: translateY(-50%);
+}
+  .hide-text{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+  dl{
+      display: inline-block;
+  }
+  .image-text .show-t{
+      font-size: 50px;
+      font-weight: 300;
+      margin-bottom: 30px;
+  }
+  .image-text .show-msg{
+    font-size: 20px;
+}
+.hide-text div{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.hide-text ul{
+    font-size: 16px;
+    color: #6c6c6c;
+}
+.mb{
+    margin-bottom: 120px;
+}
+.hide-text li
 {
-  height: 80%!important;
+    list-style-type:disc;
 }

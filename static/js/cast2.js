@@ -22,7 +22,7 @@ $(document).ready(function () {
     var parameter = $('.parameter');//技术特性
     var character = $('.character');//特性
 
-    //$('.swiper-slide').css({'margin':height/2+'px ' + (width/2-20) + 'px'});
+  
 
     $(document).scroll(function () {
         var scrollheight = $(document).scrollTop();
@@ -147,7 +147,7 @@ $(document).ready(function () {
      *板块高度
      */
     var windowHeight = window.innerHeight;
-    $('section').css('height', windowHeight - 50 + 'px');
+    $('section,.img360_holder').css('height', windowHeight - 50 + 'px');
 })
 
 
