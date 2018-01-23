@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block fixed_menu_class %}fixed_menu_class{%endblock%}
+{% load i18n %}
+{% block pagetitle%}{{contentblock.title}}{% endblock%}
+{% block css %}
+<link href="/static/page/css/pagebase.css" rel="stylesheet">
+<link href="/static/page/css/active.css" rel="stylesheet">   
+
+ {% endblock %}
+{% block content %}
+
+<div class=" container-title" >
+    <div class="container ">
+        <div class="items_holder">
+                    <h2 class="title orange">{{page.block.title}} </h2> 
+                    <a href="/">{% trans 'Home' %}</a>
+                    <a href="javasrcipt:;">/ {% trans 'News Center' %}</a> 
+                    <a href="javasrcipt:;">/{{page.block.title}}</a> 
+        </div> 
+    </div> 
+</div>
+<div class="container  ">
+    <div class="row  ">  
+            <div class="col-xs-10   text-center">
+            </div>
+            <div class="col-xs-10   text-center">
+                    {% for page in pages %} 
+                        {% if page.mark == 'top' %}
+                        <!--顶部大图-->
+                            <div class="col-xs-12"> 
+                                    <div class="img-holder">
+                                        <img class="active-img" src="{{mediaroot}}{{page.pic}}"/>
+                                    </div> 
+                                    <p>{{page.date| date:"Y-m-d"}}</p> 
+                            </div> 
+                        {% endif %}
+                    {% endfor %}
+            </div>  
+    </div>
+    <div class="row  ">  
+        <div class="col-xs-10   text-center">
+            {% trans 'Product' %}
+        </div> 
+                    {% for page in pages %} 
+                       {% if page.mark == 'product' %}
+                        <div class="col-xs-6"> 
+                                <div class="img-holder">
+                                    <img class="active-img" src="{{mediaroot}}{{page.pic}}"/>
+                                </div> 
+                        </div> 
+                        {% endif %}
+                    {% endfor %}
+               
+    </div>
+    <div class="row  ">  
+                <div class="col-xs-10   text-center">
+                    {% trans 'Brand' %}
+                </div> 
+                    {% for page in pages %} 
+                       {% if page.mark == 'brand' %}
+                        <div class="col-xs-6"> 
+                                <div class="img-holder">
+                                    <img class="active-img" src="{{mediaroot}}{{page.pic}}"/>
+                                </div> 
+                        </div> 
+                        {% endif %}
+                    {% endfor %}
+                
+    </div>
+    <div class="row  ">  
+                <div class="col-xs-10   text-center">
+                    {% trans 'Active' %}
+                </div> 
+                    {% for page in pages %} 
+                       {% if page.mark == 'active' %}
+                        <div class="col-xs-6"> 
+                                <div class="img-holder">
+                                    <img class="active-img" src="{{mediaroot}}{{page.pic}}"/>
+                                </div> 
+                        </div> 
+                        {% endif %}
+                    {% endfor %}
+            </div>
+       
+    </div>
+</div>  
+{% endblock%}
+{% block js %} 
+{% endblock %}

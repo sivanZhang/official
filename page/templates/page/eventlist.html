@@ -42,11 +42,11 @@
                 </table>
             </div>
    
-            <div class="col-sm-12 col-md-12 col-lg-12 col-active-list text-center">
-                    {% for page in eventyear.pages %}
+            <div class="col-sm-12 col-md-12 col-lg-12   text-center">
+                    {% for page in eventyear.pages %} 
                     <div class="col-sm-12 col-md-4 col-lg-4"> 
                             <div class="img-holder">
-                                <img class="active-img" src="{{mediaroot}}{{product.pageurl}}"/>
+                                <img class="active-img" src="{{mediaroot}}{{page.pic}}"/>
                             </div>
                             <a class="img_title orange" href="{{page.url}}" title="{{page.title}}">{{page.title}}</a>
                             <p>{{page.date| date:"m-d"}}</p> 

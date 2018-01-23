@@ -96,17 +96,20 @@ class PageView(View):
                 return render(request, 'page/faith.html', content)
         if 'service' == blockname and 'list' == pagename:
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
-            content['page'] = pages[0]
-            content['pages'] = replace_slide(pages)
+            #content['page'] = pages[0]
+            #content['pages'] = replace_slide(pages)
             if isMble:
                 return render(request, 'page/service.html', content)
             else:
                 return render(request, 'page/service.html', content)
         if 'news' == blockname :
-            # 媒体报道
-            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
-            content['page'] = pages[0]
-            content['pages'] = replace_slide(pages)
+            # 新闻
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark = blockname)
+            
+            if len(pages) == 0:
+                raise Http404
+            content['pages'] = pages 
+            content['contentblock'] = pages[0].block
             if isMble:
                 return render(request, 'page/news.html', content)
             else:
@@ -121,10 +124,7 @@ class PageView(View):
             else:
                 return render(request, 'page/video.html', content)
         if 'contactus' == blockname :
-            # 媒体报道
-            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
-            content['page'] = pages[0]
-            content['pages'] = replace_slide(pages) 
+            # 联系我们 
             if isMble:
                 return render(request, 'page/contactus.html', content)
             else:
@@ -162,9 +162,9 @@ class PageView(View):
                 if page.date:
                     year = page.date.year
                     mark = False
-                    for activeyear in content['eventyears']:
-                        if activeyear['year'] == year:
-                            activeyear['pages'].append(page)
+                    for eventyear in content['eventyears']:
+                        if eventyear['year'] == year:
+                            eventyear['pages'].append(page)
                             mark = True
                             break
                     if mark == False:
