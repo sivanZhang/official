@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
-{% block css %} 
-<link href="/static/product/css/cast2.css"  rel="stylesheet">
+{% block css %}
+<link href="/static/css/footer.css"  rel="stylesheet">
+<link href="/static/css/cast2.css"  rel="stylesheet">
 {% endblock %} 
 {% block content %} 
     <div class="img360_holder"> 
       
           <div class="threesixty" data-path="/static/img/360pics/{index}.png" data-count="30"></div>
+          <div class="threesixty product1">
+            <div class="spinner">
+                <span>0%</span>
+            </div>
+            <ol class="threesixty_images"></ol>
+        </div>
           <div class="img360-text">
               <h2 class="text-center image-text orange" >未来/一“触”即现
               </h2> 
@@ -538,27 +545,42 @@
     
     {% block js %}
     <script src="/static/js/cast2.js"></script>
-    <script src="/static/plugins/jquery.threesixty.js"></script>
-     <!-- Initialize Swiper -->
+    <!--<script src="/static/plugins/jquery.threesixty.js"></script>
+     
     <script>
       $(document).ready(function(){
-    $('.threesixty').threeSixty({
-        dragDirection: 'horizontal',
-        useKeys: false
-    });
-});
-/*
+            $('.threesixty').threeSixty({
+                dragDirection: 'horizontal',
+                useKeys: false
+            });
+        }); 
+    </script>-->
+    <script src="/static/plugins/threesixty-slider/threesixty.min.js"></script>
+    <script>
       $(document).ready(function(){
-        var height = window.innerHeight;
-        $('.img360_holder').height(height);
-      });
-      var images = [];
-      for(var i = 1; i < 30; i+=1)
-      {
-          images.push('/static/img/360pics/'+i+'.png');
-      }
-      $("#img360").threesixty({images:images, method:'click', 'cycle':3, direction:"backward"});
-      */
+            var product;
+            function init(){ 
+                var images = [];
+                for(var i = 1; i < 30; i+=1)
+                {
+                    images.push('/static/img/360pics/'+i+'.png');
+                }
+                product1 = $('.product360').ThreeSixty({
+                    totalFrames: 72, // Total no. of image you have for 360 slider
+                    endFrame: 72, // end frame for the auto spin animation
+                    currentFrame: 1, // This the start frame for auto spin
+                    imgList: '.threesixty_images', // selector for image list
+                    progress: '.spinner', // selector to show the loading progress
+                    imagePath:'/static/img/360pics/', // path of the image assets 
+                    ext: '.png', // extention for the assets
+                    height: 265,
+                    width: 400,
+                    navigation: true,
+                    disableSpin: true // Default false
+                });
+            
+            }
+        }); 
     </script>
     {% endblock %}
   
