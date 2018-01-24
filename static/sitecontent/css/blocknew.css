@@ -1,5 +1,7 @@
 
-
+section.container{
+    margin-top: 40px;
+}
 button[type=submit],label.control-label{
     border-radius: 17px;
     padding: 6px 15px;
@@ -9,7 +11,7 @@ button[type=submit],label.control-label{
     font-size: 20px;
 }
 button[type=submit],#file{
-background: #306efe linear-gradient(120deg,#30cde2 0,#306efe 100%) no-repeat;
+background: #ea5014 linear-gradient(120deg,rgb(253, 175, 145) 0,#ea5014 100%) no-repeat;
 border: none;
 line-height: 1.5;
 }
@@ -43,11 +45,14 @@ tr.table_con{
     position:relative;
 }
 i.fa-pencil-square-o{
-    color:blue;
+    color:#23527c;
 }
 i.fa-trash-o{
     color:red;
  }
  td>.fa{
     cursor: pointer;
+ }
+ a{
+     color: #333;
  }
