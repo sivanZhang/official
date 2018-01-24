@@ -348,6 +348,9 @@ li{
 .image-text{
     font-family: '方正兰亭纤黑简体';
 }
+.f12{
+    font-size:12px;
+}
 /* section .image-text{
     -webkit-transition: opacity 0.8s, -webkit-transform 0.8s;
     transition: opacity 0.8s, transform 0.8s;
