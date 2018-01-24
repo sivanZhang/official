@@ -542,11 +542,15 @@
      <!-- Initialize Swiper -->
     <script>
       $(document).ready(function(){
-    $('.threesixty').threeSixty({
-        dragDirection: 'horizontal',
-        useKeys: false
-    });
-});
+          six = $('.threesixty').threeSixty({
+              dragDirection: 'horizontal',
+              useKeys: false
+          });
+          var father_h = $('.img360_holder').height();
+          
+         if (father_h > 800)
+             $('.threesixty').css({'margin-top':(father_h/6)+'px'});
+      });
 /*
       $(document).ready(function(){
         var height = window.innerHeight;

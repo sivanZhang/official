@@ -61,12 +61,12 @@
 .second-menu .buy>a{
     color:#fff;
 }
-
-
-.threesixty {
-    /* width: 500px; */
-    height: 800px;
-    margin: 0 auto;
+@media screen and (max-width: 1550px) {
+    .threesixty {
+        /* width: 500px; */
+        height: 800px;
+        margin: 0 auto;
+    }
 }
 
 .sub-item
