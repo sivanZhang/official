@@ -93,4 +93,5 @@ $(document).ready(function() {
             }
         })
     })
+    $('.django-ckeditor-widget').addClass('col-xs-9');
 });

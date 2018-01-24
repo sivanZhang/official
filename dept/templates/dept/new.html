@@ -4,6 +4,7 @@
 {% block pagetitle%}体验店{% endblock%}
  {% block css %} 
 <link type="text/css" rel="stylesheet" href="/static/css/HoldOn.css"> 
+<link href="/static/dept/css/list.css" rel="stylesheet"> 
  {% endblock %} 
 {% block content %}
 {% if perm %}
@@ -14,52 +15,50 @@
     {{ form.as_p }} 
 </form>
 {% endif %}
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-                <h1></h1>
-        </div>
-    </div>
-</div>
-<div class="container">
+<div class="container new">
+        <div class="row">
+                <div class="col-xs-12">
+                    <div class="add-title">添加体验店</div>
+                </div>
+            </div>
     {% if not perm %}
         <div class="row"> 
             <div class="col-xs-4">
-                <input type="text" class="" id="name" placeholder="店名" value=""/>
+                <input type="text" class="form-control" id="name" placeholder="店名" value=""/>
             </div> 
             <div class="col-xs-2">
-                <select   class="" id="storetype"  >
+                <select   class="form-control" id="storetype"  >
                     <option value="2">旗舰店</option>
                     <option value="1">经销店</option>
                     <option value="3">加盟店</option>
                 </select>   
             </div> 
-            <div class="col-xs-2">
-                    <input type="text" class="" id="phone" placeholder="电话" value=""/>   
+            <div class="col-xs-3">
+                    <input type="text" class="form-control" id="phone" placeholder="电话" value=""/>   
             </div> 
         </div>
         <div class="row"> 
-                <div class="col-xs-1">
-                    <select   class="" id="provice" > 
+                <div class="col-xs-2">
+                    <select   class="form-control" id="provice" > 
                     </select>
                 </div> 
-                <div class="col-xs-1">
-                    <select   class="" id="city"  > 
+                <div class="col-xs-2">
+                    <select   class="form-control" id="city"  > 
                     </select>   
                 </div> 
-                <div class="col-xs-1">
-                        <select   class="" id="county"  > 
+                <div class="col-xs-2">
+                        <select   class="form-control" id="county"  > 
                             </select>    
                 </div> 
-                <div class="col-xs-5">
-                        <input type="text" class="" id="address" placeholder="详细地址" value=""/>   
+                <div class="col-xs-3">
+                        <input type="text" class="form-control" id="address" placeholder="详细地址" value=""/>   
                 </div> 
             </div>
         <div class="row">
-            <div class="col-xs-12">
+            <div>
                     {{ form.as_p }} 
             </div> 
-            <div class="col-xs-12 ">
+            <div class="col-xs-12">
                     <input type="button" class="btn-text-white orange-bg  common-btn buy-btn"
                     id="add"  value="+{% trans 'Add' %}"/> 
             </div>  
@@ -67,6 +66,8 @@
     {% endif %}
     <div class="row">
             <div class="col-xs-12 ">
+                
+                            <div class="table-title">体验店列表</div>
             <table class="table">
                 {% for dept in depts %} 
                             <tr >

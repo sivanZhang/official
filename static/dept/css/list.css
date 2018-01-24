@@ -1,0 +1,51 @@
+.add-title{
+    background-color: rgb(249, 249, 248);
+    padding: 20px 15px;
+    font-size: 16px;
+    margin-top: 40px;
+}
+.table-title
+{
+    background-color: rgb(249, 249, 248);
+    padding: 20px 15px;
+    font-size: 16px;
+}
+.new .row{
+    margin-bottom: 20px;
+}
+.input-wrap{
+    padding: 0px;
+}
+.django-ckeditor-widget.col-xs-9{
+    margin-bottom: 20px;
+}
+#cke_id_detail{
+    width: 100%!important;
+}
+label[for=id_detail]{
+    padding: 0 15px;
+}
+.table-striped>tbody>tr:nth-of-type(odd){
+    background-color: unset;
+  }
+  .table>tbody>tr:first-child>td{
+    border-top: 0!important;
+  }
+  .table>thead>tr>th{
+    border-bottom: 0;
+  }
+  .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    padding: 15px 8px;
+  }
+  .table th:first-child,.table td:first-child{
+    width: 40%;
+    text-align: left;
+    padding-left: 15px;
+  }
+  .table{
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  .table a{
+      color: #333;
+  }

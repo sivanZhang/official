@@ -284,8 +284,7 @@ td.td-bar-point
 .menu-holder{
     position: fixed;
     top: 0;
-    z-index: 10; 
-    overflow: hidden;
+    z-index: 10;
 }
 footer .pull-left{
     font-size: 12px;

@@ -101,9 +101,9 @@
     height: 100%;
     width: 100%;
     position: relative;
-    background-size: auto 100%!important;
-    background-position:top center!important;
-    background-repeat:no-repeat!important;
+    background-size: cover!important;
+    background-position: top center!important;
+    background-repeat: no-repeat!important;
   }
   .sider0{
     background: url(/static/img/slider/slider1.jpg);
