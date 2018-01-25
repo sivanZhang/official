@@ -1,11 +1,11 @@
-.video-first img{
+.video img{
     width: 100%;
 }
 video a{
     display: block;
     color: inherit;
 }
-.video-first{
+.video-first,.video-list{
     cursor: pointer;
 }
 .video{
@@ -15,20 +15,31 @@ video a{
     display: none;
     position: fixed;
     top: 0;
-    width: 100;
+    width: 100%;
     height: 100%;
-    z-index: 10000;
+    z-index: 100000;
+    background-color: #000;
     
 }
 video{
-    max-width: 100%;
+    width: auto;
+    height: auto;
 }
-.close{
+.v-wrap img.close{
     position: absolute;
     right: 30px;
     top: 30px;
-    width: 60px;
-    height: 60px;
-    padding: 6px;
-    background-color: #000;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    background-color: #ea5014;
+    border-radius: 50%;
+    opacity:.5;
+}
+.v-wrap img.close:hover{
+    opacity:1;
+}
+.video-list img{
+    width: 100%;
+    height: 180px;
 }

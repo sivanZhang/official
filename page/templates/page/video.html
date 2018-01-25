@@ -5,7 +5,8 @@
 {% block css %}
 <link href="/static/page/css/pagebase.css" rel="stylesheet">
 <link href="/static/page/css/video.css" rel="stylesheet">
-<script href="/static/page/js/video.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/static/css/swiper.css">
+<script href="/static//page/js/video.js" type="text/javascript"></script>
 <style>
       .top-slide{
         background-image: url('{{mediaroot}}{{page.pic|safe}}');
@@ -15,7 +16,7 @@
 {% block content %}
  
 <div class=" container-title" >
-    <div class="container ">
+    <div class="container">
         <div class="items_holder">
               <h2 class="title orange">{{product.title}}炫酷视频</h2>
               <a href="/">{% trans 'Home' %}</a>
@@ -24,46 +25,77 @@
         </div> 
     </div> 
 </div>
-<div class="container video">
-    <div class="row"> 
-      <div class="col-xs-12">
-          
-            
+<div class="container-fluid video">
+    
             {% for page in pages %}
-            <div class="video-first">
-                    <img src="{{mediaroot}}{{page.pic|safe}}">
-                   <div class="v-wrap">
-                       <img class="close" src="/static/img/icon/close.svg" />
-                            <video width="100%" controls>
-                                    <source src="{{page.url}}" type="video/mp4">
-                                    视频无法播放
-                            </video>
-                    </div>
-                    <div>{{page.title}}</div>
-                    <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
+            <div class="video-first container">
+                <img src="{{mediaroot}}{{page.pic|safe}}">
+            
+                <div>{{page.title}}</div>
+                <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
             </div>
-             {% endfor %}
-      </div>
-     
-    </div>
-</div>  
+            <div class="v-wrap">
+                <img class="close" src="/static/img/icon/w_close.svg" />
+                <video width="100%" controls>
+                    <source src="{{page.url}}" type="video/mp4"> 视频无法播放
+                </video>
+            </div>
+            {% endfor %}
+            
+</div> 
+<div class="swiper-container container">
+        <div class="swiper-wrapper">
+            {% for page in pages %}
+            <div class="swiper-slide">
+                    
+                <div class="video-list container">
+                        <img src="{{mediaroot}}{{page.pic|safe}}">
+                        <div>{{page.title}}</div>
+                        <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
+                </div>
+                
+                        
+            </div>
+            <div class="v-wrap">
+                    <img class="close" src="/static/img/icon/w_close.svg" />
+                    <video width="100%" controls>
+                        <source src="{{page.url}}" type="video/mp4"> 视频无法播放
+                    </video>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
+    </div> 
 <br/>
 <br/>
 {% endblock%}
 {% block js %} 
-
-<script>
-    
-$( document ).ready(function() {
-      $('#position').click(function(){
-           location.href="{% url 'page:page' 'asubrand' 'join' %}?position";
-      });
-      $('.video-first').on("click",function(){
-        $('.v-wrap').show();
-    })
-    $('.close').on("click",function(){
-        $(this).parents('.v-wrap').hide();
-    })
-  });
-  </script>
+<script type="text/javascript " src="/static/js/swiper-3.4.2.jquery.min.js "></script>
+<script> 
+    $(document).ready(function () {
+        $('#position').click(function () {
+            location.href = "{% url 'page:page' 'asubrand' 'join' %}?position";
+        });
+        $('.video-first').on("click", function () {
+            $('.v-wrap').show();
+        })
+        $('.close').on("click", function () {
+            $(this).parents('.v-wrap').hide();
+        })
+        /* 轮播图初始化 */
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: '.swiper-pagination',
+        paginationClickable: true, 
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        debugger: true,
+        slidesPerView : 3,
+        spaceBetween : 15
+    });
+    });
+</script>
 {% endblock %}
