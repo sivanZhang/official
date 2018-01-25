@@ -4,7 +4,7 @@
 {% block pagetitle%}{{contentblock.title}}{% endblock%}
 {% block css %}
 <link href="/static/page/css/pagebase.css" rel="stylesheet">
-<link href="/static/page/css/active.css" rel="stylesheet">   
+<link href="/static/page/css/event.css" rel="stylesheet">   
 <style>
         .top-slide{
           background-image: url('{{mediaroot}}{{img|safe}}');
@@ -28,30 +28,26 @@
         </div> 
     </div> 
 </div>
-<div class="container  ">
+<div class="container event-container ">
     <div class="row  "> 
         {% for eventyear in eventyears %}
              
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <table class="active-tip">
+            <div class="col-xs-12 eventlist">
+                <table class="event-table">
                     <tr>
-                    <td><span class="number orange">{{eventyear.year}} </span></td>
-                    <td class="td_line"><hr> </td>
-                    <td class="td_fa"> </td>
+                    <td class="date"><span class="number orange">{{eventyear.year}} </span></td>
+                    <td></td>
+                    <td></td>
                     </tr>
-                </table>
-            </div>
-   
-            <div class="col-sm-12 col-md-12 col-lg-12   text-center">
+              
                     {% for page in eventyear.pages %} 
-                    <div class="col-sm-12 col-md-4 col-lg-4"> 
-                            <div class="img-holder">
-                                <img class="active-img" src="{{mediaroot}}{{page.pic}}"/>
-                            </div>
-                            <a class="img_title orange" href="{{page.url}}" title="{{page.title}}">{{page.title}}</a>
-                            <p>{{page.date| date:"m-d"}}</p> 
-                    </div> 
+                     <tr class="eventlist_tr">
+                         <td class="date grey"><span class="datespan" >{{page.date| date:"m月-d日"}} </span></td>
+                         <td><span class="event_point"></span></td>
+                         <td class="msg"><div class="eventtext"> <a class="img_title grey" href="{{page.url}}" title="{{page.title}}">{{page.title}}</a> </div></td>
+                    </tr> 
                     {% endfor %}
+                </table>
             </div>
         {% endfor %}
     </div>
