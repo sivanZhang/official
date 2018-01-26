@@ -125,6 +125,21 @@ class PageView(View):
                 return render(request, 'page/video.html', content)
         if 'contactus' == blockname :
             # 联系我们 
+            try:
+                block = models.AdaptorBaseBlock.objects.get(mark = blockname)
+                content['block'] = block
+                url = block.url
+                match = re.search('\d+', url)
+                if match:
+                    productid = match.group()
+                    try:
+                        product = AdaptorProduct.objects.get(id=productid)
+                        content['product'] = product
+                        content['block'] = block
+                    except AdaptorProduct.DoesNotExist:
+                        raise Http404 
+            except models.AdaptorBaseBlock.DoesNotExist:
+                raise Http404
             if isMble:
                 return render(request, 'page/contactus.html', content)
             else:

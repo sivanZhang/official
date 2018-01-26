@@ -42,3 +42,7 @@ img{
     cursor: pointer;
 }
 
+.swiper-col{
+    height: 200px;
+    overflow: hidden;
+}
