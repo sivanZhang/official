@@ -3,9 +3,10 @@
 {% load i18n %}
 {% block pagetitle%}{{contentblock.title}}{% endblock%}
 {% block css %}
+<link rel="stylesheet" href="/static/css/swiper.css">
 <link href="/static/page/css/pagebase.css" rel="stylesheet">
-<link href="/static/page/css/active.css" rel="stylesheet">   
-
+<link href="/static/page/css/picture.css" rel="stylesheet"> 
+<script src="/static/page/js/picture.js" type="text/javascript"></script>
  {% endblock %}
 {% block content %}
 
@@ -19,71 +20,143 @@
         </div> 
     </div> 
 </div>
-<div class="container  ">
-    <div class="row  ">  
-            <div class="col-xs-10   text-center">
-            </div>
-            <div class="col-xs-10   text-center">
-                    {% for page in pages %} 
-                        {% if page.mark == 'top' %}
-                        <!--顶部大图-->
-                            <div class="col-xs-12"> 
-                                    <div class="img-holder">
-                                        <img class="active-img" src="{{mediaroot}}{{page.pic}}"/>
-                                    </div> 
-                                    <p>{{page.date| date:"Y-m-d"}}</p> 
-                            </div> 
+<div class="container pic-list">
+    <div class="row  "> 
+            <div class="swiper-container"  id="swiper1">
+                    <div class="swiper-wrapper">
+                            {% for page in pages %} 
+                            {% if page.mark == 'top' %}
+                             <!--顶部大图-->
+                        <div class="swiper-slide">
+                                    <img class="active-img" src="{{mediaroot}}{{page.pic}}"/>
+                                <p>{{page.date| date:"Y-m-d"}}</p> 
+                        </div>
                         {% endif %}
                     {% endfor %}
-            </div>  
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+            </div>
     </div>
     <div class="row  ">  
-        <div class="col-xs-10   text-center">
+        <div class="col-xs-12 grey">
             {% trans 'Product' %}
         </div> 
+
+        <div class="swiper-container" id="swiper2">
+                <div class="swiper-wrapper">
                     {% for page in pages %} 
-                       {% if page.mark == 'product' %}
-                        <div class="col-xs-6"> 
-                                <div class="img-holder">
-                                    <img class="active-img" src="{{mediaroot}}{{page.pic}}"/>
-                                </div> 
-                        </div> 
+                        {% if page.mark == 'product' %}
+                    <div class="swiper-slide"><img class="active-img" src="{{mediaroot}}{{page.pic}}"/></div>
                         {% endif %}
                     {% endfor %}
+                </div>
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+        </div>
                
     </div>
-    <div class="row  ">  
-                <div class="col-xs-10   text-center">
+    <div class="row">  
+                <div class="col-xs-12 grey">
                     {% trans 'Brand' %}
                 </div> 
-                    {% for page in pages %} 
-                       {% if page.mark == 'brand' %}
-                        <div class="col-xs-6"> 
-                                <div class="img-holder">
-                                    <img class="active-img" src="{{mediaroot}}{{page.pic}}"/>
-                                </div> 
-                        </div> 
-                        {% endif %}
-                    {% endfor %}
-                
+    <div class="swiper-container" id="swiper3">
+        <div class="swiper-wrapper">
+            {% for page in pages %} 
+                {% if page.mark == 'brand' %}
+            <div class="swiper-slide"><img class="active-img" src="{{mediaroot}}{{page.pic}}"/></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
-    <div class="row  ">  
-                <div class="col-xs-10   text-center">
+    </div>
+    <div class="row">  
+                <div class="col-xs-12 grey">
                     {% trans 'Active' %}
                 </div> 
+
+                <div class="swiper-container" id="swiper4">
+                    <div class="swiper-wrapper">
                     {% for page in pages %} 
                        {% if page.mark == 'active' %}
-                        <div class="col-xs-6"> 
-                                <div class="img-holder">
+                                <div class="swiper-slide">
                                     <img class="active-img" src="{{mediaroot}}{{page.pic}}"/>
-                                </div> 
-                        </div> 
+                                </div>
                         {% endif %}
                     {% endfor %}
+                    </div>
+                    <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
             </div>
        
     </div>
+</div>
+<div class="high_definition text-center">
+        <img class="close" src="/static/img/icon/w_close.svg" />
+        <img id="pic_wall" src="">
 </div>  
 {% endblock%}
 {% block js %} 
+<script type="text/javascript " src="/static/js/swiper-3.4.2.jquery.min.js "></script>
+<script>
+    var swiper1 = new Swiper('#swiper1', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        loop: true,
+        preventLinksPropagation : false,
+        /* 鼠标滚动 */
+        mousewheelControl : true,
+        autoplay: 5000,
+    });
+    var swiper2 = new Swiper('#swiper2', {
+        loop: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        debugger: true,
+        slidesPerView : 3,
+        /* 3d效果 */
+        /* effect : 'coverflow',
+        slidesPerView: 3,*/
+        centeredSlides: true, 
+        /* 点击事件 */
+        preventLinksPropagation : false,
+        /* 鼠标滚动 */
+        mousewheelControl : true,
+        spaceBetween : 10,
+    });
+    var swiper3 = new Swiper('#swiper3', {
+        loop: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        debugger: true,
+        slidesPerView : 3,
+        /* 3d效果 */
+        /* effect : 'coverflow',
+        slidesPerView: 3,*/
+        /* 点击事件 */
+        preventLinksPropagation : false,
+        /* 鼠标滚动 */
+        mousewheelControl : true,
+        spaceBetween : 10,
+    });
+    var swiper4 = new Swiper('#swiper4', {
+        loop: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        debugger: true,
+        slidesPerView : 3,
+        /* 3d效果 */
+        /* effect : 'coverflow',*/
+        /* 点击事件 */
+        preventLinksPropagation : false,
+        /* 鼠标滚动 */
+        mousewheelControl : true,
+        spaceBetween : 10,
+    });
+</script>
 {% endblock %}

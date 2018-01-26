@@ -1,8 +1,54 @@
+/* 通用 */
+.f16{
+    font-size: 16px;
+}
 .orange{
     color:#ea5014
 }
+.orange-bg
+{
+    background-color: #ea5014;
+}
 .grey{
     color: rgb(181, 182, 182);
+}
+.text-overflow{
+    display:block;/*内联对象需加*/
+    width:100%;
+    word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+a:link,a:visited,a:hover,a:active{
+    text-decoration: none;
+}
+
+a:focus{
+    outline: none;
+}
+.common-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    min-width: 100px;
+}
+.btn-text-white{
+    color:white;
 }
 body{
     margin: 0px;
@@ -10,6 +56,10 @@ body{
     width: 100%;
     font-family: "Helvetica Neue", Helvetica, Arial, Verdana, STHeiti, "Microsoft Yahei", sans-serif;
 }
+.container{
+    width: 1200px!important;
+}
+
 /* 菜单设置开始*/
 .menu, .menu-holder{
     min-height: 60px;
@@ -64,16 +114,9 @@ body{
 {
     position: static !important;
 }
-
-
-.orange-bg
-{
-    background-color: #ea5014;
-}
 .menu  .td_mall a{
         margin-left: 13px;
 }
-
 .point{
     width: 5px;
     height:5px;
@@ -87,7 +130,7 @@ body{
     top: -31px;
     overflow: hidden;
     border-top: 1px solid rgb(181, 182, 182);
-z-index: -1;
+    z-index: -1;
 }
 
 .menu .active *{
@@ -98,37 +141,6 @@ z-index: -1;
     background-color: #ea5014;
 }
 /* 菜单设置结束*/
-
-.common-btn {
-    display: inline-block;
-    padding: 4px 12px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    min-width: 100px;
-}
-.btn-text-white{
-    color:white;
-}
-a:link,a:visited,a:hover,a:active{
-    text-decoration: none;
-}
-
-a:focus{
-    outline: none;
-}
 .f-logo{
     width: 14px;
     height: 16px;
@@ -236,18 +248,6 @@ a:focus{
     box-shadow: none;
 }
 
-
-
-.circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    line-height: 40px;
-    text-align: center;
-    background-color: white;
-    cursor: pointer;
-}
-
 .logo
 {
     height: 34px;
@@ -273,9 +273,7 @@ td.td-bar-point
 .container-fluid{
     padding: 0px;
 }
-.container{
-    width: 1200px!important;
-}
+
 .container-center
 {
     text-align: center;

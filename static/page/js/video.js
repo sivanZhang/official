@@ -10,4 +10,6 @@ $(document).ready(function(){
     $('.video-list').on("click",function(){
         $('.v-wrap').show();
     });
+
+    
 })

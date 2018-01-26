@@ -1,0 +1,25 @@
+.pagination_circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    line-height: 40px;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+    margin: 3px; 
+    /*以下是阴影部分*/
+    -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,.19);
+    box-shadow: 0px 1px 3px rgba(0,0,0,.19); 
+}
+
+.pagination_circle .fa{
+    margin-top: 13px;
+}
+.pagination-active
+{
+    background-color: rgb(233, 85, 19);
+    color: white;
+} 
+.pagination a:hover{
+    background-color: white;
+}
