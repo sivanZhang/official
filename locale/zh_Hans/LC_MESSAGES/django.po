@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-27 11:19+0800\n"
+"POT-Creation-Date: 2018-01-27 17:33+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,18 +118,18 @@ msgid "Name, Phone and Address cannot be empty!"
 msgstr "名字，电话号码和地址不能为空！"
 
 #: .\book\views.py:115 .\book\views.py:165 .\bussiness\views.py:108
-#: .\bussiness\views.py:150 .\dept\views.py:127 .\dept\views.py:169
+#: .\bussiness\views.py:150 .\dept\views.py:134 .\dept\views.py:176
 #: .\sitecontent\views.py:111 .\sitecontent\views.py:153
 #: .\sitecontent\views.py:276 .\sitecontent\views.py:325
 msgid "Saved completely!"
 msgstr "保存完成！"
 
-#: .\book\views.py:180 .\bussiness\views.py:165 .\dept\views.py:184
+#: .\book\views.py:180 .\bussiness\views.py:165 .\dept\views.py:191
 #: .\sitecontent\views.py:168 .\sitecontent\views.py:340
 msgid "Done"
 msgstr "完成"
 
-#: .\book\views.py:183 .\bussiness\views.py:168 .\dept\views.py:187
+#: .\book\views.py:183 .\bussiness\views.py:168 .\dept\views.py:194
 #: .\sitecontent\views.py:171 .\sitecontent\views.py:279
 #: .\sitecontent\views.py:343
 msgid "Not found"
@@ -149,7 +149,7 @@ msgstr "关于我们"
 #: .\page\templates\page\joinus.html:24 .\page\templates\page\news.html:17
 #: .\page\templates\page\pic.html:17 .\page\templates\page\positions.html:24
 #: .\page\templates\page\report.html:17 .\page\templates\page\service.html:24
-#: .\page\templates\page\video.html:18
+#: .\page\templates\page\video.html:17
 msgid "Home"
 msgstr "首页"
 
@@ -163,6 +163,18 @@ msgstr "首页"
 #: .\page\templates\page\service.html:25
 msgid "Brand"
 msgstr "品牌"
+
+#: .\dept\models.py:15
+msgid "Affiliate"
+msgstr "加盟店"
+
+#: .\dept\models.py:16
+msgid "Flagship Store"
+msgstr "旗舰店"
+
+#: .\dept\models.py:17
+msgid "Distribution Points"
+msgstr "经销店"
 
 #: .\dept\models.py:31
 #, fuzzy
@@ -179,6 +191,13 @@ msgstr "详情"
 #| msgid "phone"
 msgid "Phone"
 msgstr "电话"
+
+msgid "Please select the city"
+msgstr "请选择查询的门店"
+
+#: .\dept\templates\dept\list.html:51
+msgid "All shop type"
+msgstr "所有门店类型"
 
 #: .\dept\templates\dept\new.html:63
 msgid "Add"
@@ -204,7 +223,7 @@ msgid "Contact us"
 msgstr "联系我们"
 
 #: .\page\templates\page\news.html:18 .\page\templates\page\pic.html:18
-#: .\page\templates\page\report.html:18 .\page\templates\page\video.html:19
+#: .\page\templates\page\report.html:18 .\page\templates\page\video.html:18
 msgid "News Center"
 msgstr "媒体中心"
 
@@ -245,7 +264,7 @@ msgstr "名称"
 msgid "Apply"
 msgstr "申请"
 
-#: .\page\templates\page\video.html:17 .\page\templates\page\video.html:20
+#: .\page\templates\page\video.html:16 .\page\templates\page\video.html:19
 msgid "Awesome video"
 msgstr "炫酷视频"
 

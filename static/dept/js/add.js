@@ -45,12 +45,12 @@ $(document).ready(function() {
         var detail = CKEDITOR.instances['id_detail'].getData();
         var address = $('#address').val();
         var area = 0;
-        if ($('#county').val() )
+        if ($('#county').val() || $('#county').val()  != "-1")
         {
             area = $('#county').val();
         }
         else{
-            if ($('#city').val() )
+            if ($('#city').val() || $('#city').val()  != "-1" )
             {
                 area = $('#city').val();
             } 

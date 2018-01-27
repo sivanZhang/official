@@ -12,9 +12,9 @@ class Dept(BaseDate):
     DISTRIBUTE = 3
      
     STORE_CHOICES = (
-        (AFFILIATE, 'Affiliate'),
-        (FLAGSHIP, 'Flagship Store'),
-        (DISTRIBUTE, 'Distribution Points') 
+        (AFFILIATE, _('Affiliate')),
+        (FLAGSHIP, _('Flagship Store')),
+        (DISTRIBUTE, _('Distribution Points')) 
     )
 
     # 是否允许永久删除产品，即从数据库中删除产品

@@ -64,7 +64,7 @@
 @media screen and (max-width: 1550px) {
     .threesixty {
         /* width: 500px; */
-        height: 800px;
+        height: 500px;
         margin: 0 auto;
     }
 }
@@ -514,11 +514,9 @@
       color: inherit;
   }
   .threesixty img{
-      margin: 0 auto;
-      height: 60%!important;
+      margin: 0 auto; 
   }
-  .threesixty-frame{
-    height: 60%!important;
+  .threesixty-frame{ 
   }
   .image-text table{
       text-align: center;

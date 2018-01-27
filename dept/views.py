@@ -19,10 +19,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status 
 from django.utils.translation import ugettext as _
+from django.db.models import Q
 
 from dept import models 
 from area.models import Area
-
+from area.views import get_provice_list, get_city_list, get_county_list, byte2json
 from mobile.detectmobilebrowsermiddleware import DetectMobileBrowser
 dmb     = DetectMobileBrowser()
 
@@ -74,6 +75,27 @@ class DeptView(View):
             else:
                 return render(request, 'dept/detail.html', content)
         else:
+            # 获取北京的门店：110100
+            if 'provice' in request.GET:
+                provice = request.GET['provice']
+                try:
+                    area = Area.objects.get(id=provice)
+                    content['provicearea'] = area
+                    depts = depts.filter(Q(area__parent_id = provice) | Q(area__id = '110100') )
+                except Area.DoesNotExist: 
+                    depts = depts.filter(Q(area__parent_id = provice) | Q(area__id = '110100') )
+                    area = Area.objects.get(pk='110100')
+            else:
+                depts = depts.filter(Q(area__parent_id = '110100') | Q(area__id = '110100') )
+                area = Area.objects.get(pk='110100')
+
+            provices = get_provice_list(request)
+            provices_json = byte2json(provices.content)
+           
+            content['provices'] = provices_json
+            content['depts'] = depts
+            content['area'] = area
+
             if isMble:
                 return render(request, 'dept/list.html', content)
             else:

@@ -349,6 +349,16 @@ li{
 .f12{
     font-size:12px;
 }
+.grey-bg{
+   background-color: rgb(249,249,248);
+}
+.container100{
+    width: 100% !important;
+}
+.form-control{
+    box-shadow: none;
+}
+
 /* section .image-text{
     -webkit-transition: opacity 0.8s, -webkit-transform 0.8s;
     transition: opacity 0.8s, transform 0.8s;

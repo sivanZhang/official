@@ -41,5 +41,11 @@ def set_locate_session(request):
     request.session['locationname'] = selectname
     return HttpResponse( 'ok' )
 
+def byte2json(content):
+    my_json = content.decode('utf8')
+    # Load the JSON to a Python list & dump it back out as formatted JSON
+    data = json.loads(my_json) 
+    return data
+
 
  

@@ -37,15 +37,66 @@ label[for=id_detail]{
   .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
     padding: 15px 8px;
   }
-  .table th:first-child,.table td:first-child{
-    width: 40%;
+  .table th:first-child,.table td:first-child{ 
     text-align: left;
     padding-left: 15px;
   }
   .table{
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+    text-align: center; 
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.02);
+    
+    background-color: white;
+  } 
+  .col-inline{
+      display: inline-flex;
   }
-  .table a{
-      color: #333;
+  table select{
+      min-width: 150px;
+      
   }
+  table td{
+    margin: 5px;
+  }
+  .tb_search{
+      margin: 20px auto;
+  }
+  .tb_search td{
+      padding-right: 10px;
+  }
+  .top-slide
+  {
+       height: 350px;
+       text-align: center;
+       background-image: url('../img/tu-1.jpg');
+       background-repeat:no-repeat; 
+       background-size:100% 100%;
+       -moz-background-size:100% 100%;
+  }
+  .top-tips{
+      color: white;
+      
+  }
+  .top-slide{
+    padding-right:  0px !important;
+  }
+  .serviceitem{
+    width: 21px;
+    height: 21px;
+    margin-right: 10px;
+  }
+#mapContainer{
+   height: 320px;
+}
+.map{
+    width: 70%;
+}
+.td_title{
+    width: 25%;
+}
+.td_right{
+    border-right: 1px solid rgb(181, 182, 182);
+    margin: 10px 0px;
+}
+.tr_dept{
+    padding: 20px !important;
+}
