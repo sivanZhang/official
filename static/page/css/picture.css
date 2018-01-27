@@ -1,32 +1,28 @@
 #swiper1{
     height:400px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 .pic-list{
     padding: 0 140px;
+    margin-bottom: 120px;
 }
 .active-img{
     width: 100%;
     height: 100%;
 }
-/* #swiper2,#swiper3,#swiper4{
-overflow: visible;
-} */
 .row{
-    margin-top: 50px;
+    margin-top: 40px;
 }
 .high_definition img.close{
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right: 20px;
+    top: 20px;
     width: 40px;
     height: 40px;
-    padding: 4px;
-    background-color: #ea5014;
-    border-radius: 50%;
-    opacity:1;
+    opacity:.8;
+    z-index: 101;
 }.high_definition img.close:hover{
-    opacity:.5;
+    opacity:1;
 }
 .high_definition{
     display: none;
@@ -36,7 +32,8 @@ overflow: visible;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000;
+    z-index: 100;
+    line-height: 100%;
 }
 img{
     cursor: pointer;
@@ -45,4 +42,20 @@ img{
 .swiper-col{
     height: 200px;
     overflow: hidden;
+    padding: 0px;
+    margin-top: 8px;
+}
+.swiper-button-prev, .swiper-button-next{
+    height:30px;
+}
+.gray{
+    color: #808080;
+    font-size: 16px;
+}
+#pic_wall{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
 }
