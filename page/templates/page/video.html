@@ -28,40 +28,29 @@
 <div class="container-fluid video">
     
             {% for page in pages %}
-            <div class="video-first container">
-                <img src="{{mediaroot}}{{page.pic|safe}}">
+            <div class="video-first container" data-video="{{page.url}}">
+                <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
             
                 <div>{{page.title}}</div>
                 <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
             </div>
-            <div class="v-wrap">
-                <img class="close" src="/static/img/icon/w_close.svg" />
-                <video width="100%" controls>
-                    <source src="{{page.url}}" type="video/mp4"> 视频无法播放
-                </video>
-            </div>
             {% endfor %}
             
 </div> 
+
 <div class="container">
     <div class="swiper-container">
         <div class="swiper-wrapper">
             {% for page in pages %}
             <div class="swiper-slide">
                     
-                <div class="video-list">
-                        <img src="{{mediaroot}}{{page.pic|safe}}">
+                <div class="video-list" data-video="{{page.url}}">
+                        <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
                         <div>{{page.title}}</div>
                         <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
                 </div>
                 
                         
-            </div>
-            <div class="v-wrap">
-                    <img class="close" src="/static/img/icon/w_close.svg" />
-                    <video width="100%" controls>
-                        <source src="{{page.url}}" type="video/mp4"> 视频无法播放
-                    </video>
             </div>
             {% endfor %}
         </div>
@@ -69,20 +58,17 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
         
-</div> 
+    </div> 
 </div>
-
+<!-- 弹出视频播放框 -->
+<div class="v-wrap">
+    <img class="close" src="/static/img/icon/w_close.svg" />
+    <video width="100%" controls>
+        <source src="" type="video/mp4"> 视频无法播放
+    </video>
+</div>
 <br/>
 <br/>
-
-<div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-        </div>
-        <!-- 如果需要导航按钮 -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-    </div>
 {% endblock%}
 {% block js %} 
 <script type="text/javascript " src="/static/js/swiper-3.4.2.jquery.min.js "></script>
@@ -108,11 +94,9 @@
         /* effect : 'coverflow',
         slidesPerView: 3,
         centeredSlides: true, */
-        /* 点击事件 */
-        preventLinksPropagation : false,
         /* 鼠标滚动 */
         mousewheelControl : true,
-        spaceBetween : 15,
+        spaceBetween : 10,
     });
     });
 </script>

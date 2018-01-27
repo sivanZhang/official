@@ -8,6 +8,7 @@ $(document).ready(function(){
     });
     
     $('.video-list').on("click",function(){
+        /* var videoSrc = $(this). */
         $('.v-wrap').show();
     });
 

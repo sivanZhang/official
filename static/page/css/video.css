@@ -27,14 +27,12 @@ video{
 }
 .v-wrap img.close{
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right: 15px;
+    top: 15px;
     width: 40px;
     height: 40px;
-    padding: 4px;
-    background-color: #ea5014;
     border-radius: 50%;
-    opacity:.5;
+    opacity:.8;
 }
 .v-wrap img.close:hover{
     opacity:1;
