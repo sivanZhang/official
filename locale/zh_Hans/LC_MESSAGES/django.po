@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-21 23:17+0800\n"
+"POT-Creation-Date: 2018-01-27 11:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,8 +56,8 @@ msgstr "主页内容管理"
 
 #: .\book\templates\book\blocknew.html:27
 #: .\book\templates\book\blocknew.html:29
-#: .\book\templates\book\blocknew.html:78 .\product\models.py:33
-#: .\sitecontent\templates\sitecontent\blocknew.html:27
+#: .\book\templates\book\blocknew.html:78 .\dept\models.py:28
+#: .\product\models.py:33 .\sitecontent\templates\sitecontent\blocknew.html:27
 #: .\sitecontent\templates\sitecontent\blocknew.html:29
 #: .\sitecontent\templates\sitecontent\blocknew.html:78
 #: .\sitecontent\templates\sitecontent\new.html:32
@@ -118,47 +118,75 @@ msgid "Name, Phone and Address cannot be empty!"
 msgstr "名字，电话号码和地址不能为空！"
 
 #: .\book\views.py:115 .\book\views.py:165 .\bussiness\views.py:108
-#: .\bussiness\views.py:150 .\sitecontent\views.py:111
-#: .\sitecontent\views.py:153 .\sitecontent\views.py:276
-#: .\sitecontent\views.py:325
+#: .\bussiness\views.py:150 .\dept\views.py:127 .\dept\views.py:169
+#: .\sitecontent\views.py:111 .\sitecontent\views.py:153
+#: .\sitecontent\views.py:276 .\sitecontent\views.py:325
 msgid "Saved completely!"
 msgstr "保存完成！"
 
-#: .\book\views.py:180 .\bussiness\views.py:165 .\sitecontent\views.py:168
-#: .\sitecontent\views.py:340
+#: .\book\views.py:180 .\bussiness\views.py:165 .\dept\views.py:184
+#: .\sitecontent\views.py:168 .\sitecontent\views.py:340
 msgid "Done"
 msgstr "完成"
 
-#: .\book\views.py:183 .\bussiness\views.py:168 .\sitecontent\views.py:171
-#: .\sitecontent\views.py:279 .\sitecontent\views.py:343
+#: .\book\views.py:183 .\bussiness\views.py:168 .\dept\views.py:187
+#: .\sitecontent\views.py:171 .\sitecontent\views.py:279
+#: .\sitecontent\views.py:343
 msgid "Not found"
 msgstr "没有找到"
 
 #: .\bussiness\templates\bussiness\new.html:3
-#: .\page\templates\page\aboutus.html:4 .\page\templates\page\faith.html:4
-#: .\page\templates\page\service.html:3
+#: .\page\templates\page\aboutus.html:4 .\page\templates\page\contactus.html:4
+#: .\page\templates\page\faith.html:4 .\page\templates\page\service.html:3
 msgid "About Us"
 msgstr "关于我们"
 
 #: .\bussiness\templates\bussiness\new.html:24
-#: .\page\templates\page\aboutus.html:27
-#: .\page\templates\page\activelist.html:24
-#: .\page\templates\page\eventlist.html:26
-#: .\page\templates\page\joinus.html:25
-#: .\page\templates\page\positions.html:25
-#: .\page\templates\page\service.html:24 .\page\templates\page\video.html:25
+#: .\dept\templates\dept\detail.html:26 .\page\templates\page\aboutus.html:26
+#: .\page\templates\page\activelist.html:23
+#: .\page\templates\page\contactus.html:26
+#: .\page\templates\page\eventlist.html:25
+#: .\page\templates\page\joinus.html:24 .\page\templates\page\news.html:17
+#: .\page\templates\page\pic.html:17 .\page\templates\page\positions.html:24
+#: .\page\templates\page\report.html:17 .\page\templates\page\service.html:24
+#: .\page\templates\page\video.html:18
 msgid "Home"
 msgstr "首页"
 
 #: .\bussiness\templates\bussiness\new.html:25
-#: .\page\templates\page\aboutus.html:28
-#: .\page\templates\page\activelist.html:25
-#: .\page\templates\page\eventlist.html:27
-#: .\page\templates\page\joinus.html:26
-#: .\page\templates\page\positions.html:26
-#: .\page\templates\page\service.html:25 .\page\templates\page\video.html:26
+#: .\page\templates\page\aboutus.html:27
+#: .\page\templates\page\activelist.html:24
+#: .\page\templates\page\contactus.html:27
+#: .\page\templates\page\eventlist.html:26
+#: .\page\templates\page\joinus.html:25 .\page\templates\page\pic.html:62
+#: .\page\templates\page\positions.html:25
+#: .\page\templates\page\service.html:25
 msgid "Brand"
 msgstr "品牌"
+
+#: .\dept\models.py:31
+#, fuzzy
+#| msgid "address"
+msgid "detail address"
+msgstr "地址"
+
+#: .\dept\models.py:38 .\product\models.py:47
+msgid "Detail"
+msgstr "详情"
+
+#: .\dept\models.py:40
+#, fuzzy
+#| msgid "phone"
+msgid "Phone"
+msgstr "电话"
+
+#: .\dept\templates\dept\new.html:63
+msgid "Add"
+msgstr "添加"
+
+#: .\dept\templates\dept\new.html:80
+msgid "Delete"
+msgstr "删除"
 
 #: .\page\templates\page\aboutus.html:17 .\page\templates\page\service.html:16
 msgid "真诚服务， 如友相伴"
@@ -167,6 +195,28 @@ msgstr ""
 #: .\page\templates\page\aboutus.html:18 .\page\templates\page\service.html:17
 msgid "欢迎使用我们的产品"
 msgstr ""
+
+#: .\page\templates\page\contactus.html:24
+#: .\page\templates\page\contactus.html:28
+#, fuzzy
+#| msgid "status"
+msgid "Contact us"
+msgstr "联系我们"
+
+#: .\page\templates\page\news.html:18 .\page\templates\page\pic.html:18
+#: .\page\templates\page\report.html:18 .\page\templates\page\video.html:19
+msgid "News Center"
+msgstr "媒体中心"
+
+#: .\page\templates\page\pic.html:43
+#, fuzzy
+#| msgid "hot product"
+msgid "Product"
+msgstr "热销产品"
+
+#: .\page\templates\page\pic.html:81
+msgid "Active"
+msgstr "活动"
 
 #: .\page\templates\page\positions.html:42
 msgid "Position Name"
@@ -185,15 +235,19 @@ msgid "Published Date"
 msgstr "发布日期"
 
 #: .\page\templates\page\positions.html:47
-#: .\page\templates\page\positions.html:57
+#: .\page\templates\page\positions.html:59
 #, fuzzy
 #| msgid "name"
 msgid "Manage"
 msgstr "名称"
 
-#: .\page\templates\page\positions.html:82
+#: .\page\templates\page\positions.html:85
 msgid "Apply"
 msgstr "申请"
+
+#: .\page\templates\page\video.html:17 .\page\templates\page\video.html:20
+msgid "Awesome video"
+msgstr "炫酷视频"
 
 #: .\piclab\views.py:51
 msgid "Uploaded..."
@@ -206,10 +260,6 @@ msgstr "请先选择一张图片"
 #: .\product\models.py:40
 msgid "Product Parameters"
 msgstr "产品参数"
-
-#: .\product\models.py:47
-msgid "Detail"
-msgstr "详情"
 
 #: .\product\models.py:50
 msgid "thumbnail"
