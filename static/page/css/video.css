@@ -9,21 +9,38 @@ video a{
     cursor: pointer;
 }
 .video{
-    margin-top: 30px;
+    padding: 0 140px;
 }
+.video1{
+    margin-top: 60px;
+}
+.video2{
+    margin-top: 13px;
+    margin-bottom: 120px;
+}
+
 .v-wrap{
     display: none;
     position: fixed;
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: 100000;
+    z-index: 100;
     background-color: #000;
     
 }
+.v-title{
+    margin-top: 8px;
+    font-size: 16px;
+    color:#6c6c6c;
+}
 video{
-    width: auto;
+    width: 80%;
     height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 .v-wrap img.close{
     position: absolute;
@@ -33,6 +50,7 @@ video{
     height: 40px;
     border-radius: 50%;
     opacity:.8;
+    z-index: 101;
 }
 .v-wrap img.close:hover{
     opacity:1;
@@ -41,6 +59,6 @@ video{
     width: 100%;
     height: 180px;
 }
-.video-list{
-    border:1px solid #ddd;
+.v-pic{
+    height: 400px;
 }

@@ -46,10 +46,10 @@ img{
     margin-top: 8px;
 }
 .swiper-button-prev, .swiper-button-next{
-    height:30px;
+    opacity: 0.5;
 }
 .gray{
-    color: #808080;
+    color: #6c6c6c;
     font-size: 16px;
 }
 #pic_wall{
@@ -57,5 +57,7 @@ img{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-
+}
+.swiper-container{
+    height: 100%;
 }
