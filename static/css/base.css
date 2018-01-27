@@ -1,4 +1,7 @@
 /* 通用 */
+.p-r{
+    position: relative;
+}
 .f16{
     font-size: 16px;
 }
@@ -368,10 +371,10 @@ li{
     -ms-transform: translateY(50px);
     transform: translateY(50px);
 }
-section.move .image-text{
+section .image-text:hover{
     opacity: 1;
     filter: alpha(opacity=100)\9;
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
-} */
+}  */
