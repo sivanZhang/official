@@ -117,7 +117,7 @@ class PageView(View):
         if 'video' == blockname :
             # 媒体报道
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
-            content['page'] = pages[0]
+            content['block'] = pages[0].block
             content['pages'] = replace_slide(pages)
             if isMble:
                 return render(request, 'page/video.html', content)
