@@ -7,51 +7,45 @@
 <link href="/static/page/css/video.css" rel="stylesheet">
 <link rel="stylesheet" href="/static/css/swiper.css">
 <script src="/static//page/js/video.js" type="text/javascript"></script>
-<style>
-      .top-slide{
-        background-image: url('{{mediaroot}}{{page.pic|safe}}');
-      }
-</style>
+ 
  {% endblock %}
 {% block content %}
  
 <div class=" container-title" >
     <div class="container">
         <div class="items_holder">
-              <h2 class="title orange">{{product.title}}炫酷视频</h2>
+              <h2 class="title orange">{% trans 'Awesome video' %}</h2>
               <a href="/">{% trans 'Home' %}</a>
-              <a href="javasrcipt:;">/ASU {% trans 'Brand' %}</a> 
-              <a href="javasrcipt:;">/{{product.title}}</a> 
+              <a href="javasrcipt:;">/{% trans 'News Center' %}</a> 
+              <a href="javasrcipt:;">/{% trans 'Awesome video' %}</a> 
         </div> 
     </div> 
 </div>
 <div class="container-fluid video">
-    
             {% for page in pages %}
-            <div class="video-first container" data-video="{{page.url}}">
-                <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
-            
-                <div>{{page.title}}</div>
-                <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
-            </div>
+                {% if page.mark == 'top' %}
+                    <div class="video-first container" data-video="{{page.url}}">
+                        <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
+                    
+                        <div>{{page.title}}</div>
+                        <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
+                    </div>
+                {% endif %}
             {% endfor %}
-            
-</div> 
-
+</div>  
 <div class="container">
     <div class="swiper-container">
         <div class="swiper-wrapper">
             {% for page in pages %}
-            <div class="swiper-slide">
-                    
-                <div class="video-list" data-video="{{page.url}}">
-                        <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
-                        <div>{{page.title}}</div>
-                        <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
-                </div>
-                
-                        
-            </div>
+               {% if page.mark != 'top' %}
+                    <div class="swiper-slide"> 
+                        <div class="video-list" data-video="{{page.url}}">
+                                <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
+                                <div>{{page.title}}</div>
+                                <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
+                        </div>     
+                    </div>
+                 {% endif %}
             {% endfor %}
         </div>
         <!-- 如果需要导航按钮 -->
