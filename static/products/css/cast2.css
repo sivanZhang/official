@@ -1,3 +1,6 @@
+.fs24{
+font-size: 24px;
+}
 .content
 { 
     width: 100%;
@@ -453,22 +456,26 @@
   }
   .advertising,
   .parts-img,
-  .summary,
-  .advice-details {
+  .summary {
     width: 100%;
     height: auto;
   }
   .cut-off {
-    margin: 20px 0 ;
+    margin: 5px 0 20px 60px;
+    color: #727272;
   }
   .cut-off > div {
     border-bottom: 1px solid #ddd;
   }
-  .list-wrap .col-xs-9,
-  .cut-off .col-xs-9 {
+  .list-wrap{
+      margin-left: 60px;
+      color: #727272;
+  }
+  .list-wrap .col-xs-4,
+  .cut-off .col-xs-4 {
     margin-left: 60px;
   }
-  .list-wrap > .col-xs-9 > div {
+  .list-wrap > .col-xs-4 > div {
     margin-bottom: 15px;
   }
   .yellowcolor {
@@ -576,4 +583,19 @@
 .hide-text li
 {
     list-style-type:disc;
+}
+.summary-text{
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translateY(-50%);
+color:rgb(108, 108, 108);
+font-size:16px;
+}
+.advice-details{
+    border-bottom: 1px solid #ddd;
+}
+.advice-details td{
+    width: 50%;
+
 }
