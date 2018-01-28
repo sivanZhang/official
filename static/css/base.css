@@ -1,4 +1,10 @@
 /* 通用 */
+.b-n{
+    border:none!important;
+}
+.fs24{
+    font-size: 24px;
+}
 .p-r{
     position: relative;
 }
@@ -266,7 +272,7 @@ td.td-bar-point
 .second_menu_holder
 {
     width: 100%;
-    background-color:#d6d6d6;
+    background-color:#f9f9f8;
 }
 
 .fa-search

@@ -1,6 +1,4 @@
-.fs24{
-font-size: 24px;
-}
+
 .content
 { 
     width: 100%;
@@ -47,7 +45,7 @@ font-size: 24px;
 }
 .second-menu
 {
-    line-height: 50px;
+    line-height: 60px;
     
 }
 .second-menu a{
@@ -111,7 +109,6 @@ font-size: 24px;
 .titleline
 {
     height: 120px;
-    background-color: #d6d6d6;
 }
 
 
@@ -590,10 +587,25 @@ transform: translateY(-50%);
 color:rgb(108, 108, 108);
 font-size:16px;
 }
-.advice-details{
-    border-bottom: 1px solid #ddd;
-}
+
 .advice-details td{
     width: 50%;
 
+}
+.advice-details{
+    padding:30px 95px;
+}
+.advice-details td{
+    height: 350px;
+    border-bottom: 1px solid #ddd;
+}
+.advice-details td img{
+    max-height:200px;
+    width: auto;
+}
+.advice-details td div{
+    width: 86%;
+}
+.threesixty img{
+    height: 500px;
 }
