@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-28 19:00+0800\n"
+"POT-Creation-Date: 2018-01-28 20:59+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,7 +56,7 @@ msgstr "主页内容管理"
 
 #: .\book\templates\book\blocknew.html:27
 #: .\book\templates\book\blocknew.html:29
-#: .\book\templates\book\blocknew.html:78 .\dept\models.py:28
+#: .\book\templates\book\blocknew.html:78 .\dept\models.py:32
 #: .\product\models.py:33 .\sitecontent\templates\sitecontent\blocknew.html:27
 #: .\sitecontent\templates\sitecontent\blocknew.html:29
 #: .\sitecontent\templates\sitecontent\blocknew.html:78
@@ -118,18 +118,18 @@ msgid "Name, Phone and Address cannot be empty!"
 msgstr "名字，电话号码和地址不能为空！"
 
 #: .\book\views.py:115 .\book\views.py:165 .\bussiness\views.py:108
-#: .\bussiness\views.py:150 .\dept\views.py:252 .\dept\views.py:294
+#: .\bussiness\views.py:150 .\dept\views.py:290 .\dept\views.py:332
 #: .\sitecontent\views.py:111 .\sitecontent\views.py:153
 #: .\sitecontent\views.py:276 .\sitecontent\views.py:325
 msgid "Saved completely!"
 msgstr "保存完成！"
 
-#: .\book\views.py:180 .\bussiness\views.py:165 .\dept\views.py:309
+#: .\book\views.py:180 .\bussiness\views.py:165 .\dept\views.py:347
 #: .\sitecontent\views.py:168 .\sitecontent\views.py:340
 msgid "Done"
 msgstr "完成"
 
-#: .\book\views.py:183 .\bussiness\views.py:168 .\dept\views.py:312
+#: .\book\views.py:183 .\bussiness\views.py:168 .\dept\views.py:350
 #: .\sitecontent\views.py:171 .\sitecontent\views.py:279
 #: .\sitecontent\views.py:343
 msgid "Not found"
@@ -142,7 +142,9 @@ msgid "About Us"
 msgstr "关于我们"
 
 #: .\bussiness\templates\bussiness\new.html:24
-#: .\dept\templates\dept\detail.html:31 .\page\templates\page\aboutus.html:26
+#: .\dept\templates\dept\detail.html:31
+#: .\dept\templates\dept\servicelist.html:27
+#: .\page\templates\page\aboutus.html:26
 #: .\page\templates\page\activelist.html:23
 #: .\page\templates\page\contactus.html:26
 #: .\page\templates\page\eventlist.html:25
@@ -175,21 +177,33 @@ msgstr "旗舰店"
 msgid "Distribution Points"
 msgstr "经销店"
 
-#: .\dept\models.py:31
+#: .\dept\models.py:35
 #, fuzzy
 #| msgid "address"
 msgid "detail address"
 msgstr "地址"
 
-#: .\dept\models.py:38 .\product\models.py:47
+#: .\dept\models.py:42 .\product\models.py:47
 msgid "Detail"
 msgstr "详情"
 
-#: .\dept\models.py:40
+#: .\dept\models.py:44
 #, fuzzy
 #| msgid "phone"
 msgid "Phone"
 msgstr "电话"
+
+#: .\dept\templates\dept\detail.html:4 .\dept\templates\dept\detail.html:32
+#: .\dept\templates\dept\new_service.html:4
+#: .\dept\templates\dept\new_service.html:69
+#: .\dept\templates\dept\servicelist.html:4
+msgid "Service Store"
+msgstr "标准服务"
+
+#: .\dept\templates\dept\detail.html:4 .\dept\templates\dept\detail.html:32
+#: .\dept\templates\dept\servicelist.html:4
+msgid "Store"
+msgstr "体验店"
 
 #: .\dept\templates\dept\detail.html:23 .\dept\templates\dept\list.html:21
 msgid "Physical Store"
@@ -198,10 +212,6 @@ msgstr "线下体验店"
 #: .\dept\templates\dept\detail.html:24 .\dept\templates\dept\list.html:22
 msgid "Official Authorized Store"
 msgstr "官方授权体验店"
-
-#: .\dept\templates\dept\detail.html:32
-msgid "Store"
-msgstr "体验店"
 
 #: .\dept\templates\dept\detail.html:43
 msgid "Send address to my phone"
@@ -220,6 +230,7 @@ msgid "Please select the city"
 msgstr "请选择查询的门店"
 
 #: .\dept\templates\dept\list.html:46 .\dept\templates\dept\list.html:58
+#: .\dept\templates\dept\servicelist.html:40
 msgid "All"
 msgstr "全部"
 
@@ -236,8 +247,6 @@ msgid "Free Charge"
 msgstr "免费充电"
 
 #: .\dept\templates\dept\list.html:96
-#, fuzzy
-#| msgid "name"
 msgid "Maintaince"
 msgstr "手表保养+维护"
 
@@ -246,8 +255,6 @@ msgid "Free WiFi"
 msgstr "免费WIFI"
 
 #: .\dept\templates\dept\list.html:103
-#, fuzzy
-#| msgid "Price"
 msgid "VIP Service"
 msgstr "会员服务"
 
@@ -259,32 +266,42 @@ msgstr "手表贴膜"
 msgid "Credit for gift"
 msgstr "积分兑换礼品"
 
-#: .\dept\templates\dept\new.html:43
+#: .\dept\templates\dept\new.html:44 .\dept\templates\dept\new_service.html:41
 #, fuzzy
 #| msgid "Please select the city"
 msgid "Please select"
 msgstr "请选择查询的门店"
 
-#: .\dept\templates\dept\new.html:64
+#: .\dept\templates\dept\new.html:65 .\dept\templates\dept\new_service.html:21
+#: .\dept\templates\dept\new_service.html:62
 msgid "Add"
 msgstr "添加"
 
-#: .\dept\templates\dept\new.html:81
+#: .\dept\templates\dept\new.html:82 .\dept\templates\dept\new_service.html:79
 msgid "Delete"
 msgstr "删除"
 
-#: .\page\templates\page\aboutus.html:17 .\page\templates\page\service.html:16
-msgid "真诚服务， 如友相伴"
-msgstr ""
+#: .\dept\templates\dept\servicelist.html:19
+#: .\page\templates\page\aboutus.html:17
+msgid "Service like a friend with you"
+msgstr "真诚服务，如友相伴"
 
-#: .\page\templates\page\aboutus.html:18 .\page\templates\page\service.html:17
-msgid "欢迎使用我们的产品"
-msgstr ""
+#: .\dept\templates\dept\servicelist.html:20
+#: .\page\templates\page\aboutus.html:18
+msgid "Welcome to use our product"
+msgstr "欢迎使用我们的产品"
+
+#: .\dept\templates\dept\servicelist.html:26
+#: .\dept\templates\dept\servicelist.html:29
+msgid "Service store search"
+msgstr "服务网点查询"
+
+#: .\dept\templates\dept\servicelist.html:28
+msgid "Service"
+msgstr "服务"
 
 #: .\page\templates\page\contactus.html:24
 #: .\page\templates\page\contactus.html:28
-#, fuzzy
-#| msgid "status"
 msgid "Contact us"
 msgstr "联系我们"
 
@@ -294,10 +311,8 @@ msgid "News Center"
 msgstr "媒体中心"
 
 #: .\page\templates\page\pic.html:43
-#, fuzzy
-#| msgid "hot product"
 msgid "Product"
-msgstr "热销产品"
+msgstr "产品"
 
 #: .\page\templates\page\pic.html:81
 msgid "Active"
@@ -329,6 +344,8 @@ msgstr "名称"
 #: .\page\templates\page\positions.html:85
 msgid "Apply"
 msgstr "申请"
+
+
 
 #: .\page\templates\page\service.html:25
 msgid "customer service"

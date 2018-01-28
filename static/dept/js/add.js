@@ -30,6 +30,7 @@ $(document).ready(function() {
             }
         })
     });
+    fnLimited($('#phone'));
     $("#add").click(function(){
         //
         var options = {
@@ -44,6 +45,7 @@ $(document).ready(function() {
         var phone = $('#phone').val(); 
         var detail = CKEDITOR.instances['id_detail'].getData();
         var address = $('#address').val();
+        var data_type = $('#data_type').val();
         var area = 0;
        
         if ($('#county').val() == null || $('#county').val()  == "-1")
@@ -61,6 +63,7 @@ $(document).ready(function() {
             'detail': detail,
             'address': address,
             'area' :area, 
+            'data_type':data_type,
             'csrfmiddlewaretoken': getCookie('csrftoken'),
         }; 
         HoldOn.open(options);

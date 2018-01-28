@@ -24,6 +24,10 @@ class Dept(BaseDate):
     # 这主要是针对有订单产生的产品，没有订单产生的产品可以永久删除，而不在意ALLOW_DELETE的设置
     ALLOW_DELETE = True
 
+    # 服务网点：1
+    # 体验店： 0
+    store_type = models.SmallIntegerField(default=0)
+    
     # 体验店名称
     name = models.CharField(_('title'), max_length = 2048)
     # 地址

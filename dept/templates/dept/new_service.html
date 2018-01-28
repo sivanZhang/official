@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block fixed_menu_class %}fixed_menu_class{%endblock%}
 {% load i18n %}
-{% block pagetitle%}体验店{% endblock%}
+{% block pagetitle%}{%　trans "Service Store" %}{% endblock%}
  {% block css %} 
 <link type="text/css" rel="stylesheet" href="/static/css/HoldOn.css"> 
 <link href="/static/dept/css/list.css" rel="stylesheet"> 
@@ -11,7 +11,6 @@
 <form action="" method="post">
     {%csrf_token%} 
     <input type="hidden" name="method" value="create" /> 
-    <input type="hidden" id="data_type" value="0" /> 
     
     {{ form.as_p }} 
 </form>
@@ -19,7 +18,7 @@
 <div class="container new">
         <div class="row">
                 <div class="col-xs-12">
-                    <div class="add-title">添加体验店</div>
+                    <div class="add-title">{% trans "Add" %}</div>
                 </div>
             </div>
     {% if not perm %}
@@ -28,14 +27,12 @@
                 <input type="text" class="form-control" id="name" placeholder="店名" value=""/>
             </div> 
             <div class="col-xs-2">
-                <select   class="form-control" id="storetype"  >
-                    <option value="2">旗舰店</option>
-                    <option value="1">经销店</option>
-                    <option value="3">加盟店</option>
-                </select>   
+                <input type="hidden" id="storetype" value="2" />
+                <input type="hidden" id="data_type" value="1" /> 
+                <input type="text" class="form-control" id="phone" placeholder="电话" value=""/>   
             </div> 
             <div class="col-xs-3">
-                    <input type="text" class="form-control" id="phone" placeholder="电话" value=""/>   
+                    
             </div> 
         </div>
         <div class="row"> 
@@ -69,12 +66,12 @@
     <div class="row">
             <div class="col-xs-12 ">
                 
-                            <div class="table-title">体验店列表</div>
+                            <div class="table-title">{%　trans "Service Store" %}:</div>
             <table class="table">
                 {% for dept in depts %} 
                             <tr >
                                 <td><a href="{% url "dept:list" %}?detail={{dept.id}}" >{{dept.name}}</a></td>
-                                <td>{{dept.get_dept_type_display}}</td>
+                               
                                 <td>{{dept.area.short_name}}</td>
                                 <td>{{dept.address}}</td>
                                 <td>{{dept.phone}}</td> 
