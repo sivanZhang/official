@@ -43,15 +43,31 @@
                   </td>
                   <td>
                         <select class="form-control grey" id="city" name="city"> 
+                                <option value="0">{% trans "All" %}</option>
+                                {% for item in cities %}
+                                    {% if city.id == item.id %}
+                                    <option value="{{item.id}}" selected="selected">{{item.short_name}}</option>
+                                    {% else %}
+                                    <option value="{{item.id}}">{{item.short_name}}</option>
+                                    {% endif %}
+                                {% endfor %}
                         </select>   
                   </td>
                   <td>
                         <select class="form-control grey" id="county" name="county"> 
+                                <option value="0">{% trans "All" %}</option>
+                                {% for item in counties %}
+                                    {% if county.id == item.id %}
+                                    <option value="{{item.id}}" selected="selected">{{item.short_name}}</option>
+                                    {% else %}
+                                    <option value="{{item.id}}">{{item.short_name}}</option>
+                                    {% endif %}
+                                {% endfor %}
                         </select>  
                   </td>
                   <td>
                       <select class="form-control grey" id="storetype" name="storetype">
-                            <option value="0">{% trans 'All shop type' %}</option>
+                            <option value="0">{% trans 'All shop type' %}</option> 
                                   <option value="2">旗舰店</option>
                                   <option value="1">经销店</option>
                                   <option value="3">加盟店</option>
@@ -107,7 +123,7 @@
                                         <tr class="tr_dept" >
                                             <td class="td_title td_right" ><a class="grey" href="{% url "dept:list" %}?detail={{dept.id}}" >{{dept.name}}</a></td>
                                             <td  class=" td_right">{{dept.get_dept_type_display}}</td>
-                                            <td  class=" td_right">{{dept.area.short_name}}</td>
+                                            <td  class=" td_right">{{dept.area.short_name}}{{dept.area.id}}</td>
                                             <td  class=" td_right">{{dept.address}}</td>
                                             <td  class=" ">{{dept.phone}}</td> 
                                         
@@ -140,5 +156,8 @@
         placeSearch.search('一数科技', function(status, result) {
         });
     });
+    {% if storetype  %}
+      $("#storetype").val("{{storetype}}");  
+    {% endif %}
 </script>
 {% endblock %}

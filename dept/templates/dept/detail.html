@@ -4,43 +4,62 @@
 {% block pagetitle%}体验店{% endblock%}
 {% block css %}
 <link href="/static/page/css/pagebase.css" rel="stylesheet">
-<link href="/static/page/css/aboutus.css" rel="stylesheet">
+<link href="/static/dept/css/list.css" rel="stylesheet"> 
 <style>
         .top-slide{
-          background-image: url('{{mediaroot}}{{page.pic|safe}}');
-        }
+          background-image: url('/static/img/shop/title.png');
+     }
 </style>
+
+<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+<script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+<script src="http://webapi.amap.com/maps?v=1.3&key=1f18343dbe62cd34b303180450cd005f"></script>
  {% endblock %}
 {% block content %}
 <div class="top-slide"> 
     <div class="top-tips">
-      <h1  >ASU线下体验专区</h1> 
-      <h5 >一数科技| 官方授权体验店</h5>
+        <h1 class=" " >{% trans 'Physical Store' %}</h1> 
+        <h5 >一数科技 | {% trans 'Official Authorized Store' %}</h5>
     </div>
   </div> 
 <div class=" container-title" >
     <div class="container ">
         <div class="items_holder">
                     <h2 class="title orange">{{dept.name}} </h2>
-                     
                     <a href="/">{% trans 'Home' %}</a>
-                    <a href="javasrcipt:;">/体验店</a> 
+                    <a href="javasrcipt:;">/{% trans "Store" %}</a> 
                     <a href="javasrcipt:;">/{{dept.name}}</a> 
         </div> 
     </div> 
 </div>
-<div class="container  ">
+<div class="container  detail">
     <div class="row  "> 
-      营业电话和地址
-      电话：{{dept.phone}}
-      地址{{dept.area.short_name}}
-      详细地址{{dept.address}}
-      
-      <div class="col-sm-12 col-md-12 col-lg-12">
+      <div class="col-xs-6 ">
          {{dept.detail|safe}}
       </div> 
+      <div class="col-xs-6 mapdetail">
+          <div id="mapContainer"></div> 
+      </div>
     </div>
 </div>  
 {% endblock%}
 {% block js %} 
+<script type="text/javascript">
+  var map = new AMap.Map("mapContainer", {
+      resizeEnable: true
+  });
+  AMap.service(["AMap.PlaceSearch"], function() {
+      var placeSearch = new AMap.PlaceSearch({ //构造地点查询类
+          pageSize: 5,
+          pageIndex: 1,
+          city: "{{area.short_name}}", //城市
+          map: map,
+           
+      });
+      //关键字查询
+      placeSearch.search('{{dept.address}} {{dept.name}}', function(status, result) {
+      });
+  });
+ 
+</script>
 {% endblock %}

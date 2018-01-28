@@ -38,27 +38,21 @@ $(document).ready(function() {
             backgroundColor: "#000",
             textColor: "white"
         };
-        HoldOn.open(options);
+        
         var name = $('#name').val();
         var storetype = $('#storetype').val();
         var phone = $('#phone').val(); 
         var detail = CKEDITOR.instances['id_detail'].getData();
         var address = $('#address').val();
         var area = 0;
-        if ($('#county').val() || $('#county').val()  != "-1")
+       
+        if ($('#county').val() == null || $('#county').val()  == "-1")
         {
-            area = $('#county').val();
+            //area = $('#county').val();
+            $().errormessage('请选择区县');
+            return;
         }
-        else{
-            if ($('#city').val() || $('#city').val()  != "-1" )
-            {
-                area = $('#city').val();
-            } 
-            else{
-                area = $('#provice').val();
-            }
-        }
-          
+        area = $('#county').val();  
         data = {
             'method': 'create',
             'name': name,
@@ -69,6 +63,7 @@ $(document).ready(function() {
             'area' :area, 
             'csrfmiddlewaretoken': getCookie('csrftoken'),
         }; 
+        HoldOn.open(options);
         $.ajax({
             type: 'post',
             url: '/dept/list/',

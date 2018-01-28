@@ -23,7 +23,10 @@ def get_provice_list(request):
 
 def get_city_list(request):
     provinceid = request.GET['provinceid']
-    provinces = Area.objects.filter(parent_id = provinceid, level = 2)
+    if provinceid == '110100':
+        provinces = Area.objects.filter(id = provinceid)
+    else:
+        provinces = Area.objects.filter(parent_id = provinceid, level = 2)
     return HttpResponse(serialize_areas(provinces), 
                 content_type="application/json")
 

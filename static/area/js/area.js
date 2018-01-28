@@ -3,6 +3,8 @@ $(document).ready(function() {
    $('#provice').empty();
    $.get('/area/get_provice_list/', {}, function(data) {
        var html = '';
+       html = '<option value="0">请选择</option>';
+       $('#provice').append(html);
        for (var i = 0; i < data.length;i++){
            html = '<option value="' +data[i]['id']+ '">'
                          +data[i]['short_name'] + '</option>';

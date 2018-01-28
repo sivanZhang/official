@@ -47,9 +47,10 @@ class DeptView(View):
         content['depts'] = depts
         content['mediaroot'] = settings.MEDIA_URL
         #form = DeptForm(instance=product)
-        form = DeptForm()
-        content['form'] = form
+        
         if 'new' in request.GET:
+            form = DeptForm()
+            content['form'] = form
             if request.user.is_anonymous(): 
                 return redirect('users/login/?next=dept/list?new')
 
@@ -67,8 +68,10 @@ class DeptView(View):
             deptid =  request.GET['detail']
             try:
                 dept = models.Dept.objects.get(pk = deptid)
+                area = Area.objects.get(id = dept.area.parent_id)
+                content['area'] = area
             except models.Dept.DoesNotExist:
-                dept = dept[0]
+                dept = depts[0]
             content['dept'] = dept
             if isMble:
                 return render(request, 'dept/detail.html', content)
@@ -76,25 +79,91 @@ class DeptView(View):
                 return render(request, 'dept/detail.html', content)
         else:
             # 获取北京的门店：110100
-            if 'provice' in request.GET:
+            if 'provice' in request.GET and 'city' in request.GET and 'county' in request.GET:
                 provice = request.GET['provice']
+                city = request.GET['city']
+                county = request.GET['county']
+                storetype = request.GET.get('storetype')
+                content['storetype'] = storetype
+
                 try:
-                    area = Area.objects.get(id=provice)
-                    content['provicearea'] = area
-                    depts = depts.filter(Q(area__parent_id = provice) | Q(area__id = '110100') )
+                    # 根据区县搜索
+                    county_instance = Area.objects.get(id=county) 
+                    provice_instance = Area.objects.get(id=provice)
+                    city_instance = Area.objects.get(id=county_instance.parent_id)
+                    
+                    cities = Area.objects.filter(parent_id=city_instance.parent_id)
+                    counties = Area.objects.filter(parent_id=city_instance.id)
+                    print('in count')
+                    content['cities'] = cities
+                    content['counties'] = counties 
+
+                    content['county'] = county_instance
+                    content['city'] = city_instance # 市 
+                    content['provicearea'] = provice_instance
+                    if storetype == '0':
+                        depts = depts.filter(area = county_instance)
+                    else:
+                        depts = depts.filter(area = county_instance, dept_type=storetype)
+
                 except Area.DoesNotExist: 
-                    depts = depts.filter(Q(area__parent_id = provice) | Q(area__id = '110100') )
-                    area = Area.objects.get(pk='110100')
+                    #　根据市搜索
+                    try:
+                        city_instance = Area.objects.get(id=city)
+                        provice_instance = Area.objects.get(id=provice)
+
+                        cities = Area.objects.filter(parent_id=city_instance.parent_id)
+                        counties = Area.objects.filter(parent_id=city_instance.id)
+                        print('in cirt')
+                        content['cities'] = cities
+                        content['counties'] = counties 
+
+                        content['county'] = ''
+                        content['city'] = city_instance # 市
+                        content['provicearea'] = provice_instance
+                        if storetype == '0':
+                            depts = depts.filter(area__parent_id = city_instance.id)
+                        else:
+                            depts = depts.filter(area__parent_id = city_instance.id, dept_type=storetype)
+                        
+                    except Area.DoesNotExist: 
+                        #　根据省搜索
+                        try: 
+                            provice_instance = Area.objects.get(id=provice) 
+                            cities = Area.objects.filter(parent_id=provice_instance.id)
+                            print('in pro')
+                            content['cities'] = cities 
+                            cities_id = []
+                            for cityitem in cities:
+                                cities_id.append(cityitem.id)
+                            print(cities_id)
+                            content['county'] = ''
+                            content['city'] = city # 市
+                            content['provicearea'] = provice_instance 
+                            if provice == '110100':
+                                if storetype == '0':
+                                    depts = depts.filter(area__in = cities_id)
+                                else:
+                                    depts = depts.filter(area__in = cities_id, dept_type=storetype) 
+                            else:
+                                if storetype == '0':
+                                    depts = depts.filter(area__parent_id__in = cities_id)
+                                else:
+                                    depts = depts.filter(area__parent_id__in = cities_id, dept_type=storetype) 
+                                
+                        except  Area.DoesNotExist:  
+                            depts = depts.filter( area__id = '110100' )
+                            area = Area.objects.get(pk='110100')
             else:
                 depts = depts.filter(Q(area__parent_id = '110100') | Q(area__id = '110100') )
-                area = Area.objects.get(pk='110100')
+                provice_instance = Area.objects.get(pk='110100')
 
             provices = get_provice_list(request)
             provices_json = byte2json(provices.content)
            
             content['provices'] = provices_json
             content['depts'] = depts
-            content['area'] = area
+            content['area'] = provice_instance
 
             if isMble:
                 return render(request, 'dept/list.html', content)

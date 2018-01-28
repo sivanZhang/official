@@ -90,6 +90,9 @@ label[for=id_detail]{
 .map{
     width: 70%;
 }
+.mapdetail{
+    width: 50%;
+}
 .td_title{
     width: 25%;
 }
@@ -99,4 +102,7 @@ label[for=id_detail]{
 }
 .tr_dept{
     padding: 20px !important;
+}
+.detail{
+    margin: 30px auto;
 }
