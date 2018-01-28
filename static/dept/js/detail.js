@@ -1,5 +1,5 @@
 $(document).ready(function() {  
-    
+    fnLimited($('#phone'));
     $("#send").click(function(){
         //
         var options = {

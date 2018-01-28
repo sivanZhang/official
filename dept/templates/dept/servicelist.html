@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block fixed_menu_class %}fixed_menu_class{%endblock%}
+{% load i18n %}
+{% block pagetitle%}{% if dept.store_type == 1 %}{%　trans "Service Store" %}{% else %}{%　trans "Store" %}{% endif %}{% endblock%}
+{% block css %}
+<link type="text/css" rel="stylesheet" href="/static/css/HoldOn.css"> 
+<link href="/static/page/css/pagebase.css" rel="stylesheet">
+<link href="/static/dept/css/list.css" rel="stylesheet"> 
+<link href="/static/dept/css/detail.css" rel="stylesheet"> 
+<style>
+        .top-slide{
+          background-image: url('/static/img/shop/title.png');
+     }
+</style>
+ {% endblock %}
+{% block content %}
+<div class="top-slide"> 
+    <div class="top-tips">
+        <h1 class=" " >{% trans 'Service like a friend with you' %}</h1> 
+        <h5 >{% trans 'Welcome to use our product' %}</h5>
+    </div>
+  </div> 
+<div class=" container-title" >
+    <div class="container ">
+        <div class="items_holder">
+                    <h2 class="title orange">{% trans 'Service store search' %} </h2>
+                    <a href="/">{% trans 'Home' %}</a>
+                    <a href="javasrcipt:;">/{%　trans "Service" %}</a> 
+                    <a href="javasrcipt:;">/{% trans 'Service store search' %} </a> 
+        </div> 
+    </div> 
+</div>
+<div class="container  detail">
+  <input type="hidden" id="deptid" value="{{dept.id}}" />
+  <div class="row">
+        <div class="col-xs-2 ">
+                <form id="search">
+                        <input type="hidden" name="servicesearch" value"someName" >
+                    <select class="form-control grey" id="provice" name="provice"> 
+                            <option value="0">{% trans "All" %}</option>
+                            {% for p in provices %}
+                                {% if provicearea.id == p.id %}
+                                <option value="{{p.id}}" selected="selected">{{p.short_name}}</option>
+                                {% else %}
+                                <option value="{{p.id}}">{{p.short_name}}</option>
+                                {% endif %}
+                            {% endfor %}
+                    </select>
+                </form>
+        </div>
+  </div>
+  {% for dept in depts %}
+    <div class="row  "> 
+      <div class="col-xs-6 "> 
+          <h3 class="orange">{{dept.name}}</h3>
+          <hr>
+          {{dept.detail|safe}}
+      </div>  
+    </div>
+    {% endfor %}
+</div>  
+<form action="" method="post">
+        
+    {%csrf_token%}  
+</form>
+{% endblock%}
+{% block js %} 
+
+<script src="/static/dept/js/list.js " rel="stylesheet "></script>
+{% endblock %}

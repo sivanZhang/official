@@ -69,7 +69,7 @@ class DeptView(View):
     """
     """
 
-    @method_decorator(login_required)
+    #@method_decorator(login_required)
     def get(self, request):
         isMble  = dmb.process_request(request)
         content = {} 
@@ -82,6 +82,8 @@ class DeptView(View):
         if 'new' in request.GET:
             form = DeptForm()
             content['form'] = form
+            depts = depts.filter(store_type = 0)
+            content['depts'] = depts
             if request.user.is_anonymous(): 
                 return redirect('users/login/?next=dept/list?new')
 
@@ -89,12 +91,48 @@ class DeptView(View):
                 return render(request, 'dept/new.html', content)
             else:
                 return render(request, 'dept/new.html', content)
+        if 'newservice' in request.GET:
+            form = DeptForm()
+            content['form'] = form
+            depts = depts.filter(store_type = 1)
+            content['depts'] = depts
+            if request.user.is_anonymous(): 
+                return redirect('users/login/?next=dept/list?new')
 
-        if 'test' in request.GET:
             if isMble:
-                return render(request, 'dept/test.html', content)
+                return render(request, 'dept/new_service.html', content)
             else:
-                return render(request, 'dept/test.html', content)
+                return render(request, 'dept/new_service.html', content)
+        if 'servicesearch' in request.GET:
+            depts = depts.filter(store_type = 1)
+            provices = get_provice_list(request)
+            provices_json = byte2json(provices.content) 
+            content['provices'] = provices_json 
+            
+            if 'provice' in request.GET: 
+                provice = request.GET['provice']
+                try:
+                    provice_instance = Area.objects.get(id=provice) 
+                    cities = Area.objects.filter(parent_id=provice_instance.id) 
+                    content['cities'] = cities 
+                    cities_id = []
+                    for cityitem in cities:
+                        cities_id.append(cityitem.id)
+                    if provice == '110100':
+                        depts = depts.filter(area__in = cities_id)
+                    else:
+                        depts = depts.filter(area__parent_id__in = cities_id)
+                    content['provicearea'] = provice_instance 
+                except Area.DoesNotExist:
+                    pass
+            else:
+                pass 
+            content['depts'] = depts
+            #areas = [area]
+            if isMble:
+                return render(request, 'dept/servicelist.html', content)
+            else:
+                return render(request, 'dept/servicelist.html', content)
         if 'detail' in request.GET:
             deptid =  request.GET['detail']
             try:
@@ -125,7 +163,7 @@ class DeptView(View):
                     
                     cities = Area.objects.filter(parent_id=city_instance.parent_id)
                     counties = Area.objects.filter(parent_id=city_instance.id)
-                    print('in count')
+              
                     content['cities'] = cities
                     content['counties'] = counties 
 
@@ -144,8 +182,7 @@ class DeptView(View):
                         provice_instance = Area.objects.get(id=provice)
 
                         cities = Area.objects.filter(parent_id=city_instance.parent_id)
-                        counties = Area.objects.filter(parent_id=city_instance.id)
-                        print('in cirt')
+                        counties = Area.objects.filter(parent_id=city_instance.id) 
                         content['cities'] = cities
                         content['counties'] = counties 
 
@@ -161,13 +198,11 @@ class DeptView(View):
                         #　根据省搜索
                         try: 
                             provice_instance = Area.objects.get(id=provice) 
-                            cities = Area.objects.filter(parent_id=provice_instance.id)
-                            print('in pro')
+                            cities = Area.objects.filter(parent_id=provice_instance.id) 
                             content['cities'] = cities 
                             cities_id = []
                             for cityitem in cities:
-                                cities_id.append(cityitem.id)
-                            print(cities_id)
+                                cities_id.append(cityitem.id) 
                             content['county'] = ''
                             content['city'] = city # 市
                             content['provicearea'] = provice_instance 
@@ -228,13 +263,15 @@ class DeptView(View):
         
         if 'name' in request.POST and 'storetype' in request.POST and \
            'phone' in request.POST and 'detail' in request.POST \
-            and 'address' in request.POST  and 'area' in request.POST: 
+            and 'address' in request.POST  and 'area' in request.POST \
+            and 'data_type' in request.POST : 
             name = request.POST['name'].strip() 
             storetype = request.POST['storetype'].strip() 
             phone = request.POST['phone'].strip() 
             detail = request.POST['detail'].strip() 
             address = request.POST['address'].strip() 
             areaid = request.POST['area'].strip() 
+            data_type = request.POST['data_type'].strip() 
             area = Area.objects.get(id = areaid)
 
             # 创建Block 
@@ -245,7 +282,8 @@ class DeptView(View):
                 phone = phone ,
                 detail = detail,
                 area = area,
-                address = address
+                address = address,
+                store_type=data_type
             ) 
             result['id'] = dept.id
             result['status'] ='ok'
