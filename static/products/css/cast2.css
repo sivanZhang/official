@@ -1,4 +1,6 @@
-
+.gray{
+    color: #6c6c6c;
+}
 .content
 { 
     width: 100%;
@@ -520,11 +522,6 @@
   .threesixty img{
       margin: 0 auto; 
   }
-  .threesixty-frame{ 
-  }
-  .image-text table{
-      text-align: center;
-  }
   .image-text table td{
       width: 100px;
       padding: 6px 0;
@@ -533,7 +530,8 @@
       width: 40px;
   }
   .image-text table{
-    margin-top: 120px;
+    margin-top: 90px;
+    text-align: center;
   }
   .show1,.show3{
       position: absolute;
@@ -559,7 +557,7 @@
   .image-text .show-t{
       font-size: 50px;
       font-weight: 300;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
   }
   .image-text .show-msg{
     font-size: 20px;
@@ -584,7 +582,7 @@ position: absolute;
 left: 50%;
 top: 50%;
 transform: translateY(-50%);
-color:rgb(108, 108, 108);
+color:#6c6c6c;
 font-size:16px;
 }
 

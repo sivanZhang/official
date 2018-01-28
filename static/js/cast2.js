@@ -147,7 +147,7 @@ $(document).ready(function () {
      *板块高度
      */
     var windowHeight = window.innerHeight;
-    $('section,.img360_holder').css('height', windowHeight - 60 + 'px');
+    $('section,.img360_holder').css('height', windowHeight+ 'px');
 });
 /* function elementInViewport2(el) {
     var top = el.offsetTop;
