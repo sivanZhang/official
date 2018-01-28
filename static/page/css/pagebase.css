@@ -78,9 +78,9 @@
 {
      height: 300px;
      text-align: center; 
-     background-repeat:no-repeat; 
-     background-size:100% 100%;
-     -moz-background-size:100% 100%;
+     background-size: cover!important;
+     background-position: top center!important;
+     background-repeat: no-repeat!important;
      padding-right: 30% !important;
 }
 .top-tips h1{ 
