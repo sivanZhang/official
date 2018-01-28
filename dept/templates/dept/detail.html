@@ -3,8 +3,10 @@
 {% load i18n %}
 {% block pagetitle%}体验店{% endblock%}
 {% block css %}
+<link type="text/css" rel="stylesheet" href="/static/css/HoldOn.css"> 
 <link href="/static/page/css/pagebase.css" rel="stylesheet">
 <link href="/static/dept/css/list.css" rel="stylesheet"> 
+<link href="/static/dept/css/detail.css" rel="stylesheet"> 
 <style>
         .top-slide{
           background-image: url('/static/img/shop/title.png');
@@ -33,15 +35,24 @@
     </div> 
 </div>
 <div class="container  detail">
+  <input type="hidden" id="deptid" value="{{dept.id}}" />
     <div class="row  "> 
       <div class="col-xs-6 ">
          {{dept.detail|safe}}
+         <img src="/static/dept/img/send.png" class="sendimg" />
+         <p class="sendtext grey">{% trans 'Send address to my phone' %}</p>
+         <input type="text" class="form-control " id="phone" value="" placeholder="{% trans 'your mobile phone' %}"/>
+         <br/>
+         <input type="button" class="btn-text-white orange-bg  common-btn " id="send" value="{% trans 'send' %}" />
       </div> 
       <div class="col-xs-6 mapdetail">
           <div id="mapContainer"></div> 
       </div>
     </div>
 </div>  
+<form action="" method="post">
+    {%csrf_token%}  
+</form>
 {% endblock%}
 {% block js %} 
 <script type="text/javascript">
@@ -60,6 +71,8 @@
       placeSearch.search('{{dept.address}} {{dept.name}}', function(status, result) {
       });
   });
- 
+
 </script>
+<script type="text/javascript" src="/static/js/HoldOn.min.js"></script>
+<script src="/static/dept/js/detail.js " rel="stylesheet "></script>
 {% endblock %}

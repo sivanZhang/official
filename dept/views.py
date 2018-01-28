@@ -4,6 +4,7 @@ import json
 import random
 import string
 import os
+import time
 from datetime import datetime
 from django.shortcuts import redirect 
 from django.shortcuts import render
@@ -20,7 +21,7 @@ from rest_framework.response import Response
 from rest_framework import status 
 from django.utils.translation import ugettext as _
 from django.db.models import Q
-
+import requests
 from dept import models 
 from area.models import Area
 from area.views import get_provice_list, get_city_list, get_county_list, byte2json
@@ -33,6 +34,36 @@ class DeptForm(forms.ModelForm):
     class Meta:
         model = models.Dept
         fields = ('detail',)
+
+def send(request):
+    msg = {}
+    if 'phone' in request.POST and 'deptid' in request.POST:
+        deptid = request.POST['deptid']
+        phone = request.POST['phone']
+        dept = models.Dept.objects.get(pk = deptid)
+        int_time = int(time.time())
+        if 'time' in request.session:
+            old_int_time = request.session['time']
+            request.session['time'] = int_time
+            if int_time - old_int_time < 60:# 60秒，频率太高
+                msg['status'] = 'error'
+                msg['msg'] = u'操作频率太快...'
+            else: 
+                content = "【"+settings.PROJECTNAME+"】" + dept.name + ':'+ dept.address + "电话：" + dept.phone
+                req = requests.get(settings.SMS_API.format(phone,content)) 
+                msg['status'] = 'ok'
+                msg['msg'] = u'已发送...'
+        else:
+            old_int_time = 0
+            content = "【"+settings.PROJECTNAME+"】" + dept.name + ':'+ dept.address + "电话：" + dept.phone
+            req = requests.get(settings.SMS_API.format(phone,content))   
+            request.session['time'] = int_time
+            msg['status'] = 'ok'
+            msg['msg'] = u'已发送...'
+    else:
+        msg['status'] = 'error'
+        msg['msg'] = u'方法错误...'
+    return HttpResponse(json.dumps(msg), content_type="application/json")
 
 class DeptView(View):
     """
@@ -182,9 +213,12 @@ class DeptView(View):
                 return self.create(request) 
             elif method == 'delete': # 删除
                 return self.delete(request) 
+            
         else:
             self.create(request)
             return self.get(request)
+
+    
 
     def create(self, request):
         """创建""" 

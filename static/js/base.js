@@ -149,3 +149,8 @@ $(document).ready(function() {
         history.back();
     });
 });
+/* 验证 */
+function verify_phone(phone) {
+    var pattern = /^1[34578]\d{9}$/; 
+    return pattern.test(phone); 
+}

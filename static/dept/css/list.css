@@ -56,6 +56,7 @@ label[for=id_detail]{
   }
   table td{
     margin: 5px;
+    line-height: 30px;
   }
   .tb_search{
       margin: 20px auto;
@@ -80,8 +81,7 @@ label[for=id_detail]{
     padding-right:  0px !important;
   }
   .serviceitem{
-    width: 21px;
-    height: 21px;
+    width: 18px; 
     margin-right: 10px;
   }
 #mapContainer{
@@ -105,4 +105,8 @@ label[for=id_detail]{
 }
 .detail{
     margin: 30px auto;
+}
+.service_table p.grey{
+    margin-top: 4px;
+    margin-bottom: 0px;
 }

@@ -221,8 +221,15 @@ AUTHENTICATION_BACKENDS=[
     #'official.third_party_backend.EmailBackend'
 ]
 LOGIN_URL = '/users/login/'
-PROJECTNAME = 'official site'
+PROJECTNAME = '一数科技'
 EMAIL_SWITCH = False
 SMTP_SERVER         ='smtp.163.com' #SMTP server IP address
 SMTP_SERVER_USER    ='postmaster@map2family.com'  
 SMTP_SERVER_PWD     ='Youxiang889886'  
+
+
+SMS = {
+    'SMS_SN' : "SDK-BBX-010-22746",
+    'SMS_PWD' : "76D7DAAC410AF587F0DEEE4F5FA86795",
+}
+SMS_API = "http://sdk2.entinfo.cn:8061/mdsmssend.ashx?sn=SDK-BBX-010-22746&pwd=76D7DAAC410AF587F0DEEE4F5FA86795&mobile={0}&content={1}"
