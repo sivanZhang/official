@@ -95,8 +95,9 @@ class PageView(View):
             else:
                 return render(request, 'page/faith.html', content)
         if 'service' == blockname and 'list' == pagename:
+            contentblock = models.AdaptorBaseBlock.objects.filter(mark=blockname)
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
-            #content['page'] = pages[0]
+            content['contentblock'] = contentblock[0]
             #content['pages'] = replace_slide(pages)
             if isMble:
                 return render(request, 'page/service.html', content)
