@@ -70,6 +70,10 @@
         height: 500px;
         margin: 0 auto;
     }
+    .threesixty img{
+        height: 500px;
+        margin: 70px auto;
+    }
 }
 
 .sub-item
@@ -520,7 +524,7 @@
       color: inherit;
   }
   .threesixty img{
-      margin: 0 auto; 
+      margin: 70px auto; 
   }
   .image-text table td{
       width: 100px;
@@ -603,7 +607,4 @@ font-size:16px;
 }
 .advice-details td div{
     width: 86%;
-}
-.threesixty img{
-    height: 500px;
 }

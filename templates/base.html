@@ -48,25 +48,23 @@
                           <a href="{% url 'product:cast2' %}">Watch</a>
                           <div class="point"></div>
                         </td>
+                        <td class="{% if mallpage %}active{% endif %} ">
+                            <a href="">商城</a>
+                            <div class="point"></div>
+                        </td>
+                        <td class="{% if communitypage %}active{% endif %} ">
+                            <a href="">社区</a>
+                            <div class="point"></div>
+                        </td> 
+                        <td class="{% if storepage %}active{% endif %} ">
+                            <a href="" class="a_store">体验店</a>
+                            <div class="point"></div>
+                        </td>
                         <td class="{% if servicepage %}active{% endif %} ">
                           <a href="{% url 'page:page' 'service' 'list' %}">服务</a>
                           <div class="point"></div>
                         </td>
-                        <td class="{% if storepage %}active{% endif %} ">
-                          <a href="" class="a_store">体验店</a>
-                          <div class="point"></div>
-                        </td>
-                        <td class="{% if communitypage %}active{% endif %} ">
-                          <a href="">社区</a>
-                          <div class="point"></div>
-                        </td>
-                        <td class="{% if mallpage %}active{% endif %} ">
-                          <a href="">商城</a>
-                          <div class="point"></div>
-                        </td>
-                    
                         <td class="small-padding">
-                    
                           <a href="">中文|EN</a>
                         </td>
                     

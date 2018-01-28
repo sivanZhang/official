@@ -98,7 +98,13 @@ class PageView(View):
             contentblock = models.AdaptorBaseBlock.objects.filter(mark=blockname)
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
             content['contentblock'] = contentblock[0]
-            #content['pages'] = replace_slide(pages)
+            # 获得热点问题
+            hot_products = AdaptorProduct.objects.filter(category__name = "热点问题")
+            # 获得使用小技巧
+            skill_products = AdaptorProduct.objects.filter(category__name = "使用小技巧")
+
+            content['hot_products'] = hot_products[:5]
+            content['skill_products'] = skill_products[:5]
             if isMble:
                 return render(request, 'page/service.html', content)
             else:

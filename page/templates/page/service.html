@@ -79,30 +79,30 @@
      <div class="col-xs-6 list-wrap1">
        <ul class="question">
          <li class="clearfix">
-           <div class="pull-left fs22">热点为题</div>
+           <div class="pull-left fs22">热点问题</div>
            <a class="pull-right" href="javascript:;">查看更多</a>
          </li>
-         <li class="clearfix"><a class="pull-left" href="javascript:;">什么是儿童空间？如何操作？</a>
-          <div class="pull-right show-btn">+</div>
-          <div class="answer">回答：你猜我告诉不告诉你？</div></li>
-          <li class="clearfix"><a class="pull-left" href="javascript:;">什么是儿童空间？如何操作？</a>
-            <div class="pull-right show-btn">+</div></li>
-            <div class="answer">回答：你猜我告诉不告诉你？</div>
+         {% for product in hot_products %}
+          <li class="clearfix">
+            <a class="pull-left" href="javascript:;">{{product.title}}</a>
+            <div class="pull-right show-btn">+</div> 
+           <div class="answer">{{product.detail|safe}}</div>
+          </li>
+          {% endfor %}
        </ul>
      </div>
      <div class="col-xs-6 list-wrap2">
         <ul class="question">
           <li class="clearfix">
-            <div class="pull-left fs22">热点为题</div>
+            <div class="pull-left fs22">使用小技巧</div>
             <a class="pull-right" href="javascript:;">查看更多</a>
           </li>
-          <li class="clearfix"><a class="pull-left" href="javascript:;">什么是儿童空间？如何操作？</a>
+          {% for product in skill_products %}
+          <li class="clearfix"><a class="pull-left" href="javascript:;">{{product.title}}</a>
            <div class="pull-right show-btn">+</div>
-          <div class="answer">回答：你猜我告诉不告诉你？</div>
+          <div class="answer">{{product.detail|safe}}</div>
           </li>
-           <li class="clearfix"><a class="pull-left" href="javascript:;">什么是儿童空间？如何操作？</a>
-             <div class="pull-right show-btn">+</div>
-             <div class="answer">回答：你猜我告诉不告诉你？</div></li>
+          {% endfor %}
         </ul>
       </div>
   </div>
