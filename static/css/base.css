@@ -5,6 +5,9 @@
 .fs24{
     font-size: 24px;
 }
+.fs22{
+    font-size: 22px;
+}
 .p-r{
     position: relative;
 }
@@ -13,6 +16,9 @@
 }
 .orange{
     color:#ea5014
+}
+.black{
+    color:#333;
 }
 .orange-bg
 {

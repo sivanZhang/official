@@ -34,3 +34,39 @@
   height: 58px;
   margin-bottom: 10px;
 } 
+.question>li{
+  border-bottom: 1px solid #ddd;
+  padding: 20px 10px;
+}
+.question {
+  margin-bottom: 60px;
+}
+.question a{
+  color: inherit;
+}
+.list-wrap1{
+  padding-right: 60px;
+}
+.list-wrap2{
+  padding-left: 60px;
+}
+.show-btn{
+  width: 16px ;
+  height:16px;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: rgb(175, 175, 175);
+  color: #fff;
+  line-height:7px;
+  cursor: pointer;
+  text-align: center;
+
+}
+.question{
+  color: #6c6c6c;
+}
+.answer{
+  display: none;
+  padding-top: 5px;
+  clear: both;
+}

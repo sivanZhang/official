@@ -34,9 +34,10 @@
   section.main {
     padding-top: 100px;
     position: relative;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-    background: url(/static/img/idea/main.jpg) no-repeat center;
+    background-size: cover!important;
+    background-position: top center!important;
+    background-repeat: no-repeat!important;
+    background: url(/static/img/idea/main.png);
     color: #fff;
   }
   .down {
@@ -51,11 +52,12 @@
   .sider {
     height: 100%;
     width: 100%;
-    background-attachment: fixed;
-    background-size: auto 100%!important;
+    background-size: cover!important;
+    background-position: top center!important;
+    background-repeat: no-repeat!important;
   }
   .sider0 {
-    background: url(/static/img/idea/slider1.jpg) no-repeat center;
+    background: url(/static/img/idea/slider1.png) no-repeat center;
   }
   .f12 {
     font-size: 12px;
