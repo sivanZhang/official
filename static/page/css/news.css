@@ -17,11 +17,17 @@
     margin-bottom: 40px;
 }
 .new-list a:hover,.new-list a:active,.new-list a:visited{
-    color:#ea5014;
+    color:inherit;
 }
 .news-lable{
     padding-left:130px;
 }
 .img_title{
     margin-top: 10px;
+}
+.fs18{
+    font-size: 18px;
+}
+.img_title{
+    color: #333;
 }

@@ -8,6 +8,18 @@ video a{
 .video-first,.video-list{
     cursor: pointer;
 }
+.video-first .icon,.video-list .icon{
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+}
+.video-first .icon:hover,.video-list .icon:hover{
+    opacity: 1;
+}
 .video{
     padding: 0 140px;
 }

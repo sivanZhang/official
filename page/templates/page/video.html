@@ -20,11 +20,13 @@
         </div> 
     </div> 
 </div>
+
 <div class="container video video1">
             {% for page in pages %}
                 {% if page.mark == 'top' %}
-                    <div class="video-first " data-video="{{page.url}}">
+                    <div class="video-first p-r" data-video="{{page.url}}">
                         <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
+                        <img class="icon" src="/static/img/icon/play.svg" />
                         <div class="v-title">{{page.title}}</div>
                         <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
                     </div>
@@ -37,8 +39,9 @@
             {% for page in pages %}
                {% if page.mark != 'top' %}
                <div class="col-xs-4">
-                        <div class="video-list" data-video="{{page.url}}">
+                        <div class="video-list p-r" data-video="{{page.url}}">
                                 <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
+                                <img class="icon" src="/static/img/icon/play.svg" />
                                 <div class="v-title">{{page.title}}</div>
                                 <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
                         </div> 

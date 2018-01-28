@@ -70,11 +70,11 @@
 }
 .event_point{
     position: absolute;
-    left: 16.8%;
+    left: 202px;
     height: 5px;
     width:5px;
     background-color:rgb(181, 182, 182);
-    border-radius: 2px;
+    border-radius: 50%;
 }
 .eventlist_tr{
      padding-top: 20px;
