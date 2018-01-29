@@ -1,4 +1,7 @@
 /* 通用 */
+.mb-30{
+    margin-bottom: 30px;
+}
 .b-n{
     border:none!important;
 }
@@ -116,8 +119,9 @@ body{
 
 .menu td.small-padding{
     padding: 0 10px;
-    line-height: 40px;
     font-size: 12px;
+    position: relative;
+    top: -3px;
 }
 
 .menu .td_mall
@@ -393,3 +397,13 @@ section .image-text:hover{
     color: rgb(181, 182, 182);
   }
 
+.small-padding button{
+    background-color: transparent;
+    border:none;
+    outline: none;
+}
+@font-face
+{
+font-family: '方正兰亭纤黑简体';
+src: url(/static/font/lanting.ttf);
+}
