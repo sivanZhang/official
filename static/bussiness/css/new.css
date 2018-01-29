@@ -66,9 +66,7 @@ label{
 .info-form form input:focus {
   outline: none;
 }
-.menu-holder {
-  position: absolute;
-}
+
 .top-pic {
   background: url('/static/img/dealer/top.png') 100% 100%;
   height: 300px;

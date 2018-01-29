@@ -141,11 +141,12 @@ body{
 }
 
 .bottom-line{
-    position: relative;
-    top: -31px;
+    position: absolute;
+    top: 69px;
     overflow: hidden;
     border-top: 1px solid rgb(181, 182, 182);
     z-index: -1;
+    width: 100%;
 }
 
 .menu .active *{
@@ -161,24 +162,25 @@ body{
     height: 16px;
     vertical-align:sub;
 }
-.store_sec_menu, .sec_menu
+.store_sec_menu.sec_menu
 {
     position: absolute;
     top: 70px;
-    right: 230px;
-    z-index: 10;
+    left: -52px;
+    z-index: 1001;
+    width: 220px;
 }
 .product_sec_menu
 {
     top: 70px;
     right: 25%;
 }
-.a_img
+.a_img img
 { 
     cursor:pointer;
-    width: 100px;
     height: 60px;
-    margin: 0 10px;
+    margin: 0 5px;
+    display: inline-block;
 }
 
 .panel-body-transparent
@@ -329,7 +331,6 @@ footer{
 }
 .fixed_menu_class {
     position: unset !important;
-    overflow: hidden;
     background-color: rgb(52, 52, 52);
 }
 .btn-list li img,.hide-menu img{

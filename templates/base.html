@@ -56,8 +56,20 @@
                             <a href="">社区</a>
                             <div class="point"></div>
                         </td> 
-                        <td class="{% if storepage %}active{% endif %} ">
+                        <td class="p-r" class="{% if storepage %}active{% endif %} ">
                             <a href="" class="a_store">体验店</a>
+                            <div class="panel panel-default sec_menu store_sec_menu panel-body-transparent">
+                              <div class="panel-body">
+                                <div>
+                                  <a class="a_img" href="{% url 'bussiness:new' %}">
+                                    <img class="store_img_hove" src="/static/img/store.png" />
+                                  </a>
+                                  <a class="a_img" href="{% url 'dept:list' %}">
+                                    <img class="bussiness_img_hove" src="/static/img/bussiness.png" />
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
                             <div class="point"></div>
                         </td>
                         <td class="{% if servicepage %}active{% endif %} ">
@@ -77,19 +89,8 @@
                     </td>
                     </tr>
                     </table>
-      
-        <div class="panel panel-default sec_menu store_sec_menu panel-body-transparent">
-          <div class="panel-body">
-            <div>
-              <a class="a_img" href="{% url 'bussiness:new' %}">
-                <img class="store_img_hove" src="/static/img/store.png" />
-              </a>
-              <a class="a_img" href="{% url 'dept:list' %}">
-                <img class="bussiness_img_hove" src="/static/img/bussiness.png" />
-              </a>
-            </div>
-          </div>
-        </div>
+                    
+        
       </div>
       <div class="bottom-line">
         </div>
