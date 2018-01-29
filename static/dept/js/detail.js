@@ -1,6 +1,14 @@
 $(document).ready(function() {  
     fnLimited($('#phone'));
+    doubleclick = false;//避免双击的代码
     $("#send").click(function(){
+        if (doubleclick == false){
+            doubleclick =true;
+        }
+        else{
+            return;
+        }
+
         //
         var options = {
             theme: "sk-doc",
@@ -24,7 +32,7 @@ $(document).ready(function() {
             sec --;
             if (sec ==0){
                 $("#send").removeAttr("disabled");
-                $("#send").text("已发送,");
+                $("#send").val("已发送");
                 clearInterval(inter);
             }
             else{
@@ -57,6 +65,7 @@ $(document).ready(function() {
                 // 500
                 alert('server is down!')
             }
-        })
+        });
+        doubleclick = false;
     }) 
 });
