@@ -121,8 +121,7 @@ var swiper2 = new Swiper('.swiper22', {
             pagination: '.swiper-pagination',
             paginationClickable: true,
             loop: true,
-            preventLinksPropagation : false,
-            
+            preventClicks : false,
             autoplay: 5000,
         });
          
@@ -131,13 +130,10 @@ var swiper2 = new Swiper('.swiper22', {
             nextButton: '.swiper-button-next-line1',
             prevButton: '.swiper-button-prev-line1',  
             slidesPerView : 3,
-            /* 3d效果 */
-            /* effect : 'coverflow',
-            slidesPerView: 3,*/
+            /* 居中 */
             centeredSlides: true, 
             /* 点击事件 */
-            preventLinksPropagation : false,
-            
+            preventClicks : false,
             spaceBetween : 10,
         });
         var swiper3 = new Swiper('.swiper3', {
@@ -150,8 +146,8 @@ var swiper2 = new Swiper('.swiper22', {
             slidesPerView: 3,*/
             centeredSlides: true, 
             /* 点击事件 */
-            preventLinksPropagation : false,
-            
+            preventClicks : false,
+            /* 间隙 */
             spaceBetween : 10,
         });
         var swiper4 = new Swiper('.swiper4', {
@@ -159,12 +155,9 @@ var swiper2 = new Swiper('.swiper22', {
             nextButton: '.swiper-button-next-line3',
             prevButton: '.swiper-button-prev-line3', 
             slidesPerView : 3,
-            /* 3d效果 */
-            /* effect : 'coverflow',
-            slidesPerView: 3,*/
             centeredSlides: true, 
             /* 点击事件 */
-            preventLinksPropagation : false,
+            preventClicks : false,
             spaceBetween : 10,
         });
     });
