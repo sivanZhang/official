@@ -105,6 +105,7 @@ class PageView(View):
 
             content['hot_products'] = hot_products[:5]
             content['skill_products'] = skill_products[:5]
+            content['servicepage'] = True
             if isMble:
                 return render(request, 'page/service.html', content)
             else:

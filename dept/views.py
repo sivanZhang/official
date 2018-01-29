@@ -73,9 +73,9 @@ class DeptView(View):
     def get(self, request):
         isMble  = dmb.process_request(request)
         content = {} 
-        depts = models.Dept.objects.all()
-     
+        depts = models.Dept.objects.all() 
         content['depts'] = depts
+        content['storepage'] = True
         content['mediaroot'] = settings.MEDIA_URL
         #form = DeptForm(instance=product)
         
