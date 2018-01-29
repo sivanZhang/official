@@ -42,7 +42,7 @@ table .first a{
     min-width: 120px;
 }
 .linkitems td.td_online{
-    min-width: 148px!important;
+    min-width: 230px!important;
 }
 footer a{
     color: inherit;
@@ -59,7 +59,8 @@ footer a:hover{
 
 .phone
 {   
-    color:#ea5014;
+    color: rgb(181, 182, 182);
+    /* color:#ea5014; */
     font-size: 20px;
 }
 

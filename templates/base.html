@@ -56,20 +56,8 @@
                             <a href="">社区</a>
                             <div class="point"></div>
                         </td> 
-                        <td class="p-r" class="{% if storepage %}active{% endif %} ">
-                            <a href="" class="a_store">体验店</a>
-                            <div class="panel panel-default sec_menu store_sec_menu panel-body-transparent">
-                              <div class="panel-body">
-                                <div>
-                                  <a class="a_img" href="{% url 'bussiness:new' %}">
-                                    <img class="store_img_hove" src="/static/img/store.png" />
-                                  </a>
-                                  <a class="a_img" href="{% url 'dept:list' %}">
-                                    <img class="bussiness_img_hove" src="/static/img/bussiness.png" />
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
+                        <td class="{% if storepage %}active{% endif %} ">
+                            <a href="{% url 'dept:list' %}">体验店</a>
                             <div class="point"></div>
                         </td>
                         <td class="{% if servicepage %}active{% endif %} ">
@@ -89,7 +77,6 @@
                     </td>
                     </tr>
                     </table>
-                    
         
       </div>
       <div class="bottom-line">
@@ -130,7 +117,7 @@
           </td>  
           <td rowspan="7" class="td_online text-center">
             <div class="online-div">
-              <p class="phone grey" title="客服电话">400-608-0106</p>
+              <p class="phone" title="客服电话">400-608-0106</p>
               <p>周一至周日 8:00-18:00<br>(仅收市话费)</p>
             </div>
             <a class="custom-service" href="javascript:;">
@@ -138,7 +125,7 @@
               24小时在线客服</a>
           </td>
           <td rowspan="7" class="td_online text-center clearfix">
-            <div class="qrcode pull-right">
+            <div class="qrcode">
              <img src="/static/img/qrcode.png" title="官方微信">
             </div>
           </td>
@@ -254,7 +241,7 @@
           </td>
           <td> 
           </td>
-          <td>  </td>
+          <td> <a href="{% url 'bussiness:new' %}">成为经销商</a></td>
           <td>  </td>
           <td> </td>
           <td>  </td>

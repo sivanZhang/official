@@ -175,13 +175,6 @@ body{
     top: 70px;
     right: 25%;
 }
-.a_img img
-{ 
-    cursor:pointer;
-    height: 60px;
-    margin: 0 5px;
-    display: inline-block;
-}
 
 .panel-body-transparent
 {
@@ -248,7 +241,7 @@ body{
     color: white;
 }
 
-.scroll-up, .scroll-down{
+.scroll-down{
     width: 33px;
     height: 33px;
     border-radius: 20px;
@@ -297,20 +290,21 @@ td.td-bar-point
     margin: 0 auto;
 }
 .menu-holder{
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: 10;
+    overflow: hidden;
 }
-footer .pull-left{
-    font-size: 12px;
-    
+footer .pull-left,footer .pull-right{
+    font-size: 10px;
     color: #fff;
     z-index:1000 ;
+    line-height: 40px;
 }
-footer .round-btn{
+footer .round-btn .fa{
     display: inline-block!important;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     padding: 4px;
     background-color: #fff;
     border-radius: 50%;
@@ -318,16 +312,14 @@ footer .round-btn{
     text-align: center;
 }
 .round-btn i{
-    font-size: 12px;
+    font-size: 10px;
 }
 footer{
-    height: 50px;
-    font-size: 12px;
+    height: 40px;
     width: 100%;
     color: #fff;
     background-color:rgb(143, 144, 146);
     z-index: 1000;
-    padding:15px 0;
 }
 .fixed_menu_class {
     position: unset !important;
@@ -391,3 +383,9 @@ section .image-text:hover{
     -ms-transform: translateY(0);
     transform: translateY(0);
 }  */
+.btn-list li a:hover{
+    color: #6c6c6c!important;
+}
+.btn-list li a {
+    color: rgb(181, 182, 182);
+  }

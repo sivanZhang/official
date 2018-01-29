@@ -148,6 +148,28 @@ $(document).ready(function() {
     $('i.back').click(function() {
         history.back();
     });
+    $('.menu-list td').mouseenter(function(){
+        $(this).find('.point').css('background-color','#ea5014');
+    })
+    $('.menu-list td').mouseleave(function(){
+        $(this).find('.point').css('background-color','rgb(181, 182, 182)');
+    })
+    /* 点击页面回收悬浮菜单 */
+    jQuery(document).click(function () {
+        jQuery('.btn-list li').slideUp();
+    })
+    jQuery('#show-btn').click(function (e) {
+        jQuery('.btn-list li').slideToggle();
+        e.stopPropagation();
+    })
+    jQuery(document).click(function () {
+        jQuery('#user_login_nav').slideUp();
+    })
+
+    
+    /* 产品页箭头位置 */
+    var abslut = $('.logo').offset().left;
+    $('.scroll-tip').css('right', abslut+'px')
 });
 /* 验证 */
 //手机号码验证
@@ -173,3 +195,8 @@ function fnLimited(inputLimited){
         }
     });
 }
+$(window).resize(function() {
+    var leftValue =$('.point:first').offset().left;
+    $('.bottom-line').css('left',leftValue+'px');
+  });
+  

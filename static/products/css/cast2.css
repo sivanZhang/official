@@ -219,6 +219,17 @@
     width: 100%;
     vertical-align: unset;
 }
+.scroll-up-img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 7px;
+    background-color: rgb(220 , 220, 220);
+    cursor: pointer;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    margin-top: 5px;
+}
 .roll-tip a{ 
     line-height: 30px;
     color: white;
@@ -304,22 +315,9 @@
 .scroll-tip
 {
     position: fixed;
-    bottom: 10px;
-    right: 10%;
+    bottom: 55px;
     width: auto; 
-}
-
-.scroll-up{
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    border-radius: 50%;
-    background-color: rgb(220, 220, 220);
-    text-align: center;
-    margin:5px 0;
-    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-    cursor: pointer;
+    text-align: right;
 }
 
 
@@ -423,9 +421,8 @@
     text-align: right;
     position: absolute;
     right: 0px;
-    bottom: 90px;
+    bottom: 80px;
     width: 200px;
-    padding-right: 5px;
   }
   .btn-list li {
     display: none;
@@ -449,10 +446,10 @@
     color: inherit;
   }
   #show-btn img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    padding: 10px;
+    padding: 8px;
     background-color: #fff;
     -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);

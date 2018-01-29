@@ -195,8 +195,7 @@
   height: 8px;
   display: inline-block;
   border-radius: 100%;
-  background: #000;
-  opacity: 0.2;
+  background:rgb(147, 148, 148);
 }
 button.swiper-pagination-bullet {
   border: none;
@@ -215,8 +214,7 @@ button.swiper-pagination-bullet {
   background: #fff;
 }
 .swiper-pagination-bullet-active {
-  opacity: 1;
-  background: rgb(233, 98, 19);
+  background: #ea5014;
 }
 .swiper-pagination-white .swiper-pagination-bullet-active {
   background: #fff;
