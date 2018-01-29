@@ -55,7 +55,22 @@
                 <div class="col-xs-3">
                         <input type="text" class="form-control" id="address" placeholder="详细地址" value=""/>   
                 </div> 
-            </div>
+        </div>
+        <div class="row"> 
+           
+            <div class="col-xs-2">
+                <input type="text" class="form-control" id="latitude" placeholder="纬度" value=""/>    
+            </div> 
+            <div class="col-xs-2">
+                <input type="text" class="form-control" id="longitude" placeholder="经度" value=""/>   
+            </div> 
+            <div class="col-xs-3">
+                    <a href="http://lbs.amap.com/console/show/picker">访问高德经纬度拾取器</a>   
+            </div> 
+            <div class="col-xs-2">
+                
+           </div> 
+    </div>
         <div class="row">
             <div>
                     {{ form.as_p }} 
@@ -77,6 +92,8 @@
                                 <td>{{dept.get_dept_type_display}}</td>
                                 <td>{{dept.area.short_name}}</td>
                                 <td>{{dept.address}}</td>
+                                <td>{{dept.longitude}}</td>
+                                <td>{{dept.latitude}}</td>
                                 <td>{{dept.phone}}</td> 
                                 <td> <input type="button" deptid="{{dept.id}}" class="btn-text-white orange-bg  common-btn delete"
                                        value="+{% trans 'Delete' %}"/> </td> 

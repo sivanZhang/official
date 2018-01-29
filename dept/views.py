@@ -259,8 +259,7 @@ class DeptView(View):
         """创建""" 
         # 创建时：title字段是必须的,\url\pic\mark\status是可选字段
         user = request.user
-        result = {} 
-        
+        result = {}  
         if 'name' in request.POST and 'storetype' in request.POST and \
            'phone' in request.POST and 'detail' in request.POST \
             and 'address' in request.POST  and 'area' in request.POST \
@@ -272,6 +271,8 @@ class DeptView(View):
             address = request.POST['address'].strip() 
             areaid = request.POST['area'].strip() 
             data_type = request.POST['data_type'].strip() 
+            latitude = request.POST['latitude'].strip() 
+            longitude = request.POST['longitude'].strip() 
             area = Area.objects.get(id = areaid)
 
             # 创建Block 
@@ -283,7 +284,9 @@ class DeptView(View):
                 detail = detail,
                 area = area,
                 address = address,
-                store_type=data_type
+                store_type=data_type,
+                latitude =latitude,
+                longitude=longitude,
             ) 
             result['id'] = dept.id
             result['status'] ='ok'

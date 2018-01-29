@@ -140,10 +140,63 @@
 {% block js %} 
  
 <script src="/static/dept/js/list.js " rel="stylesheet "></script>
-<script type="text/javascript">
+ 
+<script>
+    var map = new AMap.Map('mapContainer', {});
+    map.plugin(["AMap.ToolBar"], function() {
+        map.addControl(new AMap.ToolBar());
+    });
+    var infoWindow = new AMap.InfoWindow({});     //创建信息窗口对象  ps.高德目前不支持多信息窗口，即使创建多个窗口对象，也只会显示一个
+
+    var lnglats= [["116.4123","39.906422"],["116.4352","39.906933"],["116.445435","39.9054345"]];
+    var data = [{"id":1,"name":"我是第1个点","type":1},{"id":2,"name":"我是第2个点","type":3},{"id":3,"name":"我是第3个点","type":7}];
+    for(var i= 0;i<lnglats.length;i++){
+        var marker=new AMap.Marker({
+            position:lnglats[i],        //采用默认样式，无需自定义
+            map:map,
+            icon: '/static/img/gaode.png'
+        });
+        content = [];
+        content.push('ID：'+data[i].id);
+        content.push('名称：'+data[i].name);
+        marker.content = content;
+        marker.title = data[i].id+"."+data[i].name;     //标记点的title
+
+//        if(data[i].id==2){              //默认打开第二个点的信息窗口
+        infoWindow.setContent(content.join("<br/>"));
+        infoWindow.open(map,lnglats[i]);
+//        }
+
+        marker.on('dblclick',openAmap);     //这里采用调到新页面方式导航，也可直接定义带导航功能的信息窗体，请参考http://lbs.amap.com/api/javascript-api/example/infowindow/infowindow-has-search-function/
+        //给Marker绑定单击事件
+        marker.on('click', markerClick);
+    }
+
+    map.setFitView();
+    //跳至地图当中导航
+    function openAmap(e){
+        e.target.markOnAMAP({
+            name:e.target.title,
+            position:e.target.getPosition()
+        })
+    }
+    //信息窗口
+    function markerClick(e){
+        infoWindow.setContent(e.target.content.join('<br/>'));
+        infoWindow.open(map, e.target.getPosition());
+    }
+
+    //地图加载完成事件
+    map.on('complete', function() {
+        Materialize.toast('地图图块加载完毕！', 4000)
+//        document.getElementById('tip').innerHTML = "地图图块加载完毕！当前地图中心点为：" + data[0].name;
+    });
+</script>
+<script>/*
     var map = new AMap.Map("mapContainer", {
         resizeEnable: true
     });
+    
     AMap.service(["AMap.PlaceSearch"], function() {
         var placeSearch = new AMap.PlaceSearch({ //构造地点查询类
             pageSize: 5,
@@ -156,6 +209,8 @@
         placeSearch.search('一数科技', function(status, result) {
         });
     });
+    */
+   
     {% if storetype  %}
       $("#storetype").val("{{storetype}}");  
     {% endif %}

@@ -42,8 +42,9 @@ class Dept(BaseDate):
     detail = RichTextUploadingField(_('Detail'), null=True)
     # 电话
     phone = models.CharField(_('Phone'), max_length = 128, null = True) 
-
-     
+    longitude = models.CharField(_('经度'), max_length = 64, null = True)
+    latitude = models.CharField(_('纬度'), max_length = 64, null = True) 
+    
     def __str__(self):
         return self.name  
   

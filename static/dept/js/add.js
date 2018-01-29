@@ -47,12 +47,17 @@ $(document).ready(function() {
         var address = $('#address').val();
         var data_type = $('#data_type').val();
         var area = 0;
+        var latitude = $('#latitude').val();
+        var longitude = $('#longitude').val();
        
         if ($('#county').val() == null || $('#county').val()  == "-1")
         {
             //area = $('#county').val();
             $().errormessage('请选择区县');
             return;
+        }
+        if (data_type == undefined){
+            data_type = 0;
         }
         area = $('#county').val();  
         data = {
@@ -63,6 +68,8 @@ $(document).ready(function() {
             'detail': detail,
             'address': address,
             'area' :area, 
+            'longitude':longitude,
+            'latitude':latitude,
             'data_type':data_type,
             'csrfmiddlewaretoken': getCookie('csrftoken'),
         }; 

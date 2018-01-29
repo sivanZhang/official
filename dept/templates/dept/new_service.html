@@ -11,7 +11,7 @@
 <form action="" method="post">
     {%csrf_token%} 
     <input type="hidden" name="method" value="create" /> 
-    
+    <input type="hidden" id="data_type" value="1" /> 
     {{ form.as_p }} 
 </form>
 {% endif %}
