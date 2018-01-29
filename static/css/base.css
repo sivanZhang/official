@@ -92,7 +92,9 @@ body{
     font-size: 14px;
     color: rgb(181, 182, 182);
 }
-
+.menu .small-padding a{
+    font-size: 12px;
+}
 .menu a:hover, .a_img:hover{
     text-decoration: none;
     
@@ -115,6 +117,7 @@ body{
 .menu td.small-padding{
     padding: 0 10px;
     line-height: 40px;
+    font-size: 12px;
 }
 
 .menu .td_mall
@@ -325,7 +328,7 @@ footer{
     position: unset !important;
     background-color: rgb(52, 52, 52);
 }
-.btn-list li img,.hide-menu img{
+.btn-list li img{
     -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 }
@@ -389,3 +392,4 @@ section .image-text:hover{
 .btn-list li a {
     color: rgb(181, 182, 182);
   }
+
