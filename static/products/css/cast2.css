@@ -71,8 +71,8 @@
         margin: 0 auto;
     }
     .threesixty img{
-        height: 500px;
-        margin: 70px auto;
+        height: 400px;
+        margin: 60px auto;
     }
 }
 
@@ -172,9 +172,9 @@
 .roll-tip
 {
    
-    width: 40px; 
-    height: 40px; 
-    padding: 8px;
+    width: 30px; 
+    height: 30px; 
+    padding: 4px;
     border-radius: 50%;
     background-color: white;
     cursor: pointer;
@@ -217,9 +217,9 @@
     padding: 7px;
     background-color: rgb(220 , 220, 220);
     cursor: pointer;
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px rgba(0,0,0,.1);
-    margin-top: 5px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    margin-top: 10px;
 }
 .roll-tip a{ 
     line-height: 30px;
@@ -228,15 +228,15 @@
 
 .roll-tip-up
 {  
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    padding: 10px;
+    padding: 5px;
     background-color: rgb(220 , 220, 220);
     margin: 20px auto;
     cursor: pointer;
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
 .panel-menu-fixed
@@ -421,13 +421,7 @@
     font-size: 12px;
     color: rgb(182, 182, 182);
   }
-  .btn-list li img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    padding: 6px;
-    background-color: #fff;
-    
+
   }
   .btn-list a:link,
   .btn-list a:visited,
@@ -595,4 +589,10 @@ font-size:16px;
 }
 .advice-details td div{
     width: 86%;
+}
+.text-center.image-text.orange{
+    margin: 0 0 45px;
+}
+.p_title_2.text-center{
+    margin: 0px;
 }

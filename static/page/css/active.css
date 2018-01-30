@@ -19,7 +19,7 @@
     height: 140px;
 }
 .years-wrap{
-    padding: 40px 180px;
+    padding: 40px 180px 60px;
 }
 .years{
     position: relative;
@@ -53,6 +53,6 @@
     margin-left: 4px;
     cursor: pointer;
 }
-.mt100{
-    margin-top: 80px;
+.mt60{
+    margin-top: 60px;
 }

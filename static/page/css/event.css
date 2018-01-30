@@ -53,8 +53,8 @@
     margin-left: 4px;
     cursor: pointer;
 }
-.mt100{
-    margin-top: 80px;
+.mt60{
+    margin-top: 60px;
 }
 .eventlist{
     padding-left: 10%;
@@ -86,6 +86,6 @@
     margin: 20px;
 }
 .event-container{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 60px;
 }

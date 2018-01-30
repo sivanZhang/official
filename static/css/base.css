@@ -1,6 +1,13 @@
+@charset "utf-8";
+@font-face
+{
+font-family: lanting;
+src: url('/static/font/lanting.ttf');
+}
+
 /* 通用 */
-.mb-30{
-    margin-bottom: 30px;
+.mb-60{
+    margin-bottom: 60px;
 }
 .b-n{
     border:none!important;
@@ -332,10 +339,7 @@ footer{
     position: unset !important;
     background-color: rgb(52, 52, 52);
 }
-.btn-list li img{
-    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-}
+
 .fixed_menu_class .bottom-line{
         z-index: unset;
 }
@@ -359,7 +363,7 @@ li{
 }
 
 .image-text{
-    font-family: '方正兰亭纤黑简体';
+    font-family: lanting;
 }
 .f12{
     font-size:12px;
@@ -402,8 +406,19 @@ section .image-text:hover{
     border:none;
     outline: none;
 }
-@font-face
-{
-font-family: '方正兰亭纤黑简体';
-src: url(/static/font/lanting.ttf);
+.m60{
+    margin-top: 50px;
+    margin-bottom: 60px;
 }
+.btn-list span img {
+    width: 100%;
+    height: 100%;
+  }
+  .btn-list span{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 6px;
+  }

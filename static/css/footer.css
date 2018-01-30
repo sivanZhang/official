@@ -49,7 +49,7 @@ table .first a{
 }
 footer a{
     color: inherit;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 footer a:hover{
@@ -58,6 +58,7 @@ footer a:hover{
 .linkitems table.container{
     padding:0 15px!important;
     display: block;
+    overflow: hidden;
 }
 
 .phone

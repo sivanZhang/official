@@ -120,7 +120,7 @@
   .sider .shop-link {
     color: #fff;
     position: absolute;
-    font-family: '方正兰亭纤黑简体';
+    font-family: lanting;
   }
   .shop-link1{
     left: 58%;
@@ -206,15 +206,15 @@
     text-align: center;
     z-index: 1000;
   }
-  .hide-menu img {
+
+  #show-btn img{
     width: 30px;
     height: 30px;
-    background-color: #fff;
     border-radius: 50%;
-    padding: 7px;
-  }
-  #show-btn img{
     padding: 8px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   }
   .swiper-button-prev, .swiper-button-next{
     height: 28px!important;
