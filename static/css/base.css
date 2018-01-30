@@ -336,7 +336,6 @@ footer{
     z-index: 1000;
 }
 .fixed_menu_class {
-    position: unset !important;
     background-color: rgb(52, 52, 52);
 }
 
