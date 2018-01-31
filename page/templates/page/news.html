@@ -7,6 +7,7 @@
 <link href="/static/page/css/pagebase.css" rel="stylesheet">
 <link href="/static/page/css/active.css" rel="stylesheet">
 <link href="/static/page/css/news.css" rel="stylesheet">  
+<link href="/static/page/css/report.css" rel="stylesheet">  
  {% endblock %}
 {% block content %}
 
@@ -95,8 +96,7 @@
             </div>
         </div>
        <div class="col-xs-4 news-lable">
-        <div class="grey f16">新闻&nbsp;标签</div>
-       </div>
+        {% include 'page/label.html' %}
     </div>
 </div>  
 {% endblock%}

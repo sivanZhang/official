@@ -131,6 +131,13 @@ class PageView(View):
                 raise Http404
             content['pages'] = pages 
             content['contentblock'] = pages[0].block
+            labels_list = []
+            for page in pages:
+                if page.lables:
+                    labels_list += page.lables.split(',')
+         
+            labels_list = list(set(labels_list))
+            content['labels_list'] = labels_list
             if isMble:
                 return render(request, 'page/news.html', content)
             else:
@@ -170,6 +177,13 @@ class PageView(View):
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
             content['contentblock'] = pages[0].block
             content['pages'] = replace_slide(pages)
+            labels_list = []
+            for page in pages:
+                if page.lables:
+                    labels_list += page.lables.split(',')
+         
+            labels_list = list(set(labels_list))
+            content['labels_list'] = labels_list
             if isMble:
                 return render(request, 'page/report.html', content)
             else:

@@ -27,6 +27,7 @@ $("#fileUpload").on('change', function () {
       $('#url').val(oTr.children('.b_url').children().text());
       $('#mark').val(oTr.children('.b_mark').text());
       $('#date').val(oTr.children('.b_date').text());
+      $('#label').val(oTr.children('.b_label').text());
       var itemid= oTr.children('.b_itemid').text();
       $('#add_input').prepend('<input type="hidden" name="itemid" id="itemid" value="'+itemid
         +'"/>'

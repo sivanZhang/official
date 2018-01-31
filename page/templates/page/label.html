@@ -1,0 +1,22 @@
+<div class="grey f18">新闻&nbsp;标签</div>
+<div class="label_list">
+    {% for label in labels_list %}
+    <span class="span_label grey">{{label}}</span>
+    {% endfor %} 
+</div>
+
+ 
+<div class="subscribe orange-bg">
+   <h1 class="white">订阅ASU</h1>
+   <p  class="white">第一时间获得我们的更新和新服务信息</p>
+   <input type="text" class="name sub_input" id="sub_name" placeholder="姓名" value=""/>
+   <br/><br/>
+   <input type="text" class="email sub_input" id="sub_email" placeholder="您的电子邮箱" value=""/>
+   <br/><br/>
+   <input type="checkbox" class="agreement sub_input" id="sub_agreement" />
+   <span class="white">输入您的电子表示您接受我们的<a href="javascript:;" class="white a_agreement">条款和条件</a>
+   </span>
+   <br/>
+   <input type="button" class="btn_sub orange" id="sub" value="立即订阅" />
+</div>
+ 

@@ -26,6 +26,7 @@ class BaseBlock(models.Model):
         abstract = True
         
 class AdaptorBaseBlock(BaseBlock):
+    
     objects = AdaptorSiteContentManager()
     
 
@@ -53,5 +54,6 @@ class BaseBlockItem(models.Model):
         abstract = True
      
 class AdaptorBaseBlockItem(BaseBlockItem): 
-    pass
+    # 标签，以逗号隔开
+    lables = models.CharField(max_length = 1024, null = True) 
     
