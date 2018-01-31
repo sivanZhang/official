@@ -94,6 +94,19 @@ class PageView(View):
                 return render(request, 'page/faith.html', content)
             else:
                 return render(request, 'page/faith.html', content)
+
+        if 'policy' == blockname :
+            # 保修政策
+            if isMble:
+                return render(request, 'page/policy.html', content)
+            else:
+                return render(request, 'page/policy.html', content)
+        if 'waiting' == blockname :
+            # 敬请期待
+            if isMble:
+                return render(request, 'page/waiting.html', content)
+            else:
+                return render(request, 'page/waiting.html', content)
         if 'service' == blockname and 'list' == pagename:
             contentblock = models.AdaptorBaseBlock.objects.filter(mark=blockname)
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
