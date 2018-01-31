@@ -66,12 +66,13 @@
 }
 @media screen and (max-width: 1550px) {
     .threesixty {
-        /* width: 500px; */
-        height: 500px;
+        height: 425px;
+        width:auto;
         margin: 0 auto;
     }
     .threesixty img{
-        height: 400px;
+        height: 340px;
+        width:auto;
         margin: 60px auto;
     }
 }
@@ -107,7 +108,12 @@
 {
     height: 120px;
 }
-
+.advice-details .fs24{
+    line-height: 2;
+}
+.advice-details .gray{
+    line-height:1.6;
+}
 
 
 
@@ -312,11 +318,14 @@
 }
 
 
-.img360_holder.img360_holder
+.img360_holder
 {
     padding-top: 30px;
-    background-color: #000201;
     position: relative;
+    background-size:cover!important;
+    background-position:top center!important;
+    background-repeat:no-repeat!important;
+    background: url(/static/img/product/b360.png);
 }
 
 .img360-text{
@@ -506,7 +515,7 @@
       color: inherit;
   }
   .threesixty img{
-      margin: 70px auto; 
+      margin: 80px auto; 
   }
   .image-text table td{
       width: 100px;
@@ -541,9 +550,9 @@
       display: inline-block;
   }
   .image-text .show-t{
-      font-size: 50px;
+      font-size: 42px;
       font-weight: 300;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
   }
   .image-text .show-msg{
     font-size: 20px;
@@ -595,4 +604,17 @@ font-size:16px;
 }
 .p_title_2.text-center{
     margin: 0px;
+}
+.m60{
+    margin-top:40px;
+    margin-bottom: 60px;
+}
+.show1 table{
+    margin-left: -15px;
+}
+.show2 table,.show4 table{
+    margin-left: -20px;
+}
+.show3 table{
+    margin-left: -4px;
 }
