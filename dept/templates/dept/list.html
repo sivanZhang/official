@@ -25,13 +25,13 @@
   
 <div class="text-center"> 
         <form id="search">
-          <table class="tb_search grey">
+          <table class="tb_search gray">
               <tr>
                   <td>
                         <span class="msg" >{% trans 'Please select the city' %}:</span>
                   </td>
                   <td>
-                        <select class="form-control grey" id="provice" name="provice"> 
+                        <select class="form-control gray" id="provice" name="provice"> 
                             {% for p in provices %}
                                 {% if provicearea.id == p.id %}
                                 <option value="{{p.id}}" selected="selected">{{p.short_name}}</option>
@@ -42,7 +42,7 @@
                         </select>
                   </td>
                   <td>
-                        <select class="form-control grey" id="city" name="city"> 
+                        <select class="form-control gray" id="city" name="city"> 
                                 <option value="0">{% trans "All" %}</option>
                                 {% for item in cities %}
                                     {% if city.id == item.id %}
@@ -54,7 +54,7 @@
                         </select>   
                   </td>
                   <td>
-                        <select class="form-control grey" id="county" name="county"> 
+                        <select class="form-control gray" id="county" name="county"> 
                                 <option value="0">{% trans "All" %}</option>
                                 {% for item in counties %}
                                     {% if county.id == item.id %}
@@ -66,7 +66,7 @@
                         </select>  
                   </td>
                   <td>
-                      <select class="form-control grey" id="storetype" name="storetype">
+                      <select class="form-control gray" id="storetype" name="storetype">
                             <option value="0">{% trans 'All shop type' %}</option> 
                                   <option value="2">旗舰店</option>
                                   <option value="1">经销店</option>
@@ -89,15 +89,15 @@
                     <table class="service_table">
                         <tr>
                             <td><img class="serviceitem" src="/static/img/icon/charge.svg" /></td>
-                            <td><p class="grey">{% trans 'Free Charge' %}</p></td>
+                            <td><p class="gray">{% trans 'Free Charge' %}</p></td>
                         </tr>
                         <tr>
                             <td><img class="serviceitem" src="/static/img/icon/clock.svg" /></td>
-                            <td><p class="grey">{% trans 'Maintaince' %}</p></td>
+                            <td><p class="gray">{% trans 'Maintaince' %}</p></td>
                         </tr>
                         <tr>
                             <td><img class="serviceitem" src="/static/img/icon/wifi.svg" /></td>
-                            <td><p class="grey">{% trans 'Free WiFi' %}</p></td>
+                            <td><p class="gray">{% trans 'Free WiFi' %}</p></td>
                         </tr>
                     </table> 
                     <h3 class="orange">{% trans 'VIP Service' %}</h3>
@@ -105,11 +105,11 @@
                     <table class="service_table">
                         <tr>
                             <td><img class="serviceitem" src="/static/img/icon/sticker.svg" /></td>
-                            <td><p class="grey">{% trans 'Watch Sticker' %}</p></td>
+                            <td><p class="gray">{% trans 'Watch Sticker' %}</p></td>
                         </tr>
                         <tr>
                             <td><img class="serviceitem" src="/static/img/icon/gift.svg" /></td>
-                            <td><p class="grey">{% trans 'Credit for gift' %}</p></td>
+                            <td><p class="gray">{% trans 'Credit for gift' %}</p></td>
                         </tr>
                        
                     </table> 
@@ -117,22 +117,24 @@
             </div>
             <div class="row mb-60">
                     <div class="col-xs-12 "> 
-                        <div class="table-title grey">{{area.short_name}} . 体验店( {{depts|length}} )</div>
-                        <table class="table grey table-striped">
-                            {% for dept in depts %} 
-                                        <tr class="tr_dept" >
-                                            <td  >{{forloop.counter}}</td>
-                                            <td class="td_title td_right" >
-                                                <a class="grey" href="{% url "dept:list" %}?detail={{dept.id}}" >{{dept.name}}</a>
-                                                <br/>
-                                                <a class="orange" href="{% url "dept:list" %}?detail={{dept.id}}" >点击查看</a>
-                                            </td>
-                                            <td  class=" td_right">{{dept.get_dept_type_display}}</td> 
-                                            <td  class=" td_right">{{dept.address}}</td>
-                                            <td  class=" ">{{dept.phone}}</td>  
-                                        </tr> 
-                            {% endfor %}
-                        </table>
+                        <div class="table-title gray">{{area.short_name}} . 体验店( {{depts|length}} )</div>
+                       <div class="list-warp">
+                            <table class="table gray table-striped">
+                                    {% for dept in depts %} 
+                                                <tr class="tr_dept" >
+                                                    <td  class="col-xs-1 text-center orange">{{forloop.counter}}</td>
+                                                    <td class="col-xs-2 td_title text-left" >
+                                                        <a class="gray" href="{% url "dept:list" %}?detail={{dept.id}}" >{{dept.name}}</a>
+                                                        <br/>
+                                                        <a class="orange" href="{% url "dept:list" %}?detail={{dept.id}}" >点击查看</a>
+                                                    </td>
+                                                    <td class="col-xs-2"><div class="border-div">{{dept.get_dept_type_display}}</div></td> 
+                                                    <td class="col-xs-5"><div class="border-div">{{dept.address}}</div></td>
+                                                    <td class="col-xs-2"><div class="border-div">{{dept.phone}}</div></td>  
+                                                </tr> 
+                                    {% endfor %}
+                                </table>
+                       </div>
                 </div>
             </div>
         </div>  

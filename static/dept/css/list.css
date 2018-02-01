@@ -25,8 +25,10 @@
 label[for=id_detail]{
     padding: 0 15px;
 }
-.table-striped>tbody>tr:nth-of-type(odd){
-    background-color: unset;
+.table-striped>tbody>tr:nth-of-type(even){
+    background-color: #f9f9f9;
+  }.table-striped>tbody>tr:nth-of-type(odd){
+    background-color: #fff;
   }
   .table>tbody>tr:first-child>td{
     border-top: 0!important;
@@ -35,16 +37,17 @@ label[for=id_detail]{
     border-bottom: 0;
   }
   .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
-    padding: 15px 8px;
+    padding: 15px 5px!important;
+    border-top:none;
   }
   .table th:first-child,.table td:first-child{ 
-    text-align: left;
-    padding-left: 15px;
+    background-size: auto 50%!important;
+    background-position: center 56%!important;
+    background-repeat: no-repeat!important;
+    background: url(/static/img/nub_bg.png);
   }
   .table{
     text-align: center; 
-    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.02);
-    
     background-color: white;
   } 
   .col-inline{
@@ -93,9 +96,7 @@ label[for=id_detail]{
 .mapdetail{
     width: 50%;
 }
-.td_title{
-    width: 25%;
-}
+
 .td_right{
     border-right: 1px solid rgb(181, 182, 182);
     margin: 10px 0px;
@@ -112,6 +113,27 @@ label[for=id_detail]{
 }
 .store-map{
     margin:30px 0;
-    padding:15px 0;
+    padding:20px 0;
     background-color: #fff;
+}
+table td{
+    vertical-align:middle!important;
+}
+.table.gray.table-striped a:hover{
+    color:initial;
+}
+
+.service_table td img{
+    vertical-align: initial;
+}
+
+.list-warp{
+    padding: 15px;
+    background-color: #fff;
+}
+.border-div{
+    width: 100%;
+    border-left: 1px solid #ddd;
+    height: 40px;
+    padding: 10px 0;
 }
