@@ -37,9 +37,9 @@ h1.white{
     border-radius: 2px;
     background-color: white;
     border: none;
-    padding: 4px 35px;
+    padding: 0px 35px;
     margin-top: 20px; 
-    line-height: 32px;
+    line-height: 30px;
     font-size: 14px;
     font-weight: bold;
     
@@ -50,6 +50,7 @@ h1.white{
 .subscribe{
     padding: 35px;
     margin-top: 30px;
+    width: 328px;
 }
 .sub_tb{
     padding-left: 10px;
@@ -60,4 +61,15 @@ h1.white{
 /* 以下是社交媒体css样式*/
 .social{
     margin-top: 20px;
+}
+.social_tb td{
+    line-height: 55px;
+}
+.socialimg{
+    margin-right: 10px;
+
+}
+p.grey.socialtxt {
+    height: 30px;
+     
 }
