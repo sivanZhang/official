@@ -110,3 +110,8 @@ label[for=id_detail]{
     margin-top: 4px;
     margin-bottom: 0px;
 }
+.store-map{
+    margin:30px 0;
+    padding:15px 0;
+    background-color: #fff;
+}
