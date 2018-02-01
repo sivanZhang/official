@@ -21,7 +21,7 @@ table .first a{
 .linkitems
 {
     padding: 5px 0 40px;
-   background-color:rgb(247, 248, 249);
+   background-color:rgb(249, 249, 249);
 }
 .lable{
     color: #fff;
@@ -42,10 +42,10 @@ table .first a{
     border-color:#ea5014 transparent transparent #ea5014;
 }
 .linkitems td{
-    min-width: 120px;
+    min-width: 110px;
 }
 .linkitems td.td_online{
-    min-width: 230px!important;
+    min-width: 240px!important;
 }
 footer a{
     color: inherit;
@@ -64,8 +64,7 @@ footer a:hover{
 .phone
 {   
     color: rgb(181, 182, 182);
-    /* color:#ea5014; */
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .qrcode img{
@@ -76,6 +75,7 @@ footer a:hover{
     width: 100px;
     background-color: rgb(226, 227, 227);
     position: relative;
+    margin-left: 60px;
 }
 .qrcode::before{
     width: 60px;
@@ -103,7 +103,7 @@ a.custom-service{
     color: #ea5014;
     padding: 6px 12px;
     border: 1px solid #ea5014;
-    font-size: 14px;
+    font-size: 12px;
 }
 a.custom-service:link{
     color: #ea5014;

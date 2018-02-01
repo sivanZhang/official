@@ -1,6 +1,4 @@
-.gray{
-    color: #6c6c6c;
-}
+
 .content
 { 
     width: 100%;
@@ -66,12 +64,12 @@
 }
 @media screen and (max-width: 1550px) {
     .threesixty {
-        height: 425px;
+        height: 400px;
         width:auto;
         margin: 0 auto;
     }
     .threesixty img{
-        height: 340px;
+        height: 320px;
         width:auto;
         margin: 60px auto;
     }
@@ -334,7 +332,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 45px;
 }
 .p_title_2 img
 {
@@ -487,7 +485,7 @@
     font-weight: 400;
     line-height: 1.42857143;
     text-align: center;
-    vertical-align: middle;
+    vertical-align: super;
     -ms-touch-action: manipulation;
     touch-action: manipulation;
     cursor: pointer;
@@ -499,9 +497,13 @@
     border: 1px solid transparent;
     background-color: #ea5014;
     border-radius: 15px;
+    margin-left: 30px;
+  }
+  .parts-text{
     position: absolute;
-    top: 47%;
-    left: 45%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%,-50%);
   }
   .learn_more .fa-angle-right {
     font-size: 18px;
@@ -516,7 +518,8 @@
       color: inherit;
   }
   .threesixty img{
-      margin: 80px auto; 
+      margin: 90px auto; 
+      max-height: 520px;
   }
   .image-text table td{
       width: 100px;
@@ -550,13 +553,13 @@
   dl{
       display: inline-block;
   }
-  .image-text .show-t{
-      font-size: 42px;
+  .show-t{
+      font-size: 40px;
       font-weight: 300;
       margin-bottom: 10px;
   }
-  .image-text .show-msg{
-    font-size: 20px;
+.show-msg{
+    font-size: 18px;
 }
 .hide-text div{
     font-size: 30px;
@@ -579,7 +582,8 @@ left: 50%;
 top: 50%;
 transform: translateY(-50%);
 color:#6c6c6c;
-font-size:16px;
+font-size:14px;
+line-height: 1.6;
 }
 
 .advice-details td{
@@ -601,13 +605,14 @@ font-size:16px;
     width: 86%;
 }
 .text-center.image-text.orange{
-    margin: 0 0 45px;
+    margin: 0 0 10px;
+    font-size: 30px;
 }
 .p_title_2.text-center{
     margin: 0px;
 }
 .m60{
-    margin-top:40px;
+    margin-top:60px;
     margin-bottom: 60px;
 }
 .show1 table{
@@ -618,4 +623,7 @@ font-size:16px;
 }
 .show3 table{
     margin-left: -4px;
+}
+.img360_holder .white.f18.text-center{
+    margin-bottom: 30px;
 }

@@ -149,10 +149,10 @@ $(document).ready(function() {
         history.back();
     });
     $('.menu-list td').mouseenter(function(){
-        $(this).find('.point').css('background-color','#ea5014');
+        $(this).find('.point').addClass('orange-point');
     })
     $('.menu-list td').mouseleave(function(){
-        $(this).find('.point').css('background-color','rgb(181, 182, 182)');
+        $(this).find('.point').removeClass('orange-point');
     })
     /* 点击页面回收悬浮菜单 */
     jQuery(document).click(function () {
@@ -166,7 +166,6 @@ $(document).ready(function() {
         jQuery('#user_login_nav').slideUp();
     })
 
-    
     /* 产品页箭头位置 */
     var abslut = $('.logo').offset().left;
     $('.scroll-tip').css('right', abslut+'px')
@@ -199,4 +198,3 @@ $(window).resize(function() {
     var leftValue =$('.point:first').offset().left;
     $('.bottom-line').css('left',leftValue+'px');
   });
-  

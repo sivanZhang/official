@@ -1,3 +1,8 @@
+body{
+    background-color: rgb(239, 239, 239);
+    position: relative;
+    min-height: 500px;
+}
 li {
     display: inline;
 }
@@ -35,8 +40,12 @@ input.error {
     width: 360px;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
     padding: 15px;
-    margin: 40px auto 60px;
     border-radius: 6px;
+    background-color: #fff;
+    margin-top: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .login-wrap header img{
     border-radius: 50%;
@@ -99,4 +108,8 @@ input[type=checkbox], input[type=radio]{
 .relative{
     position: relative;
     margin-bottom: 20px;
+}
+footer{
+    position: fixed;
+    bottom: 0px;
 }

@@ -12,11 +12,7 @@
 </style>
  {% endblock %}
 {% block content %}
-<div class="top-slide"> 
-    <div class="top-tips">
-      <h1 class="orange " >{% trans 'Service like a friend with you' %}</h1> 
-      <h5 >{% trans 'Welcome to use our product' %}</h5>
-    </div>
+<div class="top-slide">
   </div> 
 <div class=" container-title" >
     <div class="container ">
@@ -29,11 +25,13 @@
         </div> 
     </div> 
 </div>
-<div class="container mb-60">
+<div class="container m60">
     <div class="row  "> 
-      <div class="col-xs-12">
+        <div class="col-xs-1"></div>
+      <div class="col-xs-10">
          {{product.detail|safe}}
-      </div> 
+      </div>
+      <div class="col-xs-1"></div> 
     </div>
 </div>  
 {% endblock%}

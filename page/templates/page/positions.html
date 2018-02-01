@@ -30,7 +30,7 @@
  
 <div class="container">
     <div class="row  "> 
-       <div class="col-xs-12 text-center">
+       <div class="col-xs-12 text-center title-m">
            <h2>我们期待您加入</h2>
            <p class="orange">请将简历投递至：hr@a-su.com.cn</p>
         </div>  
@@ -50,7 +50,7 @@
             </thead>
             <tbody>
              {% for product in products %}
-             <tr class="productitem" detail="{{product.detail}}" title="{{product.title}}">
+             <tr class="productitem hover-poiter" detail="{{product.detail}}" title="{{product.title}}">
                     <td >{{product.title}}</td>
                     <td>{{product.category.name}}</td>
                     <td>{{product.description}}</td>

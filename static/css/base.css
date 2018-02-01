@@ -290,7 +290,7 @@ td.td-bar-point
 .second_menu_holder
 {
     width: 100%;
-    background-color:#f9f9f8;
+    background-color:#f9f9f9;
 }
 
 .fa-search
@@ -410,7 +410,7 @@ section .image-text:hover{
     outline: none;
 }
 .m60{
-    margin-top: 50px;
+    margin-top: 60px;
     margin-bottom: 60px;
 }
 .btn-list span img {
@@ -429,3 +429,9 @@ section .image-text:hover{
   .pagination{
       display:none;
   }
+  .orange-point{
+    background-color:#ea5014;
+  }
+  .gray{
+    color: #717071!important;
+}

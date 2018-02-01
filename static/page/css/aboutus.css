@@ -53,7 +53,7 @@
     height: 100%;
     width: 100%;
     background-size: cover!important;
-    background-position: top center!important;
+    background-position: center center!important;
     background-repeat: no-repeat!important;
   }
   .sider0 {
@@ -88,34 +88,37 @@
   }
   .sider-text {
     font-size: 32px;
-    background-color: #7a7a7a;
+    background-color: rgb(73, 73, 73);
     color: #fff;
     position: absolute;
     bottom: 0px;
     width: 100%;
-    line-height: 30px;
+    height: 140px;
   }
   .sider-text .container {
-    padding: 20px 15px;
-    height: 70px;
+    height: 100%;
   }
   .sider-text .container div {
     padding: 0px;
   }
-  .sider-text .container div span {
+  .sider-text .container .col-xs-1 {
+    line-height: 140px;
+    font-size: 40px;
+  }
+  .sider-text .container .col-xs-1 span{
     font-size: 14px;
   }
-  .sider-text .container .text-deteil {
-    font-size: 12px;
-    line-height: 1.2;
+  .sider-text .container .text-deteil{
+    margin-top: 50px;
+    font-size: 14px;
   }
   .swiper-pagination-fraction,
   .swiper-pagination-custom,
   .swiper-container-horizontal > .swiper-pagination-bullets {
-    bottom: 120px;
+    bottom: 210px;
   }
-  .swiper-wrapper {
-    padding-bottom: 70px;
+  .swiper-slide {
+    padding-bottom: 140px;
   }
   .other-color
   {

@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block fixed_menu_class %}fixed_menu_class{%endblock%}
+{% extends 'base.html' %} {% block menu %}{%endblock%}
 {% block title2%}用户登录 {% endblock%} {% block css %}
 <link href="/static/css/user.css" rel="stylesheet"> {% endblock %} {% block content %}
 
@@ -48,6 +48,7 @@
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
 <script>
     $(document).ready(function() {
+       
         // 在键盘按下并释放及提交后验证提交表单
         $("#signup-Form").validate({
             rules: {
@@ -87,8 +88,10 @@
                 email: "请输入一个正确的邮箱",
             }
         });
+        
     });
 
 </script>
 
 {% endblock %}
+{% block links %}{% endblock %}

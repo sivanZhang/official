@@ -82,13 +82,13 @@
      background-position: top center!important;
      background-repeat: no-repeat!important;
      padding-right: 30% !important;
+     font-family: lanting;
 }
 .top-tips h1{ 
     left: 25%;
 }
 .top-tips h5{ 
     left: 30%;
-    font-weight: bold;
     line-height: 70px;
 }
 
@@ -101,7 +101,7 @@
     padding-top: 100px;
 }
 .container-title {
-    background-color: rgb(249,249,248);
+    background-color: rgb(249,249,249);
     color: #ea5014;
     width: 100%;
 }

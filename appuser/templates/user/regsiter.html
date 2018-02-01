@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block fixed_menu_class %}fixed_menu_class{%endblock%} {% block title2%}用户注册{% endblock%} {% block css %}
+{% block menu %}{%endblock%} {% block title2%}用户注册{% endblock%} {% block css %}
 <link href="/static/css/user.css" rel="stylesheet"> {% endblock %} {% block content %}
 {% csrf_token %}
 <div class="login-wrap">
@@ -45,7 +45,7 @@
 
 <script type="text/javascript " src="/static/js/shop.js "></script>
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
-
 <script type="text/javascript " src="/static/appuser/js/register.js "></script>
 
 {% endblock %}
+{% block links %}{% endblock %}

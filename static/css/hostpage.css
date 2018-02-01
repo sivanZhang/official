@@ -96,7 +96,7 @@
     width: 100%;
     position: relative;
     background-size: cover!important;
-    background-position: top center!important;
+    background-position: center center!important;
     background-repeat: no-repeat!important;
   }
   .sider0{
@@ -133,7 +133,7 @@
     transform: translateX(-50%);
   }
   .shop-link3{
-    left: 16%;
+    left: 20%;
     bottom: 50%;
     transform: translateY(50%);
     color: #333!important;
@@ -157,9 +157,8 @@
     transform: translateY(50%);
   }
   .shop-link6{
-    left: 20%;
-    bottom: 50%;
-    transform: translateY(50%);
+    left: 22.5%;
+    top: 44%;
     color: #333!important;
   }
   .shop-link3 a:first-child,.shop-link6 .learn_more{

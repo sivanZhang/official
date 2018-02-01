@@ -8,11 +8,14 @@
   margin-bottom: 6px;
 }
 .top-slide {
-  padding: 90px 0 0!important;
+  padding: 0!important;
   position: relative;
 }
 .top-slide .white {
-  padding-left: 334px;
+  position: absolute;
+    left: 75%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 .links {
   padding: 40px 160px;
@@ -23,7 +26,7 @@
 .links .col-xs-3 a {
   display: block;
   padding: 20px 0px;
-  background-color: #f7f8f9;
+  background-color: rgb(249, 249, 249);
   border-radius: 8px;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -69,4 +72,10 @@
   display: none;
   padding-top: 5px;
   clear: both;
+}
+a.grey{
+  margin-top: 6px;
+}
+a.grey:link,a.grey:hover{
+  color: rgb(182, 182, 182)!important;
 }
