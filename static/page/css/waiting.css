@@ -1,0 +1,26 @@
+.waiting-img{
+    height: auto;
+}
+.fs30{
+    font-size: 30px;
+}
+.image-text.orange.fs30{
+    margin-bottom: 15px;
+}
+.waiting{
+    position: relative;
+    height: 570px;
+    background-size: 420px 420px!important;
+    background-position: center center!important;
+    background-repeat: no-repeat!important;
+    background: url(/static/img/waiting.png);
+}
+.waiting .text-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.common-btn.grey-btn:hover{
+    color: #333;
+}
