@@ -29,7 +29,20 @@
     <div class="row  "> 
         <div class="col-xs-1"></div>
       <div class="col-xs-10">
-         
+         以下是热点问题
+         {% for question in hot_products %}
+            <div class="clearfix"> {{question.title}} 
+          
+            <div  >{{question.detail|safe}}</div>
+           </div>
+         {% endfor %}
+         以下是使用小技巧
+         {% for question in skill_products %}
+            <div class="clearfix">{{question.title}}
+                 
+            <div  >{{question.detail|safe}}</div>
+           </div>
+         {% endfor %}
       </div>
       <div class="col-xs-1"></div> 
     </div>

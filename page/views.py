@@ -109,6 +109,15 @@ class PageView(View):
                 return render(request, 'page/waiting.html', content)
         if 'questions' == blockname :
             # 常见问题
+            # 获得热点问题
+            hot_products = AdaptorProduct.objects.filter(category__name = "热点问题")
+            # 获得使用小技巧
+            skill_products = AdaptorProduct.objects.filter(category__name = "使用小技巧")
+
+            content['hot_products'] = hot_products 
+            content['skill_products'] = skill_products 
+            content['servicepage'] = True
+
             if isMble:
                 return render(request, 'page/questions.html', content)
             else:
