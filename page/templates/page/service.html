@@ -80,7 +80,7 @@
        <ul class="question">
          <li class="clearfix">
            <div class="pull-left fs22">热点问题</div>
-           <a class="pull-right grey" href="javascript:;">查看更多</a>
+           <a class="pull-right grey" href="{% url 'page:page' 'questions' 'list' %}">查看更多</a>
          </li>
          {% for product in hot_products %}
           <li class="clearfix">
@@ -95,7 +95,7 @@
         <ul class="question">
           <li class="clearfix">
             <div class="pull-left fs22">使用小技巧</div>
-            <a class="pull-right grey" href="javascript:;">查看更多</a>
+            <a class="pull-right grey" href="{% url 'page:page' 'questions' 'list' %}">查看更多</a>
           </li>
           {% for product in skill_products %}
           <li class="clearfix"><a class="pull-left" href="javascript:;">{{product.title}}</a>

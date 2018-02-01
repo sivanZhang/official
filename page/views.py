@@ -107,6 +107,13 @@ class PageView(View):
                 return render(request, 'page/waiting.html', content)
             else:
                 return render(request, 'page/waiting.html', content)
+        if 'questions' == blockname :
+            # 常见问题
+            if isMble:
+                return render(request, 'page/questions.html', content)
+            else:
+                return render(request, 'page/questions.html', content)
+
         if 'service' == blockname and 'list' == pagename:
             contentblock = models.AdaptorBaseBlock.objects.filter(mark=blockname)
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
