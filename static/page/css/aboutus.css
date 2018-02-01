@@ -101,9 +101,19 @@
   .sider-text .container div {
     padding: 0px;
   }
-  .sider-text .container .col-xs-1 {
+  .sider-text .container .col-xs-1, .sider-text .container .col-xs-2{
     line-height: 140px;
     font-size: 40px;
+  }
+  .sider-text .container .col-xs-2{
+    padding-right:0px;
+  }
+  .sider-text .container .col-xs-9{
+    padding-left:0px; 
+    margin-left: -30px
+  }
+  .sider-text .container .col-xs-1{
+    margin-left: 30px
   }
   .sider-text .container .col-xs-1 span{
     font-size: 14px;
