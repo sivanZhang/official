@@ -121,6 +121,7 @@
                         <table class="table grey table-striped">
                             {% for dept in depts %} 
                                         <tr class="tr_dept" >
+                                                <td  >{{forloop.counter}}</td>
                                             <td class="td_title td_right" ><a class="grey" href="{% url "dept:list" %}?detail={{dept.id}}" >{{dept.name}}</a></td>
                                             <td  class=" td_right">{{dept.get_dept_type_display}}</td>
                                             <td  class=" td_right">{{dept.area.short_name}}{{dept.area.id}}</td>
@@ -157,8 +158,8 @@
             icon: '/static/img/gaode.png'
         });
         content = [];
-        content.push('ID：'+data[i].id);
-        content.push('名称：'+data[i].name);
+        //content.push('ID：'+data[i].id);
+        //content.push('名称：'+data[i].name);
         marker.content = content;
         marker.title = data[i].id+"."+data[i].name;     //标记点的title
 
