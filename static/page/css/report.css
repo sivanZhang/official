@@ -8,8 +8,7 @@
     padding-left: 15px;
 }
 .label_list {
-    margin-top: 15px;
-    max-width: 300px;
+    margin-top: 15px; 
     display: inline-block;
     line-height: 30px;
 }

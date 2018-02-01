@@ -4,11 +4,11 @@ $(document).ready(function(){
            $().errormessage("您必须接受我们的条件...");
            return;
        }
-       if ( !$("#sub_name").val() == '' ){
+       if ( $("#sub_name").val() == '' ){
             $().errormessage("请输入您的姓名...");
             return;
         }
-        if ( !$("#sub_email").val() == ''){
+        if ( $("#sub_email").val() == ''){
             
             $().errormessage("请输入您的邮箱...");
             return;
@@ -19,6 +19,7 @@ $(document).ready(function(){
                 return;
             }
         }
-        
+        $().message("已提交订阅...");
+
    });
 });
