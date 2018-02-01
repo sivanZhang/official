@@ -3,6 +3,7 @@
 }
 .big-img,.big-img>.news-img{
     height: 300px;
+    margin-bottom: 15px;
 }
 .img-holder{
     width: 100%;

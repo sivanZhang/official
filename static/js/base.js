@@ -194,7 +194,12 @@ function fnLimited(inputLimited){
         }
     });
 }
+function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
+
 $(window).resize(function() {
     var leftValue =$('.point:first').offset().left;
     $('.bottom-line').css('left',leftValue+'px');
-  });
+});

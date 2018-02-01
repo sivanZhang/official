@@ -25,13 +25,13 @@ span.span_label.grey {
     background-color: transparent;
     color: white;
     outline:none;
-    font-size: 16px;
+    font-size: 14px;
 }
 h1.white{
     margin-top: 10px;
 }
 .sub_input::placeholder{ 
-    color: white;
+    color: #EAEAEA;
 } 
 
 .btn_sub{
@@ -39,10 +39,9 @@ h1.white{
     background-color: white;
     border: none;
     padding: 4px 35px;
-    margin-top: 20px;
-    margin-left: 15px;
+    margin-top: 20px; 
     line-height: 32px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     
 }
@@ -52,4 +51,10 @@ h1.white{
 .subscribe{
     padding: 35px;
     margin-top: 30px;
+}
+.sub_tb{
+    padding-left: 10px;
+}
+.agreement {
+    margin-bottom: 23px  !important;
 }
