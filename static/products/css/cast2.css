@@ -521,14 +521,14 @@
       margin: 90px auto; 
       max-height: 520px;
   }
-  .image-text table td{
+  .items table td{
       width: 100px;
       padding: 6px 0;
   }
-  .image-text img{
+  .items table img{
       width: 40px;
   }
-  .image-text table{
+  .items table{
     margin-top: 90px;
     text-align: center;
   }
@@ -624,6 +624,7 @@ line-height: 1.6;
 .show3 table{
     margin-left: -4px;
 }
-.img360_holder .white.f18.text-center{
+.img360_holder .white.text-center{
     margin-bottom: 30px;
+    font-size: 14px;
 }
