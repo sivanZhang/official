@@ -583,7 +583,7 @@ top: 50%;
 transform: translateY(-50%);
 color:#6c6c6c;
 font-size:14px;
-line-height: 1.6;
+line-height:2;
 }
 
 .advice-details td{

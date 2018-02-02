@@ -1,0 +1,28 @@
+.items_holder .text-center.f16.orange{
+    margin-bottom: 5px;
+}
+.items_holder{
+    padding: 35px;
+}
+.nub{
+    width: 40px;
+}
+.mb-40{
+    margin-bottom:40px;
+}
+.grey{
+    color: #848484;
+}
+.answer{
+    margin-left: 40px;
+}
+.learfix{
+    overflow: hidden;
+}
+p,.nub{
+    margin: 0;
+    line-height: 2;
+}
+.mb-30{
+    margin-bottom: 30px;
+}

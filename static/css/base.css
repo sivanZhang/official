@@ -343,9 +343,9 @@ footer{
     position: relative!important;
 }
 
-.fixed_menu_class .bottom-line{
+/* .fixed_menu_class .bottom-line{
         z-index: unset;
-}
+} */
 .error{
     border: #ea5014;
 }
