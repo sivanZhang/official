@@ -97,6 +97,21 @@ class PageView(View):
 
         if 'policy' == blockname :
             # 保修政策
+            try:
+                block = models.AdaptorBaseBlock.objects.get(mark = blockname)
+                content['pageblock'] = block
+                url = block.url
+                content['img'] =  block.pic.replace('\\','/')
+                match = re.search('\d+', url)
+                if match:
+                    productid = match.group()
+                    try:
+                        product = AdaptorProduct.objects.get(id=productid)
+                        content['product'] = product 
+                    except AdaptorProduct.DoesNotExist:
+                        raise Http404 
+            except models.AdaptorBaseBlock.DoesNotExist:
+                raise Http404 
             if isMble:
                 return render(request, 'page/policy.html', content)
             else:
@@ -107,6 +122,12 @@ class PageView(View):
                 return render(request, 'page/waiting.html', content)
             else:
                 return render(request, 'page/waiting.html', content)
+        if 'software' == blockname :
+            # 软件下载
+            if isMble:
+                return render(request, 'page/software.html', content)
+            else:
+                return render(request, 'page/software.html', content)
         if 'questions' == blockname :
             # 常见问题
             # 获得热点问题

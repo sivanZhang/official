@@ -5,7 +5,11 @@
 {% block css %}
 <link href="/static/page/css/pagebase.css" rel="stylesheet">
 <link href="/static/page/css/aboutus.css" rel="stylesheet">
- 
+<style>
+    .top-slide{
+      background-image: url('{{mediaroot}}{{img}}');
+    }
+</style>
  {% endblock %}
 {% block content %}
 <div class="top-slide"> 
@@ -17,7 +21,7 @@
 <div class=" container-title" >
     <div class="container ">
         <div class="items_holder">
-                    <h2 class="title orange">{{product.title}} </h2>
+                    <h2 class="title orange">{{product.title}}  </h2>
                      
                     <a href="/">{% trans 'Home' %}</a>
                     <a href="javasrcipt:;">/&nbsp;ASU {% trans 'Brand' %}</a> 

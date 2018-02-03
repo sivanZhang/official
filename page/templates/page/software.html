@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block fixed_menu_class %}fixed_menu_class{%endblock%}
+{% load i18n %}
+{% block pagetitle%}软件下载{% endblock%}
+{% block css %}
+<link href="/static/page/css/waiting.css" rel="stylesheet">
+ 
+ {% endblock %}
+{% block content %}
+<div class="waiting text-center">
+    <div class="text-center">
+        <div class="image-text orange fs30">软件下载!</div>
+        <a class="common-btn grey-btn" href="/">返回首页</a>
+    </div>
+</div>
+  
+{% endblock%}
+{% block js %} 
+{% endblock %}
