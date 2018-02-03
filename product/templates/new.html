@@ -15,65 +15,61 @@
 <section>
     <!-- 路径导航 -->
     <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
+        <li><a href="#">{% trans 'Home' %}</a></li>
         <li><a href="{% url 'product:products' %}">页面列表{{request.user}}</a></li>
         <li class="active">发布页面</li>
         <li class="active">修改页面信息</li> 
     </ol>
-
-
+ 
     <div  class="form-horizontal">
         <div class="form-group">
             <label for="id" class="col-sm-2 control-label">页面类型：</label>
-            <div class="col-sm-4">
+            <div class="col-sm-1">
                 <select class="form-control " id="sel-category">
                     {% for category in categories %} 
                                 <option value ="{{category.id}}"  >{{category.name}}</option>
                          
                     {% endfor%}
                 </select>
-            </div>
-            <label for="id" class="col-sm-2 control-label">页面名称：
-            </label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" name="title" id="title" value="{{product.title}}" placeholder="">
-            </div>
-
+            </div>  
         </div>
-        
+        <div class="form-group"> 
+                <label for="id" class="col-sm-2 control-label">页面名称：
+                </label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="title" id="title" value="{{product.title}}" placeholder="">
+                </div> 
+        </div>
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">页面额外信息:</label>
-            <div class="col-sm-10 ta-wrap">
+            <div class="col-sm-5 ta-wrap">
                 <input type="text" class="form-control" name="desc" value="{{product.description|default:''}}" id="desc" placeholder="">
                 <span>0/50</span>
-            </div>
-
+            </div> 
         </div>
 
         <div class="form-group">
-            <label for="message" class="col-sm-2 control-label">页面详情：</label>
+            <label for="message" class="col-sm-2 control-label">页面简述：</label>
             <div class="col-sm-10">
                 {{ form.as_p }} 
-            </div>
-
+            </div> 
         </div>
 
         <div class="form-group">
-                <label for="message" class="col-sm-2 control-label">淘宝地址：</label>
-                <div class="col-sm-10">
-                        <input type="text" class="form-control"   value="{{product.taobaourl|default:''}}" id="taobaourl" placeholder="">
-                </div>
-    
+            <label for="message" class="col-sm-2 control-label">额外地址：</label>
+            <div class="col-sm-5">
+                    <input type="text" class="form-control"   value="{{product.taobaourl|default:''}}" id="taobaourl" placeholder="">
+            </div> 
         </div> 
     </div>
     <div class="msg "> </div>
     <div class="submit"> 
         <span class="btn-group " role="group " aria-label="... ">
             <button type="button" class="btn btn-primary product-btn " status="1 ">发布</button>
-            <button type="button " class="btn btn-default product-btn " status="0 ">存草稿</button>
+           <!-- <button type="button " class="btn btn-default product-btn " status="0 ">存草稿</button>
             <button type="button " class="btn btn-default ">
             <i class="fa fa-file-text-o " aria-hidden="true "></i>
-             
+            -->
         </button>
      </span>
     </div>
