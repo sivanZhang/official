@@ -31,53 +31,16 @@
     {% endfor %}
   </div>
   <div class="questions">
-    <div class="ext-center f16 orange mb-40">其他常见问题</div>
+    <div class="ext-center f16 orange mb-40">使用小技巧</div>
+    {% for question in skill_products %}
     <div class="clearfix mb-30">
-      <div class="pull-left nub">Q1</div>
+      <div class="pull-left nub">Q{{forloop.counter}}</div>
       <div class="answer grey">
-        <p class="black">线控为什么无法使用</p>
-        <p>1、首先要判断是否使用了正确的线控，安卓线控适配安卓设备，苹果线适配苹果设备，如果使用了不匹配的线控，音量控制功能可能失效；</p>
-        <p>2、其次确保线控连接方式正确，靠近线控端的接口是连接耳机，如果插反方向线控是无法使用的；</p>
-        <p>3、然后如果确定使用了正确的线控和连接方式，线控却还是不能控制则需要做交叉对比测试，比如更换音乐软件（注：某些音乐播放软件可能存在不兼容，建议使用系统默认播放器做交叉比对），不同的手机等等。</p>
+        <p class="black">{{question.title}}</p>
+        <p>{{question.detail|safe}}</p>
       </div>
-    </div>
-    <div class="clearfix">
-      <div class="pull-left nub">Q2</div>
-      <div class="answer grey">
-        <p class="black">要不要充电？如何充电？</p>
-        <p>需要充电，因为耳机的logo灯和降噪功能是需要耗电的，。配的USB充电线可以适配正规厂家生产的充电头（电压5V，电流至少500mA），电脑USB也可以，充电时长取决于充电器输出电流，一般是3个小时，电量灯充满即灭。要求输出电压5V，不建议使用带有快充（9V，12V等）功能的充电器或者劣质充电器使用。充电时不建议使用耳机。</p>
-
-      </div>
-    </div>
-    <div class="clearfix mb-30">
-      <div class="pull-left nub">Q3</div>
-      <div class="answer grey">
-        <p class="black">logo灯和降噪如何开启</p>
-        <p>多功能键短按1下是开/关降噪，可通过指示灯判断状态；短按三下是开/关logo灯。</p>
-      </div>
-    </div>
-    <div class="clearfix mb-30">
-      <div class="pull-left nub">Q4</div>
-      <div class="answer grey">
-        <p class="black">是否需要煲机？如何煲机</p>
-        <p>请连接FIIL+进行煲机操作即可，注意：煲机时需要将ANC主动降噪关闭功能，否则有损坏振膜的风险。</p>
-      </div>
-    </div>
-    <div class="clearfix mb-30">
-      <div class="pull-left nub">Q5</div>
-      <div class="answer grey">
-        <p class="black">出厂配置了几根线控</p>
-        <p>FIIL出厂配备3根线，包括一根安卓音频线控、一根苹果音频线控和一根USB充电线。 两根音频线控分别适配安卓系统和苹果iOS系统，使用时均支持对应操作系统的麦克风通话和音量控制。
-        </p>
-      </div>
-    </div>
-    <div class="clearfix">
-      <div class="pull-left nub">Q6</div>
-      <div class="answer grey">
-        <p class="black">ASU是否有兼听功能</p>
-        <p>ASU没有兼听功能。</p>
-      </div>
-    </div>
+    </div> 
+    {% endfor %}
   </div>
 </div>
 {% endblock%}
