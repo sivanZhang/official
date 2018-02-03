@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+    
     //
     var height = window.innerHeight;
     var width = window.innerWidth;
@@ -25,6 +26,7 @@ $(document).ready(function () {
   
 
     $(document).scroll(function () {
+        
         var scrollheight = $(document).scrollTop();
         if (scrollheight > 100) {
             ////显示快捷按钮
@@ -60,7 +62,7 @@ $(document).ready(function () {
     });
 
     $('.roll-tip-up').click(function (e) {
-        //$(document).scrollTop(height);// 
+       /*  $(document).scrollTop(height); */
         //$(this).parent().hide( );
         $(this).parent().slideToggle();
     });
@@ -86,12 +88,18 @@ $(document).ready(function () {
         $(selectot).click(function (e) {
             e.preventDefault();
             var target = $(this).attr('target');
-            // $('#'+target).show('slow');
-            // $('#'+target).show(  );
-            $('#' + target).slideToggle();
+           /* var newPos=new Object();
+                newPos.top="0"; */
+            $('#' + target).slideToggle('slow',function(){
+                /* 隐藏元素到视口顶部 */
+            var scrollTop     = $(window).scrollTop(),
+            elementOffset = $('#' + target).offset().top,
+            distance= (elementOffset - scrollTop);
+             $(window).scrollTop(scrollTop+distance-60); 
+            });
         });
     };
-
+  
     submenu('.product_pic_1');
     submenu('.product_pic_2');
     /*
@@ -149,35 +157,9 @@ $(document).ready(function () {
     var windowHeight = window.innerHeight;
     $('section,.img360_holder').css('height', windowHeight+ 'px');
 });
-/* function elementInViewport2(el) {
-    var top = el.offsetTop;
-    var left = el.offsetLeft;
-    var width = el.offsetWidth;
-    var height = el.offsetHeight;
-  
-    while(el.offsetParent) {
-      el = el.offsetParent;
-      top += el.offsetTop;
-      left += el.offsetLeft;
-    }
-  
-    return (
-      top < (window.pageYOffset + window.innerHeight) &&
-      left < (window.pageXOffset + window.innerWidth) &&
-      (top + height) > window.pageYOffset &&
-      (left + width) > window.pageXOffset
-    );
-  } */
-/*   var eTop=$('.image-text').offset().top,
-     eHeight=$('.image-text').height();
-  
-  var wTop=$(window).height();
-  window.onresize = function(){
-    var wTop=$(window).height();
-  }
-  $(window).scroll(function(){
-    var dTop = $(document).scrollTop();
-    if(dTop+wTop-600> eTop){
-        $('.image-text').parents('section').addClass('move');
-    }
-  }) */
+$(window).scroll(function(){
+    var scrollTop = $(window).scrollTop(),
+    elementOffset = $('.show').offset().top,
+    distance= (elementOffset - scrollTop);
+    $(window).scrollTop(scrollTop+distance-60); 
+})

@@ -1,0 +1,10 @@
+.top-tips.white{
+    position: absolute;
+    left: 75%;
+    top: 50%;
+    transform: translate(-50%,-25%);
+    padding: 0px;
+}
+.top-slide{
+    position: relative;
+}

@@ -3,14 +3,19 @@
 {% load i18n %}
 {% block pagetitle%}软件下载{% endblock%}
 {% block css %}
-<link href="/static/page/css/waiting.css" rel="stylesheet">
+<link href="/static/page/css/software.css" rel="stylesheet">
  
  {% endblock %}
 {% block content %}
-<div class="waiting text-center">
+<div class="container text-center m60">
     <div class="text-center">
-        <div class="image-text orange fs30">软件下载!</div>
-        <a class="common-btn grey-btn" href="/">返回首页</a>
+        <img class="orange-logo" src="/static/img/noavatar.png" alt="">
+        <h3 class="grey-text f18">下载页标题</h3>
+    </div>
+    <div class="text-center">
+        <img class="apple" src="/static/img/apple.png" alt="">
+        <img class="android" src="/static/img/android.png" alt="">
+        <img class="code_small" src="/static/img/code_small.png" alt="">
     </div>
 </div>
   
