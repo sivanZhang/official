@@ -1,6 +1,5 @@
 *.pptx
-*.pyc
-*.txt
+*.pyc 
 *.docx
 *.docs
 proxytest.py

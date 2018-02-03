@@ -1,0 +1,4 @@
+drop database official;
+create database official character set 'utf8';
+use official
+source E://o.sql;
