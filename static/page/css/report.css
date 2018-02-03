@@ -26,7 +26,7 @@ span.span_label.grey {
     outline:none;
     font-size: 14px;
 }
-a:link,a:visited,a:hover,a:active{
+.subscribe:link,.subscribe:visited,.subscribe:hover,.subscribe:active{
     text-decoration: none;
     color: white;
     outline: none;
