@@ -8,8 +8,7 @@ $(document).ready(function(){
             $().errormessage("请输入您的姓名...");
             return;
         }
-        if ( $("#sub_email").val() == ''){
-            
+        if ( $("#sub_email").val() == ''){ 
             $().errormessage("请输入您的邮箱...");
             return;
         }
@@ -19,7 +18,28 @@ $(document).ready(function(){
                 return;
             }
         }
-        $().message("已提交订阅...");
-
-   });
+        name = $("#sub_name").val() ;
+        email = $("#sub_email").val();
+        data = {
+            'method': 'create',
+            'name': name,
+            'email': email, 
+            'csrfmiddlewaretoken': getCookie('csrftoken'),
+        };
+      
+      
+        $.ajax({
+                type: 'post',
+                url: '/subscribe/list/',
+                data: data,
+                success: function(result) { 
+                    $().message("已提交订阅...");
+                    $("#sub_email").val('');
+                    $("#sub_name").val('') ;
+                },
+                error: function() {
+                    alert('server is down!')
+                }
+            })
+        });
 });

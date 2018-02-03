@@ -33,4 +33,5 @@ urlpatterns = [
     url(r'^bussiness/', include('bussiness.urls', namespace="bussiness")),
     url(r'^area/', include('area.urls', namespace="area")),
     url(r'^dept/', include('dept.urls', namespace="dept")),
+    url(r'^subscribe/', include('subscribe.urls', namespace="subscribe")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

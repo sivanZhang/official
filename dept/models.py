@@ -15,15 +15,7 @@ class Dept(BaseDate):
         (AFFILIATE, _('Affiliate')),
         (FLAGSHIP, _('Flagship Store')),
         (DISTRIBUTE, _('Distribution Points')) 
-    )
-
-    # 是否允许永久删除产品，即从数据库中删除产品
-    # 可以根据不同客户的不同需求具体确定
-    # 如果 ALLOW_DELETE = True的时候代表可以删除
-    # 如果 ALLOW_DELETE = False的时候代表不可以永久删除，status字段应该被设置为DELETED
-    # 这主要是针对有订单产生的产品，没有订单产生的产品可以永久删除，而不在意ALLOW_DELETE的设置
-    ALLOW_DELETE = True
-
+    ) 
     # 服务网点：1
     # 体验店： 0
     store_type = models.SmallIntegerField(default=0)

@@ -26,6 +26,13 @@ span.span_label.grey {
     outline:none;
     font-size: 14px;
 }
+a:link,a:visited,a:hover,a:active{
+    text-decoration: none;
+    color: white;
+    outline: none;
+}
+
+ 
 h1.white{
     margin-top: 10px;
 }
@@ -41,8 +48,8 @@ h1.white{
     margin-top: 20px; 
     line-height: 30px;
     font-size: 14px;
-    font-weight: bold;
-    
+    font-weight: bold; 
+    outline:none;
 }
 .a_agreement{
     text-decoration: underline !important;
@@ -72,4 +79,8 @@ h1.white{
 p.grey.socialtxt {
     height: 30px;
      
+}
+#modal-body{
+    max-height: 400px;
+    overflow-y: scroll;
 }

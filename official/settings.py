@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'bussiness',
     'area',
     'dept',
+    'subscribe',
 ]
 
 MIDDLEWARE = [

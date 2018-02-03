@@ -52,6 +52,13 @@ a:link,a:visited,a:hover,a:active{
     text-decoration: none;
 }
 
+.orange-bg:link,.orange-bg:visited,.orange-bg:hover,.orange-bg:active{
+    text-decoration: none;
+    color: white;
+    outline: none;
+}
+
+
 a:focus{
     outline: none;
 }
