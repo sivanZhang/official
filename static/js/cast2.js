@@ -81,7 +81,9 @@ $(document).ready(function () {
      */
     
     $(document).on('click', '.scroll-up', function () {
-        document.documentElement.scrollTop = document.body.scrollTop = 0;
+        $('html, body').animate({
+            scrollTop: $('body').offset().top
+         }, 300);
     })
 
     function submenu(selectot) {
