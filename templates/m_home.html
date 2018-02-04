@@ -1,166 +1,138 @@
-{% extends 'm_base.html' %} {% block css %}
-<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.css">
-<link href="/static/css/m_shophome.css" rel="stylesheet"> {% endblock %}<script type="text/javascript" src="/static/js/swiper-3.4.2.jquery.min.js"></script> {% block content %}
-
-<header class="container">
-    <div class="row">
-        <a href="javascript:;">
-            <div class="text-center col-xs-2">
-                <i class="iconfont icon-scan block"></i><span class="f12"> 扫码</span>
+{% extends 'base.html' %}
+{% block pagetitle%}一数科技&nbsp;首页{% endblock%}
+{% block links %}{% endblock %} 
+ {% block css %}
+ <link rel="stylesheet" href="/static/css/swiper.css">
+ <link href="/static/css/hostpage.css" rel="stylesheet">
+{% endblock %} 
+{% block content %}
+<div class="container-fluid content">
+    <!-- Swiper -->
+    <div class="swiper-container row">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="sider sider0">
+                    <div class="shop-link shop-link1">
+                        <div class="mb50 fs20">
+                            ASU Watch
+                        </div>
+                        <div class="orange mb50 fs40">
+                            触&nbsp;/&nbsp;无屏可及
+                        </div>
+                        <a class="learn_more" href="{% url 'product:cast2' %}">查看详情</a>
+                        <a class="now-bye orange-bg common-btn" href="{% url 'book:buy' %}">立即购买
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </a>
-
-        <div class="search i-block col-xs-8">
-            <i class="fa fa-search pull-left" aria-hidden="true"></i>
-            <input class="inp-search" type="text" />
-        </div>
-
-        <a href="/">
-            <div class="text-center col-xs-2"><i class="iconfont icon-comment block"></i> <span class="f12"> 消息</span>
+            <div class="swiper-slide">
+                <div class="sider sider1">
+                    <div class="shop-link shop-link3">
+                            <div class="mb50 fs40 orange">高科技精密陶瓷</div>
+                            <div class="mb50 fs20">时光荏苒&nbsp;风采依旧</div>
+                        <a class="learn_more" href="{% url 'product:cast2' %}">查看详情</a>
+                        <a class="now-bye orange-bg common-btn" href="{% url 'book:buy' %}">立即购买
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </a>
-    </div>
-</header>
-
-<!-- swiper1 -->
-<div id="swiper-container" class="swiper-container">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="/static/img/sli1.jpg"></div>
-        <div class="swiper-slide"><img src="/static/img/sli3.jpg"></div>
-        <div class="swiper-slide"><img src="/static/img/sli2.jpg"></div>
-    </div>
-</div>
-<!-- swiper1 end-->
-
-<!-- swiper2 -->
-
-<div class="swiper-container swiper-container-2 subnav-wrap f12">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <a href="{% url 'users:login' %}">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if1.png"> 登录
-                </div>
-            </a>
-            <a href="{% url 'users:register' %}">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if2.png"> 注册
-                </div>
-            </a>
-            <a href="{% url 'category:categories' %}">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if3.png"> 类别
-                </div>
-            </a>
-            <a href="{% url 'product:products' %}">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if4.png"> 商品
-                </div>
-            </a>
-            <a href="{% url 'product:products' %}?new">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if5.png"> 创建商品
-                </div>
-            </a>
-            <a href="{% url 'product:products' %}?pic">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if6.png"> 创建商品图片
-                </div>
-            </a>
-            <a href="{% url 'product:products' %}">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if20.png"> 商品列表
-                </div>
-            </a>
-            <a href="{% url 'users:logout' %}">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if7.png"> 退出
-                </div>
-            </a>
-            <a href="{% url 'bill:bills' %}">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if8.png"> 我的订单
-                </div>
-            </a>
-            <a href="javascript:;">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if9.png"> 菜单名称
-                </div>
-            </a>
-
-
-        </div>
-        <div class="swiper-slide">
-            <a href="javascript:;">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if10.png"> 菜单名称
-                </div>
-            </a>
-            <a href="javascript:;">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if11.png"> 菜单名称
-                </div>
-            </a>
-            <a href="javascript:;">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if12.png"> 菜单名称
-                </div>
-            </a>
-            <a href="javascript:;">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if13.png"> 菜单名称
-                </div>
-            </a>
-            <a href="javascript:;">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if14.png"> 菜单名称
-                </div>
-            </a>
-            <a href="javascript:;">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if15.png"> 菜单名称
-                </div>
-            </a>
-            <a href="/area/get_county_list/?cityid=610800">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if16.png"> 获取榆林各县的json数据
-                </div>
-            </a>
-            <a href="javascript:;">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if17.png"> 数据
-                </div>
-            </a>
-            <a href="/area/get_city_list/?provinceid=610000">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if18.png"> 获取陕西各市json数据
-                </div>
-            </a>
-            <a href="/area/get_provice_list/">
-                <div class="pull-left submenu">
-                    <img src="/static/img/if19.png"> 获取省级json数据
-                </div>
-            </a>
+            <!-- slider 2 end-->
             
-
+            <div class="swiper-slide">
+                <div class="sider sider5">
+                    <div class="shop-link shop-link2"> 
+                        <a class="orange-bg common-btn" href="{% url 'book:buy' %}">现在预约
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- slider 3 end-->
+            <div class="swiper-slide">
+                <div class="sider sider2">
+                    <div class="shop-link shop-link4">
+                            
+                        <table>
+                            <tr>
+                                <td class="fs40 orange">金属占比高达90%</td>
+                                <td class="fs20">极致占比&nbsp;经典触感</td>
+                            </tr>
+                            <tr>
+                                    <td></td><td>
+                                            <a class="learn_more" href="{% url 'product:cast2' %}">查看详情</a>
+                                            <a class="now-bye orange-bg common-btn" href="{% url 'book:buy' %}">立即购买
+                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                            </a>
+                                    </td>
+                                    
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- slider 3 end-->
+            <div class="swiper-slide">
+                <div class="sider sider3">
+                    <div class="shop-link shop-link5">
+                            <div class="mb50 fs40 orange">纳米级金属塑料注塑</div>
+                            <div class="mb50 fs20">高精度&nbsp;高强度</div>
+                        <a class="learn_more" href="{% url 'product:cast2' %}">查看详情</a>
+                        <a class="now-bye orange-bg common-btn" href="{% url 'book:buy' %}">立即购买
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- slider 4 end-->
+            <div class="swiper-slide">
+                <div class="sider sider4">
+                    <div class="shop-link shop-link6 black">
+                            <div class="mb50 fs40">首个全金属外壳蓝牙耳机</div>
+                            <div class="mb50 fs20">机标一体&nbsp;业界风范</div>
+                        <a class="learn_more" href="{% url 'product:cast2' %}">查看详情</a>
+                        <a class="now-bye orange-bg common-btn" href="{% url 'book:buy' %}">立即购买
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- slider 5 end-->
         </div>
-
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-warp container">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
     </div>
-    <!-- <div class="swiper-pagination2 pagination-2"></div>   这是轮播图的点点-->
-    
+    <!-- end swiper -->
+    <div class="container hide-menu">
+                <ul class="btn-list">
+                        <li><a href="javascript:;" target="black_">个人中心
+                            <span><img src="/static/img/icon/geren.svg" /></span>
+                        </a></li>
+                        <li><a href="javascript:;" target="black_">在线咨询
+                            <span><img src="/static/img/icon/zixun.svg" /></span>
+                        </a></li>
+                        <li><a href="javascript:;" target="black_">店面查询
+                            <span><img src="/static/img/icon/dianmian.svg" /></span>
+                        </a></li>
+                        <li><a href="javascript:;" target="black_">微信群
+                            <span><img src="/static/img/icon/qun.svg" /></span>
+                        </a></li>
+                        <li><a href="javascript:;" target="black_">使用手册下载
+                            <span><img src="/static/img/icon/shouce.svg" /></span>
+                        </a></li>
+                        
+                </ul>
+        <div id="show-btn"><img src="/static/img/icon/jia.svg" /></div>
+    </div>
 </div>
-<!-- swiper2 end-->
-<div class="text-center">
-        <img class="recommend_title" src="/static/img/tuijian.jpg">
-</div>
-<!-- 推荐商品 -->
-<section>
-    <div></div>
-    <div></div>
-</section>
-<div class="aj"> {% if request.user.is_anonymous %}未登录{%else%} {{request.user.username}}{% endif%}</div>
-
-{% endblock %} {% block menuhome %} menu-act{% endblock %} {% block js %}
+{% endblock %} 
+{% block js %}
 <script type="text/javascript " src="/static/js/swiper-3.4.2.jquery.min.js "></script>
-<script type="text/javascript" src="/static/js/m_home.js"></script>
+<script type="text/javascript " src="/static/js/homepage.js "></script> 
 {% endblock %}

@@ -1,73 +1,297 @@
-{%load admin_static %}
 <!DOCTYPE html>
 <html>
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
-    <title>{% block pagetitle%}商城{% endblock%}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>{% block pagetitle%}{% endblock%}</title>
+    <!-- Bootstrap -->
     <link type="text/css" href="/static/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-    <link href="/static/font_my/iconfont.css" type="text/css" rel="stylesheet">    
-    <!-- <link href="//at.alicdn.com/t/font_433208_0jiikn8awg41v2t9.css" type="text/css" rel="stylesheet"> -->
+    <link href="/static/css/base.css"  rel="stylesheet">
+    <link href="/static/css/footer.css"  rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="/static/css/m_jquery.message.css">
-    <link type="text/css" rel="stylesheet" href="/static/css/HoldOn.css"> 
-    <link type="text/css" rel="stylesheet" href="/static/css/m_base.css">{% block css %} {% endblock %}
-    
+    <link rel="shortcut icon" href="/static/img/logoicon.ico">
     <script type="text/javascript" src="/static/jquery/dist/jquery.min.js"></script>
-
-    <script type="text/javascript" src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <!--扩展css开始-->
+    {% block css %} 
+    {% endblock %}
+    <!--扩展css结束-->
 </head>
 
 <body>
-    {% if request.user.is_anonymous %}
-    <input type="hidden" id="userlogin" value="0" />
-    {% else %}
-    <input type="hidden" id="userlogin" value="1" />
-    {% endif %}
-    
-    {% block content %} {% endblock %} {% block menu %}
-    <!--menu-->
-    <div class="menu">
+        {% if request.user.is_anonymous %}
+        <input type="hidden" id="userlogin" value="0" />
+        {% else %}
+        <input type="hidden" id="userlogin" value="1" />
+        {% endif %}
+    {% block menu %}
+    <!--菜单开始-->
+    <div class="menu-holder {% block fixed_menu_class %}{%endblock%}" >
+      <div class="container nav-container">
+        <table class="menu" >
+          <tr>
+          <td>
+              <div>
+                <a href="/">
+                <img class="logo" src="/static/img/logo.png"/>
+                </a>
+              </div>
+          </td>
+          <td>
+              <div class="pull-right menu-list">
+                    <table>
+                      <tr>
+                        <td class="{% if productpage %}active{% endif %}">
+                          <a href="{% url 'product:cast2' %}">Watch</a>
+                          <div class="point"></div>
+                        </td>
+                        <td class="{% if mallpage %}active{% endif %} ">
+                            <a href="">商城</a>
+                            <div class="point"></div>
+                        </td>
+                        <td class="{% if communitypage %}active{% endif %} ">
+                            <a href="">社区</a>
+                            <div class="point"></div>
+                        </td>   
+                        <td class="{% if storepage %}active{% endif %} ">
+                            <a href="{% url 'dept:list' %}">体验店</a>
+                            <div class="point"></div>
+                        </td>
+                        <td class="{% if servicepage %}active{% endif %} ">
+                          <a href="{% url 'page:page' 'service' 'list' %}">服务</a>
+                          <div class="point"></div>
+                        </td>
+                        <td class="small-padding">
+                          <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                          <a href="">中文<span>丨</span>EN</a>
+                        </td>
+                    
+                      </tr>
+                    </table>
+                    
+                    
+                    </div>
+                    <!-- 左侧菜单结束-->
+                    </td>
+                    </tr>
+                    </table>
+        
+      </div>
+      <div class="bottom-line">
+        </div>
+      </div>
+    <!--菜单结束-->
+    {% endblock %} 
 
-        <a class=" {{home}}" href="{% url 'home' %}">
-            <div class="{% block menuhome %} {% endblock %}">
-                <span class="iconfont icon-shouye"></span>
-                <div>主页</div>
+   <!--主要内容开始-->
+    {% block content %} 
+    {% endblock %}  
+    <!--主要内容结束-->
+    {% block links %}
+    <!-- start link footer -->
+    <div class="linkitems"> 
+      <table class="container">
+        <tr class="tr-title">
+          <td class="first">
+              <a href="javascript:;" >ASU品牌</a>
+          </td>
+          <td class="first">
+              <a href="javascript:;">媒体中心</a>
+          </td>
+          <td class="first">
+              <a href="javascript:;">ASU生态</a>
+          </td>
+          <td class="first">
+              <a href="javascript:;">购买渠道</a>
+          </td>
+          <td class="first">
+              <a href="javascript:;">售后服务</a>
+          </td>
+          <td class="first">
+              <a href="javascript:;">一群</a>
+          </td>
+          <td class="first">
+              <a href="javascript:;">Watch客户端</a>
+          </td>  
+          <td rowspan="7" class="td_online text-center">
+           <div class="pull-right">
+              <div class="online-div">
+                  <p class="phone" title="客服电话">400-608-0106</p>
+                  <p>周一至周日 8:00-18:00<br>(仅收市话费)</p>
+                </div>
+                <a class="custom-service" href="javascript:;">
+                  <img src="/static/img/icon/code.svg" alt="">
+                  24小时在线客服</a>
+           </div>
+          </td>
+          <td rowspan="7" class="td_online text-center clearfix">
+            <div class="qrcode">
+             <img src="/static/img/qrcode.png" title="官方微信">
             </div>
-        </a>
-        <a class=" {{category}}" href=" ">
-            <div class="{% block menucategory %} {% endblock %}  ">
-                    <span class="iconfont icon-sousuoleimu"></span>
-                <div>分类</div>
-            </div>
-        </a>
-        <a class=" {{trolly}}" href="{% url 'shopcar:shopcar_detail'  %}">
-            <div class="{% block menucart %} {% endblock %}">
-                    <span class="iconfont icon-gouwuche"></span>
-                <div>购物车<span>{{request.user.cart_num|default:''}}</span></div>
-            </div>
-        </a>
-        <a class="mine {{mine}}" href="{% url 'users:mine'  %}">
-            <div class="{% block menumine %} {% endblock %}">
-                 <span class="iconfont icon-yonghu"></span>
-                <div>我的</div>
-            </div>
-        </a>
+          </td>
+        </tr>
+         <tr >
+          <td>
+            <a href="{% url 'page:page' 'asubrand'  'aboutus' %}">关于我们</a>
+          </td>
+          <td>
+            <a href="{% url 'page:page' 'news'  'list' %}">新闻</a>
+            <span class="lable">hot</span>
+          </td>
+          
+          <td>
+            <a href="/page/waiting/list/">卡片投影</a>
+          </td>
+          <td>
+            <a href="/page/waiting/list/">官方商城</a>
+            <span class="lable">hot</span>
+          </td>
+          <td>
+            <a href="/page/service/list/" >自助服务</a>
+          </td>
+           <td>
+            <a href="/page/waiting/list/">一群论坛</a>
+            <span class="lable">hot</span>
+          </td>
+           <td>
+            <a href="/page/waiting/list/">兴趣小组</a>
+          </td> 
+        </tr>
+         <tr >
+          <td>
+            <a href="{% url 'page:page' 'asubrand'  'faith' %}">ASU理念</a>
+          </td>
+          <td>
+            <a href="{% url 'page:page' 'report'  'list' %}">媒体报道</a>
+          </td>
+          <td>
+            <a href="/page/waiting/list/">冰箱模组</a>
+          </td>
+          <td><a href="{% url 'dept:list' %}">店面查询</a></td>
+          <td><a href="/page/policy/list/">保修政策</a></td>
+          <td><a href="/page/waiting/list/">官方活动</a> </td>
+          <td><a href="/page/waiting/list/">客户端下载</a>  </td><!-- {% url 'page:page' 'software' 'list' %} -->
+        </tr>
+         <tr >
+          <td>
+            <a href="{% url 'page:page' 'active'  'list' %}">精彩活动</a>
+          </td>
+          <td>
+            <a href="{% url 'page:page' 'pic'  'list' %}">高清美图</a>
+          </td>
+          <td>
+            <a href=""> </a>
+          </td>
+          <td>
+            <a href="/page/waiting/list/">天猫旗舰店</a>
+          </td>
+          <td>
+           
+          </td>
+          <td>
+            <a href="/page/waiting/list/">QQ群</a>
+          </td>
+          
+        </tr>
+         <tr >
+          <td>
+            <a href="{% url 'page:page' 'event'  'list' %}">大事记</a>
+          </td>
+          <td>
+            <a href="{% url 'page:page' 'video'  'list' %}">炫酷视频</a>
+          </td>
+          <td>
+           
+          </td>
+          <td>
+            <a href="/page/waiting/list/">京东旗舰店</a>
+          </td>
+          <td>
+            <a href=""></a>
+          </td>
+          <td> 
+            <a href="/page/waiting/list/">开发者论坛</a>
+          </td>
+          <td> </td>
+          <td> 
+          </td>
+        </tr>
+         <tr >
+          <td>
+            <a href="{% url 'page:page' 'asubrand'  'join' %}">加入我们</a>
+          </td>
+          <td>
+            <a href="/page/waiting/list/">使用手册下载</a>
+          </td>
+          <td> 
+          </td>
+          <td>
+            <a href="/page/waiting/list/">苏宁旗舰店</a>
+          </td>
+          <td> </td>
+          <td> </td>
+          <td>  </td>
+        </tr>
+         <tr >
+          <td>
+            <a href="{% url 'page:page' 'contactus'  'list' %}">联系我们</a>
+          </td>
+          <td> 
+              <a href="/sitecontent/blockcontents/?new">管理中心</a>
+          </td>
+          <td> 
+          </td>
+          <td> <a href="{% url 'bussiness:new' %}">成为经销商</a></td>
+          <td>  </td>
+          <td> </td>
+          <td>  </td>
+        </tr>
+      </table>
+</div><!-- end items -->
+<!-- end link footer --> 
+    {% endblock %}
+    <!--底部开始-->
+    {% block footer %} 
+        <footer>
+          <div class="container clearfix">
+          <div class="pull-left">
+              <img class="f-logo" src="/static/img/microblog_w.png"/>
+            Beijing ASU Tech Co.Ltd 北京一数科技有限公司|法律声明|隐私条款 <a href="javascript:;">京ICP备15036919号-1</a>
+          </div>
+           <div class="pull-right clearfix">
+             <a class="round-btn" href="mailto:media@a-su.com.cn"><i class="fa fa-envelope" aria-hidden="true"></i>
+             </a>
+             <a class="round-btn" href="javascript:;"><i class="fa fa-weixin" aria-hidden="true"></i>
+             </a>
+             <a class="round-btn" href="https://www.facebook.com/bjasutech001/"><i class="fa fa-facebook" aria-hidden="true"></i>
+             </a>
+             <a class="round-btn" href="http://weibo.com/asu001"><i class="fa fa-weibo" aria-hidden="true"></i>
+             </a>
+             <a class="round-btn" href="javascript:;"><i class="fa fa-twitter" aria-hidden="true"></i>
+             </a>
+             <a class="round-btn" href="https://www.youtube.com/channel/UCBG6Eiw5mm1xBHHk4_yVOcQ"><i class="fa fa-youtube-square" aria-hidden="true"></i>
+             </a>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        </footer>
+     
+    <div class="wechat_div">
+        <img src="/static/img/code_big.png"/>
     </div>
-    <!-- menu end-->
+    <!--底部结束-->
     {% endblock %}
-    <!---->
+    <script type="text/javascript" src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery.message.js"></script>
-    <script type="text/javascript" src="/static/js/base.js"></script>
-    <script type="text/javascript" src="/static/js/cookie.js"></script>
-    <script type="text/javascript" src="/static/js/HoldOn.min.js"></script>
-    {% block jslogin %}
-        <script type="text/javascript" src="/static/js/login.js"></script>
+    <script type="text/javascript" src="/static/js/base.js"></script> 
+    <!--扩展js开始-->
+    {% block js %}
     {% endblock %}
-
-    {% block js %} {% endblock %}
+    <!---扩展js结束-->
 </body>
- 
+
 </html>
