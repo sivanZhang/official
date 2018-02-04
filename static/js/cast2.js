@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-    
+    transition (360);
     //
     var height = window.innerHeight;
     var width = window.innerWidth;
@@ -90,12 +90,11 @@ $(document).ready(function () {
             var target = $(this).attr('target');
            /* var newPos=new Object();
                 newPos.top="0"; */
-            $('#' + target).slideToggle('slow',function(){
+            $('#' + target).slideToggle(300,function(){
                 /* 隐藏元素到视口顶部 */
-            var scrollTop     = $(window).scrollTop(),
-            elementOffset = $('#' + target).offset().top,
-            distance= (elementOffset - scrollTop);
-             $(window).scrollTop(scrollTop+distance-60); 
+             $('html, body').animate({
+                scrollTop: $('#' + target).offset().top-60
+             }, 900);
             });
         });
     };
@@ -157,9 +156,23 @@ $(document).ready(function () {
     var windowHeight = window.innerHeight;
     $('section,.img360_holder').css('height', windowHeight+ 'px');
 });
+/* 内容过渡浮现效果 */
 $(window).scroll(function(){
+    transition (1);
+    transition (2);
+    transition (3);
+    transition (4);
+});
+function transition (nub){
     var scrollTop = $(window).scrollTop(),
-    elementOffset = $('.show').offset().top,
+    windowHeight = window.innerHeight,
+    elHtight =$('.show'+nub).height();
+    elementOffset = $('.show'+nub).offset().top,
     distance= (elementOffset - scrollTop);
-    $(window).scrollTop(scrollTop+distance-60); 
-})
+    /* = $(el).offset().top-60*/
+    if(distance+elHtight<= windowHeight){
+        $('.show'+nub).parent('section').addClass('move');
+    }else{
+        $('.show'+nub).parent('section').removeClass('move');
+    }
+}

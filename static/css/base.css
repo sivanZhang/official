@@ -388,22 +388,6 @@ li{
     box-shadow: none;
 }
 
-/* section .image-text{
-    -webkit-transition: opacity 0.8s, -webkit-transform 0.8s;
-    transition: opacity 0.8s, transform 0.8s;
-    opacity: 0;
-    filter: alpha(opacity=0)\9;
-    -webkit-transform: translateY(50px);
-    -ms-transform: translateY(50px);
-    transform: translateY(50px);
-}
-section .image-text:hover{
-    opacity: 1;
-    filter: alpha(opacity=100)\9;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-}  */
 .btn-list li a:hover{
     color: #6c6c6c!important;
 }
