@@ -90,7 +90,7 @@ $(document).ready(function () {
             var target = $(this).attr('target');
            /* var newPos=new Object();
                 newPos.top="0"; */
-            $('#' + target).slideToggle(300,function(){
+            $('#' + target).fadeToggle( function(){
                 /* 隐藏元素到视口顶部 */
              $('html, body').animate({
                 scrollTop: $('#' + target).offset().top-60
