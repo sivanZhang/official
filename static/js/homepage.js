@@ -8,7 +8,8 @@ $('.content').height(height);
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         // Enable debugger
-        debugger: true
+        debugger: true,
+        autoplay : 5000
     });
 });
 

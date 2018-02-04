@@ -514,8 +514,8 @@
   .learn_more:active {
     color: #fff;
   }
-  .roll-tip-holder a:visited,.roll-tip-holder a:hover{
-      color: inherit;
+  .roll-tip-holder a:link,.roll-tip-holder a:visited,.roll-tip-holder a:hover,.roll-tip-holder a:active,.roll-tip-holder a:focus{
+      color: #fff;
   }
   .threesixty img{
       margin: 90px auto; 
