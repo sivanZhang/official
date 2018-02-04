@@ -9,7 +9,8 @@ $('.content').height(height);
         prevButton: '.swiper-button-prev',
         // Enable debugger
         debugger: true,
-        autoplay : 5000
+        autoplay : 5000,
+        loop : true
     });
 });
 

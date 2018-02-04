@@ -581,6 +581,23 @@ section.move .img360-text{
     left:50%;
     transform: translate(-50%,-50%);
 }
+section .hide-text{
+    -webkit-transition: opacity 1.5s, -webkit-transform 1.5s;
+    transition: opacity 1.5s, transform 1.5s;
+    opacity: 0;
+    filter: alpha(opacity=0)\9;
+    -webkit-transform: translate(-50%,-30%);
+    -ms-transform: translateY(-50%,-30%);
+    transform: translateY(-50%,-30%);
+}
+section.move .hide-text{
+    opacity: 1;
+    filter: alpha(opacity=100)\9;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
   dl{
       display: inline-block;
   }

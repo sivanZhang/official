@@ -23,6 +23,7 @@ $(document).ready(function(e){
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
             // Enable debugger
-            debugger: true
+            debugger: true,
+            loop : true
     });
 });

@@ -92,12 +92,17 @@ $(document).ready(function () {
             var target = $(this).attr('target');
            /* var newPos=new Object();
                 newPos.top="0"; */
+               
             $('#' + target).fadeToggle( function(){
                 /* 隐藏元素到视口顶部 */
-             $('html, body').animate({
+            $('html, body').animate({
                 scrollTop: $('#' + target).offset().top-60
-             }, 900);
+             }, 600);
             });
+            $('#' + target).addClass('move');
+            if( $('#' + target).css('display')==='none'){
+                $('#' + target).removeClass('move');
+            }
         });
     };
   
