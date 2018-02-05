@@ -12,7 +12,6 @@
 
 .swiper-slide
 { 
-     
      text-align: center;
 }
 .sider1
@@ -48,8 +47,8 @@
     line-height: 60px;
     
 }
-.second-menu a{
-    color: black;
+.second-menu a,submenu{
+    color: rgb(113,112,113);
 }
 .buy
 {
@@ -455,7 +454,7 @@
   }
   .cut-off {
     margin: 5px 0 20px 60px;
-    color: #727272;
+    color: rgb(114, 114, 114);
   }
   .cut-off > div {
     border-bottom: 1px solid #ddd;
@@ -535,7 +534,6 @@
   .show1,.show3{
       position: absolute;
       top: 50%;
-      left:60%;
   }
   section .show{
     -webkit-transition: opacity 1.5s, -webkit-transform 1.5s;

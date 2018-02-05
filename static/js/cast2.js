@@ -1,5 +1,8 @@
 
 $(document).ready(function () {
+    var leftValue = $('.logo').offset().left;
+    $('.show1,.show3').css('right',leftValue + 'px');
+    $('.show2,.show4').css('left',leftValue + 'px');
     transition (360);
     //
     var height = window.innerHeight;

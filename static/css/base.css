@@ -88,7 +88,7 @@ a:focus{
 body{
     margin: 0px;
     padding: 0px;
-    width: 100%;
+    min-width: 1200px;
     font-family: "Helvetica Neue", Helvetica, Arial, Verdana, STHeiti, "Microsoft Yahei", sans-serif;
 }
 .container{
@@ -350,9 +350,6 @@ footer{
     position: relative!important;
 }
 
-/* .fixed_menu_class .bottom-line{
-        z-index: unset;
-} */
 .error{
     border: #ea5014;
 }

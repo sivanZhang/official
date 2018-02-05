@@ -11,18 +11,9 @@
     <div class="swiper-container row">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <div class="sider sider0">
-                    <div class="shop-link shop-link1">
-                        <div class="mb50 fs20">
-                            ASU Watch
-                        </div>
-                        <div class="orange mb50 fs40">
-                            触&nbsp;/&nbsp;无屏可及
-                        </div>
-                        <a class="learn_more" href="{% url 'product:cast2' %}">查看详情</a>
-                        <a class="now-bye orange-bg common-btn" href="{% url 'book:buy' %}">立即购买
-                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                        </a>
+                <div class="sider sider3">
+                    <div class="shop-link shop-link5">
+                       
                     </div>
                 </div>
             </div>
@@ -44,6 +35,23 @@
                 <div class="sider sider5">
                     <div class="shop-link shop-link2"> 
                         <a class="orange-bg common-btn" href="{% url 'book:buy' %}">现在预约
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="sider sider0">
+                    <div class="shop-link shop-link1">
+                        <div class="mb50 fs20">
+                            ASU Watch
+                        </div>
+                        <div class="orange mb50 fs40">
+                            触&nbsp;/&nbsp;无屏可及
+                        </div>
+                        <a class="learn_more" href="{% url 'product:cast2' %}">查看详情</a>
+                        <a class="now-bye orange-bg common-btn" href="{% url 'book:buy' %}">立即购买
                             <i class="fa fa-angle-right" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -73,18 +81,8 @@
                 </div>
             </div>
             <!-- slider 3 end-->
-            <div class="swiper-slide">
-                <div class="sider sider3">
-                    <div class="shop-link shop-link5">
-                            <div class="mb50 fs40 orange">纳米级金属塑料注塑</div>
-                            <div class="mb50 fs20">高精度&nbsp;高强度</div>
-                        <a class="learn_more" href="{% url 'product:cast2' %}">查看详情</a>
-                        <a class="now-bye orange-bg common-btn" href="{% url 'book:buy' %}">立即购买
-                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            
+            
             <!-- slider 4 end-->
             <div class="swiper-slide">
                 <div class="sider sider4">
@@ -117,7 +115,7 @@
                         <li><a href="javascript:;" target="black_">在线咨询
                             <span><img src="/static/img/icon/zixun.svg" /></span>
                         </a></li>
-                        <li><a href="javascript:;" target="black_">店面查询
+                        <li><a href="{% url 'dept:list' %}" target="black_">店面查询
                             <span><img src="/static/img/icon/dianmian.svg" /></span>
                         </a></li>
                         <li><a href="javascript:;" target="black_">微信群

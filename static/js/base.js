@@ -1,23 +1,8 @@
 
 $(document).ready(function(){
-    //
     var height = window.innerHeight;
     var width = window.innerWidth;
-    $('.wechat_div').hide();
     $('.product_sec_menu').hide();
-    //$('.swiper-container').height(height);
-    //$('.swiper-slide').css({'margin':height/2+'px ' + (width/2-20) + 'px'});
-    $('.wechat').hover(function(){
-        $('.wechat_div').show();
-    });
-    $( ".wechat" ).mouseout(function() {
-         $('.wechat_div').hide();
-    });
-
-    $('.a_store').click(function(){
-    //  体验店点击事件
-    
-    });
 
     $('.store_sec_menu').hide();
     
@@ -121,10 +106,12 @@ $(document).ready(function(){
    
     
 })
-$(document).ready(function(){
+
+$(document).ready(function () {
+    var leftValue = $('.point:first').offset().left,
+    topValue = $('.point:first').offset().top;
     /* 菜单下边线的样式 */
-    var leftValue =$('.point:first').offset().left;
-    $('.bottom-line').css('left',leftValue+'px');
+    $('.bottom-line').css('left', leftValue + 'px').css('top', topValue + 2 + 'px');
 })
 function getCookie(name) {
     var cookieValue = null;
