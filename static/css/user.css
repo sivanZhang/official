@@ -43,6 +43,7 @@ input.error {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    color: rgb(114, 114, 114);
 }
 .login-wrap header img{
     border-radius: 50%;

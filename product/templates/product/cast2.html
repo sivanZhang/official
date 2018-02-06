@@ -4,7 +4,7 @@
 <link href="/static/products/css/cast2.css"  rel="stylesheet">
 {% endblock %} 
 {% block content %} 
-    <section class="img360_holder"> 
+    <div class="img360_holder"> 
       
           <div class="threesixty" data-path="/static/img/360pics/{index}.png" data-count="30"></div>
           <div class="img360-text show360">
@@ -15,7 +15,7 @@
                  <img src="/static/img/icon/down.svg" />
                 </p>
           </div>
-    </section>
+        </div>
     <div class="container-second-menu ">
       <div class="container second-menu ">
          <table >
@@ -644,10 +644,10 @@
               dragDirection: 'horizontal',
               useKeys: false
           });
-          var father_h = $('.img360_holder').height();
+         /*  var father_h = $('.img360_holder').height();
           
          if (father_h > 800)
-             $('.threesixty').css({'margin-top':(father_h/6)+'px'});
+             $('.threesixty').css({'margin-top':(father_h/6)+'px'}); */
       });
 /*
       $(document).ready(function(){

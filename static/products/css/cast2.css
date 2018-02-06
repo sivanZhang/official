@@ -64,18 +64,7 @@
 .second-menu .buy>a{
     color:#fff;
 }
-@media screen and (max-width: 1550px) {
-    .threesixty {
-        height: 400px;
-        width:auto;
-        margin: 0 auto;
-    }
-    .threesixty img{
-        height: 318px;
-        width:auto;
-        margin: 60px auto;
-    }
-}
+
 
 .sub-item
 {
@@ -321,7 +310,6 @@
 
 .img360_holder
 {
-    padding-top: 30px;
     position: relative;
     background-size:cover!important;
     background-position:top center!important;
@@ -417,8 +405,7 @@
   section.sec4-hide {
     background: url(/static/img/product/sc4hide.png);
   }
-
-  .btn-list {
+.btn-list {
     text-align: right;
     position: absolute;
     right: 0px;
@@ -518,13 +505,25 @@
   .roll-tip-holder a:link,.roll-tip-holder a:visited,.roll-tip-holder a:hover,.roll-tip-holder a:active,.roll-tip-holder a:focus{
       color: #fff;
   }
-  .threesixty img{
-      margin: 90px auto; 
-      max-height: 520px;
-  }
+  .threesixty{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.threesixty img{
+    height: 318px;
+    margin-bottom: 30px;
+}
+@media screen and (min-width: 1550px) {
+    .threesixty img{
+        height: 420px;
+        margin-bottom: 60px;
+}
+}
   .items table td{
       width: 100px;
-      padding: 6px 0;
+      padding: 6px 0; 
   }
   .items table img{
       width: 40px;
