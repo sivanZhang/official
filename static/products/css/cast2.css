@@ -4,7 +4,10 @@
     width: 100%;
     background-color: #3C3D3F;
 }
-
+.w30{
+    width: 30px;
+    padding: 0px!important;
+}
 .swiper-container
 { 
     z-index: -1;
@@ -33,8 +36,8 @@
     width: 100%;
 }
 .tb_secondmenu td{
-    padding-left:10px;
-    padding-right:10px;
+    padding-left:30px;
+    padding-right:30px;
 }
 .container-second-menu
 {
@@ -68,7 +71,7 @@
         margin: 0 auto;
     }
     .threesixty img{
-        height: 320px;
+        height: 318px;
         width:auto;
         margin: 60px auto;
     }
@@ -453,7 +456,7 @@
     height: auto;
   }
   .cut-off {
-    margin: 5px 0 20px 60px;
+    margin: 15px 0 30px 60px;
     color: rgb(114, 114, 114);
   }
   .cut-off > div {

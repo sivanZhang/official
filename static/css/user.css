@@ -23,9 +23,6 @@ button.btn {
     color: #fff;
 }
 
-.btn{
-    height: 46px;
-}
 
 
 label.error {
@@ -37,9 +34,9 @@ input.error {
     border-color: #d9534f;
 }
 .login-wrap{
-    width: 360px;
+    width: 340px;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-    padding: 15px;
+    padding: 25px 30px 25px;
     border-radius: 6px;
     background-color: #fff;
     margin-top: 100px;
@@ -49,8 +46,8 @@ input.error {
 }
 .login-wrap header img{
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 .loginform img{
     width: 20px;
@@ -66,7 +63,7 @@ label{
 .loginform input{
     position: relative;
     width: 100%;
-    padding: 10px 10px 4px 36px;
+    padding: 0 10px 4px 36px;
     border: 1px solid;
     border-color:transparent transparent #ddd transparent;
     outline: 0px;
@@ -80,14 +77,14 @@ input[type=checkbox], input[type=radio]{
     margin:0 2px 2px 0;
 }
 .links{
-    padding: 10px 0 15px;
+    padding: 15px 0 15px;
     border-bottom: 1px solid #ddd;
     margin-bottom: 15px;
 }
 .links a{
     color: #333;
 }
-.links a:first-child{
+.links a:last-child{
     padding: 0 5px ;
     margin-right: 5px;
     border-right: 1px solid #ddd;
@@ -99,17 +96,26 @@ input[type=checkbox], input[type=radio]{
 .otherwise a .fa
 {
     background-color: #b5b6b6;
-    padding: 4px;
+    padding: 5px;
     border-radius: 50%;
     font-size: 12px;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 }
 .relative{
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 footer{
     position: fixed;
     bottom: 0px;
+}
+.login-wrap h4{
+    margin-bottom: 50px;
+}
+button[type=submit]{
+    letter-spacing: 10px;
+}
+.links a{
+    color: #ea5014;
 }

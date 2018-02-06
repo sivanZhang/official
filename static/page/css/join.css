@@ -96,6 +96,7 @@
   .modal-header{
     background-color: rgb(242, 242, 242);
     border-bottom: unset;
+    padding: 15px 45px;
   }
   .modal-content{
     border-radius: unset;
@@ -149,4 +150,9 @@
   strong{
     font-weight: 300!important;
   }
-  
+  .modal-body{
+    padding: 30px 45px 15px;
+  }
+  .modal-footer{
+    padding: 15px 45px;
+  }

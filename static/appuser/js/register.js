@@ -1,5 +1,4 @@
  $(document).ready(function() {
-
         $('#emailcode').hide();
 
         // 在键盘按下并释放及提交后验证提交表单

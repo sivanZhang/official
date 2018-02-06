@@ -28,7 +28,7 @@
         </div> 
     </div> 
 </div>
-<div class="container event-container ">
+<div class="container m60">
     <div class="row  "> 
         {% for eventyear in eventyears %}
              
@@ -43,7 +43,7 @@
                     {% for page in eventyear.pages %} 
                      <tr class="eventlist_tr">
                          <td class="date grey"><span class="datespan" >{{page.date| date:"m月-d日"}} </span></td>
-                         <td><span class="event_point"></span></td>
+                         <td class="rel"><span class="event_point"></span></td>
                          <td class="msg"><div class="eventtext"> <a class="img_title grey" href="{{page.url}}" title="{{page.title}}">{{page.title}}</a> </div></td>
                     </tr> 
                     {% endfor %}

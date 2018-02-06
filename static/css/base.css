@@ -4,7 +4,9 @@
 font-family: lanting;
 src: url('/static/font/lanting.ttf');
 }
-
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    font-weight: 100;
+}
 /* 通用 */
 .mb-60{
     margin-bottom: 60px;
@@ -422,4 +424,18 @@ li{
   }
   .gray{
     color: #717071!important;
+}
+div.jquery-error-message{
+    background-color:#ea5014;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%,50%);
+    font-size: 14px;
+    padding: 15px 30px;
+    width: unset;
+    opacity: 1!important;
+}
+div.jquery-message p, div.jquery-error-message p{
+    padding: 0!important;
+    margin: 0!important;
 }

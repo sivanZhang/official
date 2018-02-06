@@ -19,6 +19,7 @@ $(document).ready(function(){
     var abslut = $('.logo').offset().left;
     $('.swiper-button-prev').css('left', abslut+'px')
     $('.swiper-button-next').css('right', abslut+'px')
+    $('.shop-link3').css('left', abslut+60+'px')
     /* 产品页箭头位置 */
     $('.position').css('right', abslut+'px')
 })

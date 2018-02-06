@@ -70,11 +70,12 @@
 }
 .event_point{
     position: absolute;
-    left: 202px;
+    left: -3px;
     height: 5px;
     width:5px;
     background-color:rgb(181, 182, 182);
     border-radius: 50%;
+    content: '';
 }
 .eventlist_tr{
      padding-top: 20px;
@@ -85,7 +86,10 @@
 .eventtext{
     margin: 20px;
 }
-.event-container{
-    margin-top: 50px;
-    margin-bottom: 60px;
+
+.m60 a:visited,.m60 a:hover,.m60 a:active{
+    color: rgb(181, 182, 182);
+}
+.rel{
+    position: relative;
 }

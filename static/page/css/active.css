@@ -13,13 +13,15 @@
 }
 .img-holder{
     overflow: hidden;
+    height: 150px;
+    width: 300px;
 }
-.img-holder, .active-img  { 
+.active-img  { 
     width: 100%;
-    height: 140px;
+    height: auto;
 }
 .years-wrap{
-    padding: 40px 180px 60px;
+    padding: 40px 100px 60px;
 }
 .years{
     position: relative;
@@ -55,4 +57,16 @@
 }
 .mt60{
     margin-top: 60px;
+}
+.mt60 a:visited,.mt60 a:hover,.mt60 a:active{
+    color: #ea5014;
+}
+.img-holder{
+    margin-bottom: 20px;
+}
+.active-img a{
+    display: block;
+}
+.col-xs-4 p{
+    margin-bottom:30px;
 }

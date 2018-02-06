@@ -1,6 +1,5 @@
 .text-center h5{
     line-height: 65px;
-    font-weight: bold;
 }
  
 .buy-code{
@@ -14,7 +13,10 @@
     margin: 0 auto;
     text-align: left;
 }
- 
+.booking-money{
+    height: 60px;
+    vertical-align: bottom;
+}
 .billno{
     margin-right: 20px;
 }
@@ -50,4 +52,7 @@ span.grey{
 }
 .return-btn{
     margin-bottom: 30px;
+}
+.select-pay-way,.pay-way{
+height: 40px;
 }

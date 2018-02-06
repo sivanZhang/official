@@ -1,7 +1,7 @@
 $(document).ready(function(){
    $("#sub").click(function(){
        if ( !$("#sub_agreement").is(':checked') ){
-           $().errormessage("您必须接受我们的条件...");
+           $().errormessage("如需订阅，请点击接受我们的条款！");
            return;
        }
        if ( $("#sub_name").val() == '' ){
