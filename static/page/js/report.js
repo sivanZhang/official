@@ -1,12 +1,14 @@
 $(document).ready(function(){
    $("#sub").click(function(){
        if ( !$("#sub_agreement").is(':checked') ){
-            $('#add').remove();
-           $(this).before('<p id="add">如需订阅,请点击接受我们的条款!</p>')
+            $('#add1').remove();
+           $(this).before('<p class="add" id="add1">如需订阅,请点击接受我们的条款!</p>')
            return;
        }
        if ( $("#sub_name").val() == '' ){
-            $().errormessage("请输入您的姓名...");
+        $('#add2').remove();
+        $(this).before('<p class="add" id="add2">请输入您的姓名</p>')
+        return;
             return;
         }
         if ( $("#sub_email").val() == ''){ 
@@ -43,9 +45,10 @@ $(document).ready(function(){
                 }
             })
         });
+        /* “接受条款”复选框点击后警告消失 */
         $("#sub_agreement").click(function(){
             if ( $("#sub_agreement").is(':checked') ){
-                $('#add').remove();
+                $('#add1').remove();
            }
         })
 });
