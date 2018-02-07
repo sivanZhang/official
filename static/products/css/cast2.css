@@ -671,7 +671,22 @@ line-height:2;
 .show3 table{
     margin-left: -4px;
 }
-.img360_holder .white.text-center{
+.img360_holder .white.text-center img{
     margin-bottom: 30px;
-    font-size: 14px;
+    width: 100px;
+    height: auto;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: twinkle;
+    -webkit-animation-duration: 1200ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes twinkle {
+    0% {
+        opacity:0.1;
+    }
+    100% {
+        opacity:1;
+    }
 }

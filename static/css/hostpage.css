@@ -244,7 +244,7 @@
     }
     100% {
         border: 1px solid rgba(221, 221, 221, 0.7);
-        box-shadow: 0 1px 20px #ccc, 0 1px 10px #ccc inset;
+        box-shadow: 0 1px 30px #cccccc, 0 1px 15px rgb(204, 204, 204) inset;
     }
 }
 .shop-link2,.block-a{
