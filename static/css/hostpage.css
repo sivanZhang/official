@@ -234,7 +234,7 @@
     border-radius: 50%;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-name: breathe;
-    -webkit-animation-duration: 1500ms;
+    -webkit-animation-duration: 1200ms;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
 }

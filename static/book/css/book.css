@@ -14,7 +14,7 @@
     text-align: left;
 }
 .booking-money{
-    height: 60px;
+    height: 70px;
     vertical-align: bottom;
 }
 .billno{
@@ -40,7 +40,9 @@
     margin-left: 23px;
 }
 .pre-payed{
-    font-size: 26px;
+    font-size: 24px;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 .payname{
     margin-right: 20px;
@@ -55,4 +57,16 @@ span.grey{
 }
 .select-pay-way,.pay-way{
 height: 40px;
+}
+.buy-form td{
+ width: 300px;
+}
+.mr{
+    margin-right: 20px;
+}
+.ml{
+    margin-left: 20px;
+}
+input.form-control{
+    margin-bottom: 10px;
 }

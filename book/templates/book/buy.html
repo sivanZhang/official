@@ -16,15 +16,15 @@
             {%csrf_token%}  
             <input type="hidden"   method="method" value="create" />
             <table>
-                <tr><td>预约姓名</td><td>联系电话</td></tr>
+                <tr><td>预约姓名</td><td><div class="ml">联系电话</div></td></tr>
                 <tr>
-                    <td><input class="form-control" id="name" name="name" placeholder="请输入您的姓名"></td>
-                    <td><input class="form-control" id="phone" name="phone" placeholder="xxx-xxxx-xx"></td>
+                    <td><input class="form-control mr" id="name" name="name" placeholder="请输入您的姓名"></td>
+                    <td><input class="form-control ml" id="phone" name="phone" placeholder="xxx-xxxx-xx"></td>
                 </tr>
-                <tr><td>您的邮箱</td><td>详细地址</td></tr>
+                <tr><td>您的邮箱</td><td><div class="ml">详细地址</div></td></tr>
                 <tr>
-                    <td><input class="form-control" id="email" name="email" placeholder="请输入您的邮箱"></td>
-                    <td><input class="form-control" id="address" name="address" placeholder="请输入您的地址"></td>
+                    <td><input class="form-control mr" id="email" name="email" placeholder="请输入您的邮箱"></td>
+                    <td><input class="form-control ml" id="address" name="address" placeholder="请输入您的地址"></td>
                 </tr>
                 <tr ><td colspan="2" class="booking-money" ><span class="pre-payed">预约需提前交<span class="orange">200元</span>订金</span></td></tr>
                 <tr ><td colspan="2" class="select-pay-way" >选择支付方式</td></tr>
