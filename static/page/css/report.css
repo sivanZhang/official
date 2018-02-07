@@ -32,7 +32,9 @@ span.span_label.grey {
     outline: none;
 }
 
- 
+ #add{
+     margin-bottom: 0px;
+ }
 h1.white{
     margin-top: 10px;
 }

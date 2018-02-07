@@ -1,7 +1,8 @@
 $(document).ready(function(){
    $("#sub").click(function(){
        if ( !$("#sub_agreement").is(':checked') ){
-           $().errormessage("如需订阅，请点击接受我们的条款！");
+            $('#add').remove();
+           $(this).before('<p id="add">如需订阅,请点击接受我们的条款!</p>')
            return;
        }
        if ( $("#sub_name").val() == '' ){
@@ -42,4 +43,9 @@ $(document).ready(function(){
                 }
             })
         });
+        $("#sub_agreement").click(function(){
+            if ( $("#sub_agreement").is(':checked') ){
+                $('#add').remove();
+           }
+        })
 });
