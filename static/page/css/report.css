@@ -33,7 +33,7 @@ span.span_label.grey {
 }
 
  .add{
-     margin-bottom: 0px;
+     margin: 0px!important;
  }
 h1.white{
     margin-top: 10px;
