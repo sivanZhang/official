@@ -213,7 +213,6 @@
     height: 30px;
     border-radius: 50%;
     padding: 8px;
-    background-color: #fff;
     -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   }
@@ -241,10 +240,12 @@
 @-webkit-keyframes breathe {
     0% {
         box-shadow: 0 1px 4px rgba(204, 204, 204, 0.4), 0 1px 2px rgba(204, 204, 204, 0.3) inset;
+        background-color: #fff;
     }
     100% {
         border: 1px solid rgba(221, 221, 221, 0.7);
         box-shadow: 0 1px 30px #cccccc, 0 1px 15px rgb(204, 204, 204) inset;
+        background-color: #cccccc;
     }
 }
 .shop-link2,.block-a{
