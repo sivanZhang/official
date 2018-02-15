@@ -153,9 +153,7 @@ $(document).ready(function() {
         jQuery('#user_login_nav').slideUp();
     })
 
-    /* 产品页箭头位置 */
-    var abslut = $('.logo').offset().left;
-    $('.scroll-tip').css('right', abslut+'px')
+    
 });
 /* 验证 */
 //手机号码验证
