@@ -39,6 +39,16 @@ class AdaptorProductForm(forms.ModelForm):
         model = AdaptorProduct
         fields = ('detail',)
 
+
+def search(request):
+    content= {}
+    if 'keywords' in request.GET:
+        keywords = request.GET['keywords'].strip()
+        products = AdaptorProduct.objects.filter(title__icontains=keywords)
+        content['products'] = products 
+        content['keywords'] = keywords
+    return render(request, 'search.html', content) 
+
 @login_required 
 #@permission_required('product.manage_product')
 def change(request, pk):
