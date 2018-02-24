@@ -315,6 +315,11 @@ class PageView(View):
                 return render(request, 'page/m_detail.html', content)
             else:
                 return render(request, 'page/m_detail.html', content)
+        if 'usage' == pagename:
+            if isMble:
+                return render(request, 'page/usage.html', content)
+            else:
+                return render(request, 'page/usage.html', content)
         else:
             raise Http404
 

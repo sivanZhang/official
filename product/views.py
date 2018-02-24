@@ -33,8 +33,6 @@ dmb     = DetectMobileBrowser()
 
 from django import forms
 
- 
-
 class AdaptorProductForm(forms.ModelForm):
 
     class Meta:
