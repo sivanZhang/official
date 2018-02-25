@@ -120,16 +120,17 @@ a.custom-service:link{
 footer a.round-btn{
     display: block;
     float: left;
-    height: 14px;
-    width: 14px;
+    height: 17px;
+    width: 17px;
     border-radius: 50%;
     background-color: #fff;
 }
 footer .round-btn img{
-    height: 10px;
-    max-width: 10px;
+    height: 13px;
+    max-width: 13px;
     line-height: 40px;
     vertical-align: text-top;
+    padding: 1px;
 }
 footer .pull-left{
     font-size: 10px;
@@ -138,7 +139,7 @@ footer .pull-left{
     line-height: 40px;
 }
 footer .pull-right{
-padding-top: 13px;
+padding-top: 14px;
 text-align: center;
 }
 .online-div p{
