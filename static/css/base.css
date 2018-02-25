@@ -321,32 +321,8 @@ td.td-bar-point
     z-index: 10;
     overflow: hidden;
 }
-footer .pull-left,footer .pull-right{
-    font-size: 10px;
-    color: #fff;
-    z-index:1000 ;
-    line-height: 40px;
-}
-footer .round-btn .fa{
-    display: inline-block!important;
-    width: 20px;
-    height: 20px;
-    padding: 4px;
-    background-color: #fff;
-    border-radius: 50%;
-    color: rgb(181, 182, 182)!important;
-    text-align: center;
-}
-.round-btn i{
-    font-size: 10px;
-}
-footer{
-    height: 40px;
-    width: 100%;
-    color: #fff;
-    background-color:rgb(143, 144, 146);
-    z-index: 1000;
-}
+
+
 .fixed_menu_class {
     background-color: rgb(52, 52, 52);
     position: relative!important;

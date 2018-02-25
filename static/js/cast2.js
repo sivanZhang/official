@@ -27,7 +27,13 @@ $(document).ready(function () {
     var character = $('.character');//特性
 
   
-
+    $(document).ready(function(){
+        /* 轮播图箭头位置 */
+        var abslut = $('.logo').offset().left;
+        /* 产品页到顶部位置 */
+        $('.scroll-tip').css('right', abslut+'px')
+    })
+    
     $(document).scroll(function () {
         
         var scrollheight = $(document).scrollTop();

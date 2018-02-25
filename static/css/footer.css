@@ -1,4 +1,10 @@
-
+footer{
+    height: 40px;
+    width: 100%;
+    color: #fff;
+    background-color:rgb(143, 144, 146);
+    z-index: 1000;
+}
 
 table .first a{ 
     font-size: 14px;
@@ -49,7 +55,7 @@ table .first a{
 }
 footer a{
     color: inherit;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 footer a:hover{
@@ -63,7 +69,7 @@ footer a:hover{
 
 .phone
 {   
-    color: rgb(181, 182, 182);
+    color: #6c6c6c;
     font-size: 18px;
 }
 
@@ -71,13 +77,12 @@ footer a:hover{
     width: 100%;
 }
 .qrcode{
-    padding: 10px;
-    width: 100px;
-    background-color: rgb(226, 227, 227);
+    width: 114px;
+   /*  background-color: rgb(226, 227, 227); */
     position: relative;
-    margin-left: 60px;
+    margin-left: 42px;
 }
-.qrcode::before{
+/* .qrcode::before{
     width: 60px;
     height: 20px;
     background-color: rgb(226, 227, 227);
@@ -94,7 +99,7 @@ footer a:hover{
     position: absolute;
     top: 100%;
     left: 20px; 
-}
+} */
 .online-div{
     line-height: initial!important;
     font-size: 12px;
@@ -110,4 +115,32 @@ a.custom-service:link{
 }
 .custom-service img{
     height: 18px;
+    margin-bottom: 3px;
+}
+footer a.round-btn{
+    display: block;
+    float: left;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+footer .round-btn img{
+    height: 10px;
+    max-width: 10px;
+    line-height: 40px;
+    vertical-align: text-top;
+}
+footer .pull-left{
+    font-size: 10px;
+    color: #fff;
+    z-index:1000 ;
+    line-height: 40px;
+}
+footer .pull-right{
+padding-top: 13px;
+text-align: center;
+}
+.online-div p{
+    margin: 6px 0 14px;
 }

@@ -690,3 +690,9 @@ line-height:2;
         opacity:1;
     }
 }
+.mt60mb120{
+    margin: 60px auto 120px;
+}
+.m120{
+    margin: 120px auto;
+}

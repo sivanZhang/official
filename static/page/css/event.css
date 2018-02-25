@@ -7,10 +7,7 @@
 { 
     font-size: 30px;  
 }
-.img_title
-{
-     margin-left: 10px;
-}
+
 .img-holder{
     overflow: hidden;
 }
@@ -84,7 +81,7 @@
     max-width: 75%;
 }
 .eventtext{
-    margin: 20px;
+    margin: 20px 0 20px 25px;
 }
 
 .m60 a:visited,.m60 a:hover,.m60 a:active{

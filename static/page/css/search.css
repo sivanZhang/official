@@ -11,6 +11,7 @@
     width: 50%;
     padding: 8px 31px 8px 6px;
     margin-bottom: 40px;
+    border: 1px solid #ddd;
 }
 .search-val:focus{
     outline-color: #ea5014;

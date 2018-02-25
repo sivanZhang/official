@@ -27,11 +27,8 @@
     text-decoration: none;
     outline: none;
   }
-  /* deteil */
-  .bottom-line {
-    z-index: unset;
-  }
-  section.main {
+   /* deteil */
+     section.main {
     padding-top: 100px;
     position: relative;
     background-size: cover!important;

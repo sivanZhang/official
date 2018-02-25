@@ -17,11 +17,9 @@ $('.content').height(height);
 $(document).ready(function(){
     /* 轮播图箭头位置 */
     var abslut = $('.logo').offset().left;
-    $('.swiper-button-prev').css('left', abslut+'px')
-    $('.swiper-button-next').css('right', abslut+'px')
-    $('.shop-link3').css('left', abslut+60+'px')
-    /* 产品页箭头位置 */
-    $('.position').css('right', abslut+'px')
+    $('.swiper-button-prev').css('left', abslut+'px');
+    $('.swiper-button-next').css('right', abslut+'px');
+    $('.shop-link3').css('left', abslut+60+'px');
 })
 
 

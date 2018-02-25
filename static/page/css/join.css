@@ -30,9 +30,7 @@
     outline: none;
   }
   /* deteil */
-  .bottom-line {
-    z-index: unset;
-  }
+
   section.main {
     padding-top: 100px;
     position: relative;
