@@ -2,34 +2,23 @@
 {% block fixed_menu_class %}fixed_menu_class{%endblock%}
 {% block pagetitle%}商品列表{% endblock%} 
 {% block css %} {% load staticfiles %}
-<link href="/static/products/css/list.css" rel="stylesheet"> {% endblock %} {% block content %}
-<div class="container main">
+<link href="/static/page/css/search.css" rel="stylesheet"> {% endblock %} {% block content %}
+<div class="container m60">
     <!-- 路径导航 -->
-    <ol class="breadcrumb row">
-       
-        <li class="active">搜索结果</li>
-
-        <form class="input-group search_wrap">
-            <input type="search" class="form-control inp_search" value="{{keywords}}" name="keywords" placeholder="Search">
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="submit" title="点击搜索">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-            </span>
+        <form class="text-center">
+            <input class="search-val" type="text" value="{{keywords}}" name="keywords" placeholder="请输入搜索内容">
+            <button class="btn-search" type="submit" title="点击搜索"><i class="fa fa-search orange" aria-hidden="true"></i></button>
         </form>
-    </ol>
+        <div class="count">
+            结果:找到"watch"相关内容3个
+        </div>
  
-        <div class="row row_margin">
             {% for product in products %}
-            <div class="col-sm-4 col-md-3">
-                    <div class="thumbnail"> 
-                        <div class="caption">
-                            <h4><a href="{% url 'product:detail' product.id %}" >{{product.title}}</a></h4>
-                        </div> 
-                    </div>
+            <div class="col-xs-12">
+                <div class="f16"><a href="{% url 'product:detail' product.id %}" >{{product.title}}</a></div>
+                <p class="gray">搜索结果内容</p>
             </div>
             {% endfor %} 
-        </div>
     </div>
 
 {% endblock %} 

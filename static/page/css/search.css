@@ -1,0 +1,27 @@
+.btn-search{
+    transform: translateX(-150%);
+    background: none;
+    border: unset;
+    outline: unset;
+}
+.fa-search.orange{
+    color: #ea5014;
+}
+.search-val{
+    width: 50%;
+    padding: 8px 31px 8px 6px;
+    margin-bottom: 40px;
+}
+.search-val:focus{
+    outline-color: #ea5014;
+    border-color: transparent;
+}
+.count{
+    padding: 30px 15px;
+    font-size: 16px;
+    background-color: rgb(249, 249, 248);
+    margin-bottom: 40px;
+}
+p.gray{
+    margin: 6px auto 30px;
+}
