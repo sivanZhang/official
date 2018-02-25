@@ -25,6 +25,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.decorators import permission_required
 from django.utils.translation import ugettext  as _
 from product.comm import handle_uploaded_file
+from sitecontent.models import AdaptorBaseBlock, AdaptorBaseBlockItem
 
 from mobile.detectmobilebrowsermiddleware import DetectMobileBrowser
 
@@ -44,7 +45,19 @@ def search(request):
     content= {}
     if 'keywords' in request.GET:
         keywords = request.GET['keywords'].strip()
-        products = AdaptorProduct.objects.filter(title__icontains=keywords)
+        """
+        product_ids = []
+        baseblocks = AdaptorBaseBlock.objects.filter(url__icontains = 'products') 
+        for baseblock in baseblocks: 
+            product_ids += [int(s) for s in baseblock.url.split('/') if s.isdigit()]
+        print(product_ids)
+        baseitems = AdaptorBaseBlockItem.objects.filter(url__icontains = 'products')
+        
+        for baseitem in baseitems:
+            product_ids += [int(s) for s in baseitem.url.split('/') if s.isdigit()]
+        print(product_ids)
+        """
+        products = AdaptorProduct.objects.filter(title__icontains=keywords )
         content['products'] = products 
         content['keywords'] = keywords
     return render(request, 'search.html', content) 

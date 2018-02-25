@@ -26,3 +26,7 @@
 p.gray{
     margin: 6px auto 30px;
 }
+.searchdetail{
+    height: 100px;
+    overflow: hidden;
+}
