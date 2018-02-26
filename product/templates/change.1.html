@@ -16,11 +16,16 @@
 
 <section>
     <!-- 路径导航 -->
-    
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="{% url 'product:products' %}">商品列表</a></li>
+        <li class="active">发布商品</li>
+        <div class="title">修改商品信息</div>
+    </ol>
 
-    <div  class="form-horizontal m60">
+    <div  class="form-horizontal">
         <div class="form-group">
-            <label for="id" class="col-sm-2 control-label">选择类型:</label>
+            <label for="id" class="col-sm-2 control-label">商品类型：</label>
             <div class="col-sm-4">
                 <select class="form-control " id="sel-category">
                     {% for category in categories %}
@@ -32,7 +37,8 @@
                     {% endfor%}
                 </select>
             </div>
-            <label for="id" class="col-sm-2 control-label">网页名称:</label>
+            <label for="id" class="col-sm-2 control-label">商品名称：
+            </label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" name="title" id="title" value="{{product.title}}" placeholder="">
             </div>
@@ -49,20 +55,20 @@
         </div>
         
         <div class="form-group">
-            <label for="message" class="col-sm-2 control-label">网页编辑:</label>
+            <label for="message" class="col-sm-2 control-label">商品详情：</label>
             <div class="col-sm-10">
                 {{ form.as_p }} 
             </div>
 
         </div>
 
-       <!--  <div class="form-group">
+        <div class="form-group">
                 <label for="message" class="col-sm-2 control-label">淘宝地址：</label>
                 <div class="col-sm-10">
                         <input type="text" class="form-control"   value="{{product.taobaourl|default:''}}" id="taobaourl" placeholder="">
                 </div>
     
-        </div> -->
+        </div>
         
 
     </div>

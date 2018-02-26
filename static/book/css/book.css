@@ -70,3 +70,9 @@ height: 40px;
 input.form-control{
     margin-bottom: 10px;
 }
+.form-control:focus{
+    border-color: #ddd;
+    outline: 0;
+    -webkit-box-shadow: unset;
+    box-shadow: iunset;
+}

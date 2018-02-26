@@ -49,7 +49,15 @@ i.fa-shopping-cart {
     margin-right: 0px;
     margin-left: 0px;
 }
-
+.btn-primary{
+    background-color:#ea5014;
+    border-color: #ea5014;
+}
+.btn-primary:hover{
+    background-color:#ea5014;
+    border-color: #ea5014;
+    opacity: .8;
+}
 
 table:first-child {
     text-align: center;
