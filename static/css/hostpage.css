@@ -103,17 +103,17 @@
     background: url(/static/img/slider/slider1.png);
   } 
   .sider1{
-  background: url(/static/img/slider/slider2.png);
+  background:unsert;
 }
 .sider2{
-  background-size: 1507px auto!important;
   background: url(/static/img/slider/slider3.png);
 }
 .sider3{
   background: url(/static/img/slider/slider4.png);
 }
 .sider4{
-  background: url(/static/img/slider/slider5.png);
+  background: url(/static/img/slider/slider5.jpg);
+  background-size:auto 100% !important;
 }
 .sider5{
   background: url(/static/img/slider/slider6.png);
@@ -367,4 +367,30 @@ transform-origin:83% 18%; /* Safari and Chrome */
 -moz-transform:rotate(45deg); 	/* Firefox */
 -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
 -o-transform:rotate(45deg); 	/* Opera */
+}
+.sider4-img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(1);
+  -webkit-animation: opener 3s ease-in-out alternate infinite;
+  animation: opener 3s ease-in-out alternate infinite;
+  -webkit-transition: opener .2s ease-in-out, transform .5s ease-in-out .2s;
+  transition: opener .2s ease-in-out, transform .5s ease-in-out .2s;
+}
+@-webkit-keyframes opener {
+  0%{
+    transform: translate(-50%,-50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%,-55%) scale(1.05);
+  }
+}
+@keyframes opener {
+  0%{
+    transform: translate(-50%,-50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%,-55%) scale(1.05);
+  }
 }
