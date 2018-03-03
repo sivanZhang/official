@@ -8,6 +8,7 @@ src: url('/static/font/lanting.ttf');
     font-weight: 100;
 }
 /* 通用 */
+html{-webkit-text-size-adjust:none;}
 .mb-60{
     margin-bottom: 60px;
 }
@@ -103,7 +104,6 @@ body{
     line-height: 60px; 
     width: 100%;
 }
-
 .menu table
 {
      min-height: 60px;
@@ -121,7 +121,6 @@ body{
     text-decoration: none;
     
 }
-
 .menu td{
     line-height: 40px;
 }
@@ -131,7 +130,6 @@ body{
 .menu-list td:last-child{
     padding-right:0px!important;
 }
-
 .menu td a{
     width: 40px;
 }
@@ -414,4 +412,7 @@ div.jquery-error-message{
 div.jquery-message p, div.jquery-error-message p{
     padding: 0!important;
     margin: 0!important;
+}
+.items_holder span{
+    color: grey;
 }

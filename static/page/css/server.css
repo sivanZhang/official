@@ -20,10 +20,12 @@
 .links {
   padding: 40px 160px;
 }
-.links .col-xs-3 {
+
+.links .col-xs-2 {
   padding: 15px;
+  margin: 0 14px;
 }
-.links .col-xs-3 a {
+.links .col-xs-2 a {
   display: block;
   padding: 20px 0px;
   background-color: rgb(249, 249, 249);
@@ -32,7 +34,7 @@
   -webkit-border-radius: 8px;
   color: inherit;
 }
-.links .col-xs-3 a img {
+.links .col-xs-2 a img {
   width: auto;
   height: 40px;
   margin-bottom: 10px;

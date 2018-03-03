@@ -622,6 +622,7 @@ section.move .hide-text{
 .hide-text li
 {
     list-style-type:disc;
+    font-family: "微软雅黑";
 }
 .summary-text{
 position: absolute;
@@ -695,4 +696,7 @@ line-height:2;
 }
 .m120{
     margin: 120px auto;
+}
+section.sub-item{
+    background-size: 100% auto !important;
 }

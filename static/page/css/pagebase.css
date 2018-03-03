@@ -108,7 +108,7 @@
 .items_holder {
     padding-bottom: 30px;
 }
-.items_holder a {
+.items_holder a,.items_holder span{
     color: #808080;
 }
 .yellowcolor {
@@ -136,4 +136,7 @@
 {
     width: 60%;
     margin: 40px auto;
+}
+.big-img{
+    overflow: hidden;
 }
