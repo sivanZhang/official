@@ -12,3 +12,35 @@ input.inp_search{
 .main>row div{
     padding: 20px 10px;
 }
+h4{
+    font-size: 16px;
+}
+h4>a{
+    color:inherit;
+    display: inline-block;
+    height: 40px;
+    overflow: hidden;
+}
+.thumbnail a.orange{
+    padding:9px;
+}
+.btn-search{
+    transform: translateX(-150%);
+    background: none;
+    border: unset;
+    outline: unset;
+}
+.fa-search.orange{
+    color: #ea5014;
+}
+.search-val{
+    width: 50%;
+    padding: 8px 31px 8px 6px;
+    margin: 22px auto 2px 30px;
+    border: 1px solid #ddd;
+    display: inline-block
+}
+.search-val:focus{
+    outline-color: #ea5014;
+    border-color: transparent;
+}

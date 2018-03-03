@@ -2,31 +2,26 @@
 {% block fixed_menu_class %}fixed_menu_class{%endblock%}
 {% block pagetitle%}商品列表{% endblock%} 
 {% block css %} {% load staticfiles %}
-<link href="/static/products/css/list.css" rel="stylesheet"> {% endblock %} {% block content %}
-<div class="container main">
+<link href="/static/products/css/list.css" rel="stylesheet">
+{% endblock %} {% block content %}
+<div class="container mb-60">
     <!-- 路径导航 -->
-    <ol class="breadcrumb row">
-       
-        <li class="active">搜索结果</li>
-
-        <form class="input-group search_wrap">
-            <input type="search" class="form-control inp_search" name="keywords" placeholder="Search">
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="submit" title="点击搜索">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-            </span>
+    <div class="breadcrumb m60">
+        <form class="text-center">
+                    <input class="search-val" type="search" name="keywords" placeholder="搜索管理内容">
+                    <button class="btn-search" type="submit" title="点击搜索"><i class="fa fa-search orange" aria-hidden="true"></i></button>
         </form>
-    </ol>
+        <div class="active">搜索结果:</div>
+    </div>
  
         <div class="row row_margin">
             {% for product in products %}
-            <div class="col-sm-4 col-md-3">
+            <div class="col-xs-3">
                     <div class="thumbnail"> 
                         <div class="caption">
                             <h4><a href="{% url 'product:detail' product.id %}" >{{product.title}}</a></h4>
                         </div>
-                        <a href="{% url 'product:change' product.id %}" target="__blank">修改</a>
+                        <a class="orange" href="{% url 'product:change' product.id %}" target="__blank">修改</a>
                     </div>
             </div>
             {% endfor %} 

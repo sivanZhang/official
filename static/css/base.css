@@ -416,3 +416,12 @@ div.jquery-message p, div.jquery-error-message p{
 .items_holder span{
     color: grey;
 }
+.btn-primary{
+    background-color: #ea5014;
+    border-color: #ea5014;
+}
+.btn-primary:active:focus, .btn-primary:active:hover,.btn-primary:hover{
+    background-color: #ea5014;
+    border-color: #ea5014;
+    opacity: .8;
+}
