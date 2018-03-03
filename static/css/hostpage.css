@@ -273,7 +273,14 @@
         width: 47px;
     }
 }
-
+@media screen and (max-width:1500px) and (min-width:1400px){
+  .pngcover-slider1{
+      top: 48.7%;
+      left: 30.5%;
+      height: 56px;
+      width: 56px;
+  }
+}
 
 .pngcover-slider1 {   
 -webkit-animation:spin 60s linear infinite;
