@@ -109,6 +109,7 @@
             <div class="swiper-button-next"></div>
         </div>
     </div>
+    
     <!-- end swiper -->
     <div class="container hide-menu">
                 <ul class="btn-list">
@@ -121,15 +122,24 @@
                         <!-- <li><a href="{% url 'dept:list' %}" target="black_">店面查询
                             <span><img src="/static/img/icon/dianmian.svg" /></span>
                         </a></li> -->
-                        <li><a href="javascript:;" target="black_">微信群
+                        <li><a id="weichat" href="javascript:;" target="black_">微信群
                             <span><img src="/static/img/icon/qun.svg" /></span>
                         </a></li>
-                        <li><a href="javascript:;" target="black_">用户指南下载
+                        <li><a href="/page/touser/usage/" target="black_">用户指南下载
                             <span><img src="/static/img/icon/shouce.svg" /></span>
                         </a></li>
                         
                 </ul>
         <div id="show-btn"><img src="/static/img/icon/jia.svg" /></div>
+    </div>
+    <div class="code-wrap">
+            <div class="code-bg">
+                    
+                </div>
+                <div class="code">
+                        <div>一数科技微信群<img id="close" class="pull-right" src="/static/img/icon/close_b.svg" /></div>
+                        <img src="/static/img/qun.png" />
+                </div>
     </div>
 </div>
 {% endblock %} 

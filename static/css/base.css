@@ -21,6 +21,9 @@ html{-webkit-text-size-adjust:none;}
 .fs22{
     font-size: 22px;
 }
+.iblock{
+    display: inline-block;
+}
 .p-r{
     position: relative;
 }

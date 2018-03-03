@@ -33,6 +33,7 @@ $(document).ready(function() {
     })
     jQuery('#show-btn').click(function (e) {
         jQuery('.btn-list li').slideToggle();
+       $(this).children().toggleClass('img-close');
         e.stopPropagation();
     })
     jQuery(document).click(function () {

@@ -1,7 +1,37 @@
-.orange-logo{
-    width: 160px;
-    height: 160px;
+.b-logo{
+    width: 120px;
+    height: 120px;
+    margin-bottom: 30px;
 }
-.grey-text{
-    color: #848484;
+.orange-bg.iblock{
+    border-radius: 6px;
+    padding:6px 18px;
+    color: #fff;
+    margin: 30px auto 10px;
+}
+.container{
+    color: gray;
+}
+.black-bd{
+    border-bottom: 2px solid #000;
+    font-size: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+}
+.download-icon{
+    height: 62px;
+    width: auto;
+}
+.grey-bd{
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+    padding-top: 50px;
+}
+.grey-bd img{
+    width: 140px;
+    height: 140px;
+    margin-bottom: 10px;
+}
+.black.f18{
+    margin: 20px 0;
 }

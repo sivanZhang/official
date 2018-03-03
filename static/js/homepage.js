@@ -21,5 +21,10 @@ $(document).ready(function(){
     $('.swiper-button-next').css('right', abslut+'px');
     $('.shop-link3').css('left', abslut+60+'px');
 })
-
-
+/* 点击显示微信群二维码 */
+$('#weichat').on('click',function(){
+    $('.code-wrap').fadeIn(300);
+})
+$('#close').on('click',function(){
+    $('.code-wrap').fadeOut(300);
+})
