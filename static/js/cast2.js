@@ -1,13 +1,11 @@
 
 $(document).ready(function () {
+    /* 文字定位 */
     var leftValue = $('.logo').offset().left;
     $('.show1,.show3').css('right',leftValue + 'px');
     $('.show2,.show4').css('left',leftValue + 'px');
     transition (360);
-    //
-    var height = window.innerHeight;
-    var width = window.innerWidth;
-    $('.swiper-container').height(height);
+
     $('.advice').hide();
     $('.parameter').hide();
     $('.scene').hide();
@@ -80,12 +78,6 @@ $(document).ready(function () {
         //
     });
     /* 
-     *隐藏菜单切换 
-     */
-    $(document).on('click', '#show-btn', function () {
-        $('.btn-list li').slideToggle();
-    })
-    /* 
      *回到顶部
      */
     
@@ -117,15 +109,7 @@ $(document).ready(function () {
   
     submenu('.product_pic_1');
     submenu('.product_pic_2');
-    /*
-        
-   $('.product_pic_1').click(function(e){
-                   e.preventDefault();
-                   var target = $(this).attr('target');
-                  // $('#'+target).show('slow');
-                  $('#sub-item11').slideToggle(  );
-               });*/
-    //二级菜单切换
+
     function sec_menu(sec) {
         advice.hide();
         fitting.hide();

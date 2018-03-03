@@ -106,6 +106,7 @@
   background: url(/static/img/slider/slider2.png);
 }
 .sider2{
+  background-size: 1507px auto!important;
   background: url(/static/img/slider/slider3.png);
 }
 .sider3{
@@ -256,9 +257,11 @@
 
 .pngcover{
   position: absolute;
-  top: 40.4%;
-  left: 17%;
-  width: 67%;
+  top: 248px;
+  left: 50%;
+  transform: translateX(-389px);
+  height: 352px;
+  width: auto;
 }
 .pngcover-slider1{
     position: absolute; 
@@ -312,6 +315,6 @@ transform-origin:83% 18%; /* Safari and Chrome */
   -webkit-animation-name: fadeInOut;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 12s;
+  -webkit-animation-duration: 2s;
   -webkit-animation-direction: alternate;
 }
