@@ -53,6 +53,7 @@ class Product(BaseDate):
         permissions = (
             'manage_product', _('Permission to manage product')
         )
+        ordering = ['-date']
     
 
     class Meta:
@@ -124,6 +125,9 @@ class AdaptorProduct(OfficialProduct):
     
     def __str__(self):
         return self.title  
+    
+    class Meta: 
+        ordering = ['-date']
  
 class ProductPic(Pic): 
     """产品图片类"""

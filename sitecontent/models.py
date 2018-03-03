@@ -51,7 +51,8 @@ class BaseBlockItem(models.Model):
     date = models.DateTimeField(null=True)
     
     class Meta:
-        abstract = True
+        abstract = True 
+        ordering = ['-date']
      
 class AdaptorBaseBlockItem(BaseBlockItem): 
     # 标签，以逗号隔开
