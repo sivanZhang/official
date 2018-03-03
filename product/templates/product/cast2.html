@@ -23,7 +23,7 @@
             <tr>
                 <td>
                     <div>
-                       <span class='submenu'>ASU Watch</span>
+                       <a class='submenu' href="{% url 'product:cast2' %}">ASU Watch</a>
                     </div>
                 </td>
                 <td>
@@ -62,13 +62,11 @@
                     <td><img src="/static/img/icon/s1_1.svg" /></td>
                     <td><img src="/static/img/icon/s1_2.svg" /></td>
                     <td><img src="/static/img/icon/s1_3.svg" /></td>
-                    <td><img src="/static/img/icon/s1_4.svg" /></td>
                 </tr>
                 <tr>
                     <td>15流明亮度</td>
-                    <td>720P高清画质</td>
-                    <td>2-60英寸</td>
-                    <td>自如切换</td>
+                    <td>广色域</td>
+                    <td>手背2.3寸</td>
                   </tr>
               </table>
             </div>
@@ -88,7 +86,7 @@
                   <li>实时展示当地天气信息</li>
                   <li>天气动效投影在手背上，查看效果更佳</li>
                 </ul>
-                <div class="orange">微信APP</div>
+                <div class="image-text orange">微信APP</div>
                 <ul>
                   <li>支持手机扫码登录</li>
                   <li>支持微信对话</li>
@@ -107,13 +105,11 @@
                 <td><img src="/static/img/icon/s2_1.svg" /></td>
                 <td><img src="/static/img/icon/s2_2.svg" /></td>
                 <td><img src="/static/img/icon/s2_3.svg" /></td>
-                <td><img src="/static/img/icon/s2_4.svg" /></td>
               </tr>
               <tr>
-                  <td>杜比音效</td>
-                  <td>骨膜传导</td>
-                  <td>蓝牙4.0</td>
-                  <td>抗噪</td>
+                  <td>金属机身</td>
+                  <td>蓝牙4.1</td>
+                  <td>CVC消噪</td>
                 </tr>
             </table>
           </div>
@@ -137,7 +133,7 @@
                     <li>支持本地通讯录</li>
                     <li>电话号码手背投影显示，点击手背接听</li>
                   </ul>
-                  <div class="orange">音乐APP</div>
+                  <div class="image-text orange">音乐APP</div>
                   <ul>
                     <li>播放手表本地连接手机播放歌曲</li>
                     <li>将歌曲歌词投影在手背上，方便查看</li>
@@ -156,8 +152,8 @@
                   <td><img src="/static/img/icon/s3_4.svg" /></td>
               </tr>
               <tr>
-                  <td>2.6寸物理屏幕</td>
-                  <td>2.8寸虚拟屏幕</td>
+                  <td>1.54寸物理屏幕</td>
+                  <td>2.3寸虚拟屏幕</td>
                   <td>手势操作</td>
                   <td>皮肤触控</td>
                 </tr>
@@ -176,7 +172,7 @@
                       <ul class="mb">
                         <li>通过在物理屏幕完成画作，<br>在手背上投影出相应图案或分享给朋友</li>
                       </ul>
-                      <div class="orange">Show APP</div>
+                      <div class="image-text orange">Show APP</div>
                       <ul>
                         <li>从show store中选择动画效果,<br>show出你的态度</li>
                         <li>投影精美制作的动画效果到手背上</li>
@@ -199,13 +195,11 @@
                   <td><img src="/static/img/icon/s4_1.svg" /></td>
                   <td><img src="/static/img/icon/s4_2.svg" /></td>
                   <td><img src="/static/img/icon/s4_3.svg" /></td>
-                  <td><img src="/static/img/icon/s4_4.svg" /></td>
               </tr>
               <tr>
                   <td>心率监测</td>
-                  <td>GPS导航</td>
-                  <td>陀螺仪测速</td>
-                  <td>十指触控</td>
+                  <td>GPS</td>
+                  <td>陀螺仪</td>
                 </tr>
             </table>
           </div>
@@ -225,7 +219,7 @@
                         <li>心率测试</li>
                         <li>关键数据投影在手背上，展示更多信息</li>
                       </ul>
-                      <div class="orange">跑步 APP</div>
+                      <div class="image-text orange">跑步 APP</div>
                       <ul>
                         <li>记录跑步关键数据</li>
                         <li>跑步中手背投影运动关键数据，如配速、<br>距离等,查看更方便</li>
@@ -247,8 +241,8 @@
                   <div class="items_holder">
                     <h2 class="yellowcolor">技术参数</h2>
                     <a href="首页.html">首页</a>
-                    <a href="{% url 'product:cast2' %}">/&nbsp;Watch</a>
-                    <a href="#">/&nbsp;技术参数</a> 
+                    <span>/&nbsp;Watch</span>
+                    <span>/&nbsp;技术参数</span> 
                   </div> 
                 </div>
             </div>
@@ -394,8 +388,8 @@
                   <div class="items_holder">
                     <h2 class="yellowcolor">精品配件</h2>
                     <a href="首页.html">首页</a>
-                    <a href="{% url 'product:cast2' %}">/&nbsp;Watch</a>
-                    <a href="#">/&nbsp;精品配件</a> 
+                    <span>/&nbsp;Watch</span>
+                    <span>/&nbsp;精品配件</span> 
                   </div> 
               </div>
            </div>
@@ -568,9 +562,9 @@
               <div class="titleline">
                  <div class="items_holder">
                     <h2 class="yellowcolor">安全使用建议</h2>
-                    <a href="首页.html">首页</a>
-                    <a href="{% url 'product:cast2' %}">/&nbsp;Watch</a>
-                    <a href="#">/&nbsp;安全使用建议</a> 
+                    <a href="/">首页</a>
+                    <span>/&nbsp;Watch</span>
+                    <span>/&nbsp;安全使用建议</span> 
                   </div> <!-- end items_holder -->
               </div><!-- end titleline -->
            </div><!-- end col -->
