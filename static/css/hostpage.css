@@ -264,14 +264,7 @@ background:unsert;
   left: -200px;
   height: 768px;
 }
-@media screen and (min-width:1500px){
-  .sider0 img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 768px;
-  }
-}
+
 
 .pngcover-slider1 {   
 -webkit-animation:spin 60s linear infinite;
@@ -332,28 +325,41 @@ transform-origin: 731px 385px;
 -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
 -o-transform:rotate(45deg); 	/* Opera */
 }
-
+.sider-2img{
+  position: absolute;
+  left: 50%;
+}
 .sider-2img{
   height: 100%;
-  
   position: absolute;
   left: 50%;
   opacity: 0;
   filter: alpha(opacity=0)\9;
-  -webkit-transform: translateX(-25%);
-  -ms-transform: translateX(-25%);
-  transform: translateX(-25%);
+  -webkit-transform: translateX(-35%);
+  -ms-transform: translateX(-35%);
+  transform: translateX(-35%);
 }
 
 .swiper-slide-active .sider-2img{
-  transition: opacity 3s, transform 3s,opacity 3s;
+  transition: opacity 3s, transform 3s;
   opacity: 1;
   filter: alpha(opacity=100)\9;
-  -webkit-transform: translateX(-10%);
-  -ms-transform: translateX(-10%);
-  transform: translateX(-10%);
+  -webkit-transform: translateX(-20%);
+  -ms-transform: translateX(-20%);
+  transform: translateX(-20%);
 }
-
+@media screen and (min-width:1500px){
+  .sider0 img{
+    position: absolute;
+    top: 92px;
+    left: 52px;
+    height: 768px;
+  }
+  .sider-2img{
+    position: absolute;
+    left: 44%;
+  }
+}
 .sider2 img{
   position: absolute;
   top: 0;
@@ -368,7 +374,7 @@ transform-origin: 731px 385px;
 }
 .swiper-slide-active .shop-link4,.swiper-slide-active .projective{
   opacity: 1;
-  transition:opacity 5s;
+  transition:opacity 4s;
 }
 .sider4-img{
   position: absolute;

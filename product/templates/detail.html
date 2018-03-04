@@ -2,21 +2,24 @@
 {% block fixed_menu_class %}fixed_menu_class{%endblock%}
 {% load i18n %}
 {% block css %}
+<link href="/static/page/css/pagebase.css" rel="stylesheet">
 <link href="/static/products/css/products.css" rel="stylesheet"> 
+<link href="/static/page/css/report.css" rel="stylesheet">  
 {% endblock %}
  {% block content %}
 <input type="hidden" id="productid" value="{{product.id}}" />
-<div class="container main-container">
-    <div class="row">
-       
-        <!-- 型号选择和购买 -->
-        <div class="col-sm-12 col-md-12 shop"> 
-            <h1 class=" orange"> {{product.title }} </h1> 
-            <h5 class=" grey">{% trans "Time" %}：{{product.date|date:'Y-m-d' }}</h5>
-        </div>
-        <!-- 型号选择和购买 完！！！ -->
-
+<div class=" container-title" >
+        <div class="container ">
+            <div class="items_holder">
+                        <h2 class="title orange">新闻</h2> 
+                        <a href="/">{% trans 'Home' %}</a>
+                        <span>/&nbsp;{% trans 'News Center' %}</span> 
+                        <span>/&nbsp;新闻{{contentblock.title}}</span> 
+            </div> 
+        </div>  
     </div>
+<div class="container m60">
+
 
     <!-- 商品信息和评价 -->
     <div class="row">
@@ -24,20 +27,22 @@
     
         <div id="myTabContent" class="tab-content">
             <!-- 商品详情 -->
-            <div class="col-sm-12 col-md-12 tab-pane fade in active" id="details" role="tabpanel">
+            <div class="col-xs-8 tab-pane fade in active" id="details" role="tabpanel">
+                    <h2 class=" orange"> {{product.title }} </h2> 
+                    <h5 class=" grey">{% trans "Time" %}：{{product.date|date:'Y-m-d' }}</h5>
                 <div class="illustrate">
                     {{ product.detail|default:''|safe}}
                 </div> 
             </div>
-            <!-- 规格参数 --> 
+            <div class="col-xs-4 news-lable" role="tabpanel">
+                    {% include 'page/label.html' %}
+            </div>
         </div>
-        <!-- 商品信息和评价 完 -->
     </div>
 </div>
-<!-- 制顶 -->
-<div id="to_top" title="回到顶部"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
 {% endblock %} 
 {% block js %}
+<script src="/static/page/js/report.js"></script>
 <script type="text/javascript " src="/static/js/login.js "></script>
 <script type="text/javascript " src="/static/products/js/detail.js"></script>
  

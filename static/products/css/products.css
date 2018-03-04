@@ -49,16 +49,9 @@ ul {
 .btn-danger {
     background-color: rgb(201, 22, 35);
 }
-
-.main-container {
-    margin-top: 20px;
-    background-color: #fefefe;
-    border: 1px solid #ddd;
-    padding-top: 15px;
-    margin-bottom: 20px;
+.news-lable {
+    padding-left: 105px;
 }
-
-
 /* 
  * 功能组
  */
