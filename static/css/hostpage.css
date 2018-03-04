@@ -103,7 +103,7 @@
     background: url(/static/img/slider/slider1.png);
   } 
   .sider1{
-  background:unsert;
+background:unsert;
 }
 .sider2{
   background: url(/static/img/slider/slider3.png);
@@ -145,14 +145,13 @@
     color: #333;
   }
   .shop-link4{
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 62%;
+    left: 54%;
+    transform: translateY(50%);
+    bottom: 50%;
+    opacity: .1;
   }
-  .shop-link4 td{
-    vertical-align: text-bottom;
-    line-height: 1;
-    padding: 15px;
+  .shop-link4 .fs20{
+    margin: 40px auto;
   }
   .shop-link5{
     left: 56%;
@@ -257,33 +256,20 @@
   height: 100%;
 }
 
-.pngcover{
+
+
+.sider0 img{
   position: absolute;
-  top: 248px;
-  left: 50%;
-  transform: translateX(-389px);
-  height: 352px;
-  width: auto;
+  top: -100px;
+  left: -200px;
+  height: 768px;
 }
-.pngcover-slider1{
-    position: absolute; 
-    top: 48.9%;
-    left: 32.2%; 
-}
-@media screen and (max-width:1400px){
-    .pngcover-slider1{
-        top: 48.7%;
-        left: 34.1%;
-        height: 47px;
-        width: 47px;
-    }
-}
-@media screen and (max-width:1500px) and (min-width:1400px){
-  .pngcover-slider1{
-      top: 48.7%;
-      left: 30.5%;
-      height: 56px;
-      width: 56px;
+@media screen and (min-width:1500px){
+  .sider0 img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 768px;
   }
 }
 
@@ -291,35 +277,13 @@
 -webkit-animation:spin 60s linear infinite;
 -moz-animation:spin 60s linear infinite;
 animation:spin 60s linear infinite; 
--webkit-transform-origin:83% 18%; /* Safari and Chrome */
-transform-origin:83% 18%; /* Safari and Chrome */
+transform-origin: 731px 385px;
 }
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg);  } }
 
-@-webkit-keyframes fadeInOut {
-  0% {
-      opacity:1;
-   }
-  25% {
-      opacity:0;
-  }
-  50% {
-      opacity: 0;    
-  }
-  75% {
-      opacity:1;
-  }
-}
-.anim_fade_image {
-  position:absolute;    
-  -webkit-animation-name: fadeInOut;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-direction: alternate;
-}
+
 /* 微信群二维码样式 */
 .code{
   position: fixed;
@@ -368,6 +332,74 @@ transform-origin:83% 18%; /* Safari and Chrome */
 -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
 -o-transform:rotate(45deg); 	/* Opera */
 }
+
+.sider-2img{
+  height: 100%;
+  
+  position: absolute;
+  left: 50%;
+  opacity: 0;
+  filter: alpha(opacity=0)\9;
+  -webkit-transform: translateX(-25%);
+  -ms-transform: translateX(-25%);
+  transform: translateX(-25%);
+}
+
+.swiper-slide-active .sider-2img{
+  transition: opacity 3s, transform 3s,opacity 3s;
+  opacity: 1;
+  filter: alpha(opacity=100)\9;
+  -webkit-transform: translateX(-10%);
+  -ms-transform: translateX(-10%);
+  transform: translateX(-10%);
+}
+
+.sider2 img{
+  position: absolute;
+  top: 0;
+  left: -10%;
+  height: 100%;
+  width: auto;
+  min-width: 100%;
+  transform:scale(1.1);
+}
+.projective{
+  opacity: 0;
+}
+.swiper-slide-active .shop-link4,.swiper-slide-active .projective{
+  opacity: 1;
+  transition:opacity 5s;
+}
+.sider4-img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(.9);
+  opacity: .6;
+}
+.swiper-slide-active .sider4-img{
+  transform: translate(-51%,-51%) scale(1);
+  opacity: 1;
+  transition: transform 3s, opacity 3s;
+}
+
+/* @-webkit-keyframes fadeInOut {
+  0% {
+      opacity:.1;
+  }
+  100% {
+      opacity:1;
+  }
+}
+.projective {   
+  -webkit-animation-name: fadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-direction: alternate;
+  -webkit-transition: opacity 3s;
+  transition: opacity 3s;
+} 
 .sider4-img{
   position: absolute;
   top: 50%;
@@ -394,23 +426,4 @@ transform-origin:83% 18%; /* Safari and Chrome */
     transform: translate(-50%,-52%) scale(1.05);
   }
 }
-.sider-2img{
-  height: 90%;
-  -webkit-transition: opacity 3s, -webkit-transform 3s;
-  transition: opacity 3s, transform 3s;
-  position: absolute;
-  left: 50%;
-  opacity: 0;
-  filter: alpha(opacity=0)\9;
-  -webkit-transform: translateX(-25%);
-  -ms-transform: translateX(-25%);
-  transform: translateX(-25%);
-}
-
-.swiper-slide-active .sider-2img{
-  opacity: 1;
-  filter: alpha(opacity=100)\9;
-  -webkit-transform: translateX(-10%);
-  -ms-transform: translateX(-10%);
-  transform: translateX(-10%);
-}
+*/
