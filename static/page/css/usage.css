@@ -1,3 +1,22 @@
 .content{
-    max-width: 1000px;
+    max-width: 970px;
+}
+.link a{
+    padding:0 30px;
+    display: inline-block;
+    margin: 30px 0;
+}
+a.download{
+    border-right: 1px solid #ddd;
+}
+.title{
+    background-color: rgb(249, 249, 248);
+    padding: 30px;
+    font-size: 20px;
+}
+.link a i{
+    margin-left: 10px;
+}
+.p115{
+    padding: 0 115px;
 }
