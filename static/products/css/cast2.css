@@ -402,9 +402,6 @@
   section.sec4-show {
     background: url(/static/img/product/sc4.png);
   }
-  section.sec4-hide {
-    background: url(/static/img/product/sc4hide.png);
-  }
 
   .advertising,
   .parts-img,
@@ -645,8 +642,8 @@ line-height:2;
 }
 .img360_holder .white.text-center img{
     margin-bottom: 30px;
-    width: 100px;
-    height: auto;
+    width: auto;
+    height: 40px;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-name: twinkle;
     -webkit-animation-duration: 1200ms;
@@ -671,3 +668,4 @@ line-height:2;
 section.sub-item{
     background-size: 100% auto !important;
 }
+/* 隐藏板块 */
