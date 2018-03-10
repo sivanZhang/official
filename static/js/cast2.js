@@ -5,6 +5,69 @@ $(document).ready(function () {
     $('.show1,.show3').css('right',leftValue + 'px');
     $('.show2,.show4').css('left',leftValue + 'px');
     transition (360);
+    
+    /* var iconLength = $('.icon-img').length;
+    for(var i = 0;i<iconLength;i++){
+        $('.icon-img').eq(i).click(function(){
+            $(this).parents('table').find('.icon-img').removeClass('act-icon');
+            $(this).addClass('act-icon');
+            $(this).parents('.sub-item').find('.hide-watch').hide();
+            $(this).parents('.sub-item').find('.hide-watch').eq(i).show();
+        })
+    } */
+    var icon =$('.icon-img'),
+        watch = $('.hide-watch');
+        for(var i=0;i<icon.length;i++){
+            //鼠标移入显示，移出隐藏
+          ~function(i){                               //匿名函数立即执行
+            $('.sub-item').on('click',icon[i],function(){
+                if($(icon[i]).hasClass('act-icon')){
+                    return;
+                }else{
+                    $(icon[i]).parents('table').find('.icon-img').removeClass('act-icon');
+                    $(icon[i]).addClass('act-icon');
+                }
+                $(watch[i]).show();
+              });   
+          }(i);
+        };  
+        /* icon.on('click',function(){
+            if($(this).hasClass('act-icon')){
+                return;
+            }else{
+                $(this).parents('table').find('.icon-img').removeClass('act-icon');
+                $(this).addClass('act-icon');
+            }
+            watch.show();
+          });    */
+
+
+          
+        /* aSub.mouseenter(function(){
+            $(this).show();
+          });
+          aSub.mouseleave(function(){
+            $(this).hide();
+          }); */
+     /*$('.icon-img').on('click',function(){
+         if($(this).hasClass('act-icon')){
+            return;
+        }else{
+        $(this).parents('table').find('.icon-img').removeClass('act-icon');
+        $(this).addClass('act-icon')
+        
+        } 
+        $(this).parents('.sub-item').find('.hide-watch').hide();
+        $(this).parents('.sub-item').find('.hide-watch').eq($(this).index()).show();
+    }) */
+    
+
+
+
+
+
+
+
 
     $('.advice').hide();
     $('.parameter').hide();
@@ -97,7 +160,7 @@ $(document).ready(function () {
             $('#' + target).fadeToggle( function(){
                 /* 隐藏元素到视口顶部 */
             $('html, body').animate({
-                scrollTop: $('#' + target).offset().top-60
+                scrollTop: $('#' + target).offset().top
              }, 600);
             });
             $('#' + target).addClass('move');
@@ -176,3 +239,5 @@ function transition (nub){
         $('.show'+nub).parent('section').removeClass('move');
     }
 }
+/* 隐藏板块标签页功能 */
+    
