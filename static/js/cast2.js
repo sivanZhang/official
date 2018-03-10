@@ -10,7 +10,9 @@ $(document).ready(function () {
 
     $('.icon-img').on('click', function () {
         var thisIcon = $(this),
-            thisIndex = $(this).index(thisIcon.parents('.sub-item').find('.icon-img'));
+            //thisIndex = $(this).index(thisIcon.parents('.sub-item').find('.icon-img'));
+            thisIndex = $('.icon-img').index($(this));
+            //thisIndex = $(this).attr("imgid");
         if (thisIcon.hasClass('act-icon')) {
             return;
         } else {
