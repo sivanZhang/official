@@ -5,7 +5,21 @@ $(document).ready(function () {
     $('.show1,.show3').css('right',leftValue + 'px');
     $('.show2,.show4').css('left',leftValue + 'px');
     transition (360);
-    
+    var height = window.innerHeight;
+     var width = window.innerWidth;
+
+    $('.icon-img').on('click', function () {
+        var thisIcon = $(this),
+            thisIndex = $(this).index(thisIcon.parents('.sub-item').find('.icon-img'));
+        if (thisIcon.hasClass('act-icon')) {
+            return;
+        } else {
+            thisIcon.parents('table').find('.icon-img').removeClass('act-icon');
+            thisIcon.addClass('act-icon');
+            thisIcon.parents('.sub-item').find('.hide-watch').hide();
+            thisIcon.parents('.sub-item').find('.hide-watch').eq(thisIndex).show();
+        }
+    });
     /* var iconLength = $('.icon-img').length;
     for(var i = 0;i<iconLength;i++){
         $('.icon-img').eq(i).click(function(){
@@ -15,7 +29,7 @@ $(document).ready(function () {
             $(this).parents('.sub-item').find('.hide-watch').eq(i).show();
         })
     } */
-    var icon =$('.icon-img'),
+   /*  var icon =$('.icon-img'),
         watch = $('.hide-watch');
         for(var i=0;i<icon.length;i++){
             //鼠标移入显示，移出隐藏
@@ -30,8 +44,7 @@ $(document).ready(function () {
                 $(watch[i]).show();
               });   
           }(i);
-        };  
-        /* icon.on('click',function(){
+        };   icon.on('click',function(){
             if($(this).hasClass('act-icon')){
                 return;
             }else{
@@ -160,7 +173,7 @@ $(document).ready(function () {
             $('#' + target).fadeToggle( function(){
                 /* 隐藏元素到视口顶部 */
             $('html, body').animate({
-                scrollTop: $('#' + target).offset().top
+                scrollTop: $('#' + target).offset().top-60
              }, 600);
             });
             $('#' + target).addClass('move');
