@@ -663,8 +663,7 @@ section.sub-item{
 .hide-right>div{
     position: absolute;
     left: 60px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 120px;
 }
 .sub-item .image-text.orange{
     font-size: 30px;
@@ -681,4 +680,10 @@ section.sub-item{
 }
 .hide-left .hide-watch:first-child{
     display: block;
+}
+.hide-right .db{
+    display: block;
+}
+.hide-text{
+    display: none;
 }
