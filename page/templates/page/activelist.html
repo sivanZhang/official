@@ -40,7 +40,7 @@
                                     <div class="img-holder">
                                         <img class="active-img" src="{{mediaroot}}{{product.pageurl}}"/>
                                     </div>
-                                    <a class="img_title orange" href="{% url 'product:detail' product.id %}" title="{{product.title}}">{{product.title|truncatechars:12}}</a>
+                                    <a class="img_title orange" href="{% url 'product:detail' product.id %}" title="{{product.title}}">{{product.title|truncatechars:25}}</a>
                                     <p class="grey">{{product.date| date:"Y-m-d"}}</p> 
                             </div> 
                             {% endfor %}

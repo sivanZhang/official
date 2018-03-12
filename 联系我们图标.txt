@@ -1,0 +1,19 @@
+地址		<i class="fa fa-grey fa-map-marker" aria-hidden="true"></i>
+  
+媒体合作	<i class="fa fa-grey fa-microphone" aria-hidden="true"></i>
+
+商务合作	<i class="fa fa-grey fa-shopping-bag" aria-hidden="true"></i>
+
+产品建议	<i class="fa fa-grey fa-commenting" aria-hidden="true"></i>
+
+联系电话	<i class="fa fa-grey fa-phone" aria-hidden="true"></i>
+
+招聘邮箱	<i class="fa fa-grey fa-envelope-square" aria-hidden="true"></i>
+
+客户邮箱	<i class="fa fa-grey fa-envelope-o" aria-hidden="true"></i>
+
+客服热线	<i class="fa fa-grey fa-phone" aria-hidden="true"></i>
+
+服务时间	<i class="fa fa-grey fa-clock-o" aria-hidden="true"></i>
+
+

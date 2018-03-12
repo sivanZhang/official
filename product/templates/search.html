@@ -3,7 +3,7 @@
 {% block pagetitle%}结果:找到"{{keywords}}"相关内容{{products|length}}个{% endblock%} 
 {% block css %} {% load staticfiles %}
 <link href="/static/page/css/search.css" rel="stylesheet"> {% endblock %} {% block content %}
-<div class="container m60">
+<div class="container search-container m60">
     <!-- 路径导航 -->
         <form class="text-center">
             <input class="search-val" type="text" value="{{keywords}}" name="keywords" placeholder="请输入搜索内容">
@@ -32,6 +32,14 @@
         element.find('img').remove(); 
         newText = element.html(); 
         $('.searchdetail{{forloop.counter}}').html(newText);
+       
 </script>    
 {% endfor %} 
+<script>
+$(".search-container").css({ 'min-height': ($(window).innerHeight()-(184+40+100+78+60+25)) + 'px' });
+$(window).resize(function() {
+    $(".search-container").css({ 'min-height': ($(window).innerHeight()-(184+40+100+78+60+25)) + 'px' });
+});
+
+</script>  
 {% endblock %}

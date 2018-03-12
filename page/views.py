@@ -280,16 +280,21 @@ class PageView(View):
             page_item = pages[0]
             for page in pages: 
                 url = page.url
+                if not page.date:# 精彩活动中，不填写日期的不显示
+                    continue 
+
                 match = re.search('\d+', url)
                 if match:
                     productid = match.group()
                     try:
                         product = AdaptorProduct.objects.get(id=productid)
-                        year = product.date.year
+                        year = page.date.year
+                        product.date = page.date
                         mark = False
                         for activeyear in content['activeyears']:
                             if activeyear['year'] == year:
                                 product.pageurl = page.pic
+                                
                                 activeyear['products'].append(product)
                                 mark = True
                                 break
