@@ -260,8 +260,8 @@ background:unsert;
 
 .sider0 img{
   position: absolute;
-  top: -100px;
-  left: -200px;
+  top: -90px;
+  left: -240px;
   height: 768px;
 }
 
@@ -357,7 +357,7 @@ transform-origin: 731px 385px;
   }
   .sider-2img{
     position: absolute;
-    left: 44%;
+    left: 46%;
   }
 }
 .sider2 img{

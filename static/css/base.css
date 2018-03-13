@@ -128,10 +128,11 @@ body{
     line-height: 40px;
 }
 .menu-list td{
-    padding: 0 15px;
+    min-width:70px;
+    text-align:center;
 }
 .menu-list td:last-child{
-    padding-right:0px!important;
+    text-align:right!important;
 }
 .menu td a{
     width: 40px;

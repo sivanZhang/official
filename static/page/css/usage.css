@@ -4,7 +4,7 @@
 .link a{
     padding:0 30px;
     display: inline-block;
-    margin: 30px 0;
+    margin: 60px 0 30px;
 }
 a.download{
     border-right: 1px solid #ddd;
