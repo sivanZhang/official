@@ -75,3 +75,10 @@ $(window).resize(function() {
     var leftValue =$('.point:first').offset().left;
     $('.bottom-line').css('left',leftValue+'px');
 });
+/* 点击显示qq群二维码 */
+$('#qq_group').on('click',function(){
+    $('.code-wrap').fadeIn(300);
+})
+$('#close').on('click',function(){
+    $('.code-wrap').fadeOut(300);
+})

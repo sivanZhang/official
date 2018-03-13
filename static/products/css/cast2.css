@@ -483,7 +483,7 @@
 }
 @media screen and (min-width: 1550px) {
     .threesixty img{
-        height: 420px;
+        height: 460px;
         margin-bottom: 60px;
 }
 }
@@ -663,7 +663,8 @@ section.sub-item{
 .hide-right>div{
     position: absolute;
     left: 60px;
-    top: 120px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .sub-item .image-text.orange{
     font-size: 30px;
@@ -686,4 +687,5 @@ section.sub-item{
 }
 .hide-text{
     display: none;
+    height: 172px;
 }
