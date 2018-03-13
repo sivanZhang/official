@@ -260,9 +260,8 @@ background:unsert;
 
 .sider0 img{
   position: absolute;
-  top: -90px;
-  left: -240px;
-  height: 768px;
+  left: -10%;
+  height: 100%;
 }
 
 
@@ -270,7 +269,7 @@ background:unsert;
 -webkit-animation:spin 60s linear infinite;
 -moz-animation:spin 60s linear infinite;
 animation:spin 60s linear infinite; 
-transform-origin: 731px 385px;
+transform-origin: 38% 50%;
 }
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
@@ -349,12 +348,6 @@ transform-origin: 731px 385px;
   transform: translateX(-20%);
 }
 @media screen and (min-width:1500px){
-  .sider0 img{
-    position: absolute;
-    top: 92px;
-    left: 0;
-    height: 768px;
-  }
   .sider-2img{
     position: absolute;
     left: 46%;
