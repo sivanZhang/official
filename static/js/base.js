@@ -30,6 +30,7 @@ $(document).ready(function() {
     /* 点击页面回收悬浮菜单 */
     jQuery(document).click(function () {
         jQuery('.btn-list li').slideUp();
+        $('#show-btn').children().removeClass('img-close');
     })
     jQuery('#show-btn').click(function (e) {
         jQuery('.btn-list li').slideToggle();
@@ -80,5 +81,8 @@ $('#qq_group').on('click',function(){
     $('.code-wrap').fadeIn(300);
 })
 $('#close').on('click',function(){
+    $('.code-wrap').fadeOut(300);
+})
+$('.code-bg').on('click',function(){
     $('.code-wrap').fadeOut(300);
 })

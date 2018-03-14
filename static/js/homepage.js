@@ -25,6 +25,3 @@ $(document).ready(function(){
 $('#weichat').on('click',function(){
     $('.code-wrap').fadeIn(300);
 })
-$('#close').on('click',function(){
-    $('.code-wrap').fadeOut(300);
-})
