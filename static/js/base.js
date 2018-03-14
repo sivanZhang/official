@@ -90,7 +90,7 @@ $('.code-bg').on('click',function(){
 /* 
  *菜单下边线的样式
  */
-$(document).ready(function () {
+$(window).load(function () {
 
     var leftValue = $('.point:first').offset().left,
         lineWidth = $('body').width()-leftValue;
