@@ -2,7 +2,7 @@
     margin: 10px 0;
 }
 .img-holder{
-    height: 200px;
+    height: 219px;
 }
 .label_list {
     margin-top: 15px; 
@@ -59,7 +59,7 @@ h1.white{
 }
 .subscribe{
     padding: 35px;
-    margin-top: 20px;
+   /*  margin-top: 20px; */
     width: 100%;
 }
 .sub_tb{
