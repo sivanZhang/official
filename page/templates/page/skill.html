@@ -11,25 +11,25 @@
 <div class=" container-title">
   <div class="container ">
     <div class="items_holder">
-      <div class="text-center f16 orange">常见问题 </div>
+      <div class="text-center f16 orange">使用小技巧 </div>
 
-      <div class="text-center grey">您好，为了节省您等待客服解答的时间，我们特别为您收集了一些常见问题与答案，如果仍无法解决您的问题，请您直接拨打客服电话，谢谢您的理解。</div>
+      <div class="text-center grey">您好，为了节省您等待客服解答的时间，我们特别为您收集了一些常见使用小技巧，如果仍无法解决您的问题，请您直接拨打客服电话，谢谢您的理解。</div>
     </div>
   </div>
 </div>
-<div class="container m60">
-  <div class="questions mb-40">
-    <div class="ext-center f16 orange mb-40">热点问题</div>
-    {% for question in hot_products %}
+<div class="container m60"> 
+  <div class="questions">
+    <div class="ext-center f16 orange mb-40">使用小技巧</div>
+    {% for question in skill_products %}
     <div class="clearfix mb-30">
       <div class="pull-left nub">Q{{forloop.counter}}</div>
       <div class="answer grey">
         <p class="black">{{question.title}}</p>
-        {{question.detail|safe}}
+        <p>{{question.detail|safe}}</p>
       </div>
-    </div>
+    </div> 
     {% endfor %}
-  </div> 
+  </div>
 </div>
 {% endblock%}
 {% block js %} 

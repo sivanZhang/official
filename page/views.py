@@ -131,18 +131,24 @@ class PageView(View):
         if 'questions' == blockname :
             # 常见问题
             # 获得热点问题
-            hot_products = AdaptorProduct.objects.filter(category__name = "热点问题")
-            # 获得使用小技巧
-            skill_products = AdaptorProduct.objects.filter(category__name = "使用小技巧")
-
-            content['hot_products'] = hot_products 
-            content['skill_products'] = skill_products 
             content['servicepage'] = True
-
-            if isMble:
-                return render(request, 'page/questions.html', content)
+            if 'hot' in request.GET:
+                hot_products = AdaptorProduct.objects.filter(category__name = "热点问题")
+                content['hot_products'] = hot_products 
+                if isMble:
+                    return render(request, 'page/questions.html', content)
+                else:
+                    return render(request, 'page/questions.html', content)
             else:
-                return render(request, 'page/questions.html', content)
+                # 获得使用小技巧
+                skill_products = AdaptorProduct.objects.filter(category__name = "使用小技巧")
+                content['skill_products'] = skill_products 
+                if isMble:
+                    return render(request, 'page/skill.html', content)
+                else:
+                    return render(request, 'page/skill.html', content)
+
+             
 
         if 'service' == blockname and 'list' == pagename:
             contentblock = models.AdaptorBaseBlock.objects.filter(mark=blockname)
