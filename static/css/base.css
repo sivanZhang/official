@@ -321,7 +321,6 @@ td.td-bar-point
     position: absolute;
     top: 0;
     z-index: 10;
-    overflow: hidden;
 }
 
 

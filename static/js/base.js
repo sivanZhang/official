@@ -86,3 +86,18 @@ $('#close').on('click',function(){
 $('.code-bg').on('click',function(){
     $('.code-wrap').fadeOut(300);
 })
+
+/* 
+ *菜单下边线的样式
+ */
+$(document).ready(function () {
+
+    var leftValue = $('.point:first').offset().left,
+        lineWidth = $('body').width()-leftValue;
+    topValue = $('.point:first').offset().top;
+    $('.bottom-line').css('width',lineWidth+ 'px').css('left', leftValue + 'px').css('top', topValue + 2 + 'px');
+})
+$(window).resize(function() {
+    var leftValue =$('.point:first').offset().left;
+    $('.bottom-line').css('left',leftValue+'px');
+});

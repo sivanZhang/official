@@ -27,6 +27,7 @@
     position: relative;
     border-bottom: 1px solid #cdcdcd;
     margin: 0 15px;
+    color: #808080;
 }
 .years span{
     position: absolute;
