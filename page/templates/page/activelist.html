@@ -34,13 +34,13 @@
                             <div class="down"></div>
                     </div>
            
-                    <div class="col-active-list">
+                    <div class="col-active-list clearfix">
                             {% for product in activeyear.products %}
                             <div class="col-xs-4">
                                     <div class="img-holder">
-                                        <img class="active-img" src="{{mediaroot}}{{product.pageurl}}"/>
+                                                <a class="i-block" href="{% url 'product:detail' product.id %}" title="{{product.title}}"><img class="active-img" src="{{mediaroot}}{{product.pageurl}}"/></a>
                                     </div>
-                                    <a class="img_title orange" href="{% url 'product:detail' product.id %}" title="{{product.title}}">{{product.title|truncatechars:25}}</a>
+                                    <a class="img_title gray" href="{% url 'product:detail' product.id %}" title="{{product.title}}">{{product.title|truncatechars:25}}</a>
                                     <p class="grey">{{product.date| date:"Y-m-d"}}</p> 
                             </div> 
                             {% endfor %}

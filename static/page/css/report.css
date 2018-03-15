@@ -1,5 +1,5 @@
 .img_title{
-    margin: 10px 0;
+    margin-top:8px;
 }
 .img-holder{
     height: 219px;
@@ -35,6 +35,7 @@ span.span_label.grey {
 
  .add{
      margin: 0px!important;
+     color: #fefefe;
  }
 h1.white{
     margin-top: 10px;
@@ -70,10 +71,11 @@ h1.white{
 }
 /* 以下是社交媒体css样式*/
 .social{
-    margin-top: 20px;
+    margin: 30px auto 6px;
 }
 .social_tb td{
-    line-height: 55px;
+    vertical-align: middle;
+    height: 54px;
 }
 .socialimg{
     margin-right: 10px;
@@ -82,8 +84,4 @@ h1.white{
 p.grey.socialtxt {
     height: 30px;
      
-}
-#modal-body{
-    max-height: 400px;
-    overflow-y: scroll;
 }

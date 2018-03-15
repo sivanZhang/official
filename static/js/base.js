@@ -78,13 +78,16 @@ $(window).resize(function() {
 });
 /* 点击显示qq群二维码 */
 $('#qq_group').on('click',function(){
-    $('.code-wrap').fadeIn(300);
+    $('.code-wrap').eq(0).fadeIn(300);
 })
-$('#close').on('click',function(){
-    $('.code-wrap').fadeOut(300);
+$('#wei_group').on('click',function(){
+    $('.code-wrap').eq(1).fadeIn(300);
+})
+$('.close_code').on('click',function(){
+    $(this).parents('.code-wrap').fadeOut(300);
 })
 $('.code-bg').on('click',function(){
-    $('.code-wrap').fadeOut(300);
+    $(this).parents('.code-wrap').fadeOut(300);
 })
 
 /* 

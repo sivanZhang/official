@@ -427,3 +427,19 @@ div.jquery-message p, div.jquery-error-message p{
     border-color: #ea5014;
     opacity: .8;
 }
+@media (min-width: 768px){
+    .modal-dialog { 
+        width: 900px;
+        margin: 30px auto;
+    }
+    }
+    #modal-body{
+        padding: 15px 40px
+    }
+    .modal-header{
+        padding: 15px 40px
+    }
+    #modal-body{
+        max-height: 460px;
+        overflow-y: scroll;
+    }

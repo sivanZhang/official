@@ -100,10 +100,20 @@
                     
                 </div>
                 <div class="code">
-                        <div>一数科技微信群<img id="close" class="pull-right" src="/static/img/icon/close_b.svg" /></div>
+                        <div>一数科技QQ群<img class="close_code pull-right" src="/static/img/icon/close_b.svg" /></div>
                         <img src="/static/img/qqqun.jpg" />
                 </div>
     </div>
+    <div class="code-wrap">
+        <div class="code-bg">
+                
+            </div>
+            <div class="code">
+                    <div>一数科技微信兴趣群<img class="pull-right close_code" src="/static/img/icon/close_b.svg" /></div>
+                    <img src="/static/img/xinqu.jpg" />
+                    <div class="fs12 grey">扫描二维码，加入兴趣小组</div>
+            </div>
+</div>
       <table class="container">
         <tr class="tr-title">
           <td class="first">
@@ -167,7 +177,7 @@
             <span class="lable">hot</span>
           </td>
            <td>
-            <a href="/page/waiting/list/">兴趣小组</a>
+            <a id="wei_group" href="javascript:;">兴趣小组</a>
           </td>
           <td>
             <!-- <a href="/page/waiting/list/">卡片投影</a> -->
@@ -181,7 +191,7 @@
             <a href="{% url 'page:page' 'report'  'list' %}">媒体报道</a>
           </td>
           
-          <td><a href="{% url 'dept:list' %}">店面查询</a></td>
+          <td> <a href="/page/waiting/list/">京东旗舰店</a></td>
           <td><a href="/page/policy/list/">保修政策</a></td>
           <td><a href="/page/waiting/list/">官方活动</a> </td>
           <td><a href="/page/go/software/">手机端管理软件下载</a>  </td><!-- {% url 'page:page' 'software' 'list' %} -->
@@ -196,10 +206,7 @@
           <td>
             <a href="{% url 'page:page' 'pic'  'list' %}">高清美图</a>
           </td>
-          
-          <td>
-            <a href="/page/waiting/list/">天猫旗舰店</a>
-          </td>
+          <td> <a href="{% url 'bussiness:new' %}">成为经销商</a></td>
           <td>
            
           </td>
@@ -222,7 +229,7 @@
           </td>
           
           <td>
-            <a href="/page/waiting/list/">京东旗舰店</a>
+           
           </td>
           <td>
             <a href=""></a>
@@ -244,9 +251,9 @@
             <a href="/sitecontent/blockcontents/?new">管理中心</a>
           </td>
           
-          <td>
+          <!-- <td>
             <a href="/page/waiting/list/">苏宁旗舰店</a>
-          </td>
+          </td> -->
           <td> </td>
           <td> </td>
           <td>  </td>
@@ -260,7 +267,7 @@
           
           <td> 
           </td>
-          <td> <a href="{% url 'bussiness:new' %}">成为经销商</a></td>
+          <td></td>
           <td>  </td>
           <td> </td>
           <td>  </td>
@@ -281,17 +288,17 @@
             Beijing ASU Tech Co.Ltd 北京一数科技有限公司丨法律声明丨隐私条款 <a href="javascript:;">京ICP备15036919号-1</a>
           </div>
            <div class="pull-right">
-             <a class="round-btn" href="mailto:media@a-su.com.cn" title="邮箱"><img src="/static/img/icon/footer01.svg"/>
+             <a class="round-btn" href="mailto:media@a-su.com.cn" target="_black" title="邮箱"><img src="/static/img/icon/footer01.svg"/>
              </a>
-             <a class="round-btn" href="http://i.youku.com/asucast1" title="优酷"><img src="/static/img/icon/footer02.svg"/>
+             <a class="round-btn" href="http://i.youku.com/asucast1" target="_black" title="优酷"><img src="/static/img/icon/footer02.svg"/>
              </a>
-             <a class="round-btn" href="https://www.facebook.com/bjasutech001/" title="Facebook"><img src="/static/img/icon/footer03.svg"/>
+             <a class="round-btn" href="https://www.facebook.com/bjasutech001/" target="_black" title="Facebook"><img src="/static/img/icon/footer03.svg"/>
              </a>
-             <a class="round-btn" href="http://weibo.com/asu001" title="新浪微博"><img src="/static/img/icon/footer04.svg"/>
+             <a class="round-btn" href="http://weibo.com/asu001" target="_black" title="新浪微博"><img src="/static/img/icon/footer04.svg"/>
              </a>
-             <a class="round-btn" href="javascript:;" title="Twitter"><img src="/static/img/icon/footer05.svg"/>
+             <a class="round-btn" href="javascript:;" target="_black" title="Twitter"><img src="/static/img/icon/footer05.svg"/>
              </a>
-             <a class="round-btn" href="https://www.youtube.com/channel/UCBG6Eiw5mm1xBHHk4_yVOcQ" title="Youtobe"><img src="/static/img/icon/footer06.svg"/>
+             <a class="round-btn" href="https://www.youtube.com/channel/UCBG6Eiw5mm1xBHHk4_yVOcQ" target="_black" title="Youtobe"><img src="/static/img/icon/footer06.svg"/>
              </a>
           </div>
           <div class="clearfix"></div>

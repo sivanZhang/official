@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/* $(document).ready(function(){
     $('.years:first').addClass('act');
     $('.col-active-list:first').css('display','block');
     $('.years span').click(function(){
@@ -9,4 +9,4 @@ $(document).ready(function(){
         $('.act').next('.col-active-list').slideDown();
        }
     })
-})
+}) */

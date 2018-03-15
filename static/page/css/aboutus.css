@@ -131,3 +131,9 @@
   .swiper-button-prev, .swiper-button-next{
     height: 40px;
   }
+  #to_next{
+    cursor: pointer;
+  }
+  .fs60{
+    font-size: 60px;
+  }

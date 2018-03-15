@@ -27,3 +27,9 @@ $(document).ready(function(e){
             loop : true
     });
 });
+
+$('#to_next').on('click', function () {
+    $('html, body').animate({
+        scrollTop: $('.swiper-container').offset().top
+    }, 300);
+})

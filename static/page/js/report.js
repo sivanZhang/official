@@ -37,7 +37,7 @@ $(document).ready(function () {
             url: '/subscribe/list/',
             data: data,
             success: function (result) {
-                $().message("已提交订阅...");
+                $('#sub').after('<p class="add" id="add5">已提交订阅！</p>');
                 $("#sub_email").val('');
                 $("#sub_name").val('');
             },

@@ -330,6 +330,7 @@
 }
 .p_title_2 img
 {
+    cursor: pointer;
     width: 30px;
     
 }
@@ -481,10 +482,22 @@
     height: 318px;
     margin-bottom: 30px;
 }
+.img360_holder .white.text-center img{
+    margin-bottom: 30px;
+    width: auto;
+    height: 30px;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: twinkle;
+    -webkit-animation-duration: 1200ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
 @media screen and (min-width: 1550px) {
     .threesixty img{
         height: 460px;
         margin-bottom: 60px;
+}.img360_holder .white.text-center img{
+    margin-bottom: 60px;
 }
 }
   .items table td{
@@ -588,7 +601,7 @@ line-height:2;
 }
 .text-center.image-text.orange{
     margin: 0 0 10px;
-    font-size: 30px;
+    font-size: 40px;
 }
 .p_title_2.text-center{
     margin: 0px;
@@ -606,16 +619,7 @@ line-height:2;
 .show3 table{
     margin-left: -4px;
 }
-.img360_holder .white.text-center img{
-    margin-bottom: 30px;
-    width: auto;
-    height: 40px;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-name: twinkle;
-    -webkit-animation-duration: 1200ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-}
+
 
 @-webkit-keyframes twinkle {
     0% {
@@ -662,9 +666,17 @@ section.sub-item{
 }
 .hide-right>div{
     position: absolute;
-    left: 60px;
+    left: 120px;
     top: 50%;
     transform: translateY(-50%);
+}
+.icon-img:hover{
+    border-radius: 16px;
+    width:84px;
+    height: 84px;
+    opacity: .7;
+    -webkit-box-shadow: 1px 3px 3px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 3px 3px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 .sub-item .image-text.orange{
     font-size: 30px;

@@ -98,10 +98,15 @@ $(document).ready(function () {
     /* 
      *回到顶部
      */
-
+    
     $(document).on('click', '.scroll-up', function () {
         $('html, body').animate({
             scrollTop: $('body').offset().top
+        }, 300);
+    })
+    $('#to_next').on('click', function () {
+        $('html, body').animate({
+            scrollTop: $('.container-second-menu').offset().top
         }, 300);
     })
 
@@ -138,9 +143,15 @@ $(document).ready(function () {
         switch (sec) {
             case 'advice':
                 advice.show();
+                $('html,body').animate({
+                    scrollTop: $('.advice .second_menu_holder').offset().top-59
+                }, 300);
                 break;
             case 'fitting':
                 fitting.show();
+                $('html,body').animate({
+                    scrollTop: $('.fitting .second_menu_holder').offset().top-59
+                }, 300);
                 break;
             case 'scene':
                 scene.show();
@@ -148,6 +159,9 @@ $(document).ready(function () {
                 break;
             case 'parameter':
                 parameter.show();
+                $('html,body').animate({
+                    scrollTop: $('.parameter .second_menu_holder').offset().top-59
+                }, 300);
                 break;
             case 'character':
                 character.show();
