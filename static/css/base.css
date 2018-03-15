@@ -68,6 +68,9 @@ a:link,a:visited,a:hover,a:active{
 a:focus{
     outline: none;
 }
+.pointer{
+    cursor: pointer;
+}
 .common-btn {
     display: inline-block;
     padding: 4px 12px;
