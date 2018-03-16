@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from official import views
+from official import en_views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -34,4 +35,15 @@ urlpatterns = [
     url(r'^area/', include('area.urls', namespace="area")),
     url(r'^dept/', include('dept.urls', namespace="dept")),
     url(r'^subscribe/', include('subscribe.urls', namespace="subscribe")),
+
+    url(r'^$', views.home, name='home'),
+
+    url(r'^en/home$', en_views.home, name='home'),
+    url(r'^en/watch$', en_views.watch, name='watch'),
+    url(r'^en/aboutus$', en_views.aboutus, name='aboutus'),
+    url(r'^en/contactus$', en_views.contactus, name='contactus'),
+    url(r'^en/accessories$', en_views.accessories, name='accessories'),
+    url(r'^en/parameters$', en_views.parameters, name='parameters'),
+
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

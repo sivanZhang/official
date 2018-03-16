@@ -1,0 +1,34 @@
+{% extends 'en/base_en.html' %}
+{% block fixed_menu_class %}fixed_menu_class{%endblock%}
+{% load i18n %}
+{% block pagetitle%}Contact Us{% endblock%}
+{% block css %}
+<link href="/static/page/css/pagebase.css" rel="stylesheet">
+<link href="/static/page/css/contactus.css" rel="stylesheet">
+<style>
+        .top-slide{
+          background-image: url('/static/img/page/contactus.png');
+        }
+</style>
+ {% endblock %}
+{% block content %}
+<div class="top-slide"> 
+    <div class="top-tips">
+      <h1 class="orange " > </h1> 
+      <h5 > </h5>
+    </div>
+</div> 
+<br/><br/>
+<div class="container  ">
+    <div class="row  m60"> 
+      <div class="col-xs-6 ">
+         {{product.detail|safe}}
+      </div> 
+      <div class="col-xs-6 map-margin"> 
+          <iframe class="map"  width='500' height='400' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='http://f.amap.com/YVMp_0834csv'></iframe>
+       </div> 
+    </div>
+</div>  
+{% endblock%}
+{% block js %} 
+{% endblock %}

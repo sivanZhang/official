@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>{% block pagetitle%}{% endblock%}</title>
+    <!-- Bootstrap -->
+    <link type="text/css" href="/static/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="/static/css/base.css"  rel="stylesheet">
+    <link href="/static/css/en_menu.css"  rel="stylesheet">
+    <link href="/static/css/footer.css"  rel="stylesheet">
+    <link rel="shortcut icon" href="/static/img/logoicon.ico">
+    <script type="text/javascript" src="/static/jquery/dist/jquery.min.js"></script>
+    <!--扩展css开始-->
+    {% block css %}
+    {% endblock %}
+
+    <!--扩展css结束-->
+</head>
+
+<body>
+        {% if request.user.is_anonymous %}
+        <input type="hidden" id="userlogin" value="0" />
+        {% else %}
+        <input type="hidden" id="userlogin" value="1" />
+        {% endif %}
+    {% block menu %}
+    <!--菜单开始-->
+    <div class="menu-holder fixed_menu_class" >
+      <div class="container nav-container">
+        <table class="menu" >
+          <tr>
+          <td>
+              <div>
+                <a href="/en/home">
+                <img class="logo" src="/static/img/logo.png"/>
+                </a>
+              </div>
+          </td>
+          <td>
+              <div class="pull-right menu-list">
+                    <table class="menu-right">
+                      <tr>
+                        <td class="{% if productpage %}active{% endif %}">
+                          <a href="/en/watch">Watch</a>
+                          <div class="point"></div>
+                        </td>
+                        
+                        <td class="{% if servicepage %}active{% endif %} ">
+                          <a href="/en/accessories">Accessories</a>
+                          <div class="point"></div>
+                        </td>
+
+                        <td class="{% if servicepage %}active{% endif %} ">
+                          <a href="/en/parameters">Tech Specs</a>
+                          <div class="point"></div>
+                        </td>
+                        <td class="small-padding">
+                          <a href="{% url 'product:search' %}"><i class="fa fa-search" aria-hidden="true"></i></a>
+                          <a href="/">中文</a><span class="white">丨</span><a href="/en/home">EN</a>
+                        </td>
+
+                      </tr>
+                    </table>
+
+
+                    </div>
+                    <!-- 左侧菜单结束-->
+                    </td>
+                    </tr>
+                    </table>
+
+      </div>
+      <div class="bottom-line">
+        </div>
+      </div>
+    <!--菜单结束-->
+    {% endblock %}
+
+   <!--主要内容开始-->
+    {% block content %}
+    {% endblock %}
+    <!--主要内容结束-->
+    {% block links %}
+    <!-- start link footer -->
+    <div class="linkitems">
+        <div class="code-wrap">
+            <div class="code-bg">
+
+                </div>
+                <div class="code">
+                        <div>一数科技微信群<img id="close" class="pull-right" src="/static/img/icon/close_b.svg" /></div>
+                        <img src="/static/img/qqqun.jpg" />
+                </div>
+    </div>
+      <table class="container">
+         <tr >
+          <td>
+            <a href="{% url 'page:page' 'asubrand'  'enaboutus' %}">About Us</a>
+          </td>
+          <td>
+            <a href="{% url 'page:page' 'asubrand'  'encontactus' %}">Contact Us</a>
+          </td> 
+        </tr> 
+      </table>
+      <table class="container"> 
+       <tr >
+         <td  >
+           <span>Beijing ASU Tech Co.Ltd All Rights Reserved. 北京一数科技有限公司</span> 
+         </td> 
+       </tr>
+       <tr >
+        <td  > 
+          <p class="grey">京ICP备15036919号-1</p>
+        </td> 
+      </tr>
+     </table>
+</div><!-- end items -->
+<!-- end link footer -->
+    {% endblock %}
+   
+    <script type="text/javascript" src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
+ 
+    <script type="text/javascript" src="/static/js/base.js"></script>
+    <!--扩展js开始-->
+    {% block js %}
+    {% endblock %}
+    <!---扩展js结束-->
+</body>
+
+</html>

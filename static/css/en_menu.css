@@ -1,0 +1,19 @@
+.img360-text{
+    margin-bottom: 20px !important;
+}
+
+.menu-right tr td{
+     width: 100px;
+}
+
+.linkitems tr:first-child{
+    line-height: 30px !important;
+}
+
+.linkitems a {
+    line-height: 80px !important;
+    font-size: 18px !important;
+}
+.linkitems{
+    padding-top: 37px !important;
+}

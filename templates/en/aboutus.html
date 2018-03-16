@@ -1,0 +1,28 @@
+{% extends 'en/base_en.html' %} 
+{% load i18n %}
+{% block pagetitle%}{% trans 'About Us' %}{% endblock%}
+{% block css %}
+<link href="/static/page/css/pagebase.css" rel="stylesheet">
+<link href="/static/page/css/aboutus.css" rel="stylesheet">
+<style>
+        .top-slide{
+          background-image: url('{{mediaroot}}{{page.pic|safe}}');
+        }
+</style>
+ {% endblock %}
+{% block content %}
+<div class="top-slide">
+  </div> 
+<br/><br/>
+<div class="container m60">
+    <div class="row  "> 
+        <div class="col-xs-1"></div>
+      <div class="col-xs-10">
+         {{product.detail|safe}}
+      </div>
+      <div class="col-xs-1"></div> 
+    </div>
+</div>  
+{% endblock%}
+{% block js %} 
+{% endblock %}

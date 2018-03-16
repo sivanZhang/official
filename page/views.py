@@ -49,6 +49,52 @@ class PageView(View):
                 return render(request, 'page/aboutus.html', content)
             else:
                 return render(request, 'page/aboutus.html', content)
+
+        if 'asubrand' == blockname and 'enaboutus' == pagename:
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname, mark=pagename)
+            if len(pages) == 0:
+                raise Http404
+            page_item = pages[0]
+            url = page_item.url
+            match = re.search('\d+', url)
+            if match:
+                productid = match.group()
+                try:
+                    product = AdaptorProduct.objects.get(id=productid)
+                    content['product'] = product
+                    page_item.pic = page_item.pic.replace('\\','/')
+                    content['page'] = page_item
+                    content['blockname'] = blockname
+                except AdaptorProduct.DoesNotExist:
+                    raise Http404
+            if isMble:
+                return render(request, 'en/aboutus.html', content)
+            else:
+                return render(request, 'en/aboutus.html', content)
+
+        if 'asubrand' == blockname and 'encontactus' == pagename:  
+            # 联系我们 
+            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname, mark=pagename)
+            if len(pages) == 0:
+                raise Http404
+            page_item = pages[0]
+            url = page_item.url
+            match = re.search('\d+', url)
+            if match:
+                productid = match.group()
+                try:
+                    product = AdaptorProduct.objects.get(id=productid)
+                    content['product'] = product
+                    page_item.pic = page_item.pic.replace('\\','/')
+                    content['page'] = page_item
+                    content['blockname'] = blockname
+                except AdaptorProduct.DoesNotExist:
+                    raise Http404
+            if isMble:
+                return render(request, 'en/contactus.html', content)
+            else:
+                return render(request, 'en/contactus.html', content)
+
         if 'asubrand' == blockname and 'join' == pagename:
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname, mark=pagename)
             if len(pages) == 0:
@@ -215,6 +261,7 @@ class PageView(View):
                 return render(request, 'page/contactus.html', content)
             else:
                 return render(request, 'page/contactus.html', content)
+ 
         if 'report' == blockname :
             # 媒体报道
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)

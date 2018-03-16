@@ -1,0 +1,36 @@
+{% extends 'en/base_en.html' %}
+{% block pagetitle%}ASU&nbsp;watch{% endblock%}
+{% block css %}
+<link href="/static/products/css/cast2.css"  rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="img360_holder">
+
+          <div class="threesixty" data-path="/static/img/360pics/watch.{index}.png" data-count="30"></div>
+          <div class="img360-text show360">
+              <div class="white text-center"><img src="/static/img/icon/360.svg"></div>
+              <h2 class="text-center image-text orange" ><span>Future&nbsp;／&nbsp;One Touch Reality</span>
+              </h2> 
+          </div>
+    </div>
+   
+
+    {% endblock %}
+
+    {% block js %}
+    <script src="/static/js/cast2_en.js"></script>
+    <script src="/static/plugins/jquery.threesixty.js"></script>
+     <!-- Initialize Swiper -->
+    <script>
+      $(document).ready(function(){
+          six = $('.threesixty').threeSixty({
+              dragDirection: 'horizontal',
+              useKeys: false
+          });
+         /*  var father_h = $('.img360_holder').height();
+
+         if (father_h > 800)
+             $('.threesixty').css({'margin-top':(father_h/6)+'px'}); */
+      });
+    </script>
+    {% endblock %}
