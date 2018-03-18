@@ -31,7 +31,7 @@
         {% endif %}
     {% block menu %}
     <!--菜单开始-->
-    <div class="menu-holder fixed_menu_class" >
+    <div class="menu-holder {% block fixed_menu_class %}{%endblock%}" >
       <div class="container nav-container">
         <table class="menu" >
           <tr>
@@ -52,17 +52,17 @@
                         </td>
                         
                         <td class="{% if servicepage %}active{% endif %} ">
-                          <a href="/en/accessories">Accessories</a>
+                          <a href="/en/parameters">Accessories</a>
                           <div class="point"></div>
                         </td>
 
                         <td class="{% if servicepage %}active{% endif %} ">
-                          <a href="/en/parameters">Tech Specs</a>
+                          <a href="/en/accessories">Tech Specs</a>
                           <div class="point"></div>
                         </td>
                         <td class="small-padding">
                           <a href="{% url 'product:search' %}"><i class="fa fa-search" aria-hidden="true"></i></a>
-                          <a href="/">中文</a><span class="white">丨</span><a href="/en/home">EN</a>
+                          <a href="/">中文</a><span class="grey">丨</span><a href="/en/home">EN</a>
                         </td>
 
                       </tr>

@@ -185,7 +185,7 @@ $(document).ready(function () {
     /* 
      *板块高度
      */
-    var windowHeight = window.innerHeight/3*2;
-    $('section,.img360_holder').css('height', '500px');
+    var windowHeight = window.innerHeight/3*2 + 80;
+    $('section,.img360_holder').css('height', windowHeight+'px');
 });
  
