@@ -12,8 +12,9 @@
 
 客户邮箱	<i class="fa fa-grey fa-envelope-o" aria-hidden="true"></i>
 
-客服热线	<i class="fa fa-grey fa-phone" aria-hidden="true"></i>
+客服热线	<i class="fa fa-grey fa-volume-control-phone " aria-hidden="true"></i>
 
 服务时间	<i class="fa fa-grey fa-clock-o" aria-hidden="true"></i>
 
+在线客服 	<i class="fa fa-grey fa-qq" aria-hidden="true"></i>
 

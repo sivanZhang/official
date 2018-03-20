@@ -22,8 +22,8 @@
             <div class="swiper-slide">
                 <div class="sider sider1">
                     <div class="shop-link shop-link3">
-                            <div class="mb50 fs40 orange">高科技精密陶瓷</div>
-                            <div class="mb50 fs20">时光荏苒&nbsp;风采依旧</div>
+                            <div class="fs40 orange image-text">高科技精密陶瓷</div>
+                            <div class="mb50 fs20 image-text">时光荏苒&nbsp;风采依旧</div>
                         <a class="learn_more" href="{% url 'product:cast2' %}">查看详情</a>
                         <a class="now-bye orange-bg common-btn" href="{% url 'book:buy' %}">立即购买
                             <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -45,14 +45,16 @@
 
             <div class="swiper-slide">
                 <div class="sider sider0">
-                    <img src="/static/img/slider/watch2.png"  />
-                    <img src="/static/img/slider/slider1-o.png" class="pngcover-slider1 " />
+                    <div class="img-wrap">
+                            <img src="/static/img/slider/watch2.png"  />
+                            <img src="/static/img/slider/slider1-o.png" class="pngcover-slider1 " />
+                    </div>
                     <div class="shop-link shop-link1">
-                        <div class="mb50 fs20">
+                        <div class="fs20 image-text">
                             ASU Watch
                         </div>
-                        <div class="orange mb50 fs40">
-                            触&nbsp;/&nbsp;无屏可及
+                        <div class="orange mb50 fs40 image-text">
+                            触&nbsp;·&nbsp;无屏可及
                         </div>
                         <a class="learn_more" href="{% url 'product:cast2' %}">查看详情</a>
                         <a class="now-bye orange-bg common-btn" href="{% url 'book:buy' %}">立即购买
@@ -67,25 +69,8 @@
                      <img src="/static/img/slider/watch3.png" />
                      <img class="projective" src="/static/img/slider/projective.png"/> 
                     <div class="shop-link shop-link4">
-                            
-                       <!--  <table>
-                            <tr>
-                                <td class="fs40 orange">金属占比高达90%</td>
-                                <td class="fs20">极致占比&nbsp;经典触感</td>
-                            </tr>
-                            <tr>
-                                    <td></td>
-                                    <td>
-                                        <a class="learn_more" href="{% url 'product:cast2' %}">查看详情</a>
-                                        <a class="now-bye orange-bg common-btn" href="{% url 'book:buy' %}">立即购买
-                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                        </table> -->
-
-                        <div class="fs40 orange">金属占比高达90%</div>
-                                <div class="fs20">极致占比&nbsp;经典触感</div>
+                        <div class="fs40 orange image-text">金属占比高达90%</div>
+                                <div class="fs20 image-text">极致占比&nbsp;经典触感</div>
                                 <div><a class="learn_more" href="{% url 'product:cast2' %}">查看详情</a>
                                     <a class="now-bye orange-bg common-btn" href="{% url 'book:buy' %}">立即购买
                                         <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -100,8 +85,9 @@
             <div class="swiper-slide">
                 <div class="sider sider4">
                     <div class="shop-link shop-link6 black">
-                            <div class="mb50 fs40">首个全金属外壳蓝牙耳机</div>
-                            <div class="mb50 fs20">机标一体&nbsp;业界风范</div>
+                            <div class="fs20 image-text">机标一体&nbsp;业界风范</div>
+                            <div class="fs40 image-text mb50">首个全金属外壳蓝牙耳机</div>
+                            
                         <a class="learn_more" href="{% url 'product:cast2' %}">查看详情</a>
                         <a class="now-bye orange-bg common-btn" href="{% url 'book:buy' %}">立即购买
                             <i class="fa fa-angle-right" aria-hidden="true"></i>

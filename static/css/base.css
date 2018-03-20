@@ -15,6 +15,9 @@ html{-webkit-text-size-adjust:none;}
 .b-n{
     border:none!important;
 }
+.l2{
+    line-height: 2;
+}
 .fs24{
     font-size: 24px;
 }

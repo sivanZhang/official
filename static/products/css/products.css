@@ -38,19 +38,13 @@
  * 通用
  */
 
-.red_msg {
-    color: rgb(201, 22, 35);
+.fs30{
+    font-size: 30px;
 }
-
-ul {
-    padding: 0px;
-}
-
-.btn-danger {
-    background-color: rgb(201, 22, 35);
-}
-.news-lable {
-    padding-left: 105px;
+h5.grey{
+    margin: 15px auto 40px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #ddd;
 }
 /* 
  * 功能组

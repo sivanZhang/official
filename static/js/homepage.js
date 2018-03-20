@@ -19,7 +19,8 @@ $(document).ready(function(){
     var abslut = $('.logo').offset().left;
     $('.swiper-button-prev').css('left', abslut+'px');
     $('.swiper-button-next').css('right', abslut+'px');
-    $('.shop-link3').css('left', abslut+60+'px');
+    $('.shop-link3').css('right', abslut+120+'px');
+    $('.sider0 .img-wrap').css('left', abslut+180+'px');
 })
 /* 点击显示微信群二维码 */
 $('#weichat').on('click',function(){

@@ -701,3 +701,20 @@ section.sub-item{
     display: none;
     height: 172px;
 }
+.title-text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size:12px;
+  }
+  .tb-icon{
+    height: 40px;
+  }
+  .title-text td{
+      width:170px;
+      padding: 5px 0;
+  }
+  .title-text p{
+      margin: 10px 0;
+  }
