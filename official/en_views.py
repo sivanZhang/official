@@ -59,11 +59,12 @@ def accessories(request):
     content ={}
     isMble  = dmb.process_request(request) 
     content['mediaroot'] = settings.MEDIA_URL
-
     if isMble:
-        return render(request, 'en/accessories.html',content) 
+        return render(request, 'en/fetting.html',content) 
     else:
-        return render(request, 'en/accessories.html',content)  
+        return render(request, 'en/fetting.html',content) 
+
+      
 
 def parameters(request):
     content ={}
@@ -71,6 +72,6 @@ def parameters(request):
     content['mediaroot'] = settings.MEDIA_URL
 
     if isMble:
-        return render(request, 'en/fetting.html',content) 
+        return render(request, 'en/accessories.html',content) 
     else:
-        return render(request, 'en/fetting.html',content)  
+        return render(request, 'en/accessories.html',content) 

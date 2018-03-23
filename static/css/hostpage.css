@@ -125,9 +125,9 @@ background:unsert;
   }
 
   .shop-link1{
-    left: 58%;
-    bottom: 50%;
-    transform: translateY(50%);
+     margin-left: 26%;
+     top: 50%;
+     transform: translateY(-50%);
   }
   .shop-link2{
     left: 50%;
@@ -260,7 +260,8 @@ background:unsert;
   position: relative;
   height: 56%;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-20%,-50%);
 }
 .sider0 img{
   position: absolute;

@@ -186,6 +186,8 @@ $(document).ready(function () {
      *板块高度
      */
     var windowHeight = window.innerHeight/3*2 + 80;
-    $('section,.img360_holder').css('height', windowHeight+'px');
+    var Height = window.innerHeight-140;
+    $('section').css('height', windowHeight+'px');
+    $('.img360_holder').css('height', Height+'px');
 });
  

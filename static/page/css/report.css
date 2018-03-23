@@ -43,7 +43,9 @@ h1.white{
 .sub_input::placeholder{ 
     color: #EAEAEA;
 } 
-
+.news-lable{
+    padding-left: 100px;
+}
 .btn_sub{
     border-radius: 2px;
     background-color: white;
