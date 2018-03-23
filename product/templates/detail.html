@@ -11,10 +11,17 @@
 <div class=" container-title" >
         <div class="container ">
             <div class="items_holder">
+                {% if page %}
+                        <h2 class="title orange">精彩活动</h2> 
+                        <a href="/">{% trans 'Home' %}</a>
+                        <span>/&nbsp;ASU品牌</span> 
+                        <span>/&nbsp;精彩活动{{contentblock.title}}</span> 
+                     {% else %}
                         <h2 class="title orange">新闻</h2> 
                         <a href="/">{% trans 'Home' %}</a>
                         <span>/&nbsp;{% trans 'News Center' %}</span> 
                         <span>/&nbsp;新闻{{contentblock.title}}</span> 
+                    {% endif %}
             </div> 
         </div>  
     </div>

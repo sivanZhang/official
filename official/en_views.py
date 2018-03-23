@@ -22,7 +22,7 @@ def watch(request):
     content ={}
     isMble  = dmb.process_request(request)  
     content['mediaroot'] = settings.MEDIA_URL
-
+    content['productpage'] = True
     if isMble:
         return render(request, 'en/watch.html',content) 
     else:
@@ -59,6 +59,7 @@ def accessories(request):
     content ={}
     isMble  = dmb.process_request(request) 
     content['mediaroot'] = settings.MEDIA_URL
+    content['servicepage'] = True
     if isMble:
         return render(request, 'en/fetting.html',content) 
     else:
@@ -70,6 +71,7 @@ def parameters(request):
     content ={}
     isMble  = dmb.process_request(request) 
     content['mediaroot'] = settings.MEDIA_URL
+    content['parameters'] = True
 
     if isMble:
         return render(request, 'en/accessories.html',content) 

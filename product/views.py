@@ -102,10 +102,12 @@ class ProductDetailView(APIView):
     def get(self, request, pk, format=None):
         product = self.get_object(pk)
         isMobile  = dmb.process_request(request)
-        
-        content={
-            'product':product
-        }
+        content = {}
+        if 'page' in request.GET:
+            page = request.GET['page']
+            content['page'] = page
+ 
+        content['product'] = product
         content['mediaroot'] = settings.MEDIA_URL
         if isMobile:
             return render(request, 'm_detail.html', content)
