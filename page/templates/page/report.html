@@ -32,7 +32,7 @@
                         <!--顶部大图-->
                             <div class="col-xs-12"> 
                                     <div class="img-holder">
-                                        <img class="active-img" src="{{mediaroot}}{{page.pic}}"/>
+                                            <a class="img_title orange" href="{{page.url}}" title="{{page.title}}"><img class="active-img" src="{{mediaroot}}{{page.pic}}"/></a>
                                     </div>
                                     <a class="img_title orange" href="{{page.url}}" title="{{page.title}}">{{page.title}}</a>
                                     <p>{{page.date| date:"Y-m-d"}}</p> 
@@ -43,7 +43,7 @@
                     {% for page in pages %} 
                         <div class="col-xs-6 mb40"> 
                                 <div class="img-holder">
-                                    <img class="news-img" src="{{mediaroot}}{{page.pic}}"/>
+                                        <a class="img_title orange text-overflow gray" href="{{page.url}}" title="{{page.title}}"><img class="news-img" src="{{mediaroot}}{{page.pic}}"/></a>
                                 </div>
                                 <a class="img_title orange text-overflow gray" href="{{page.url}}" title="{{page.title}}">{{page.title}}</a>
                                 <p class="grey">{{page.date| date:"Y-m-d"}}</p> 

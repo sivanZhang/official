@@ -179,7 +179,7 @@ body{
     overflow: hidden;
     border-top: 1px solid rgb(181, 182, 182);
     z-index: -1;
-    width: 100%;
+    left: 100%;
 }
 
 .menu .active *{

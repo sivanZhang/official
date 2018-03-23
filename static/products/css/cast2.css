@@ -721,7 +721,11 @@ section.sub-item{
   }
   .title-text td{
       width:170px;
-      padding: 5px 0;
+      height: 90px;
+      vertical-align: top;
+  }
+  .title-text td.mid{
+      vertical-align: middle;
   }
   .title-text p{
       margin: 10px 0;
