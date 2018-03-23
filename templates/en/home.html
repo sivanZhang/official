@@ -27,6 +27,10 @@
               dragDirection: 'horizontal',
               useKeys: false
           });
+          var wdHeight=$(window).height(),bodyHeight=$(document.body).height();
+      if(bodyHeight<wdHeight){
+        $('.linkitems').css({'position':' fixed','bottom':'0','width':'100%'});
+      }
          /*  var father_h = $('.img360_holder').height();
 
          if (father_h > 800)

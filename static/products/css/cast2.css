@@ -328,6 +328,14 @@
     width: 100%;
     margin-bottom: 45px;
 }
+@media screen and (min-width:1500px){
+    .img360-text{
+        margin-bottom: 90px;
+    }
+  }
+.fs40{
+    font-size: 40px;
+}
 .p_title_2 img
 {
     cursor: pointer;

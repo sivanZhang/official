@@ -157,7 +157,6 @@ background:unsert;
     transform: translateY(50%);
   }
   .shop-link6{
-    left: 18.5%;
     top: 45%;
     color: #333!important;
   }
@@ -258,8 +257,8 @@ background:unsert;
 
 
 .sider0 .img-wrap{
-  position: absolute;
-  height: 70%;
+  position: relative;
+  height: 56%;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -288,9 +287,12 @@ transform-origin: 43% 49%;
 -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
 -o-transform:rotate(45deg); 	/* Opera */
 }
-
+.sider .image-text{
+  font-weight: 100;
+}
 .sider-2img{
-  height: 100%;
+  margin-top: 5%;
+  height: 80%;
   position: absolute;
   right: 56%;
   opacity: 0;
@@ -319,7 +321,7 @@ transform-origin: 43% 49%;
 @media screen and (min-width:1500px){
   .sider-2img{
     position: absolute;
-    right: 48%;
+    right: 50%;
   }
   .sider2 img{
     left: -8%;
