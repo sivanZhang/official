@@ -333,8 +333,8 @@
         margin-bottom: 90px;
     }
   }
-.fs40{
-    font-size: 40px;
+.fs30{
+    font-size: 30px;
 }
 .p_title_2 img
 {
@@ -491,7 +491,6 @@
     margin-bottom: 30px;
 }
 .img360_holder .white.text-center img{
-    margin-bottom: 30px;
     width: auto;
     height: 30px;
     -webkit-animation-timing-function: ease-in-out;
@@ -500,12 +499,15 @@
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
 }
+.text-center.fs30.image-text.white{
+    margin: 30px auto;
+}
 @media screen and (min-width: 1550px) {
     .threesixty img{
         height: 460px;
         margin-bottom: 60px;
-}.img360_holder .white.text-center img{
-    margin-bottom: 60px;
+}.text-center.fs30.image-text.white{
+    margin: 50px auto;
 }
 }
   .items table td{
