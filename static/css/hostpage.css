@@ -292,24 +292,23 @@ transform-origin: 43% 49%;
   font-weight: 100;
 }
 .sider-2img{
-  margin-top: 5%;
-  height: 80%;
+  height: 100%;
   position: absolute;
-  right: 56%;
+  left: 52%;
   opacity: 0;
   filter: alpha(opacity=0)\9;
-  -webkit-transform: translateX(-5%);
-  -ms-transform: translateX(35%);
-  transform: translateX(35%);
+  -webkit-transform: translateX(-35%);
+  -ms-transform: translateX(-35%);
+  transform: translateX(-35%);
 }
 
 .swiper-slide-active .sider-2img{
   transition: opacity 3s, transform 3s;
   opacity: 1;
   filter: alpha(opacity=100)\9;
-  -webkit-transform: translateX(20%);
-  -ms-transform: translateX(20%);
-  transform: translateX(20%);
+  -webkit-transform: translateX(-20%);
+  -ms-transform: translateX(-20%);
+  transform: translateX(-20%);
 }
 .sider2 img{
   position: absolute;
@@ -338,7 +337,8 @@ transform-origin: 43% 49%;
   }
   .sider-2img{
     position: absolute;
-    right: 50%;
+    left: 47%;
+    height: 96%;
   }
   .sider2 img{
     left: -8%;

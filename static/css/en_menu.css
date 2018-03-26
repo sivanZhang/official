@@ -1,7 +1,9 @@
 .img360-text{
     margin-bottom: 20px !important;
 }
-
+.img360-text img{
+    margin-bottom: 20px;
+}
 .menu-right tr td{
      width: 100px;
 }
@@ -17,3 +19,15 @@
 .linkitems{
     padding: 0!important;
 }
+@media screen and (min-width:1500px){
+    .img360-text{
+        margin-bottom: 60px !important;
+    }
+    .img360-text img{
+        margin-bottom: 60px;
+    }
+  }
+  .fs40{
+      font-size:40px;
+      line-height: 1;
+  }

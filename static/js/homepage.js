@@ -19,7 +19,7 @@ $(document).ready(function(){
     var abslut = $('.logo').offset().left;
     $('.swiper-button-prev').css('left', abslut+'px');
     $('.swiper-button-next').css('right', abslut+'px');
-    $('.shop-link3').css('right', abslut+120+'px');
+    $('.shop-link3').css('left', abslut+90+'px');
    /*  $('.sider0 .img-wrap').css('left', abslut+180+'px'); */
     $('.shop-link6').css('left', abslut+120+'px');
 })
