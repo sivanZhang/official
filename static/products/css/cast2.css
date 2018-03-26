@@ -492,7 +492,7 @@
 }
 .img360_holder .white.text-center img{
     width: auto;
-    height: 30px;
+    height: 20px;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-name: twinkle;
     -webkit-animation-duration: 1200ms;
