@@ -11,7 +11,8 @@
     <!-- Bootstrap -->
     <link type="text/css" href="/static/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-    <link href="/static/css/base.css"  rel="stylesheet">
+  
+    <link href="/static/css/m_base.css"  rel="stylesheet">
     <link href="/static/css/footer.css"  rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="/static/css/m_jquery.message.css">
     <link rel="shortcut icon" href="/static/img/logoicon.ico">
@@ -21,7 +22,37 @@
     {% endblock %}
     <!--扩展css结束-->
 </head>
+<nav class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <img src="/static/img/icon/Category.svg" alt="">
+    </div>
+    <div class="col-xs-4 text-center">
+      <img src="/static/img/logo.png" alt="">
+    </div>
+    <div class="col-xs-4 text-right">
+      <img src="/static/img/icon/cart.svg" alt="">
+    </div>
+  </div>
 
+  <ul>
+    <a href="">
+      <li>Watch</li>
+    </a>
+    <a href="">
+      <li>商城</li>
+    </a>
+    <a href="">
+      <li>社区</li>
+    </a>
+    <a href="">
+      <li>体验店</li>
+    </a>
+    <a href="">
+      <li>服务</li>
+    </a>
+  </ul>
+</nav>
 <body>
         {% if request.user.is_anonymous %}
         <input type="hidden" id="userlogin" value="0" />
@@ -30,60 +61,7 @@
         {% endif %}
     {% block menu %}
     <!--菜单开始-->
-    <div class="menu-holder {% block fixed_menu_class %}{%endblock%}" >
-      <div class="container nav-container">
-        <table class="menu" >
-          <tr>
-          <td>
-              <div>
-                <a href="/">
-                <img class="logo" src="/static/img/logo.png"/>
-                </a>
-              </div>
-          </td>
-          <td>
-              <div class="pull-right menu-list">
-                    <table>
-                      <tr>
-                        <td class="{% if productpage %}active{% endif %}">
-                          <a href="{% url 'product:cast2' %}">Watch</a>
-                          <div class="point"></div>
-                        </td>
-                        <td class="{% if mallpage %}active{% endif %} ">
-                            <a href="">商城</a>
-                            <div class="point"></div>
-                        </td>
-                        <td class="{% if communitypage %}active{% endif %} ">
-                            <a href="">社区</a>
-                            <div class="point"></div>
-                        </td>   
-                        <td class="{% if storepage %}active{% endif %} ">
-                            <a href="{% url 'dept:list' %}">体验店</a>
-                            <div class="point"></div>
-                        </td>
-                        <td class="{% if servicepage %}active{% endif %} ">
-                          <a href="{% url 'page:page' 'service' 'list' %}">服务</a>
-                          <div class="point"></div>
-                        </td>
-                        <td class="small-padding">
-                          <button><i class="fa fa-search" aria-hidden="true"></i></button>
-                          <a href="">中文<span>丨</span>EN</a>
-                        </td>
-                    
-                      </tr>
-                    </table>
-                    
-                    
-                    </div>
-                    <!-- 左侧菜单结束-->
-                    </td>
-                    </tr>
-                    </table>
-        
-      </div>
-      <div class="bottom-line">
-        </div>
-      </div>
+    
     <!--菜单结束-->
     {% endblock %} 
 
@@ -255,8 +233,7 @@
 <!-- end link footer --> 
     {% endblock %}
     <!--底部开始-->
-    {% block footer %} 
-        <footer>
+    {% block footer %}  <footer>
           <div class="container clearfix">
           <div class="pull-left">
               <img class="f-logo" src="/static/img/microblog_w.png"/>
@@ -282,7 +259,7 @@
      
     <div class="wechat_div">
         <img src="/static/img/code_big.png"/>
-    </div>
+    </div> 
     <!--底部结束-->
     {% endblock %}
     <script type="text/javascript" src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
