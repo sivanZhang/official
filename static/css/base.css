@@ -94,6 +94,7 @@ a:focus{
     border-radius: 4px;
     min-width: 100px;
 }
+
 .btn-text-white{
     color:white;
 }
@@ -104,7 +105,7 @@ body{
     font-family: "Helvetica Neue", Helvetica, Arial, Verdana, STHeiti, "Microsoft Yahei", sans-serif;
 }
 .container{
-    width: 1200px!important;
+    min-width: 1200px!important;
 }
 
 /* 菜单设置开始*/

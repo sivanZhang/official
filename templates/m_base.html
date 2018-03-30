@@ -21,7 +21,7 @@
     {% endblock %}
     <!--扩展css结束-->
 </head>
-<nav class="container">
+<nav class="container {% block fixed_menu_class %}{%endblock%}">
   <div class="row">
     <div class="col-xs-3">
       <img id="link" src="/static/img/icon/Category.svg" alt="">
@@ -34,23 +34,25 @@
     </div>
   </div>
 
-  <ul>
-    <a href="{% url 'product:cast2' %}">
-      <li>Watch</li>
-    </a>
-    <a href="http://47.95.239.228:8000">
-      <li>商城</li>
-    </a>
-    <a href="http://www.asucast.com:8080/forum.php">
-      <li>社区</li>
-    </a>
-    <a href="{% url 'dept:list' %}">
-      <li>体验店</li>
-    </a>
-    <a href="{% url 'page:page' 'service' 'list' %}">
-      <li>服务</li>
-    </a>
-  </ul>
+  <div class="row">
+      <ul>
+          <a href="{% url 'product:cast2' %}">
+            <li>Watch</li>
+          </a>
+          <a href="http://47.95.239.228:8000">
+            <li>商城</li>
+          </a>
+          <a href="http://www.asucast.com:8080/forum.php">
+            <li>社区</li>
+          </a>
+          <a href="{% url 'dept:list' %}">
+            <li>体验店</li>
+          </a>
+          <a href="{% url 'page:page' 'service' 'list' %}">
+            <li>服务</li>
+          </a>
+        </ul>
+  </div>
 </nav>
 <body>
         {% if request.user.is_anonymous %}
@@ -253,10 +255,6 @@
 			</a>
 		 </div>
 	</footer>
-     
-    <div class="wechat_div">
-        <img src="/static/img/code_big.png"/>
-    </div> 
     <!--底部结束-->
     {% endblock %}
     <script type="text/javascript" src="/static/bootstrap/dist/js/bootstrap.min.js"></script>

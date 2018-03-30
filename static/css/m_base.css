@@ -1,4 +1,12 @@
 /* 通用 */
+@font-face
+{
+font-family: lanting;
+src: url('/static/font/lanting.ttf');
+}
+.lanting{
+    font-family: lanting; 
+}
 li{
     list-style: none;
 }
@@ -6,9 +14,81 @@ ul{
     margin: 0;
     padding: 0;
 }
-
-
+.common-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    min-width: 100px;
+}
+.common-big-btn{
+    display: inline-block;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    min-width: 100px;
+}
+.grey-btn{
+    color:#333;
+    background-color: #e5e5e5;
+}
+.orange-btn{
+    color:#fff;
+    background-color: #ea5014;
+}
+.orange{
+    color:#ea5014
+}
+.black{
+    color:#333;
+}
+.white{
+    color:white;
+}
+.orange-bg
+{
+    background-color: #ea5014;
+}
+.grey{
+    color: rgb(181, 182, 182);
+}
+.gray{
+    color: gray;
+}
 /* 菜单 */
+.fixed_menu_class {
+    position: absolute!important;
+    width: 100%;
+    z-index: 1000;
+}
+nav.fixed_menu_class>div.row{
+    background-color: transparent!important;
+}
 nav img{
     height: 20px;
 }
@@ -26,7 +106,7 @@ body{
 }
 nav ul{
     background-color: #fff;
-    padding-bottom: 15px;
+    padding: 15px;
 }
 nav li{
     padding-top: 15px;
@@ -40,3 +120,4 @@ nav .col-xs-3 img{
 nav ul{
     display: none;
 }
+/* 菜单结束 */

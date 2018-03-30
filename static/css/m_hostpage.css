@@ -1,0 +1,338 @@
+.content
+{ 
+    padding:0px;
+}
+
+
+.swiper-slide
+{ 
+     padding-bottom: 40px;
+}
+
+
+
+.fa-side{
+    color:gray;
+    font-size: 20px;
+}
+ 
+.wechat_div{
+    position: fixed;
+    bottom: 80px;
+    right: 150px;
+}
+
+
+.white_span{
+    color: white;
+}
+
+.yellow_span
+{
+    color: #ea5014;
+}
+
+
+.learn_more
+{
+    border-bottom: 2px solid #ea5014;
+    font-size: 12px;
+    padding-bottom: 4px;
+    font-weight: 300;
+}
+
+.h3_product_name
+{
+    font-size: 14px;
+    margin:0;
+}
+
+.swiper-button-warp{
+    overflow: hidden;
+    height: 100%!important;
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 60px!important;
+    left: 0;
+    width: 100%;
+}
+
+
+/* base */
+.round {
+    border-radius: 50%;
+  }
+  .ml10 {
+    margin-left: 10px;
+  }
+ 
+  .a-style {
+    text-decoration: none;
+    outline: none;
+  }
+  ul {
+    padding: 0px;
+    margin: 0px;
+  }
+  li {
+    list-style-type: none;
+  }
+  a:link,
+  a:hover,
+  a:focus,
+  a:visited {
+    text-decoration: none;
+    outline: none;
+  }
+  /* deteil */
+  .a_product {
+    color: #ea5014;
+  }
+  /* 轮播图 */
+
+  .sider {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-size:cover!important;
+    background-position: center center!important;
+    background-repeat: no-repeat!important;
+  }
+  .sider0{
+    background: url(/static/img/slider/slider1.jpg);
+  } 
+  .sider1{
+background:unsert;
+}
+.sider2{
+  background: url(/static/img/slider/slider3.png);
+}
+.sider3{
+  background: url(/static/img/slider/slider4.png);
+}
+.sider4{
+  background: url(/static/img/slider/slider5.jpg);
+  background-size:auto 100% !important;
+}
+.sider5{
+  background: url(/static/img/slider/slider6m.png);
+}
+  .sider .shop-link {
+    color: #fff;
+    position: absolute;
+    
+  }
+
+  .shop-link1{
+     margin-left: 26%;
+     top: 50%;
+     transform: translateY(-50%);
+  }
+  .shop-link2{
+    left: 50%;
+    bottom: 20%;
+    transform: translateX(-50%);
+  }
+  .shop-link3{
+    color: #333!important;
+    text-align: center;
+    margin-top: 5%;
+  }
+  .shop-link3 a{
+    width:50%;
+    margin-top: 2%;
+  }
+  .shop-link4{
+    left: 54%;
+    transform: translateY(50%);
+    bottom: 50%;
+    opacity: .1;
+  }
+  .shop-link4 .fs18{
+    margin-bottom:  50px;
+  }
+  .shop-link5{
+    left: 56%;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+  .shop-link6{
+    top: 45%;
+    color: #333!important;
+  }
+ .shop-link6 .learn_more{
+    color: #333;
+  }
+
+  .sider .shop-link .common-btn .fa-angle-right {
+    font-size: 120%;
+    margin-left: 4px;
+  }
+  /* 底部 */
+  footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+  }
+  /* 隐藏菜单 */
+  .hide-menu {
+    position: relative;
+    text-align: right;
+  }
+  .hide-menu .btn-list {
+    font-size: 12px;
+    position: absolute;
+    right: 0px;
+    bottom: 120px;
+    z-index: 1000;
+  }
+  .hide-menu .btn-list li {
+    display: none;
+    padding: 10px 15px;
+  }
+
+  .hide-menu #show-btn {
+    position: absolute;
+    right: 0px;
+    bottom: 60px;
+    color: #333;
+    margin: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 500;
+    width: 30px;
+    height: 30px;
+  }
+
+  #show-btn img{
+    width: 100%;
+    height:  100%;
+    border-radius: 50%;
+    padding: 8px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  }
+  .swiper-button-prev, .swiper-button-next{
+    height: 28px!important;
+  }
+  .mb50{
+    margin-bottom:50px;
+  }
+ 
+  .fs16{
+    font-size: 16px;
+  }
+  .fs30{
+    font-size: 30px;
+  }
+  #show-btn {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-name: breathe;
+    -webkit-animation-duration: 1200ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+@-webkit-keyframes breathe {
+    0% {
+        box-shadow: 0 1px 4px rgba(204, 204, 204, 0.4), 0 1px 2px rgba(204, 204, 204, 0.3) inset;
+        background-color: #fff;
+    }
+    100% {
+        border: 1px solid rgba(221, 221, 221, 0.7);
+        box-shadow: 0 1px 30px #cccccc, 0 1px 15px rgb(204, 204, 204) inset;
+        background-color: #cccccc;
+    }
+}
+.shop-link2,.block-a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.sider0 .img-wrap{
+  position: relative;
+  height: 56%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20%,-50%);
+}
+.sider0 img{
+  position: absolute;
+  height: 100%;
+}
+
+
+.pngcover-slider1 {   
+-webkit-animation:spin 60s linear infinite;
+-moz-animation:spin 60s linear infinite;
+animation:spin 60s linear infinite; 
+transform-origin: 43% 49%;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg);  } }
+
+
+
+.img-close{
+  transform:rotate(45deg);
+-ms-transform:rotate(45deg); 	/* IE 9 */
+-moz-transform:rotate(45deg); 	/* Firefox */
+-webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+-o-transform:rotate(45deg); 	/* Opera */
+}
+.sider .image-text{
+  font-weight: 100;
+}
+.sider-2img{
+    height: 60%;
+  max-width: 100%;
+  opacity: 0;
+  filter: alpha(opacity=0)\9;
+  -webkit-transform: translateX(-15%);
+  -ms-transform: translateX(-15%);
+  transform: translateX(-15%);
+}
+
+.swiper-slide-active .sider-2img{
+  transition: opacity 3s, transform 3s;
+  opacity: 1;
+  filter: alpha(opacity=100)\9;
+  -webkit-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
+}
+.sider2 img{
+  position: absolute;
+  top: 0;
+  left: -10%;
+  height: 100%;
+  width: auto;
+  min-width: 100%;
+}
+.sider4-img{
+width: 100%;
+  transform: translate(-50%,-50%) scale(.9);
+  opacity: .6;
+}
+.swiper-slide-active .sider4-img{
+  transform: translate(-51%,-51%) scale(1);
+  opacity: 1;
+  transition: transform 3s, opacity 3s;
+}
+
+
+.projective{
+  opacity: 0;
+}
+.swiper-slide-active .shop-link4,.swiper-slide-active .projective{
+  opacity: 1;
+  transition:opacity 4s;
+}
+
