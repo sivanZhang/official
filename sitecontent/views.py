@@ -19,6 +19,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status 
 from django.utils.translation import ugettext as _
+from django.contrib.auth.decorators import permission_required
+from django.http import HttpResponseForbidden
 
 from sitecontent import models
 from sitecontent.comm import handle_uploaded_file
@@ -30,6 +32,11 @@ class BlockContentView(View):
 
     @method_decorator(login_required)
     def get(self, request):
+        user = request.user
+        perm = user.has_perm('sitecontent.manage_content')
+        if not perm: 
+            return HttpResponseForbidden()
+
         isMble  = dmb.process_request(request)
         content = {} 
         blocks = models.AdaptorBaseBlock.objects.all()
@@ -61,6 +68,11 @@ class BlockContentView(View):
     @method_decorator(login_required)
     @method_decorator(csrf_exempt)
     def post(self,request ): 
+        user = request.user
+        perm = user.has_perm('sitecontent.manage_content')
+        if not perm: 
+            return HttpResponseForbidden()
+
         if 'method' in request.POST:
             method = request.POST['method'].lower()
             if method == 'put':# 修改
@@ -177,12 +189,17 @@ class BlockContentView(View):
 
     def httpjson(self, result):
         return HttpResponse(json.dumps(result), content_type="application/json")
-
+    
+    
 
 
 class BlockItemContentView(View):
     @method_decorator(login_required)
     def get(self, request):
+        user = request.user
+        perm = user.has_perm('sitecontent.manage_content')
+        if not perm: 
+            return HttpResponseForbidden()
         isMble  = dmb.process_request(request)
         content = {}   
         content['mediaroot'] = settings.MEDIA_URL
@@ -220,6 +237,10 @@ class BlockItemContentView(View):
     @method_decorator(login_required)
     @method_decorator(csrf_exempt)
     def post(self,request ):
+        user = request.user
+        perm = user.has_perm('sitecontent.manage_content')
+        if not perm: 
+            return HttpResponseForbidden()
         if 'method' in request.POST:
             method = request.POST['method'].lower()
             if method == 'put':# 修改
