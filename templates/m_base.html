@@ -72,165 +72,152 @@
     <!--主要内容结束-->
     {% block links %}
     <!-- start link footer -->
-    <div class="linkitems"> 
-      <table class="container">
-        <tr class="tr-title">
-          <td class="first">
-              <a href="javascript:;" >ASU品牌</a>
-          </td>
-          <td class="first">
-              <a href="javascript:;">媒体中心</a>
-          </td>
-          <td class="first">
-              <a href="javascript:;">ASU生态</a>
-          </td>
-          <td class="first">
-              <a href="javascript:;">购买渠道</a>
-          </td>
-          <td class="first">
-              <a href="javascript:;">售后服务</a>
-          </td>
-          <td class="first">
-              <a href="javascript:;">一群</a>
-          </td>
-          <td class="first">
-              <a href="javascript:;">Watch客户端</a>
-          </td>  
-          <td rowspan="7" class="td_online text-center">
-           <div class="pull-right">
-              <div class="online-div">
-                  <p class="phone" title="客服电话">400-608-0106</p>
-                  <p>周一至周日 8:00-18:00<br>(仅收市话费)</p>
-                </div>
-                <a class="custom-service" href="javascript:;">
-                  <img src="/static/img/icon/code.svg" alt="">
-                  24小时在线客服</a>
-           </div>
-          </td>
-          <td rowspan="7" class="td_online text-center clearfix">
-            <div class="qrcode">
-             <img src="/static/img/qrcode.png" title="官方微信">
-            </div>
-          </td>
-        </tr>
-         <tr >
-          <td>
-            <a href="{% url 'page:page' 'asubrand'  'aboutus' %}">关于我们</a>
-          </td>
-          <td>
-            <a href="{% url 'page:page' 'news'  'list' %}">新闻</a>
-            <span class="lable">hot</span>
-          </td>
-          
-          <td>
-            <a href="/page/waiting/list/">卡片投影</a>
-          </td>
-          <td>
-            <a href="/page/waiting/list/">官方商城</a>
-            <span class="lable">hot</span>
-          </td>
-          <td>
-            <a href="/page/service/list/" >自助服务</a>
-          </td>
-           <td>
-            <a href="/page/waiting/list/">一群论坛</a>
-            <span class="lable">hot</span>
-          </td>
-           <td>
-            <a href="/page/waiting/list/">兴趣小组</a>
-          </td> 
-        </tr>
-         <tr >
-          <td>
-            <a href="{% url 'page:page' 'asubrand'  'faith' %}">ASU理念</a>
-          </td>
-          <td>
-            <a href="{% url 'page:page' 'report'  'list' %}">媒体报道</a>
-          </td>
-          <td>
-            <a href="/page/waiting/list/">冰箱模组</a>
-          </td>
-          <td><a href="{% url 'dept:list' %}">店面查询</a></td>
-          <td><a href="/page/policy/list/">保修政策</a></td>
-          <td><a href="/page/waiting/list/">官方活动</a> </td>
-          <td><a href="/page/waiting/list/">客户端下载</a>  </td><!-- {% url 'page:page' 'software' 'list' %} -->
-        </tr>
-         <tr >
-          <td>
-            <a href="{% url 'page:page' 'active'  'list' %}">精彩活动</a>
-          </td>
-          <td>
-            <a href="{% url 'page:page' 'pic'  'list' %}">高清美图</a>
-          </td>
-          <td>
-            <a href=""> </a>
-          </td>
-          <td>
-            <a href="/page/waiting/list/">天猫旗舰店</a>
-          </td>
-          <td>
-           
-          </td>
-          <td>
-            <a href="/page/waiting/list/">QQ群</a>
-          </td>
-          
-        </tr>
-         <tr >
-          <td>
-            <a href="{% url 'page:page' 'event'  'list' %}">大事记</a>
-          </td>
-          <td>
-            <a href="{% url 'page:page' 'video'  'list' %}">炫酷视频</a>
-          </td>
-          <td>
-           
-          </td>
-          <td>
-            <a href="/page/waiting/list/">京东旗舰店</a>
-          </td>
-          <td>
-            <a href=""></a>
-          </td>
-          <td> 
-            <a href="/page/waiting/list/">开发者论坛</a>
-          </td>
-          <td> </td>
-          <td> 
-          </td>
-        </tr>
-         <tr >
-          <td>
-            <a href="{% url 'page:page' 'asubrand'  'join' %}">加入我们</a>
-          </td>
-          <td>
-            <a href="/page/waiting/list/">使用手册下载</a>
-          </td>
-          <td> 
-          </td>
-          <td>
-            <a href="/page/waiting/list/">苏宁旗舰店</a>
-          </td>
-          <td> </td>
-          <td> </td>
-          <td>  </td>
-        </tr>
-         <tr >
-          <td>
-            <a href="{% url 'page:page' 'contactus'  'list' %}">联系我们</a>
-          </td>
-          <td> 
-              <a href="/sitecontent/blockcontents/?new">管理中心</a>
-          </td>
-          <td> 
-          </td>
-          <td> <a href="{% url 'bussiness:new' %}">成为经销商</a></td>
-          <td>  </td>
-          <td> </td>
-          <td>  </td>
-        </tr>
-      </table>
-</div><!-- end items -->
+    <div class="linkitems">
+		<div>回到顶部</div>
+      <div class="group-title clearfix">
+		  <div class="pull-left">ASU品牌</div>
+		  <div class="show-btn pull-right"><img src="/static/img/icon/jia.svg" /></div>
+	</div>
+      <ul class="links">
+        <li>
+          <a href="{% url 'page:page' 'asubrand'  'aboutus' %}">关于我们</a>
+        </li>
+        <li>
+          <a href="{% url 'page:page' 'asubrand'  'faith' %}">ASU理念</a>
+        </li>
+        <li>
+          <a href="{% url 'page:page' 'active'  'list' %}">精彩活动</a>
+        </li>
+        <li>
+          <a href="{% url 'page:page' 'event'  'list' %}">大事记</a>
+        </li>
+        <li>
+          <a href="{% url 'page:page' 'asubrand'  'join' %}">加入我们</a>
+        </li>
+        <li>
+          <a href="{% url 'page:page' 'contactus'  'list' %}">联系我们</a>
+        </li>
+      </ul>
+      <div class="group-title clearfix">
+			<div class="pull-left">媒体中心</div>
+			<div class="show-btn pull-right"><img src="/static/img/icon/jia.svg" /></div>
+	  </div>
+      <ul class="links">
+        <li>
+          <a href="{% url 'page:page' 'news'  'list' %}">新闻</a>
+        </li>
+        <li>
+          <a href="{% url 'page:page' 'report'  'list' %}">媒体报道</a>
+        </li>
+        <li>
+          <a href="{% url 'page:page' 'pic'  'list' %}">高清美图</a>
+        </li>
+        <li>
+          <a href="{% url 'page:page' 'video'  'list' %}">炫酷视频</a>
+        </li>
+        <li>
+          <a href="/sitecontent/blockcontents/?new">管理中心</a>
+        </li>
+      </ul>
+      <div class="group-title clearfix">
+			<div class="pull-left">购买渠道</div>
+			<div class="show-btn pull-right"><img src="/static/img/icon/jia.svg" /></div>
+	  </div>
+      <ul class="links">
+        <li>
+          <a href="/page/waiting/list/">官方商城</a>
+        </li>
+        <li>
+          <a href="/page/waiting/list/">京东旗舰店</a>
+        </li>
+        <li>
+          <a href="{% url 'bussiness:new' %}">成为经销商</a>
+        </li>
+      </ul>
+      <div class="group-title clearfix">
+			<div class="pull-left">售后服务</div>
+			<div class="show-btn pull-right"><img src="/static/img/icon/jia.svg" /></div>
+	  </div>
+      <ul class="links">
+        <li>
+          <a href="/page/service/list/">自助服务</a>
+        </li>
+        <li>
+          <a href="/page/policy/list/">保修政策</a>
+        </li>
+      </ul>
+      <div class="group-title clearfix">
+			<div class="pull-left">一群</div>
+			<div class="show-btn pull-right"><img src="/static/img/icon/jia.svg" /></div>
+	  </div>
+      <ul class="links">
+        <li>
+          <a href="/page/waiting/list/">一群论坛</a>
+        </li>
+        <li>
+          <a href="/page/waiting/list/">官方活动</a>
+        </li>
+        <li>
+          <a href="/page/waiting/list/">QQ群</a>
+        </li>
+      </ul>
+	  <div class="group-title clearfix">
+			<div class="pull-left">Watch客户端</div>
+			<div class="show-btn pull-right"><img src="/static/img/icon/jia.svg" /></div>
+	  </div>
+      <ul class="links">
+        <li>
+          <a id="wei_group" href="javascript:;">兴趣小组</a>
+        </li>
+        <li>
+          <a href="/page/go/software/">手机端管理软件下载</a>
+        </li>
+        <li>
+          <a href="/page/touser/usage/">用户指南下载</a>
+        </li>
+      </ul>
+	<div class="clearfix">
+		<div class="online-div pull-left text-center">
+			<div class="phone" title="客服电话">400-608-0106</div>
+			<p class="grey">周一至周日 9:00-18:00
+				<br>(仅收市话费)</p>
+			<a class="custom-service" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2913472145&amp;site=qq&amp;menu=yes" target="_blank">
+				<img src="/static/img/icon/code.svg" alt=""> 在线客服
+			</a>
+		</div>
+		<div class="qrcode pull-left">
+			<img src="/static/img/qrcode.png" title="官方微信">
+		</div>
+	</div>
+    
+    
+    
+        <div>
+				法律声明 | 隐私条款<br>ASU Tech Co.Ltd 北京一数科技有限公司<br>
+				<a href="javascript:;">京ICP备15036919号-1</a>
+				<div class="clearfix">
+						<a class="round-btn" href="mailto:media@a-su.com.cn" target="_black" title="邮箱">
+						  <img src="/static/img/icon/footer01.svg" />
+						</a>
+						<a class="round-btn" href="http://i.youku.com/asucast1" target="_black" title="优酷">
+						  <img src="/static/img/icon/footer02.svg" />
+						</a>
+						<a class="round-btn" href="https://www.facebook.com/bjasutech001/" target="_black" title="Facebook">
+						  <img src="/static/img/icon/footer03.svg" />
+						</a>
+						<a class="round-btn" href="http://weibo.com/asu001" target="_black" title="新浪微博">
+						  <img src="/static/img/icon/footer04.svg" />
+						</a>
+						<a class="round-btn" href="javascript:;" target="_black" title="Twitter">
+						  <img src="/static/img/icon/footer05.svg" />
+						</a>
+						<a class="round-btn" href="https://www.youtube.com/channel/UCBG6Eiw5mm1xBHHk4_yVOcQ" target="_black" title="Youtobe">
+						  <img src="/static/img/icon/footer06.svg" />
+						</a>
+					</div>
+        </div>
+        
+    </div><!-- end items -->
 <!-- end link footer --> 
     {% endblock %}
     <!--底部开始-->

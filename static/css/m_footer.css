@@ -10,20 +10,15 @@ footer{
 .linkitems a
 {
     font-size: 12px;
-    color:rgb(27, 34, 34);
+    color:rgb(181, 182, 182);
 }
 
-.linkitems tr{
-    line-height:22px;
+.linkitems ul{
+    background: rgb(72, 72, 74)
 }
-.linkitems tr:first-child{
-    line-height:46px;
-}
-
 .linkitems
 {
-    padding: 5px 0 40px;
-   background-color:rgb(249, 249, 249);
+   color: rgb(181, 182, 182);
 }
 .lable{
     color: #fff;
@@ -43,11 +38,39 @@ footer{
     border-style:solid; 
     border-color:#ea5014 transparent transparent #ea5014;
 }
-.linkitems td{
-    min-width: 110px;
+.linkitems li{
+   padding:0 0 15px 30px;
 }
-.linkitems td.td_online{
-    min-width: 240px!important;
+.linkitems ul li:first-child{
+    padding-top: 15px;
+    margin-top: 0px;
+}
+.group-title img{
+    height: 14px;
+}
+.linkitems>div{
+    padding: 20px 15px;
+    background-color:rgb(43, 43, 44);
+    border-top: 1px solid #aaa;
+}
+.rota{
+    transform:rotate(45deg);
+-ms-transform:rotate(45deg); 	/* IE 9 */
+-moz-transform:rotate(45deg); 	/* Firefox */
+-webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+-o-transform:rotate(45deg); 	/* Opera */
+}
+.linkitems>div:last-child>div{
+    margin-top: 10px;
+}
+.linkitems>div:first-child{
+   border: none;
+}
+.links{
+    display: none;
+}
+.linkitems a.round-btn{
+margin-right: 10px;
 }
 footer a{
     color: inherit;
@@ -57,12 +80,6 @@ footer a{
 footer a:hover{
     color: inherit;
 }
-.linkitems table.container{
-    padding:0 15px!important;
-    display: block;
-    overflow: hidden;
-}
-
 .phone
 {   
     color: #6c6c6c;
@@ -73,7 +90,7 @@ footer a:hover{
     width: 100%;
 }
 .qrcode{
-    width: 114px;
+    width: 100px;
    /*  background-color: rgb(226, 227, 227); */
     position: relative;
     margin-left: 42px;
@@ -113,7 +130,8 @@ a.custom-service:link{
     height: 18px;
     margin-bottom: 3px;
 }
-footer a.round-btn{
+a.round-btn{
+    text-align: center;
     padding-top: 1px;
     display: block;
     float: left;
@@ -122,7 +140,7 @@ footer a.round-btn{
     border-radius: 50%;
     background-color: rgb(221, 221, 221);
 }
-footer .round-btn img{
+.round-btn img{
     height: 13px;
     max-width: 13px;
     vertical-align: text-top;
