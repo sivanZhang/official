@@ -2,6 +2,8 @@ $(document).ready(function(){
     var windowHeight = window.innerHeight;
     $('section').css('height', windowHeight - 100 + 'px');
     $('.swiper-wrapper').css('height', windowHeight+ 'px');
+    var positionValue = $('.logo').offset().left;
+    $('.main-text').css('left',  positionValue + 'px');
     /* 
      *隐藏菜单切换 
      */

@@ -29,7 +29,6 @@
   }
    /* deteil */
      section.main {
-    padding-top: 100px;
     position: relative;
     background-size: cover!important;
     background-position: top center!important;
@@ -124,6 +123,11 @@
   .swiper-pagination-custom,
   .swiper-container-horizontal > .swiper-pagination-bullets {
     bottom: 170px;
+  }
+  .main-text{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .swiper-slide {
     padding-bottom: 140px;

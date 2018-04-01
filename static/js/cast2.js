@@ -2,8 +2,8 @@
 $(document).ready(function () {
     /* 文字定位 */
     var positionValue = $('.logo').offset().left;
-    $('.show1,.show3').css('right',  positionValue + 'px');
-    $('.show2,.show4').css('left',  positionValue + 'px');
+    $('.show1').css('right',  positionValue + 'px');
+    $('.show2,.show4,.show3').css('left',  positionValue + 'px');
     transition(360);
     var height = window.innerHeight;
     var width = window.innerWidth;
