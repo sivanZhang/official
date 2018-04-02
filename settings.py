@@ -93,11 +93,12 @@ WSGI_APPLICATION = 'official.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+       'ENGINE': 'django.db.backends.mysql',
+        #'ENGINE': 'mysql.connector.django',
         'NAME':'official',
-		'USER':'root',
-        'PASSWORD':'sqlroot',
-        'HOST':'localhost',
+	'USER':'asucast',
+        'PASSWORD':'asu@@@123cast',
+        'HOST':'10.81.8.122',
         'PORT':3306, 
     }
 }
@@ -216,12 +217,14 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+
 AUTHENTICATION_BACKENDS=[
     'official.third_party_backend.PhoneBackend',
     'django.contrib.auth.backends.ModelBackend',
     #'official.user_backend.EmailBackend',
     #'official.third_party_backend.EmailBackend'
 ]
+
 LOGIN_URL = '/users/login/'
 PROJECTNAME = '一数科技'
 EMAIL_SWITCH = False
@@ -238,10 +241,11 @@ SMS_API = "http://sdk2.entinfo.cn:8061/mdsmssend.ashx?sn=SDK-BBX-010-22746&pwd=7
 
 
 # 第三方用户登录信息
-LOGIN_MASTER = "http://127.0.0.1:7000"
-STORE_LOGIN = 'http://127.0.0.1:8000'
+LOGIN_MASTER = "http://47.95.239.228:8800"
+STORE_LOGIN = 'http://www.asucast.com'
 LOGIN_APPID = "3d7bf00b-1e76-4547-901f-53a8b1cfd330"
 LOGIN_SECRET = "92e49c5e-1595-4d0a-a702-9d99c5bf8e81"
 THIRD_LOGIN_URL = LOGIN_MASTER + "/users/login/?appid="+LOGIN_APPID+"&redirect_url="+STORE_LOGIN+"/users/login/"
 THIRD_AUTH_URL = LOGIN_MASTER + "/users/oauth2/authorize/"
+
 

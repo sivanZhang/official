@@ -405,7 +405,7 @@ def cast2(request):
     isMobile  = dmb.process_request(request)
     content = {'productpage':_('Watch')}
     if isMobile:
-        return render(request, 'product/cast2.html', content)
+        return render(request, 'product/m_cast2.html', content)
     else:
         return render(request, 'product/cast2.html', content)
 

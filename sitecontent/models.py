@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 from django.db import models
 from appuser.models import AdaptorUser as User
-
+from django.utils.translation import ugettext_lazy as _
 from sitecontent.manager import AdaptorSiteContentManager
 
 class BaseBlock(models.Model):
@@ -28,6 +28,10 @@ class BaseBlock(models.Model):
 class AdaptorBaseBlock(BaseBlock):
     
     objects = AdaptorSiteContentManager()
+    class Meta:
+        permissions = (
+            ('manage_content', _('Permission to manage content')),
+        )
     
 
 class BaseBlockItem(models.Model):

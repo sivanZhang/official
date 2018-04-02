@@ -1,26 +1,22 @@
 from django.contrib.auth.backends import ModelBackend
-from django.contrib.auth.models import User
+from appuser.models import AdaptorUser as User
 import re
 from django.contrib.auth import authenticate, login
 import pdb
  
-class EmailBackend(ModelBackend):
+class PhoneBackend(ModelBackend):
     """
     """
-    def authenticate(self, email=None):
-	"""
-		the third party user authentication
-	"""
-        #validate email format
-        EMAIL_REGEX = re.compile(r'[^@]+@[^@]+\.[^@]+') 
-        if EMAIL_REGEX.match(email):
-            try: 
-                user = User.objects.get(email=email)  
-		return user
-            except User.DoesNotExist:
-                return None
-        else:
-                return None
+    def authenticate(self, phone=None):
+        """
+            the third party user authentication
+        """ 
+        try:  
+            user = User.objects.get(phone=phone)  
+            return user
+        except User.DoesNotExist:
+            return None
+     
          
 			
     def get_user(self, user_id):

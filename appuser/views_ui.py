@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import requests
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.conf import settings
@@ -18,6 +18,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from .form import UploadPortrainForm, GroupForm, UserForm
 from django.contrib import auth
+from official.third_party_backend import authenticate
 #from socialoauth import SocialSites,SocialAPIError  
 
 from basedatas.bd_comm import Common
@@ -28,6 +29,53 @@ comm    = Common()
 
 @csrf_exempt
 def login(request):
+    # 第三方登录开始
+    if 'token' in request.GET:
+        token = request.GET['token']
+        appid = settings.LOGIN_APPID
+        secret = settings.LOGIN_SECRET
+        post_data = { 'token' : token,
+                  'appid' : appid,
+                  'secret' : secret
+                }
+                  
+        req = requests.post(settings.THIRD_AUTH_URL, data = post_data)
+        
+        if req.status_code == 200:
+            userinfo = json.loads(req.text)
+            if userinfo['status'] == 'ok':
+                userinfo  = userinfo['result']
+                phone = userinfo['phone'] 
+                email = userinfo['email'] 
+                username = userinfo['username']   
+                try:
+                    user = User.objects.get(phone = phone)  
+                except User.DoesNotExist: 
+                    password = str(uuid.uuid4())
+                  
+                    user = User(username= username, phone=phone, email = '',  password=password)
+                    if email:
+                        user.email = email
+                    user.save() 
+                  
+                #log the User in our web site
+                auth.logout(request)  
+                user =  authenticate(phone = phone) 
+                request.user = user 
+                auth.login(request, user) 
+                if 'next' in request.GET: 
+                    next_url = request.GET.get('next')
+                else:
+                    next_url = '/'
+                return redirect(next_url )
+            else:
+                return HttpResponse(userinfo['msg']) 
+        else:
+            return HttpResponse("用户认证系统异常...") 
+    else:
+        return redirect(settings.THIRD_LOGIN_URL )
+    # 第三方登录结束
+
     isMble  = dmb.process_request(request)
     
     if 'email' in request.POST and 'password' in request.POST:
