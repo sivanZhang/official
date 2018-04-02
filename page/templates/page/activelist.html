@@ -36,10 +36,13 @@
            
                     <div class="col-active-list clearfix">
                             {% for product in activeyear.products %}
-                            <div class="col-xs-4">
+                            <div class="col-xs-4 ">
                                     <div class="img-holder">
-                                                <a class="i-block" href="{% url 'product:detail' product.id %}?page=active" title="{{product.title}}"><img class="active-img" src="{{mediaroot}}{{product.pageurl}}"/></a>
+                                                <a class="i-block" href="{% url 'product:detail' product.id %}?page=active" title="{{product.title}}">
+                                                        <img class="active-img" src="{{mediaroot}}{{product.pageurl}}"/>
+                                                </a>
                                     </div>
+                                    <div class="marginline">   </div>
                                     <a class="img_title gray" href="{% url 'product:detail' product.id %}?page=active" title="{{product.title}}">{{product.title|truncatechars:25}}</a>
                                     <p class="grey">{{product.date| date:"Y-m-d"}}</p> 
                             </div> 
