@@ -54,3 +54,6 @@ $('.group-title').each(function(){
         }
     })
 })
+$('#link').click(function(){
+    $('nav ul').slideToggle();
+})
