@@ -96,7 +96,7 @@ nav img{
 nav a{
     color: #b5b5b5;
 }
-nav>div{
+nav>div:first-child{
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: rgb(51, 51, 51);
@@ -106,7 +106,7 @@ body{
 }
 nav ul{
     background-color: #fff;
-    padding: 15px;
+    padding:0 15px 15px;
 }
 nav li{
     padding-top: 15px;
