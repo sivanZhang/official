@@ -32,15 +32,6 @@
     color: #ea5014;
 }
 
-
-.learn_more
-{
-    border-bottom: 2px solid #ea5014;
-    font-size: 12px;
-    padding-bottom: 4px;
-    font-weight: 300;
-}
-
 .h3_product_name
 {
     font-size: 14px;
@@ -106,7 +97,7 @@
 background:unsert;
 }
 .sider2{
-  background: url(/static/img/slider/slider3.png);
+  background: url(/static/img/slider/slider3m.png);
 }
 .sider3{
   background: url(/static/img/slider/slider4.png);
@@ -125,9 +116,8 @@ background:unsert;
   }
 
   .shop-link1{
-     margin-left: 26%;
-     top: 50%;
-     transform: translateY(-50%);
+    width: 100%;
+     top: 60%;
   }
   .shop-link2{
     left: 50%;
@@ -139,18 +129,14 @@ background:unsert;
     text-align: center;
     margin-top: 5%;
   }
-  .shop-link3 a{
+  .common-big-btn{
     width:50%;
     margin-top: 2%;
   }
   .shop-link4{
-    left: 54%;
-    transform: translateY(50%);
-    bottom: 50%;
+    width: 100%;
+    top: 60%;
     opacity: .1;
-  }
-  .shop-link4 .fs18{
-    margin-bottom:  50px;
   }
   .shop-link5{
     left: 56%;
@@ -158,11 +144,8 @@ background:unsert;
     transform: translateY(50%);
   }
   .shop-link6{
-    top: 45%;
-    color: #333!important;
-  }
- .shop-link6 .learn_more{
-    color: #333;
+    top: 60%;
+    width: 100%;
   }
 
   .sider .shop-link .common-btn .fa-angle-right {
@@ -256,12 +239,15 @@ background:unsert;
 
 
 .sider0 .img-wrap{
-  position: relative;
-  height: 56%;
-  top: 50%;
+  position: absolute;
+  display: inline-block;
+  top: 100px;
+  height: 40%;
   left: 50%;
-  transform: translate(-20%,-50%);
+  transform: translateX(-25%);
+  width: 100%;
 }
+  
 .sider0 img{
   position: absolute;
   height: 100%;
@@ -317,12 +303,13 @@ transform-origin: 43% 49%;
   min-width: 100%;
 }
 .sider4-img{
-width: 100%;
-  transform: translate(-50%,-50%) scale(.9);
+  margin-top: 90px;
+width: 90%;
+  transform:scale(.8);
   opacity: .6;
 }
 .swiper-slide-active .sider4-img{
-  transform: translate(-51%,-51%) scale(1);
+  transform:scale(1);
   opacity: 1;
   transition: transform 3s, opacity 3s;
 }

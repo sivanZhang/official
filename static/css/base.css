@@ -9,6 +9,20 @@ src: url('/static/font/lanting.ttf');
 }
 /* 通用 */
 html{-webkit-text-size-adjust:none;}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, STHeiti, "Microsoft Yahei", sans-serif;
+}
+@media (min-width:768px) { 
+    body{
+        min-width: 1200px;
+    }
+    .container{
+        width: 1200px;
+    }
+    
+}
 .mb-60{
     margin-bottom: 60px;
 }
@@ -98,15 +112,7 @@ a:focus{
 .btn-text-white{
     color:white;
 }
-body{
-    margin: 0px;
-    padding: 0px;
-    min-width: 1200px;
-    font-family: "Helvetica Neue", Helvetica, Arial, Verdana, STHeiti, "Microsoft Yahei", sans-serif;
-}
-.container{
-    min-width: 1200px!important;
-}
+
 
 /* 菜单设置开始*/
 .menu, .menu-holder{
