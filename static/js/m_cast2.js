@@ -125,7 +125,12 @@ $(document).ready(function () {
             }
         });
     };
-
+    $('.tb_secondmenu_item').click(function(){
+        $('#more').slideDwon();
+    })
+    $('.submenu').click(function(){
+        $('#more').slideToggle();
+    })
     submenu('.product_pic_1');
     submenu('.product_pic_2');
 
