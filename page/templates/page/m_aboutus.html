@@ -1,14 +1,13 @@
-{% extends 'm_base.html' %}
-{% block fixed_menu_class %}fixed_menu_class{%endblock%}
+{% extends 'm_base.html' %} 
 {% load i18n %}
 {% block pagetitle%}{% trans 'About Us' %}{% endblock%}
 {% block css %}
-<link href="/static/page/css/pagebase.css" rel="stylesheet">
-<link href="/static/page/css/aboutus.css" rel="stylesheet">
+<link href="/static/page/css/m_pagebase.css" rel="stylesheet">
+<link href="/static/page/css/m_aboutus.css" rel="stylesheet">
 <style>
-        .top-slide{
-          background-image: url('{{mediaroot}}{{page.pic|safe}}');
-        }
+    .top-slide{
+        background-image: url('{{mediaroot}}{{page.pic|safe}}');
+    }
 </style>
  {% endblock %}
 {% block content %}
@@ -25,7 +24,8 @@
         </div> 
     </div> 
 </div>
-<div class="container m60">
+<div class="container m60 aboutuscontent">
+    <br/><br/>
     <div class="row  "> 
         <div class="col-xs-1"></div>
       <div class="col-xs-10">

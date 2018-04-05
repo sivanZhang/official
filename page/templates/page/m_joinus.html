@@ -1,0 +1,53 @@
+{% extends 'm_base.html' %} 
+{% load i18n %}
+{% block pagetitle%}{{product.title}}{% endblock%}
+{% block css %}
+<link href="/static/page/css/m_pagebase.css" rel="stylesheet">
+<link href="/static/page/css/join.css" rel="stylesheet">
+<style>
+      .top-slide{
+        background-image: url('{{mediaroot}}{{page.pic|safe}}');
+      }
+</style>
+ {% endblock %}
+{% block content %}
+<div class="top-slide"> 
+    <div class="top-tips">
+       
+    </div>
+  </div> 
+<div class=" container-title" >
+    <div class="container ">
+        <div class="items_holder">
+              <h2 class="title orange">{{product.title}} </h2>
+              <a href="/">{% trans 'Home' %}</a>
+              <span>/&nbsp;ASU {% trans 'Brand' %}</span> 
+              <span>/&nbsp;{{product.title}}</span> 
+        </div> 
+    </div> 
+</div>
+<div class="container join-wrap">
+    <div class="row"> 
+      <div class="col-xs-12 ">
+         {{product.detail|safe}}
+      </div> 
+    </div>
+</div>  
+<div class="container mb-60">
+    <div class="row  "> 
+      <div class="col-xs-12 text-center">
+          <button id="position" class=" orange-bg common-btn btn-text-white">选择职位</button>
+         
+      </div> 
+    </div>
+</div>
+{% endblock%}
+{% block js %} 
+<script>
+$( document ).ready(function() {
+      $('#position').click(function(){
+           location.href="{% url 'page:page' 'asubrand' 'join' %}?position=&category=4";
+      });
+  });
+  </script>
+{% endblock %}

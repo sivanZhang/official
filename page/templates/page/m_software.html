@@ -1,0 +1,52 @@
+{% extends 'm_base.html' %} 
+{% load i18n %}
+{% block pagetitle%}软件下载{% endblock%}
+{% block css %}
+<link href="/static/page/css/software.css" rel="stylesheet">
+ 
+ {% endblock %}
+{% block content %}
+<div class="container text-center m60">
+        <img class="b-logo" src="/static/img/download.png" alt="">
+        <div>
+            ASU Watch APP是一款辅助ASU Watch进行管理和设置的应用，也是您跟一数直接的沟通桥梁
+            <br>当您遇到问题时可以通过应用中的一件反馈功能告诉我们。
+            <br>我们由衷的希望帮助解决您在使用过程中遇到的问题，同时也希望你可以对我们的产品提出宝贵的建议和反馈。
+        </div>
+        <span class="orange-bg iblock"><i class="fa f18 fa-android" aria-hidden="true"></i>&nbsp;Android版</span>
+        <div class="black-bd">支持安卓5.0以上版本</div>
+        <div class="row">
+                <div class="col-xs-4 text-left">
+                        <div class="text-center iblock">
+                                <img class="download-icon" src="/static/img/icon/d1.svg" alt="">
+                                <div class="black f18">Wi-Fi同步</div>
+                                通过软件中的“Wi-Fi同步”功能，为ASU
+                                <br>Watch设置Wi-Fi。
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                           
+                                    <img class="download-icon" src="/static/img/icon/d2.svg" alt="">
+                                    <div class="black f18">音乐传输</div>
+                                    通过软件中的“音乐同步”功能，将手机端的
+                                    <br>下载的音乐同步到手表，同步后就可以用
+                                    <br> Watch播放音乐了。
+                    </div>
+                    <div class="col-xs-4 text-right">
+                            <div class="text-center iblock">
+                                    <img class="download-icon" src="/static/img/icon/d3.svg" alt="">
+                                    <div class="black f18">新手引导</div>
+                                    后续增加的功能介绍会及时在新手引导中更
+                                    <br>新，保证您不会错过每一个功能。
+                            </div>
+                        </div>
+        </div>
+        <div class="grey-bd">
+            <img src="/static/img/down_code.png" alt="">
+            <div>手机扫描下载软件</div>
+        </div>
+</div>
+  
+{% endblock%}
+{% block js %} 
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'm_base.html' %}
+
+{% load i18n %}
+{% block pagetitle%}联系我们{% endblock%}
+{% block css %}
+<link href="/static/page/css/m_pagebase.css" rel="stylesheet">
+<link href="/static/page/css/contactus.css" rel="stylesheet">
+<style>
+        .top-slide{
+          background-image: url('/static/img/page/contactus.png');
+        }
+</style>
+ {% endblock %}
+{% block content %}
+<div class="top-slide"> 
+    <div class="top-tips">
+      <h1 class="orange " > </h1> 
+      <h5 > </h5>
+    </div>
+  </div> 
+<div class=" container-title" >
+    <div class="container ">
+        <div class="items_holder">
+            <h2 class="title orange">{% trans 'Contact us' %} </h2>
+                
+            <a href="/">{% trans 'Home' %}</a>
+            <span>/&nbsp;ASU {% trans 'Brand' %}</span> 
+            <span>/&nbsp;{% trans 'Contact us' %} </span> 
+        </div> 
+    </div> 
+</div>
+<br/><br/><br/>
+<div class="container  ">
+    <div class="row  m60"> 
+      <div class="col-xs-12 ">
+         {{product.detail|safe}}
+      </div> 
+       
+    </div>
+</div>  
+<br/><br/>
+{% endblock%}
+{% block js %} 
+{% endblock %}

@@ -129,7 +129,7 @@ class PageView(View):
                 else:
                     return render(request, 'page/positions.html', content)
             if isMble:
-                return render(request, 'page/joinus.html', content)
+                return render(request, 'page/m_joinus.html', content)
             else:
                 return render(request, 'page/joinus.html', content)
         if 'asubrand' == blockname and  'faith' == pagename:
@@ -165,7 +165,7 @@ class PageView(View):
         if 'waiting' == blockname :
             # 敬请期待
             if isMble:
-                return render(request, 'page/waiting.html', content)
+                return render(request, 'page/m_waiting.html', content)
             else:
                 return render(request, 'page/waiting.html', content)
         if 'software' == blockname :
@@ -258,7 +258,7 @@ class PageView(View):
             except models.AdaptorBaseBlock.DoesNotExist:
                 raise Http404
             if isMble:
-                return render(request, 'page/contactus.html', content)
+                return render(request, 'page/m_contactus.html', content)
             else:
                 return render(request, 'page/contactus.html', content)
  
@@ -375,7 +375,7 @@ class PageView(View):
                 return render(request, 'page/m_detail.html', content)
         if 'software' == pagename:
             if isMble:
-                return render(request, 'page/m_detail.html', content)
+                return render(request, 'page/m_software.html', content)
             else:
                 return render(request, 'page/software.html', content)
         if 'usage' == pagename:
