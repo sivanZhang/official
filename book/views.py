@@ -19,9 +19,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status 
 from django.utils.translation import ugettext as _
+from django.shortcuts import redirect 
 
 from book import models
- 
+from book.apis import pay_book
+from book.views_pay import alipay
 
 from mobile.detectmobilebrowsermiddleware import DetectMobileBrowser
 dmb     = DetectMobileBrowser()
@@ -78,7 +80,7 @@ class BookView(View):
         # 预约时  
         result = {} 
         isMble  = dmb.process_request(request)
-        content = {} 
+        content = {}  
         if 'name' in request.POST and  'phone' in request.POST and  'email' in request.POST \
             and  'address' in request.POST: 
             name = request.POST['name'].strip() 
@@ -88,11 +90,11 @@ class BookView(View):
             code    = ''.join(random.choice(string.digits) for i in range(4))
             billno = datetime.now().strftime('%Y%m%d%H%M%S')+str(code) 
             
-            if name == '' or phone == '' or address =='': 
+            if name == '' or phone == '': 
                 books = models.AdaptorBook.objects.all()
                 content['number'] = len(books)
                 content['error'] = 'error' 
-                content['msg'] = _('Name, Phone and Address cannot be empty!') 
+                content['msg'] = _('Name  and Phone cannot be empty!') 
 
                 content['name'] = 'name' 
                 content['phone'] = 'phone' 
@@ -110,6 +112,12 @@ class BookView(View):
                 if email:
                     book.email = email
                 book.save()
+
+                # 开始支付
+                book_money  = 0.01
+                subject = "一数预约支付"
+                return redirect (alipay(billno, book_money, subject))
+                
                 content['billno'] = book.billno
                 result['status'] ='ok'
                 result['msg'] = _('Saved completely!') 

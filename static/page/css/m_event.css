@@ -1,0 +1,92 @@
+.top-slide{
+    height: 300px;
+    background-size: 100% auto;
+    background-position: top center;
+}
+.number
+{ 
+    font-size: 30px;  
+}
+
+.img-holder{
+    overflow: hidden;
+}
+.img-holder, .active-img  { 
+    width: 100%;
+    height: 140px;
+}
+.years-wrap{
+    padding: 40px 180px;
+}
+.years{
+    position: relative;
+    border-bottom: 1px solid #cdcdcd;
+    margin: 0 15px;
+}
+.years span{
+    position: absolute;
+    right: 100%;
+    bottom: 100%;
+    font-size: 26px;
+    cursor: pointer;
+}
+.act span{
+    color: #ea5014;
+}
+.col-active-list{
+    margin: 20px 0;
+    display: none;
+}
+.down {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    width: 0;
+    height: 0;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #cdcdcd transparent transparent;
+    margin-left: 4px;
+    cursor: pointer;
+}
+.mt60{
+    margin-top: 60px;
+}
+.eventlist{
+    padding-left: 5%;
+}
+
+.date {
+    border-left: 1px solid rgb(181, 182, 182);
+}
+
+.datespan{
+    margin-right: 20px; 
+}
+.event_point{
+    position: absolute;
+    left: -2px;
+    top: 8px;
+    height: 5px;
+    width:5px;
+    background-color:rgb(181, 182, 182);
+    border-radius: 50%;
+    content: '';
+}
+.eventlist_tr{
+     padding-top: 20px;
+}
+.msg{
+    max-width: 75%;
+}
+.eventtext{
+    margin: 10px 0 20px 25px;
+}
+
+.m60 a:visited,.m60 a:hover,.m60 a:active{
+    color: rgb(181, 182, 182);
+}
+.rel{
+    position: relative;
+}

@@ -1,8 +1,19 @@
 {% extends 'base.html' %} 
+{% block pagetitle%}预约购买{% endblock%}
 {% block fixed_menu_class %}fixed_menu_class{%endblock%}
 {% load i18n %}
 {% block css %} 
 <link rel="stylesheet" href="/static/book/css/book.css">
+<style>
+    label.error {
+    color: #ea5014; 
+    position: absolute; 
+    font-size: 14px;
+    padding-left: 20px;
+    background: url(/static/img/icon/jinggao.gif) no-repeat left 3px;
+    background-size: 14px;
+}
+</style>
  {% endblock %}
  {% block content %}
 <div class="buy-container container m60">
@@ -12,18 +23,42 @@
     </div>
 
     <div class="info ">
-        <form action="" class="buy-form" method="post">
+        <form action="/book/buy/" class="buy-form" id="buy-form" method="post">
             {%csrf_token%}  
             <input type="hidden"   method="method" value="create" />
             <table>
                 <tr><td>预约姓名</td><td><div class="ml">联系电话</div></td></tr>
                 <tr>
-                    <td><input class="form-control mr" id="name" name="name" placeholder="请输入您的姓名"></td>
-                    <td><input class="form-control ml" id="phone" name="phone" placeholder="xxx-xxxx-xx"></td>
+                    <td>
+                        <input class="form-control mr" id="name" name="name" placeholder="请输入您的姓名">
+                        <div class="name-error">
+                                
+                        </div>
+                    </td>
+                    <td>
+                        <input class="form-control ml" id="phone" name="phone" placeholder="xxx-xxxx-xx">
+                        <div class="phone-error">
+                             
+                        </div>
+                    </td>
+                    
                 </tr>
+                <tr>
+                        <td></td>
+                        <td>
+                             
+                                
+                        </td>
+                        
+                    </tr>
                 <tr><td>您的邮箱</td><td><div class="ml">详细地址</div></td></tr>
                 <tr>
-                    <td><input class="form-control mr" id="email" name="email" placeholder="请输入您的邮箱"></td>
+                    <td>
+                        <input class="form-control mr" id="email" name="email" placeholder="请输入您的邮箱">
+                        <div class="email-error">
+                             
+                        </div>
+                    </td>
                     <td><input class="form-control ml" id="address" name="address" placeholder="请输入您的地址"></td>
                 </tr>
                 <tr ><td colspan="2" class="booking-money" ><span class="pre-payed">预约需提前交<span class="orange">200元</span>订金</span></td></tr>
@@ -34,7 +69,8 @@
                     <input type="radio" name="payway" class="rdo-payway" value="weixin" /><span>微信</span></td>
                 </tr>
                 <tr>
-                    <td><span class="grey">您前面已有{{number|default:'0'}}位预约了！</span><input type="submit" value="预约提交" 
+                    <td><span class="grey">您前面已有{{number|default:'0'}}位预约了！</span>
+                        <input type="submit" id="submit"  value="预约提交" 
                         class="btn-text-white orange-bg  common-btn buy-btn"></td>
                 </tr>
             </table>
@@ -43,5 +79,5 @@
 </div>
 
 {% endblock %} 
-{% block js %} 
- {% endblock %}
+{% block js %}<script type="text/javascript " src="/static/book/js/buy.js"></script>
+{% endblock %}

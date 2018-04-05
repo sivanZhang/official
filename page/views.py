@@ -46,7 +46,7 @@ class PageView(View):
                 except AdaptorProduct.DoesNotExist:
                     raise Http404
             if isMble:
-                return render(request, 'page/aboutus.html', content)
+                return render(request, 'page/m_aboutus.html', content)
             else:
                 return render(request, 'page/aboutus.html', content)
 
@@ -317,7 +317,7 @@ class PageView(View):
                         content['eventyears'].append(tmp)
           
             if isMble:
-                return render(request, 'page/eventlist.html', content)
+                return render(request, 'page/m_eventlist.html', content)
             else:
                 return render(request, 'page/eventlist.html', content)
         if 'active' == blockname and  'list' == pagename:

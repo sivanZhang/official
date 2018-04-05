@@ -39,8 +39,7 @@ class PicLabView(View):
     def post(self, request):
         """ 
         """
-        result = {} 
-        pdb.set_trace()
+        result = {}  
         if  'pic' in request.FILES: # 说明是在上传图库图片 
             files = request.FILES.getlist('pic')
             for file_item in files:

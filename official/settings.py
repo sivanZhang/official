@@ -245,3 +245,27 @@ LOGIN_SECRET = "92e49c5e-1595-4d0a-a702-9d99c5bf8e81"
 THIRD_LOGIN_URL = LOGIN_MASTER + "/users/login/?appid="+LOGIN_APPID+"&redirect_url="+STORE_LOGIN+"/users/login/"
 THIRD_AUTH_URL = LOGIN_MASTER + "/users/oauth2/authorize/"
 
+
+# 支付宝 正式环境
+# 支付宝配置参数
+
+ALIPAY_APPID = "2017020405508290"
+ALIPAY_URL = "https://openapi.alipay.com/gateway.do"
+ALI_PUBLIC_KEY = os.path.join(BASE_DIR, 'official', 'alipay_public.pem')
+PRIVATE_KEY = os.path.join(BASE_DIR, 'official', 'app_private_key.pem')
+
+PAYHOST = 'http://www.asucast.com/'
+ALIPAY_RETURN_URL = PAYHOST + 'book/alipay_check_pay'
+ALIPAY_NOTIFY_URL = PAYHOST + 'book/alipay_notify'
+"""
+# 支付宝测试-沙箱环境
+# 支付宝配置参数
+ALIPAY_APPID = "2016091000479829"
+ALIPAY_URL = "https://openapi.alipaydev.com/gateway.do"
+ALI_PUBLIC_KEY = os.path.join(BASE_DIR, 'official', 'alipay_public.pem')
+PRIVATE_KEY = os.path.join(BASE_DIR, 'official', 'app_private_key.pem')
+
+PAYHOST = 'http://www.asu.com:8000/'
+ALIPAY_RETURN_URL = PAYHOST + 'book/alipay_check_pay'
+ALIPAY_NOTIFY_URL = PAYHOST + 'book/alipay_notify'
+"""
