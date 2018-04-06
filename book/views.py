@@ -36,11 +36,7 @@ class BookView(View):
         books = models.AdaptorBook.objects.all()
      
         content['books'] = books
-        content['number'] = len(books)
-        if isMble:
-            return render(request, 'book/success.html', content)
-        else:
-            return render(request, 'book/success.html', content)
+        content['number'] = len(books) 
         if 'new' in request.GET:
             if isMble:
                 return render(request, 'book/m_blocknew.html', content)
