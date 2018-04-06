@@ -2,41 +2,38 @@
         <tr>
             <td>
                 <div class="pagination_circle orange  ">
-                    <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                        <a class="pagepre" href="{% url 'page:page' 'news'  'list' %}?pageindex={{pagecurrent}}">
+                            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                        </a>    
                 </div>
             </td>
-
+           {% for pageindex in pagescounter %}
             <td>
-                <div class="pagination_circle pagination-active">
-                    1
+                <div class="pagination_circle {% if forloop.counter == pagecurrent %}pagination-active{% endif %}" 
+                pageindex="{{forloop.counter}}">
+                <a href="{% url 'page:page' 'news'  'list' %}?pageindex={{forloop.counter}}">
+                    <span class="{% if forloop.counter != pagecurrent %}orange{% endif %}">{{forloop.counter}}</span>
+                </a>
                 </div>
             </td>
-
-            <td>
-                <div class="pagination_circle orange  ">
-                    2
-                </div>
-            </td>
-            <td>
-                <div class="pagination_circle orange  ">
-                    3
-                </div>
-            </td>
-
-            <td>
-                <div class="pagination_circle orange  ">
-                    4
-                </div>
-            </td>
-            <td>
-                    <div class="pagination_circle orange  ">
-                        5
-                    </div>
-                </td>
+            {% endfor %}  
             <td>
                 <div class="pagination_circle orange">
+                        <a class="pagenext" href="">
                     <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    </a>
                 </div>
             </td>
         </tr>
     </table>
+    <script>
+        {% if maxpage > pagecurrent %}
+        var next = {{pagecurrent}} + 1;
+        $(".pagenext").attr('href', "{% url 'page:page' 'news'  'list' %}?pageindex=" + next);
+        {% endif %}
+
+        {% if 1 < pagecurrent %}
+        var pre = {{pagecurrent}} - 1;
+        $(".pagepre").attr('href', "{% url 'page:page' 'news'  'list' %}?pageindex=" + pre);
+        {% endif %}
+    </script>

@@ -37,8 +37,7 @@
                         {% endif %}
                     {% endfor %}
 
-                    {% for page in pages %} 
-                       {% if page.mark != 'bigimg' %}
+                    {% for page in pageitems %}  
                         <div class="col-xs-12 mt40"> 
                                 <div class="img-holder">
                                     <a href="{{page.url}}"><img class="news-img" src="{{mediaroot}}{{page.pic}}"/></a>
@@ -47,8 +46,7 @@
                                 <a class="img_title text-overflow   orange" href="{{page.url}}" title="{{page.title}}">{{page.title}}</a>
                                 <br/>
                                 <p class="grey date">{{page.date| date:"Y-m-d"}}</p> 
-                        </div> 
-                        {% endif %}
+                        </div>  
                     {% endfor %}
                     <div class="col-xs-12 text-center">
                             {% include 'page/m_pagination.html' %}
@@ -66,4 +64,5 @@
 {% endblock%}
 {% block js %} 
 <script src="/static/page/js/report.js"></script>
+<script src="/static/js/pagination.js"></script>
 {% endblock %}
