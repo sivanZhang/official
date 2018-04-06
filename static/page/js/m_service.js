@@ -1,6 +1,6 @@
 $(document).ready(function(){
     /* 点击加减号 */
-    $('.show-btn').on('click',function(){
+    $('.show-service-btn').on('click',function(){
         var answer = $(this).next('.answer');
         if(answer.css('display')=='none'){
             answer.slideDown()

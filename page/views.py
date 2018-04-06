@@ -209,7 +209,7 @@ class PageView(View):
             content['skill_products'] = skill_products[:5]
             content['servicepage'] = True
             if isMble:
-                return render(request, 'page/service.html', content)
+                return render(request, 'page/m_service.html', content)
             else:
                 return render(request, 'page/service.html', content)
         if 'news' == blockname :
