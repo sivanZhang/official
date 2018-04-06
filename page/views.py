@@ -228,7 +228,7 @@ class PageView(View):
             labels_list = list(set(labels_list))
             content['labels_list'] = labels_list
             if isMble:
-                return render(request, 'page/news.html', content)
+                return render(request, 'page/m_news.html', content)
             else:
                 return render(request, 'page/news.html', content)
         if 'video' == blockname :

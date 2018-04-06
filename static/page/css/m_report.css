@@ -1,0 +1,96 @@
+.img_title{
+    margin-top:8px;
+}
+.img-holder{
+    height: 219px;
+}
+.label_list {
+    margin-top: 15px; 
+    display: inline-block;
+    line-height: 30px;
+}
+span.span_label.grey {
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 0px 10px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+
+}
+/* 开始订阅部分样式*/
+.sub_input{
+    border:none;
+    border-bottom: 2px solid #F37C3D;
+    line-height: 40px;
+    background-color: transparent;
+    color: white;
+    outline:none;
+    font-size: 14px;
+}
+.subscribe:link,.subscribe:visited,.subscribe:hover,.subscribe:active{
+    text-decoration: none;
+    color: white;
+    outline: none;
+}
+
+ .add{
+     margin: 0px!important;
+     color: #fefefe;
+ }
+h1.white{
+    margin-top: 10px;
+}
+.sub_input::placeholder{ 
+    color: #EAEAEA;
+} 
+ 
+.btn_sub{
+    border-radius: 2px;
+    background-color: white;
+    border: none;
+    padding: 0px 35px;
+    margin-top: 20px; 
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold; 
+    outline:none;
+}
+.a_agreement{
+    text-decoration: underline !important;
+}
+.subscribe{
+    padding: 35px;
+   /*  margin-top: 20px; */
+    width: 100%;
+}
+.sub_tb{
+    padding-left: 10px;
+}
+.agreement {
+    margin-bottom: 5px  !important;
+}
+/* 以下是社交媒体css样式*/
+.social{
+    line-height: 60px;
+    background-color: rgb(249,249,248);
+    font-size: 18px;
+    padding-left: 20px;
+}
+.social_tb{
+    width: 100%;
+    text-align: center; 
+}
+.social_tb td{
+    vertical-align: middle; 
+}
+.socialimg{
+    margin-right: 10px;
+
+}
+p.grey.socialtxt {
+    height: 30px;
+     
+}
+.news-lable{
+    padding:0px;
+}

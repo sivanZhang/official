@@ -1,0 +1,69 @@
+{% extends 'm_base.html' %} 
+{% load i18n %}
+{% block pagetitle%}{{contentblock.title}}{% endblock%}
+{% block css %}
+<link href="/static/css/pagination.css"  rel="stylesheet">
+<link href="/static/page/css/pagebase.css" rel="stylesheet">
+<link href="/static/page/css/active.css" rel="stylesheet">
+<link href="/static/page/css/m_news.css" rel="stylesheet">  
+<link href="/static/page/css/m_report.css" rel="stylesheet">  
+ {% endblock %}
+{% block content %}
+
+<div class=" container-title" >
+    <div class="container ">
+        <div class="items_holder">
+                    <h2 class="title orange">{{contentblock.title}} </h2> 
+                    <a href="/">{% trans 'Home' %}</a>
+                    <span>/&nbsp;{% trans 'News Center' %}</span> 
+                    <span>/&nbsp;{{contentblock.title}}</span> 
+        </div> 
+    </div> 
+</div>
+<div class="container new-list mb-60">
+    <div class="row">  
+                    {% for page in pages %} 
+                        {% if page.mark == 'bigimg' %}
+                        <!--顶部大图-->
+                            <div class="col-xs-12"> 
+                                    <div class="big-img">
+                                        <a href="{{page.url}}"><img class="news-img" src="{{mediaroot}}{{page.pic}}"/></a>
+                                    </div>
+                                    <br/>
+                                    <a class="img_title fs18 orange" href="{{page.url}}" title="{{page.title}}">{{page.title}}</a>
+                                    
+                                    <p class="grey date">{{page.date| date:"Y-m-d"}}</p> 
+                            </div> 
+                        {% endif %}
+                    {% endfor %}
+
+                    {% for page in pages %} 
+                       {% if page.mark != 'bigimg' %}
+                        <div class="col-xs-12 mt40"> 
+                                <div class="img-holder">
+                                    <a href="{{page.url}}"><img class="news-img" src="{{mediaroot}}{{page.pic}}"/></a>
+                                </div>
+                                <br/>
+                                <a class="img_title text-overflow   orange" href="{{page.url}}" title="{{page.title}}">{{page.title}}</a>
+                                <br/>
+                                <p class="grey date">{{page.date| date:"Y-m-d"}}</p> 
+                        </div> 
+                        {% endif %}
+                    {% endfor %}
+                    <div class="col-xs-12 text-center">
+                            {% include 'page/m_pagination.html' %}
+                    </div>
+       
+       <div class="col-xs-12 news-lable">
+            {% include 'page/tab.html' %}
+         
+        {% include 'page/m_label.html' %}
+        <br/><br/><br/>
+        </div>
+        <br/><br/><br/>
+    </div>
+</div>  
+{% endblock%}
+{% block js %} 
+<script src="/static/page/js/report.js"></script>
+{% endblock %}
