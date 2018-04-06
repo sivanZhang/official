@@ -436,7 +436,7 @@ class PageView(View):
                         # 忽略用户设置错误的活动
                         pass  
             if isMble:
-                return render(request, 'page/activelist.html', content)
+                return render(request, 'page/m_activelist.html', content)
             else:
                 return render(request, 'page/activelist.html', content)
         if 'detail' == pagename:

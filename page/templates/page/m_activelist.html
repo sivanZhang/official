@@ -1,0 +1,59 @@
+{% extends 'm_base.html' %} 
+{% load i18n %}
+{% block pagetitle%}{{contentblock.title}}{% endblock%}
+{% block css %}
+<link href="/static/page/css/m_pagebase.css" rel="stylesheet">
+<link href="/static/page/css/m_active.css" rel="stylesheet">   
+<style>
+        .top-slide{
+          background-image: url('{{mediaroot}}{{img|safe}}');
+        }
+</style>
+ {% endblock %}
+{% block content %}
+<div class="top-slide"> 
+    <div class="top-tips">
+    </div>
+  </div> 
+<div class="container-title" >
+    <div class="container">
+        <div class="items_holder">
+            <h2 class="title orange">{{contentblock.title}} </h2>
+            <a href="/">{% trans 'Home' %}</a>
+            <span>/&nbsp;ASU {% trans 'Brand' %}</span> 
+            <span>/&nbsp;{{contentblock.title}}</span> 
+        </div> 
+    </div> 
+</div>
+<div class="mt60">
+        {% for activeyear in activeyears %}
+        <div class="container years-wrap">  
+                    <div class="years">
+                            <span>{{activeyear.year}}</span> 
+                    </div>
+           
+                    <div class="col-active-list clearfix">
+                            {% for product in activeyear.products %}
+                            <div class="col-xs-12 ">
+                                    <div class="img-holder">
+                                                <a class="i-block" href="{% url 'product:detail' product.id %}?page=active" title="{{product.title}}">
+                                                        <img class="active-img" src="{{mediaroot}}{{product.pageurl}}"/>
+                                                </a>
+                                    </div>
+                                    <div class="marginline">   </div>
+                                    <a class="img_title gray" href="{% url 'product:detail' product.id %}?page=active" title="{{product.title}}">{{product.title|truncatechars:25}}</a>
+                                    <p class="grey">{{product.date| date:"Y-m-d"}}</p> 
+                                    <br/>
+                            </div> 
+                            
+                            {% endfor %}
+                    </div>
+                
+        </div>  
+        {% endfor %}
+</div>
+{% endblock%}
+{% block js %} 
+<script type="text/javascript" src="/static/page/js/activelist.js"></script> 
+
+{% endblock %}
