@@ -116,7 +116,7 @@ $(document).ready(function () {
             $('#' + target).fadeToggle(function () {
                 /* 隐藏元素到视口顶部 */
                 $('html, body').animate({
-                    scrollTop: $('#' + target).offset().top - 60
+                    scrollTop: $('#' + target).offset().top - 51
                 }, 600);
             });
             $('#' + target).addClass('move');
