@@ -7,22 +7,29 @@
  {% endblock %}
  {% block content %}
  <br/>
-<div class="buy-container container">
-    <div class="text-center">
-        <h1 class="orange"><img class="buy-code-right" src="/static/img/right.gif"/></i> 预约成功</h1>
-        <div class="h5billno">
-             <h5 class="grey "><span class="billno">预约编号：{{billno}}</span>预约支付：{{book.payed_money}}元</h5>
+<div class="buy-container container p-r">
+    <div class="to-center">
+        <div class="text-center">
+            <h1 class="orange"><img class="buy-code-right" src="/static/img/right.gif"/></i> 预约成功</h1>
+            <div class="h5billno">
+                 <h5 class="grey "><span class="billno">预约编号：{{billno}}</span>预约支付：{{book.payed_money}}元</h5>
+            </div>
         </div>
-    </div>
-
-    <div class="text-center ">
-            <span class="grey">我们会尽快为您服务</span>
-            <br/>
-            <a href="/"  class="common-btn grey-btn return-btn">返回首页</a>
+    
+        <div class="text-center ">
+                <span class="grey">我们会尽快为您服务</span>
+                <br/>
+                <a href="/"  class="common-btn grey-btn return-btn">返回首页</a>
+        </div>
     </div>
 </div>
 <br/>
 {% endblock %} 
 {% block js %} 
+<script>
+    $(document).ready(function(){
+    fixedFooter();
+  })
+</script>
  {% endblock %}
  
