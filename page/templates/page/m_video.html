@@ -1,0 +1,115 @@
+{% extends 'm_base.html' %} 
+{% load i18n %}
+{% block pagetitle%}{{product.title}}{% endblock%}
+{% block css %}
+<link href="/static/css/pagination.css"  rel="stylesheet">
+<link href="/static/page/css/m_pagebase.css" rel="stylesheet">
+<link href="/static/page/css/m_video.css" rel="stylesheet">
+<script src="/static/page/js/video.js" type="text/javascript"></script>
+ 
+ {% endblock %}
+{% block content %}
+ 
+<div class=" container-title" >
+    <div class="container">
+        <div class="items_holder">
+              <h2 class="title orange">{% trans 'Awesome video' %}</h2>
+              <a href="/">{% trans 'Home' %}</a>
+              <span>/&nbsp;{% trans 'News Center' %}</span> 
+              <span>/&nbsp;{% trans 'Awesome video' %}</span> 
+        </div> 
+    </div> 
+</div>
+
+<div class="container video video1">
+            {% for page in pageitems %}
+                {% if page.mark == 'top' %}
+                    <div class="video-first p-r" data-video="{{page.url}}">
+                        <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
+                        <img class="icon" src="/static/img/icon/play.svg" />
+                        <br/><br/>
+                        <div class="v-title orange">{{page.title}}</div>
+                        <br/>
+                        <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+</div>  
+<div class="container video video2">
+    <div class="row">
+        
+            {% for page in pageitems %}
+               {% if page.mark != 'top' %}
+               <div class="col-xs-12">
+                        <div class="video-list p-r" data-video="{{page.url}}">
+                                <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
+                                <img class="icon" src="/static/img/icon/play.svg" />
+                                <br/><br/>
+                                <div class="v-title orange">{{page.title}}</div>
+                                <br/> 
+                                <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
+                        </div> 
+                    </div>   
+                 {% endif %}
+            {% endfor %} 
+            <div class="col-xs-12 text-center">
+                    <table class="pagination">
+                            <tr>
+                                <td>
+                                    <div class="pagination_circle orange  ">
+                                            <a class="pagepre orange" href="{% url 'page:page' 'video'  'list' %}?pageindex={{pagecurrent}}">
+                                                <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                                            </a>    
+                                    </div>
+                                </td>
+                               {% for pageindex in pagescounter %}
+                                <td>
+                                    <div class="pagination_circle {% if forloop.counter == pagecurrent %}pagination-active{% endif %}" 
+                                    pageindex="{{forloop.counter}}">
+                                    <a  href="{% url 'page:page' 'video'  'list' %}?pageindex={{forloop.counter}}">
+                                        <span class="{% if forloop.counter != pagecurrent %}orange{% else %}white{% endif %}">{{forloop.counter}}</span>
+                                    </a>
+                                    </div>
+                                </td>
+                                {% endfor %}  
+                                <td>
+                                    <div class="pagination_circle orange">
+                                            <a class="pagenext orange" href="">
+                                        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <script>
+                            {% if maxpage > pagecurrent %}
+                            var next = {{pagecurrent}} + 1;
+                            $(".pagenext").attr('href', "{% url 'page:page' 'video'  'list' %}?pageindex=" + next);
+                            {% endif %}
+                    
+                            {% if 1 < pagecurrent %}
+                            var pre = {{pagecurrent}} - 1;
+                            $(".pagepre").attr('href', "{% url 'page:page' 'video'  'list' %}?pageindex=" + pre);
+                            {% endif %}
+                        </script>
+              </div>  
+    </div> 
+</div>
+<!-- 弹出视频播放框 -->
+<div class="v-wrap">
+    <img class="close" src="/static/img/icon/w_close.svg" />
+    <video width="100%" src="" controls>
+    视频无法播放
+    </video>
+</div>
+{% endblock%}
+{% block js %} 
+<script type="text/javascript " src="/static/js/swiper-3.4.2.jquery.min.js "></script>
+<script> 
+    $(document).ready(function () {
+        $('#position').click(function () {
+            location.href = "{% url 'page:page' 'asubrand' 'join' %}?position";
+        });
+    });
+</script>
+{% endblock %}

@@ -65,7 +65,7 @@ ul{
     background-color: #ea5014;
 }
 .orange{
-    color:#ea5014
+    color:#ea5014 !important;
 }
 .black{
     color:#333;

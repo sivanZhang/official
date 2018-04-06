@@ -159,7 +159,7 @@ class PageView(View):
             except models.AdaptorBaseBlock.DoesNotExist:
                 raise Http404 
             if isMble:
-                return render(request, 'page/policy.html', content)
+                return render(request, 'page/m_policy.html', content)
             else:
                 return render(request, 'page/policy.html', content)
         if 'waiting' == blockname :
@@ -254,14 +254,38 @@ class PageView(View):
                 content['maxpage'] = maxpage
                 content['pageitems'] = pagesitems[pagesize*(pageindex-1):pagesize*pageindex]
                 return render(request, 'page/news.html', content)
+
         if 'video' == blockname :
             # 媒体报道
             pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname)
             content['block'] = pages[0].block
             content['pages'] = replace_slide(pages)
+
+            # 分页开始
+            pagesitems = pages
+            counter = pagesitems.count()
+            pagesize = 10
+            pageindex = request.GET.get('pageindex')
+            try:
+                pageindex = int(pageindex)
+            except TypeError:
+                pageindex = 1
+            except ValueError:
+                pageindex = 1
+            content['pagecurrent'] = pageindex 
+
             if isMble:
-                return render(request, 'page/video.html', content)
+                pagesize = 2
+                maxpage = int(counter/pagesize)
+                content['pagescounter'] = range(maxpage)
+                content['maxpage'] = maxpage
+                content['pageitems'] = pagesitems[pagesize*(pageindex-1):pagesize*pageindex]
+                return render(request, 'page/m_video.html', content)
             else:
+                maxpage = int(counter/pagesize)
+                content['pagescounter'] = range(maxpage)
+                content['maxpage'] = maxpage
+                content['pageitems'] = pagesitems[pagesize*(pageindex-1):pagesize*pageindex]
                 return render(request, 'page/video.html', content)
         if 'contactus' == blockname :
             # 联系我们 

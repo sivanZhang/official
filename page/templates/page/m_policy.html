@@ -1,0 +1,31 @@
+{% extends 'm_base.html' %}
+{% load i18n %}
+{% block pagetitle%}保修政策{% endblock%}
+{% block css %}
+<link href="/static/page/css/m_pagebase.css" rel="stylesheet">
+<link href="/static/page/css/policy.css" rel="stylesheet">
+ 
+ {% endblock %}
+{% block content %}
+ 
+<div class=" container-title" >
+    <div class="container ">
+        <div class="items_holder">
+                    <h2 class="title orange">{{product.title}}  </h2>
+                     
+                    <a href="/">{% trans 'Home' %}</a>
+                    <span>/&nbsp;{% trans 'Service' %}</span>  
+                    <span>/&nbsp;{{product.title}}</span> 
+        </div> 
+    </div> 
+</div>
+<div class="container mb-60">
+    <div class="row  "> 
+      <div class="col-xs-12">
+         {{product.detail|safe}}
+      </div> 
+    </div>
+</div>  
+{% endblock%}
+{% block js %} 
+{% endblock %}
