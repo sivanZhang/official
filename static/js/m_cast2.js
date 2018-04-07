@@ -4,6 +4,8 @@ $(document).ready(function () {
     var height = window.innerHeight;
     var width = window.innerWidth;
 
+
+    //隐藏板块点击图标切换图
     $('.icon-img').on('click', function () {
         var thisIcon = $(this),
             //获取下标
@@ -39,12 +41,6 @@ $(document).ready(function () {
     var character = $('.character');//特性
 
 
-    $(document).ready(function () {
-        /* 轮播图箭头位置 */
-        var abslut = $('.logo').offset().left;
-        /* 产品页到顶部位置 */
-        $('.scroll-tip').css('right', abslut + 'px')
-    })
 
     $(document).scroll(function () {
 
@@ -91,6 +87,9 @@ $(document).ready(function () {
     body.stop().animate({ scrollTop: 0 }, 500, 'swing', function () {
         //
     });
+
+
+    
     /* 
      *回到顶部
      */
@@ -116,7 +115,7 @@ $(document).ready(function () {
             $('#' + target).fadeToggle(function () {
                 /* 隐藏元素到视口顶部 */
                 $('html, body').animate({
-                    scrollTop: $('#' + target).offset().top - 51
+                    scrollTop: $('#' + target).offset().top - 50
                 }, 600);
             });
             $('#' + target).addClass('move');
@@ -125,12 +124,13 @@ $(document).ready(function () {
             }
         });
     };
-    $('.tb_secondmenu_item').click(function(){
-        $('#more').slideDwon();
-    })
-    $('.submenu').click(function(){
+    $('.submenu').click(function(e){
         $('#more').slideToggle();
+        e.stopPropagation();
     })
+    jQuery(document).click(function () {
+        jQuery('#more').slideUp();
+    })  
     submenu('.product_pic_1');
     submenu('.product_pic_2');
 
@@ -145,13 +145,13 @@ $(document).ready(function () {
             case 'advice':
                 advice.show();
                 $('html,body').animate({
-                    scrollTop: $('.advice .second_menu_holder').offset().top-59
+                    scrollTop: $('.advice').offset().top-55
                 }, 300);
                 break;
             case 'fitting':
                 fitting.show();
                 $('html,body').animate({
-                    scrollTop: $('.fitting .second_menu_holder').offset().top-59
+                    scrollTop: $('.fitting').offset().top-55
                 }, 300);
                 break;
             case 'scene':
@@ -161,7 +161,7 @@ $(document).ready(function () {
             case 'parameter':
                 parameter.show();
                 $('html,body').animate({
-                    scrollTop: $('.parameter .second_menu_holder').offset().top-59
+                    scrollTop: $('.parameter').offset().top-55
                 }, 300);
                 break;
             case 'character':

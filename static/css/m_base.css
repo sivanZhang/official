@@ -17,6 +17,9 @@ ul{
 .p-r{
     position: relative;
 }
+.fs16{
+    font-size: 16px;
+}
 .common-btn {
     display: inline-block;
     padding: 4px 12px;
