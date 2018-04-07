@@ -5,6 +5,7 @@
 proxytest.py
 *.tmp
 */migrations/*
+static-/*
 *.pem
 *.json
 *.md

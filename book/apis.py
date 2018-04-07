@@ -1,6 +1,7 @@
 # -*- conding:utf-8 -*- 
 import pdb
-
+import requests
+from django.conf import settings
 from book.models import AdaptorBook as Book
  
 
@@ -24,3 +25,7 @@ def pay_book(billno, pay_way, payed_money, trade_no, pay_datetime):
     result['book'] = book 
 
     return result
+
+
+def sendsms(phone, content):
+    req = requests.get(settings.SMS_API.format(phone, content) ) 

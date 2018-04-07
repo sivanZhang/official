@@ -108,6 +108,7 @@ def alipay_check_pay(request):
                 smscontent = """您已成功预约，到货后第一时间会发短信联系您，您可输入预约码xxx直接抵扣200元。请妥善保留此短信。"""
                 emailcontent = emailcontent.replace('xxx', book.billno)
                 smscontent = smscontent.replace('xxx', book.billno)
+               
                 #emailex.send_text_email("一数科技预约支付", emailcontent, book.email)
                 req = requests.get(settings.SMS_API.format(book.phone, smscontent) )
                
