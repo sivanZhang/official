@@ -355,7 +355,7 @@ class PageView(View):
             content['page'] = pages[0]
             content['pages'] = replace_slide(pages)
             if isMble:
-                return render(request, 'page/pic.html', content)
+                return render(request, 'page/m_pic.html', content)
             else:
                 return render(request, 'page/pic.html', content)
         if 'event' == blockname and  'list' == pagename:
