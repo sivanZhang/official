@@ -4,6 +4,7 @@ import json
 import random
 import string
 import os
+import requests
 from datetime import datetime
 
 from django.shortcuts import render
@@ -20,10 +21,11 @@ from rest_framework.response import Response
 from rest_framework import status 
 from django.utils.translation import ugettext as _
 from django.shortcuts import redirect 
-
+from common.e_mail import EmailEx
 from book import models
 from book.apis import pay_book
 from book.views_pay import alipay
+
 
 from mobile.detectmobilebrowsermiddleware import DetectMobileBrowser
 dmb     = DetectMobileBrowser()
@@ -37,6 +39,7 @@ class BookView(View):
      
         content['books'] = books
         content['number'] = len(books) 
+        #return render(request, 'book/success.html', content) 
         if 'new' in request.GET:
             if isMble:
                 return render(request, 'book/m_blocknew.html', content)

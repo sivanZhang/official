@@ -39,16 +39,15 @@ class Email(object):
 class EmailEx(Email):
     def send_text_email(self,Subject,content,receiver):
         if settings.EMAIL_SWITCH:
-            sender              = 'postmaster@map2family.com'
+            sender              = settings.SMTP_SERVER_USER
             themsg              = MIMEMultipart()
             themsg['Subject']   = Subject
             themsg['To']        = receiver
-            themsg['From']      = settings.PROJECTNAME
+            themsg['From']      = settings.SMTP_FROM
             themsg['Date']      = utils.formatdate(localtime = 1)
             themsg['Message-ID'] = utils.make_msgid()
             msgAlternative      = MIMEMultipart('alternative')
-            themsg.attach(msgAlternative)
-            content = content + '<br/>www.map2family.com'
+            themsg.attach(msgAlternative) 
             msgText = MIMEText(content,'html', 'utf-8')
             msgAlternative.attach(msgText)
             themsgtest = themsg.as_string()      
@@ -57,7 +56,7 @@ class EmailEx(Email):
             server.connect(settings.SMTP_SERVER) 
             server.login(settings.SMTP_SERVER_USER, settings.SMTP_SERVER_PWD)
             server.sendmail(sender, receiver, themsgtest)
-            server.quit()#SMTP.quit()
+            server.quit()
    
     @staticmethod        
     def send_html_email( Subject,content,receiver):

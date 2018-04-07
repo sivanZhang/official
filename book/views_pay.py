@@ -1,3 +1,4 @@
+import requests
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 from alipay import AliPay
@@ -5,6 +6,7 @@ import os
 from django.conf import settings
 from django.shortcuts import redirect
 from django.urls import reverse
+from common.e_mail import EmailEx
 
 from mobile.detectmobilebrowsermiddleware import DetectMobileBrowser
 dmb     = DetectMobileBrowser()
@@ -94,6 +96,20 @@ def alipay_check_pay(request):
                 book = result['book'] 
                 content['billno'] = book.billno
                 content['book'] = book 
+        
+                emailex = EmailEx()
+                emailcontent = """
+                您好！
+                <br/>
+                感谢您预约最新款ASU Watch， 我们将在到货后第一时间通过短信、邮件等方式联系您，您可输入预约码xxx直接抵扣200元。
+                <br/>
+                请妥善保留此邮件！
+                """
+                smscontent = """您已成功预约，到货后第一时间会发短信联系您，您可输入预约码xxx直接抵扣200元。请妥善保留此短信。"""
+                emailcontent = emailcontent.replace('xxx', book.billno)
+                smscontent = smscontent.replace('xxx', book.billno)
+                #emailex.send_text_email("一数科技预约支付", emailcontent, book.email)
+                req = requests.get(settings.SMS_API.format(book.phone, smscontent) )
                
                 if isMble:
                     return render(request, 'book/success.html', content)

@@ -224,11 +224,11 @@ AUTHENTICATION_BACKENDS=[
 ]
 LOGIN_URL = '/users/login/'
 PROJECTNAME = '一数科技'
-EMAIL_SWITCH = False
-SMTP_SERVER         ='smtp.163.com' #SMTP server IP address
+EMAIL_SWITCH = True
+SMTP_SERVER         ='smtp.mxhichina.com' #SMTP server IP address
 SMTP_SERVER_USER    ='postmaster@map2family.com'  
 SMTP_SERVER_PWD     ='Youxiang889886'  
-
+SMTP_FROM           = "postmaster"
 
 SMS = {
     'SMS_SN' : "SDK-BBX-010-22746",
