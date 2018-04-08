@@ -25,7 +25,7 @@ from common.e_mail import EmailEx
 from book import models
 from book.apis import pay_book, sendsms
 from book.views_pay import alipay
-
+from common.e_mail import EmailEx
 
 from mobile.detectmobilebrowsermiddleware import DetectMobileBrowser
 dmb     = DetectMobileBrowser()
@@ -39,8 +39,6 @@ class BookView(View):
      
         content['books'] = books
         content['number'] = len(books) 
-        #smscontent = """您已成功预约，到货后第一时间会发短信联系您，您可输入预约码xxx直接抵扣200元。请妥善保留此短信。"""
-        sendsms(18811082245, "测试")
         
         #return render(request, 'book/success.html', content) 
         if 'new' in request.GET:

@@ -7,12 +7,11 @@ from django.conf import settings
 from django.shortcuts import redirect
 from django.urls import reverse
 from common.e_mail import EmailEx
-
+from book import models
 from mobile.detectmobilebrowsermiddleware import DetectMobileBrowser
 dmb     = DetectMobileBrowser()
-import pdb
-from book.apis import pay_book
-
+import pdb 
+from book.apis import pay_book, sendsms
 def alipay(order_id, total_amount, subject):
     #request.POST.get("order_id")
     # 创建用于进行支付宝支付的工具对象
@@ -96,21 +95,22 @@ def alipay_check_pay(request):
                 book = result['book'] 
                 content['billno'] = book.billno
                 content['book'] = book 
-        
-                emailex = EmailEx()
-                emailcontent = """
-                您好！
-                <br/>
-                感谢您预约最新款ASU Watch， 我们将在到货后第一时间通过短信、邮件等方式联系您，您可输入预约码xxx直接抵扣200元。
-                <br/>
-                请妥善保留此邮件！
-                """
-                smscontent = """您已成功预约，到货后第一时间会发短信联系您，您可输入预约码xxx直接抵扣200元。请妥善保留此短信。"""
-                emailcontent = emailcontent.replace('xxx', book.billno)
-                smscontent = smscontent.replace('xxx', book.billno)
-               
-                #emailex.send_text_email("一数科技预约支付", emailcontent, book.email)
-                req = requests.get(settings.SMS_API.format(book.phone, smscontent) )
+                if 'created' in result:
+                    emailex = EmailEx()
+                    emailcontent = """
+                    您好！
+                    <br/>
+                    您已成功预约ASU Watch，预约码为xxx，如有货会第一时间给您发短信/邮件通知。您在购买结算时输入预约码可直接抵扣200元现金。请妥善保留此邮件
+                    <br/>
+                    一数科技商城
+                    """
+                    smscontent = """您好，您已成功预约ASU Watch，预约码为xxx，如有货会第一时间给您发短信通知。您在购买结算时输入预约码可直接抵扣200元现金。请妥善保留此短信"""
+                    emailcontent = emailcontent.replace('xxx', book.billno)
+                    smscontent = smscontent.replace('xxx', book.billno)
+                
+                    emailex.send_text_email("一数科技预约支付", emailcontent, book.email)
+                    sendsms(book.phone, smscontent)
+                #req = requests.get(settings.SMS_API.format(book.phone, smscontent) )
                
                 if isMble:
                     return render(request, 'book/success.html', content)

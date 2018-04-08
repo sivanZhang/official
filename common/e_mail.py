@@ -12,29 +12,7 @@ import re
 class Email(object):
     EMAIL_REGEX = re.compile(r'[^@]+@[^@]+\.[^@]+')
 
-    def send_text_email(self,Subject,preamble,content,receiver):
-        if settings.EMAIL_SWITCH:
-            sender              = 'zhaji25@ca.com'
-            themsg              = MIMEMultipart()
-            themsg['Subject']   = Subject
-            themsg['To']        = receiver
-            themsg['From']      = 'L2 Tools Management System'
-            themsg.preamble     = preamble
-
-            msgAlternative      = MIMEMultipart('alternative')
-            themsg.attach(msgAlternative)
-            content = content + '<br/>www.map2family.com'
-            msgText = MIMEText(content,'html', 'utf-8')
-            msgAlternative.attach(msgText)
-            themsgtest = themsg.as_string()      
-            # send the message
-            try:
-                smtp = smtplib.SMTP(settings.SMTP_SERVER)#SMTP server IP, or postfix server in linux
-                smtp.sendmail(sender, receiver, themsgtest)
-                smtp.close()#close the connnection
-                return 'email has been sent successfully'
-            except Exception as e: 
-                return e
+    pass
         
 class EmailEx(Email):
     def send_text_email(self,Subject,content,receiver):
@@ -50,10 +28,11 @@ class EmailEx(Email):
             themsg.attach(msgAlternative) 
             msgText = MIMEText(content,'html', 'utf-8')
             msgAlternative.attach(msgText)
-            themsgtest = themsg.as_string()      
+            themsgtest = themsg.as_string()       
             # send the message
-            server = smtplib.SMTP()  
-            server.connect(settings.SMTP_SERVER) 
+            server = smtplib.SMTP_SSL(settings.SMTP_SERVER, 465) 
+            #server.set_debuglevel(True) 
+            #server.connect(settings.SMTP_SERVER) 
             server.login(settings.SMTP_SERVER_USER, settings.SMTP_SERVER_PWD)
             server.sendmail(sender, receiver, themsgtest)
             server.quit()

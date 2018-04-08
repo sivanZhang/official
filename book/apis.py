@@ -12,7 +12,9 @@ def pay_book(billno, pay_way, payed_money, trade_no, pay_datetime):
     """
     result = {}
     book = Book.objects.get(billno = billno)
-    
+    if book.status == Book.STATUS_CREATED:
+        result['created'] = True 
+    result['book'] = book 
     book.status = book.STATUS_PAYED
     book.money = payed_money
     book.pay_way = pay_way
@@ -28,4 +30,6 @@ def pay_book(billno, pay_way, payed_money, trade_no, pay_datetime):
 
 
 def sendsms(phone, content):
-    req = requests.get(settings.SMS_API.format(phone, content) ) 
+    content = content + ' 【一数科技】'
+    req = requests.get(settings.SMS_API.format(phone, content) )
+    

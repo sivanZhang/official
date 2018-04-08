@@ -225,9 +225,9 @@ AUTHENTICATION_BACKENDS=[
 LOGIN_URL = '/users/login/'
 PROJECTNAME = '一数科技'
 EMAIL_SWITCH = True
-SMTP_SERVER         ='smtp.mxhichina.com' #SMTP server IP address
-SMTP_SERVER_USER    ='postmaster@map2family.com'  
-SMTP_SERVER_PWD     ='Youxiang889886'  
+SMTP_SERVER         ='smtp.exmail.qq.com' #SMTP server IP address
+SMTP_SERVER_USER    ='shop@a-su.com.cn'  
+SMTP_SERVER_PWD     ='Bjasu@2018'  
 SMTP_FROM           = "postmaster"
 
 SMS = {
