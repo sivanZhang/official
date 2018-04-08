@@ -1,0 +1,74 @@
+.text-center h5{
+ padding: 20px 0 40px;
+ margin-bottom: 0px;
+}
+ .buy-container h3{
+     margin: 40px 0 0;
+ }
+.buy-code{
+    width: 130px;
+    height: 120px;
+}
+
+
+.billno{
+    margin-right: 20px;
+}
+.buy-form .common-inp{
+   display: block;
+   margin-top: 5px;
+   width: 100%;
+}
+.buy-code{
+    width: 130px;
+    height: 120px;
+}
+
+.rdo-payway{
+    margin-right: 5px !important;
+}
+.h5billno{
+    border-bottom: 1px solid rgb(181, 182, 182);
+}
+
+.buy-btn{
+    width: 46%;
+    display: block;
+    margin: 0 auto 40px;
+}
+.buy-form .pre-payed{
+    font-size: 24px;
+    margin: 40px 0 20px;
+}
+.payname{
+    margin-right: 30px;
+}
+.buy-form>div{
+    margin: 20px 0;
+}
+.pay-way img{
+    height: 16px;
+}
+input[type=checkbox], input[type=radio] {
+    vertical-align: sub;
+}
+.buy-form .select-pay-way{
+    padding: 15px;
+    background-color: rgb(249, 249, 249);
+    margin: 15px -15px 20px;
+}
+span.grey{
+    line-height: 50px;
+
+}
+.return-btn{
+    margin-bottom: 30px;
+}
+/*.to-center{
+    
+    position: absolute;
+top:50%;
+left: 50%;
+transform: translate(-50%,-50%);
+
+}*/

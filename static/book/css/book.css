@@ -76,11 +76,11 @@ input.form-control{
     -webkit-box-shadow: unset;
     box-shadow: iunset;
 }
-.to-center{
-    /*
+/*.to-center{
+    
     position: absolute;
 top:50%;
 left: 50%;
 transform: translate(-50%,-50%);
-*/
-}
+
+}*/

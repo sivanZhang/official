@@ -1,0 +1,68 @@
+{% extends 'm_base.html' %} 
+{% block pagetitle%}预约购买{% endblock%}
+{% load i18n %}
+{% block css %} 
+<link rel="stylesheet" href="/static/book/css/m_book.css">
+<style>
+    label.error {
+    color: #ea5014; 
+    position: absolute; 
+    font-size: 14px;
+    padding-left: 20px;
+    background: url(/static/img/icon/jinggao.gif) no-repeat left 3px;
+    background-size: 14px;
+    font-weight:100;
+}
+</style>
+ {% endblock %}
+ {% block content %}
+<div class="buy-container container m60">
+    <div class="text-center">
+        <h3 class="orange"><i class="fa fa-shopping-cart" aria-hidden="true"></i> 预约购买</h3>
+        <h5 class="grey">注：首批商品已售罄，即刻预约，我们将提前通知您进行购买</h5>
+    </div>
+
+    <div class="info ">
+        <form action="/book/buy/" class="buy-form" id="buy-form" method="post">
+            {%csrf_token%}  
+            <input type="hidden"   method="method" value="create" />
+            <div>
+                预约姓名
+                <input class="common-inp mr" id="name" name="name" placeholder="请输入您的姓名">
+                <div class="name-error"></div>
+            </div>
+            <div>
+                联系电话
+                <input class="common-inp ml" id="phone" name="phone" placeholder="xxx-xxxx-xx">
+                <div class="phone-error"></div>
+            </div>
+            <div>
+                您的邮箱
+                <input class="common-inp mr" id="email" name="email" placeholder="请输入您的邮箱">
+                <div class="email-error"></div>
+            </div>
+            <div>
+                详细地址
+                <input class="common-inp ml" id="address" name="address" placeholder="请输入您的地址">
+            </div>
+            
+             <div class="pre-payed">预约需提前交<span class="orange">200元</span>订金</div>
+                <div class="select-pay-way row" >选择支付方式</div>
+                <div class="pay-way" >
+                    <input type="radio" name="payway" class="rdo-payway" value="zhifubao" checked="checked" />
+                    <img class="payname" src="/static/img/alipay.png" alt="">
+                    <input type="radio" name="payway" class="rdo-payway" value="weixin" />
+                    <img src="/static/img/weipay.png" alt="">
+                </div>
+               <div class="grey text-center">您前面已有{{number|default:'0'}}位预约了！</div>
+                <button type="submit" id="submit" class="orange-bg  common-big-btn buy-btn">
+                    <span class="white">预约提交</span>
+                </button>
+           
+        </form>
+    </div>
+</div>
+
+{% endblock %} 
+{% block js %}<script type="text/javascript " src="/static/book/js/buy.js"></script>
+{% endblock %}

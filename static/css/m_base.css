@@ -59,6 +59,22 @@ ul{
     border: 1px solid transparent;
     min-width: 100px;
 }
+.common-inp{
+    display: inline-block;
+    height: 38px;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ddd;
+    border-radius: 4px; 
+}
+.common-inp:focus,.form-control:focus {
+    border-color:#ea5014;
+    outline: none;
+} 
 .grey-btn{
     color:#333;
     background-color: #e5e5e5;
