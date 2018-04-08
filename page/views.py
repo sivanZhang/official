@@ -137,7 +137,7 @@ class PageView(View):
             content['page'] = pages[0]
             content['pages'] = replace_slide(pages)
             if isMble:
-                return render(request, 'page/faith.html', content)
+                return render(request, 'page/m_faith.html', content)
             else:
                 return render(request, 'page/faith.html', content)
 
@@ -171,7 +171,7 @@ class PageView(View):
         if 'software' == blockname :
             # 软件下载
             if isMble:
-                return render(request, 'page/software.html', content)
+                return render(request, 'page/m_software.html', content)
             else:
                 return render(request, 'page/software.html', content)
         if 'questions' == blockname :
