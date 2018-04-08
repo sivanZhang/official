@@ -57,3 +57,9 @@ $('.group-title').each(function(){
 $('#link').click(function(){
     $('nav ul').slideToggle();
 })
+//回到顶部
+$('#to_top').on('click',function () {
+    $('html, body').animate({
+        scrollTop: $('body').offset().top
+    }, 300);
+})

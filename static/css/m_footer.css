@@ -1,10 +1,4 @@
-footer{
-    width: 100%;
-    color: #fff;
-    background-color:#8f9092;
-    z-index: 1000;
-    padding: 10px 0;
-}
+
 
 
 .linkitems a
@@ -72,14 +66,9 @@ footer{
 .linkitems a.round-btn{
 margin-right: 10px;
 }
-footer a{
-    color: inherit;
-    margin-left: 2px;
-}
 
-footer a:hover{
-    color: inherit;
-}
+
+
 .phone
 {   
     color: #6c6c6c;
@@ -135,27 +124,18 @@ a.round-btn{
     padding-top: 1px;
     display: block;
     float: left;
-    height: 17px;
-    width: 17px;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
     background-color: rgb(221, 221, 221);
 }
 .round-btn img{
-    height: 13px;
-    max-width: 13px;
+    height: 16px;
+    max-width: 16px;
     vertical-align: text-top;
     padding: 1px;
 }
-footer .pull-left{
-    font-size: 10px;
-    color: #fff;
-    z-index:1000 ;
-}
-footer .pull-right{
-padding-top: 14px;
-text-align: center;
-padding-top: 6px;
-}
+
 .online-div p{
     margin: 6px 0 14px;
 }
@@ -208,9 +188,7 @@ padding-top: 6px;
       padding: 0 15px 10px;
   }
   /* 底部 */
-footer{
-    font-size: 10px;
-}
+
 .f-logo{
     height: 14px;
 }
