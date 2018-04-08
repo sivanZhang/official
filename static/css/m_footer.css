@@ -66,9 +66,9 @@
 .linkitems a.round-btn{
 margin-right: 10px;
 }
-
-
-
+.linkitems>.phone-wrap{
+    padding: 20px 50px;
+}
 .phone
 {   
     color: #6c6c6c;
@@ -81,8 +81,6 @@ margin-right: 10px;
 .qrcode{
     width: 100px;
    /*  background-color: rgb(226, 227, 227); */
-    position: relative;
-    margin-left: 30px;
 }
 /* .qrcode::before{
     width: 60px;
