@@ -1,0 +1,83 @@
+{% extends 'm_base.html' %}
+{% load i18n %}
+{% block pagetitle%}{{product.title}}{% endblock%}
+{% block css %}
+<link href="/static/page/css/m_pagebase.css" rel="stylesheet">
+<link href="/static/page/css/m_join.css" rel="stylesheet">
+<style>
+      .top-slide{
+        background-image: url('{{mediaroot}}{{page.pic|safe}}');
+      }
+</style>
+ {% endblock %}
+{% block content %}
+<div class="top-slide"> 
+    <div class="top-tips">
+       
+    </div>
+  </div> 
+<div class=" container-title" >
+    <div class="container ">
+        <div class="items_holder">
+              <h2 class="title orange">{{product.title}} </h2>
+              <a href="/">{% trans 'Home' %}</a>
+              <span>/&nbsp;ASU {% trans 'Brand' %}</span> 
+              <span>/&nbsp;{{product.title}}</span> 
+        </div> 
+    </div> 
+</div>
+ 
+<div class="container">
+    <div class="row  "> 
+       <div class="col-xs-12 text-center title-m">
+           <h2>我们期待您加入</h2>
+           <p class="orange">请将简历投递至：hr@a-su.com.cn</p>
+        </div> 
+      <div class="col-xs-12 ">
+          {% for product in products %}
+        <div class="productitem-wrap row">
+            <div class="productitem row" detail="{{product.detail}}" title="{{product.title}}"><div class="pull-left">{{product.title}}</div> 
+              	<div class="show-btn pull-right"><img src="/static/img/icon/jia.svg" /></div>
+            </div>
+            <div class="p-detail">
+                <div class="row detail-title">{{product.category.name}} | {{product.description}} | {{product.date|date:"Y-m-d"}}
+                    {% if perm %}
+                    | {% trans 'Manage' %}
+                    {% endif %}
+                </div>
+                <div class="detail-con">
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+      </div> 
+    </div>
+</div>  
+<br/>
+<br/>
+
+{% endblock%}
+{% block js %} 
+<script>
+  $(document).ready(function () {
+    $('.productitem').click(function () {
+      var display = $(this).next('.p-detail').css('display');
+      $(this).next('.p-detail').slideToggle();//点击职位标题 下拉详情
+      if (display == 'none') {
+        $(this).children('.show-btn').addClass('rota');
+      } else {
+        $(this).children('.show-btn').removeClass('rota');
+      }
+      $(this).next('.p-detail').find('.detail-con').append($(this).attr('title'));
+      $(this).next('.p-detail').find('.detail-con').append($(this).attr('detail'))
+        /* $("#exampleModalLabel").text('');
+        $("#modal-body").text('');
+        $("#exampleModalLabel").append($(this).attr('title')) ;
+        $("#modal-body").append($(this).attr('detail')) ;
+        $('#Modal').modal('show'); */
+
+      });
+  });
+  </script>
+{% endblock %}

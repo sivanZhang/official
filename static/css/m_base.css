@@ -40,6 +40,7 @@ ul{
     border-radius: 4px;
     min-width: 100px;
 }
+
 .common-big-btn{
     display: inline-block;
     padding: 8px 24px;
@@ -101,6 +102,9 @@ ul{
 }
 .gray{
     color: gray;
+}
+a:link,a:visited,a:hover,a:active{
+    text-decoration: none;
 }
 /* 菜单 */
 .fixed_menu_class {

@@ -1,0 +1,157 @@
+/* base */
+.fixed-position {
+    position: relative;
+  }
+  .round {
+    border-radius: 50%;
+  }
+  .ml10 {
+    margin-left: 10px;
+  }
+  .close img{
+    width: 22px;
+  }
+  .a-style {
+    text-decoration: none;
+    outline: none;
+  }
+  ul {
+    padding: 0px;
+    margin: 0px;
+  }
+  li {
+    list-style-type: none;
+  }
+  a:link,
+  a:hover,
+  a:focus,
+  a:visited {
+    text-decoration: none;
+    outline: none;
+  }
+  /* deteil */
+
+  section.main {
+    padding-top: 100px;
+    position: relative;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background: url(/static/img/idea/main.jpg) no-repeat center;
+    color: #fff;
+  }
+  #position{
+    margin-bottom: 40px;
+  }
+  .down {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+    text-align: center;
+  }
+  .down img {
+    width: 30px;
+  }
+  .sider {
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: auto 100%!important;
+  }
+  .sider0 {
+    background: url(/static/img/idea/slider1.jpg) no-repeat center;
+  }
+  .f12 {
+    font-size: 12px;
+  }
+  .sider-text {
+    font-size: 32px;
+    background-color: #7a7a7a;
+    color: #fff;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    line-height: 30px;
+  }
+  .sider-text .container {
+    padding: 20px 15px;
+    height: 70px;
+  }
+  .sider-text .container div {
+    padding: 0px;
+  }
+  .sider-text .container div span {
+    font-size: 14px;
+  }
+  .sider-text .container .text-deteil {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 120px;
+  }
+  .swiper-wrapper {
+    padding-bottom: 70px;
+  }
+  .modal-header{
+    background-color: rgb(242, 242, 242);
+    border-bottom: unset;
+    padding: 15px 15px 15px 45px;
+  }
+  .modal-content{
+    border-radius: unset;
+  }
+  .modal-title{
+    font-size: 16px;
+  }
+  .productitem{
+    padding: 15px;
+  }
+  .productitem-wrap{
+    border-top: 1px solid #ddd;
+    padding:0 15px;
+  }
+ .productitem-wrap:last-child{
+    border-bottom: 1px solid #ddd;
+  }
+  .p-detail{
+    padding-bottom: 15px;
+    display: none;
+  }
+  .productitem .show-btn{
+    width: 14px;
+  }
+  .detail-title{
+    padding:15px;
+    background-color: rgb(249, 249, 249);
+
+  }
+  .detail-con{
+    padding: 15px 0;
+  }
+  .title-m{
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+  
+ 
+  .join-wrap{
+    padding: 40px 120px 0px;
+  }
+  strong{
+    font-weight: 300!important;
+  }
+  .modal-body{
+    padding: 35px 45px 15px;
+  }
+  .modal-footer{
+    padding: 15px 15px 30px 45px;
+    border:none;
+  }
+  @media (min-width: 768px){
+    .modal-dialog {
+      width: 720px;
+      margin: 30px auto;
+  }
+  }
