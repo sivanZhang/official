@@ -63,3 +63,16 @@ $('#to_top').on('click',function () {
         scrollTop: $('body').offset().top
     }, 300);
 })
+/* 点击显示qq群二维码 */
+$('#qq_group').on('click',function(){
+    $('.code-wrap').eq(0).fadeIn(300);
+})
+$('#wei_group').on('click',function(){
+    $('.code-wrap').eq(1).fadeIn(300);
+})
+$('.close_code').on('click',function(){
+    $(this).parents('.code-wrap').fadeOut(300);
+})
+$('.code-bg').on('click',function(){
+    $(this).parents('.code-wrap').fadeOut(300);
+})
