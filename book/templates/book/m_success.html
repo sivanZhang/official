@@ -1,0 +1,32 @@
+{% extends 'm_base.html' %} 
+{% block pagetitle%}预约成功{% endblock%}
+{% load i18n %}
+{% block css %} 
+<link rel="stylesheet" href="/static/book/css/m_book.css">
+ {% endblock %}
+ {% block content %} 
+<div class="buy-container container p-r">
+    <div class="to-center">
+        <div class="text-center">
+            <h3 class="orange"><img class="buy-code-right" src="/static/img/right.gif"/></i> 预约成功</h3>
+            <div class="h5billno">
+                 <h5 class="gray "><span class="billno">预约编号：{{billno}}</span>预约支付：{{book.payed_money}}元</h5>
+            </div>
+        </div>
+    
+        <div class="text-center ">
+                <span class="grey">我们会尽快为您服务</span>
+                <br/>
+                <a href="/"  class="common-big-btn orange-bg return-btn"><span class="white">返回首页</span></a>
+        </div>
+    </div>
+</div>
+{% endblock %} 
+{% block js %} 
+<script>
+    $(document).ready(function(){
+    fixedFooter();
+  })
+</script>
+ {% endblock %}
+ 

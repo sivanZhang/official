@@ -43,6 +43,10 @@
 .payname{
     margin-right: 30px;
 }
+.buy-code-right{
+    height: 26px;
+    vertical-align: sub;
+}
 .buy-form>div{
     margin: 20px 0;
 }
