@@ -33,12 +33,16 @@
   }
    /* deteil */
      section.main {
+       height: 616px;
     position: relative;
-    background-size: cover!important;
-    background-position: top center!important;
+    background-size: cover 100%!important;
+    background-position:center center!important;
     background-repeat: no-repeat!important;
-    background: url(/static/img/idea/main.png);
+    background: url(/static/img/idea/main_m.png);
     color: #fff;
+  }
+  .swiper-wrapper{
+    height: 667px;
   }
   .down {
     width: 100%;
@@ -57,31 +61,26 @@
     background-repeat: no-repeat!important;
   }
   .sider0 {
-    background: url(/static/img/idea/slider1.png);
+    background: url(/static/img/idea/slider1_m.png);
   }
   .sider1 {
-    background: url(/static/img/idea/slider2.png);
+    background: url(/static/img/idea/slider2_m.png);
   }
   .sider2 {
-    background: url(/static/img/idea/slider3.png);
+    background: url(/static/img/idea/slider3_m.png);
   }
   .sider3 {
-    background: url(/static/img/idea/slider4.png);
+    background: url(/static/img/idea/slider4_m.png);
   }
   .sider4 {
-    background: url(/static/img/idea/slider5.png);
+    background: url(/static/img/idea/slider5_m.png);
   }
-  .sider5 {
-    background: url(/static/img/idea/slider6.png);
-  }
+
   .sider6 {
-    background: url(/static/img/idea/slider7.png);
+    background: url(/static/img/idea/slider7_m.png);
   }
-  .sider7 {
-    background: url(/static/img/idea/slider8.png);
-  }
-  .sider8 {
-    background: url(/static/img/idea/slider9.png);
+  .fs40{
+    font-size: 40px;
   }
   .f12 {
     font-size: 12px;
@@ -93,35 +92,18 @@
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 140px;
   }
   .sider-text .container {
     height: 100%;
-  }
-  .sider-text .container div {
-    padding: 0px;
-  }
-  .sider-text .container .col-xs-1{
-    line-height: 140px;
-    font-size: 40px;
+    padding: 15px;
+    min-height: 158px;
   }
  
-  .sider-text .container .col-xs-9{
-    padding-left:0px; 
-    min-width: 902px;
-  }
-  .sider-text .container .col-xs-1{
-    width: 114px;
-  }
-  .col-xs-1.image-text.text-right{
-    margin-left: 38px;
-  }
-  .sider-text .container .col-xs-1 span{
-    font-size: 14px;
-  }
+
+
   .sider-text .container .text-deteil{
-    margin-top: 50px;
-    font-size: 14px;
+    margin-top: 15px;
+    font-size: 12px;
   }
   .swiper-pagination-fraction,
   .swiper-pagination-custom,
