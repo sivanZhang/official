@@ -45,8 +45,8 @@ function isEmail(email) {
 }
 $('.group-title').each(function(){
     $(this).on('click',function(){
-        var display = $(this).next('.links').css('display');
-        $(this).next('.links').slideToggle();
+        var display = $(this).next('.footer_links').css('display');
+        $(this).next('.footer_links').slideToggle();
         if( display=='none'){
             $(this).children('.show-btn').addClass('rota');
         }else{
