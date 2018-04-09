@@ -96,7 +96,11 @@ class PageView(View):
                 return render(request, 'en/contactus.html', content)
 
         if 'asubrand' == blockname and 'join' == pagename:
-            pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname, mark=pagename)
+            if isMble:
+                # 手机版
+                pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname, mark='joinus_mobile')
+            else:
+                pages = models.AdaptorBaseBlockItem.objects.filter(block__mark=blockname, mark=pagename)
             if len(pages) == 0:
                 raise Http404 
             page_item = pages[0]
