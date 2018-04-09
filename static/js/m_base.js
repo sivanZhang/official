@@ -56,6 +56,11 @@ $('.group-title').each(function(){
 })
 $('#link').click(function(){
     $('nav ul').slideToggle();
+    if($('nav').hasClass('act')){
+        $('nav').removeClass('act');
+    }else{
+        $('nav').addClass('act');
+    }
 })
 //回到顶部
 $('#to_top').on('click',function () {

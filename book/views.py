@@ -46,12 +46,7 @@ class BookView(View):
                 return render(request, 'book/m_blocknew.html', content)
             else:
                 return render(request, 'book/blocknew.html', content)
-
-        if 'test' in request.GET:
-            if isMble:
-                return render(request, 'book/test.html', content)
-            else:
-                return render(request, 'book/test.html', content)
+ 
         if 'detail' in request.GET:
             if isMble:
                 return render(request, 'book/m_detail.html', content)
@@ -59,7 +54,7 @@ class BookView(View):
                 return render(request, 'book/m_detail.html', content)
         else:
             if isMble:
-                return render(request, 'book/buy.html', content)
+                return render(request, 'book/m_buy.html', content)
             else:
                 return render(request, 'book/buy.html', content)
 
@@ -106,7 +101,7 @@ class BookView(View):
                 content['address'] = 'address' 
 
                 if isMble:
-                    return render(request, 'book/buy.html', content)
+                    return render(request, 'book/m_buy.html', content)
                 else:
                     return render(request, 'book/buy.html', content)
             else:
@@ -126,14 +121,14 @@ class BookView(View):
                 result['status'] ='ok'
                 result['msg'] = _('Saved completely!') 
                 if isMble:
-                    return render(request, 'book/success.html', content)
+                    return render(request, 'book/m_success.html', content)
                 else:
                     return render(request, 'book/success.html', content)
         else:
             content['status'] ='error'
             content['msg'] ='Need title  in POST' 
             if isMble:
-                return render(request, 'book/buy.html', content)
+                return render(request, 'book/m_buy.html', content)
             else:
                 return render(request, 'book/buy.html', content)
          
@@ -145,34 +140,7 @@ class BookView(View):
         result = {}
         if 'blockid' in request.POST : 
             blockid = request.POST['blockid'].strip() 
-
-            # 预约Block 
-            block = models.AdaptorBook.objects.get(pk = blockid)
-            
-            if  'title' in request.POST  :
-                title = request.POST['title'].strip()
-                block.title = title
-            
-            if 'pic' in request.FILES:
-                pic = request.FILES['pic'] 
-                pic_url = handle_uploaded_file(pic, user.id)
-                block.pic = pic_url
-
-            if  'url' in request.POST  :
-                url = request.POST['url'].strip()
-                block.url = url
-            
-            if 'mark' in request.POST:
-                mark = request.POST['mark'].strip() 
-                if mark:
-                    block.mark = mark
-            
-            if 'status' in request.POST:
-                status = request.POST['status'].strip()   
-                block.status = int(status)
-            
-            block.save()
-            result['id'] = block.id
+  
             result['status'] ='ok'
             result['msg'] = _('Saved completely!') 
         else:
@@ -184,15 +152,9 @@ class BookView(View):
         user = request.user
         result = {}
         if 'id' in request.POST : 
-            blockid = request.POST['id'].strip() 
-            try:
-                block = models.AdaptorBook.objects.get(pk = blockid)
-                block.delete()
-                result['status'] ='ok'
-                result['msg'] = _('Done')
-            except models.AdaptorBook.DoesNotExist:
-                result['status'] ='error'
-                result['msg'] = _('Not found')
+            blockid = request.POST['id'].strip()  
+            result['status'] ='ok'
+            result['msg'] = _('Done') 
         else:
             result['status'] ='error'
             result['msg'] = 'Need title  in POST'

@@ -115,7 +115,7 @@ def alipay_check_pay(request):
                 #req = requests.get(settings.SMS_API.format(book.phone, smscontent) )
                
                 if isMble:
-                    return render(request, 'book/success.html', content)
+                    return render(request, 'book/m_success.html', content)
                 else:
                     return render(request, 'book/success.html', content)
             else:

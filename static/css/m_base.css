@@ -136,6 +136,16 @@ nav>div:first-child{
     padding-bottom: 15px;
     background-color: rgb(51, 51, 51);
 }
+nav.act>div:first-child,nav.act.fixed_menu_class>div.row{
+    background-color: #fff!important;
+    border-bottom: 1px solid #ddd;
+}
+nav.act{
+    position: fixed;
+    top:0;
+    width:100%;
+    z-index: 100;
+}
 body{
     width: 100%!important;
 }
