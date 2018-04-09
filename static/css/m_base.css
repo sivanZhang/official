@@ -7,8 +7,14 @@ src: url('/static/font/lanting.ttf');
 .lanting{
     font-family: lanting; 
 }
+a{
+    color:inherit;
+}
 li{
     list-style: none;
+}
+.fs30{
+    font-size: 30px;
 }
 ul{
     margin: 0;
@@ -93,6 +99,9 @@ ul{
 .white{
     color:white;
 }
+.iblock{
+    display: inline-block;
+}
 .orange-bg
 {
     background-color: #ea5014;
@@ -146,4 +155,5 @@ nav .col-xs-3 img{
 nav ul{
     display: none;
 }
+
 /* 菜单结束 */

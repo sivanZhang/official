@@ -125,7 +125,7 @@ class PageView(View):
                 products = AdaptorProduct.objects.filter(category__parent__id = category)
                 content['products'] = products
                 if isMble:
-                    return render(request, 'page/positions.html', content)
+                    return render(request, 'page/m_positions.html', content)
                 else:
                     return render(request, 'page/positions.html', content)
             if isMble:

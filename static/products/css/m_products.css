@@ -7,11 +7,16 @@ ul {
     margin: 0px;
     padding: 0px;
 }
-
-li {
-    display: inline-block;
+.m30{
+    margin: 15px auto 30px;
 }
-
+/* li {
+    display: inline-block;
+} */
+.illustrate img{
+    max-width: 100%!important;
+    height: auto!important;
+}
 .swiper-slide img {
     width: 100%;
 }
@@ -20,7 +25,7 @@ li {
     position: relative;
 }
 
-nav {
+/* nav {
     height: 40px;
     border-bottom: 1px solid #ddd;
     background-color: rgba(0, 0, 0, 0.3);
@@ -30,11 +35,11 @@ nav {
     color: #fff;
     text-align: center;
     width: 100%
-}
+} */
 
-nav ul {
+/* nav ul {
     height: 100%;
-}
+} */
 
 .header {
     height: 40px
@@ -45,11 +50,11 @@ nav ul {
     line-height: 40px;
 }
 
-nav li {
+/* nav li {
     display: inline-block;
     line-height: 40px;
     width: 30%;
-}
+} */
 
 li.active {
     position: relative;
@@ -241,9 +246,6 @@ svg.list-btn {
     font-size: 14px;
 }
 
-.row {
-    margin: 0px;
-}
 
 .container-fluid {
     padding: 0 4px;
