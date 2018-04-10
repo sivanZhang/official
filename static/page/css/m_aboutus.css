@@ -33,13 +33,16 @@
   }
    /* deteil */
      section.main {
-       height: 616px;
+    height: 616px;
     position: relative;
-    background-size: cover 100%!important;
+    background-size: auto 100%!important;
     background-position:center center!important;
     background-repeat: no-repeat!important;
     background: url(/static/img/idea/main_m.png);
     color: #fff;
+  }
+  section.main>.text-left.image-text.main-text{
+    padding-left: 15px;
   }
   .swiper-wrapper{
     height: 667px;
@@ -116,14 +119,15 @@
     transform: translateY(-50%);
   }
   .swiper-slide {
-    padding-bottom: 140px;
+    padding-bottom: 158px;
   }
-  .swiper-button-prev, .swiper-button-next{
-    height: 40px;
-  }
+
   #to_next{
     cursor: pointer;
   }
   .fs60{
     font-size: 60px;
+  }
+  .swiper-button-prev, .swiper-button-next{
+    top:243.5px;
   }

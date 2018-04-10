@@ -58,8 +58,10 @@ $('#link').click(function(){
     $('nav ul').slideToggle();
     if($('nav').hasClass('act')){
         $('nav').removeClass('act');
+        $(this).attr('src','/static/img/icon/category.svg')
     }else{
         $('nav').addClass('act');
+        $(this).attr('src','/static/img/icon/close_nav.svg')
     }
 })
 //回到顶部
@@ -80,4 +82,8 @@ $('.close_code').on('click',function(){
 })
 $('.code-bg').on('click',function(){
     $(this).parents('.code-wrap').fadeOut(300);
+})
+$(function(){
+    var height = window.innerHeight;
+    $('nav ul').height(height-60);
 })

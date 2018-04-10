@@ -130,7 +130,7 @@ footer{
     background: url(/static/img/slider/slider1.jpg);
   } 
   .sider1{
-background:unsert;
+background:url(/static/img/slider/sider2m.png);
 }
 .sider2{
   background: #000;
@@ -163,7 +163,9 @@ background:unsert;
   .shop-link3{
     color: #333!important;
     text-align: center;
-    margin-top: 3%;
+    position: absolute;
+    top: 60%;
+    width: 100%;
   }
   .common-big-btn{
     width:50%;
@@ -312,7 +314,7 @@ transform-origin: 43% 49%;
 .sider .image-text{
   font-weight: 100;
 }
-.sider-2img{
+/* .sider-2img{
     height: 60%;
   max-width: 100%;
   opacity: 0;
@@ -321,25 +323,26 @@ transform-origin: 43% 49%;
   -ms-transform: translateX(-15%);
   transform: translateX(-15%);
 }
-
-.swiper-slide-active .sider-2img{
+ */
+/* .swiper-slide-active .sider-2img{
   transition: opacity 3s, transform 3s;
   opacity: 1;
   filter: alpha(opacity=100)\9;
   -webkit-transform: translateX(0%);
   -ms-transform: translateX(0%);
   transform: translateX(0%);
-}
+} */
 .sider2 img{
   position: absolute;
-  top: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
   min-height: 100%;
-  margin-top: -10%;
+  margin-top: -2%
 }
 .sider4-img{
-  margin-top: 90px;
-width: 90%;
+  margin-top: 60px;
+width: 88%;
   transform:scale(.8);
   opacity: .6;
 }
@@ -348,7 +351,10 @@ width: 90%;
   opacity: 1;
   transition: transform 3s, opacity 3s;
 }
-
+.grey-btn-white{
+  color:white;
+  background-color: rgb(105, 105, 105);
+}
 
 .projective{
   opacity: 0;
