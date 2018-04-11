@@ -13,7 +13,7 @@ $(document).ready(function () {
         if (thisIcon.hasClass('act-icon')) {
             return;
         } else {
-            thisIcon.parents('table').find('.icon-img').removeClass('act-icon');
+            thisIcon.parents('.hide-right').find('.icon-img').removeClass('act-icon');
             thisIcon.addClass('act-icon');
             thisIcon.parents('.sub-item').find('.hide-watch').hide();
             thisIcon.parents('.sub-item').find('.hide-text').hide();

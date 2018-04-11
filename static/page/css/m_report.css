@@ -77,14 +77,15 @@ h1.white{
     padding-left: 20px;
 }
 .social_tb{
-    width: 100%;
     text-align: center; 
 }
 .social_tb td{
     vertical-align: middle; 
+    text-align: center;
+    width: 80px;
 }
 .socialimg{
-    margin-right: 10px;
+    margin-bottom: 6px;
 
 }
 p.grey.socialtxt {

@@ -1,0 +1,23 @@
+.content{
+    background-color: transparent!important;
+}
+a.download{
+    border-right: 1px solid #ddd;
+    padding-right:30px;
+    display: inline-block;
+    margin: 50px 30px 50px 0;
+}
+.img-title{
+    background-color: rgb(249, 249, 248);
+    padding: 30px 15px;
+    font-size: 18px;
+}
+.down-icon{
+    height: 20px;
+    margin-left: 6px;
+    vertical-align: sub;
+}
+.m50{
+    display: inline-block;
+    margin: 50px 0 50px;
+}

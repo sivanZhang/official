@@ -45,19 +45,19 @@
 .question {
   margin-bottom: 60px;
 }
+.question a.pull-left{
+  max-width: 94%;
+}
 .question a{
   color: inherit;
 } 
 .show-service-btn{
   width: 16px ;
   height:16px;
-  padding: 4px;
-  border-radius: 50%;
   color: rgb(175, 175, 175); 
-  line-height: 7px;
   cursor: pointer;
   text-align: center; 
-
+  font-size: 15px;
 }
 .question_title_li{
   background-color: rgb(249, 249, 249);

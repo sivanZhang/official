@@ -455,7 +455,7 @@ class PageView(View):
                 return render(request, 'page/software.html', content)
         if 'usage' == pagename:
             if isMble:
-                return render(request, 'page/usage.html', content)
+                return render(request, 'page/m_usage.html', content)
             else:
                 return render(request, 'page/usage.html', content)
         else:

@@ -1,0 +1,53 @@
+{% extends 'm_base.html' %}
+{% load i18n %}
+{% block pagetitle%}使用说明{% endblock%}
+{% block css %}
+<link href="/static/page/css/m_pagebase.css" rel="stylesheet">
+<link href="/static/page/css/m_usage.css" rel="stylesheet">
+
+ {% endblock %}
+{% block content %}
+<div class=" container-title" >
+        <div class="container ">
+            <div class="items_holder">
+                        <h2 class="title orange">用户指南下载</h2>
+                        <a href="/">{% trans 'Home' %}</a>
+                        <span>/&nbsp;Watch客户端</span> 
+                        <span>/&nbsp;用户指南下载</span> 
+            </div> 
+        </div> 
+    </div>
+<div class="container">
+    <div class="link fs16 clearfix">
+        <div class="pull-left">
+                <a class="download" href="/media/download/watch使用手册.pdf" target="_black">
+                    <span class="black">
+                        ASU&nbsp;Watch&nbsp;<br>激光投影手表<img class="down-icon" src="/static/img/icon/xiazai.svg" title="点击下载">
+                    </span>
+                    
+                </a>
+        </div>
+        
+                <div class="pull-left"><a class="m50" href="#bt" title="点击下跳"><span class="black">ASU<br>蓝牙耳机</span></a>
+                    <a href="/media/download/耳机说明书.pdf" target="_black"><img class="down-icon" src="/static/img/icon/xiazai.svg" title="点击下载">
+                    
+            </a></div>
+
+    </div>
+    <div class="img-title row"> ASU&nbsp;Watch&nbsp;激光投影手表</div>
+    <div class="text-center row"><img class="content" src="/static/img/shuoming1m.png"></div>
+    <div id="bt" class="img-title row">ASU&nbsp;蓝牙耳机</div>
+    <div class="text-center row"><img class="content" src="/static/img/shuoming2m.png"></div>
+</div>
+<div class="container m60">
+    <div class="row  ">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10">
+
+        </div>
+        <div class="col-xs-1"></div>
+    </div>
+</div>
+{% endblock%}
+{% block js %} 
+{% endblock %}

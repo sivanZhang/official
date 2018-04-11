@@ -20,6 +20,9 @@ ul{
     margin: 0;
     padding: 0;
 }
+.fs12{
+    font-size: 12px;
+}
 .p-r{
     position: relative;
 }
@@ -159,7 +162,7 @@ nav .col-xs-3 img{
     height: 20px;
 }
 nav .col-xs-3{
-    padding: 20px 15px;
+    padding: 18px 15px;
 }
 nav .col-xs-6 img{
     height: 26px;
@@ -167,7 +170,7 @@ nav .col-xs-6 img{
 nav .col-xs-6 a{
     display: inline-block;
     height: 100%;
-    padding: 17px 0;
+    padding: 15px 0;
 }
 nav ul{
     display: none;

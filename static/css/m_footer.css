@@ -46,6 +46,7 @@
     padding: 20px 15px;
     background-color:#2b2b2c;
     border-top: 1px solid #4b4b4c;
+    font-size: 12px;
 }
 .rota{
     transform:rotate(45deg);
@@ -182,15 +183,13 @@ a.round-btn{
   #qq_group{
       cursor: pointer;
   }
-  .fs12{
+  /* .fs12{
       font-size: 12px;
       padding: 0 15px 10px;
-  }
+  } */
   /* 底部 */
 
-.f-logo{
-    height: 14px;
-}
+
 .code-wrap {
     display: none;
 }

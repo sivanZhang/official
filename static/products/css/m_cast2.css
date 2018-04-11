@@ -454,9 +454,8 @@ section,.img360_holder{
   }
   .learn_more {
     display: inline-block;
-    padding: 2px 12px;
+    padding: 2px 12px 3px;
     font-size: 12px;
-    font-weight: 100;
     line-height: 1.42857143;
     text-align: center;
     vertical-align: super;
@@ -470,7 +469,7 @@ section,.img360_holder{
     background-image: none;
     border: 1px solid transparent;
     background-color: #ea5014;
-    border-radius: 14px;
+    border-radius: 12px;
     position: absolute;
     bottom: 24%;
     left: 35%;
@@ -489,7 +488,7 @@ section,.img360_holder{
     background-size:auto 100%;
   }
   .learn_more .fa-angle-right {
-    font-size: 18px;
+    font-size: 13px;
   }
   .learn_more:link,
   .learn_more:hover,
@@ -504,11 +503,10 @@ section,.img360_holder{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-60%);
+    transform: translate(-50%,-70%);
 }
 .threesixty img{
     height: 318px;
-    margin-bottom: 30px;
 }
 .img360_holder .white.text-center img{
     width: auto;
@@ -522,14 +520,7 @@ section,.img360_holder{
 .text-center.fs30.image-text.white{
     margin: 30px auto;
 }
-@media screen and (min-width: 1550px) {
-    .threesixty img{
-        height: 460px;
-        margin-bottom: 60px;
-}.text-center.fs30.image-text.white{
-    margin: 50px auto;
-}
-}
+
   .items table td{
       width: 100px;
       padding: 6px 0; 
@@ -647,7 +638,9 @@ line-height:2;
 .show3 table{
     margin-left: -4px;
 }
-
+.advertising-big{
+    width: 60%!important;
+}
 
 @-webkit-keyframes twinkle {
     0% {
@@ -667,13 +660,18 @@ section.sub-item{
     background-size: 100% auto !important;
 }
 /* 隐藏板块 */
-
+/* .hide-right ul{
+    height: 62px;
+}
+.hide-right li{
+    float: left;
+    margin-bottom: 4px;
+} */
 .hide-right img{
     width: 30px;
     height: 30px;
     margin-right: 15px;
     border-radius: 20%;
-    float: left;
     display: inline-block;
 }
 .hide-right img.act-icon{
@@ -695,13 +693,22 @@ section.sub-item{
 
 .sub-item .image-text.orange{
     font-size: 30px;
-    margin: 15px auto 15px;
+    margin: 15px auto 10px;
 }
 .hide-left{
     height: 55%;
 }
 .hide-right{
     height: 45%;
+}
+.sub-item table.first-icon tr td{
+    width: 60px;
+}
+.sub-item table.first-icon tr:first-child td{
+    padding-bottom: 4px;
+}
+.hide-right table.first-icon img{
+    margin-right: 0px; 
 }
 .sub-item table tr td{
     width: auto;
@@ -718,6 +725,9 @@ section.sub-item{
 .hide-text{
     display: none;
     height: 172px;
+}
+.hide-text p{
+    margin-bottom: 4px;
 }
 .title-text{
     position: absolute;

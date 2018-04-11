@@ -1,4 +1,4 @@
-$(document).ready(function(e){
+$(document).ready(function(){
 var height = window.innerHeight;
 $('.swiper-container').height(height);
 $('.content').height(height);
@@ -13,4 +13,8 @@ $('.content').height(height);
         loop : true
     });
 });
+$('.sider0 img').load(function(){
+    var marginLeft=0-$('.sider0 img').width()/2;
+    $('.sider0 img').css('margin-left',marginLeft+'px');
+})
 
