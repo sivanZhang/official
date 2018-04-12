@@ -21,6 +21,12 @@ body{
     }
     
 }
+.fs40{
+    font-size: 40px;
+}
+.fs12{
+    font-size: 12px;
+}
 .mb-60{
     margin-bottom: 60px;
 }
