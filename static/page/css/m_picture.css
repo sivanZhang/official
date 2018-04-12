@@ -9,7 +9,6 @@
 .active-img{
     width: 100%;
     height: auto;
-    min-height:100%;
 } 
 .high_definition img.close{
     position: absolute;
@@ -51,7 +50,6 @@ img{
     height: 50px;
 }
 .swiper-col{
-    height: 260px;
     overflow: hidden;
     padding: 0px;
     margin-top: 8px;

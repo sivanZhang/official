@@ -186,7 +186,7 @@ class PageView(View):
                 hot_products = AdaptorProduct.objects.filter(category__name = "热点问题")
                 content['hot_products'] = hot_products 
                 if isMble:
-                    return render(request, 'page/questions.html', content)
+                    return render(request, 'page/m_questions.html', content)
                 else:
                     return render(request, 'page/questions.html', content)
             else:
@@ -194,7 +194,7 @@ class PageView(View):
                 skill_products = AdaptorProduct.objects.filter(category__name = "使用小技巧")
                 content['skill_products'] = skill_products 
                 if isMble:
-                    return render(request, 'page/skill.html', content)
+                    return render(request, 'page/m_skill.html', content)
                 else:
                     return render(request, 'page/skill.html', content)
 

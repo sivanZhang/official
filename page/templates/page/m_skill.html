@@ -1,0 +1,35 @@
+{% extends 'm_base.html' %}
+{% load i18n %}
+{% block pagetitle%}使用小技巧{% endblock%}
+{% block css %}
+<link href="/static/page/css/pagebase.css" rel="stylesheet">
+<link href="/static/page/css/questions.css" rel="stylesheet">
+
+ {% endblock %}
+{% block content %}
+<div class=" container-title">
+  <div class="container ">
+    <div class="items_holder">
+      <div class="text-center fs16 orange">使用小技巧 </div>
+
+      <div class="text-center grey">您好，为了节省您等待客服解答的时间，我们特别为您收集了一些常见使用小技巧，如果仍无法解决您的问题，请您直接拨打客服电话，谢谢您的理解。</div>
+    </div>
+  </div>
+</div>
+<div class="container m60"> 
+  <div class="questions">
+    <div class="ext-center fs16 orange mb-40">使用小技巧</div>
+    {% for question in skill_products %}
+    <div class="clearfix mb-30">
+      <div class="pull-left nub">Q{{forloop.counter}}</div>
+      <div class="answer grey">
+        <p class="black">{{question.title}}</p>
+        <p>{{question.detail|safe}}</p>
+      </div>
+    </div> 
+    {% endfor %}
+  </div>
+</div>
+{% endblock%}
+{% block js %} 
+{% endblock %}
