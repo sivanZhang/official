@@ -24,10 +24,13 @@
 <div class="container video video1">
             {% for page in pageitems %}
                 {% if page.mark == 'top' %}
-                    <div class="video-first p-r" data-video="{{page.url}}">
-                        <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
-                        <img class="icon" src="/static/img/icon/play.svg" />
-                        <br/><br/>
+                    <div class="video-first" data-video="{{page.url}}">
+                        <div class="p-r">
+                            <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
+                            <img class="icon" src="/static/img/icon/play.svg" />
+                        </div>
+                        <br/>
+                        <br/>
                         <div class="v-title orange">{{page.title}}</div>
                         <br/>
                         <p class="grey f12">{{page.date| date:"Y-m-d"}}</p>
@@ -41,9 +44,11 @@
             {% for page in pageitems %}
                {% if page.mark != 'top' %}
                <div class="col-xs-12">
-                        <div class="video-list p-r" data-video="{{page.url}}">
-                                <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
-                                <img class="icon" src="/static/img/icon/play.svg" />
+                        <div class="video-list" data-video="{{page.url}}">
+                                <div class="p-r">
+                                        <img class="v-pic" src="{{mediaroot}}{{page.pic|safe}}">
+                                        <img class="icon" src="/static/img/icon/play.svg" />
+                                </div>
                                 <br/><br/>
                                 <div class="v-title orange">{{page.title}}</div>
                                 <br/> 
