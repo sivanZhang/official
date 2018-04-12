@@ -1,0 +1,223 @@
+{% extends 'm_base.html' %}
+
+{% load i18n %}
+{% block pagetitle%}体验店{% endblock%}
+ {% block css %} 
+ <link href="/static/page/css/pagebase.css" rel="stylesheet">
+<link href="/static/dept/css/list.css" rel="stylesheet"> 
+<style>
+.top-slide{
+     background-image: url('/static/img/shop/title.png');
+}
+</style>
+ 
+<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+<script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+<script src="http://webapi.amap.com/maps?v=1.3&key=1f18343dbe62cd34b303180450cd005f"></script>
+ {% endblock %} 
+{% block content %}
+<div class="top-slide"> 
+        <div class="top-tips">
+          <h1 class=" " >{% trans 'Physical Store' %}</h1> 
+          <h5 >一数科技 | {% trans 'Official Authorized Store' %}</h5>
+        </div>
+</div> 
+  
+<div class="text-center"> 
+        <form id="search">
+          <table class="tb_search gray">
+              <tr>
+                  <td>
+                        <span class="msg" >{% trans 'Please select the city' %}:</span>
+                  </td>
+                  <td>
+                        <select class="form-control gray" id="provice" name="provice"> 
+                            {% for p in provices %}
+                                {% if provicearea.id == p.id %}
+                                <option value="{{p.id}}" selected="selected">{{p.short_name}}</option>
+                                {% else %}
+                                <option value="{{p.id}}">{{p.short_name}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                  </td>
+                  <td>
+                        <select class="form-control gray" id="city" name="city"> 
+                                <option value="0">{% trans "All" %}</option>
+                                {% for item in cities %}
+                                    {% if city.id == item.id %}
+                                    <option value="{{item.id}}" selected="selected">{{item.short_name}}</option>
+                                    {% else %}
+                                    <option value="{{item.id}}">{{item.short_name}}</option>
+                                    {% endif %}
+                                {% endfor %}
+                        </select>   
+                  </td>
+                  <td>
+                        <select class="form-control gray" id="county" name="county"> 
+                                <option value="0">{% trans "All" %}</option>
+                                {% for item in counties %}
+                                    {% if county.id == item.id %}
+                                    <option value="{{item.id}}" selected="selected">{{item.short_name}}</option>
+                                    {% else %}
+                                    <option value="{{item.id}}">{{item.short_name}}</option>
+                                    {% endif %}
+                                {% endfor %}
+                        </select>  
+                  </td>
+                  <td>
+                      <select class="form-control gray" id="storetype" name="storetype">
+                            <option value="0">{% trans 'All shop type' %}</option> 
+                                  <option value="2">旗舰店</option>
+                                  <option value="1">经销店</option>
+                                  <option value="3">加盟店</option>
+                      </select>  
+                  </td>
+              </tr>
+          </table>
+        </form>    
+      </div> 
+<div class="grey-bg container100 ">
+    <div class="container">
+            <div class="row store-map">
+                <div class="col-xs-9 map"> 
+                        <div id="mapContainer"></div> 
+                </div>
+                <div class="col-xs-3 ">
+                    <h3 class="orange">{% trans 'Service Items' %}</h3>
+                     
+                    <table class="service_table">
+                        <tr>
+                            <td><img class="serviceitem" src="/static/img/icon/charge.svg" /></td>
+                            <td><p class="gray">{% trans 'Free Charge' %}</p></td>
+                        </tr>
+                        <tr>
+                            <td><img class="serviceitem" src="/static/img/icon/clock.svg" /></td>
+                            <td><p class="gray">{% trans 'Maintaince' %}</p></td>
+                        </tr>
+                        <tr>
+                            <td><img class="serviceitem" src="/static/img/icon/wifi.svg" /></td>
+                            <td><p class="gray">{% trans 'Free WiFi' %}</p></td>
+                        </tr>
+                    </table> 
+                    <h3 class="orange">{% trans 'VIP Service' %}</h3>
+                   
+                    <table class="service_table">
+                        <tr>
+                            <td><img class="serviceitem" src="/static/img/icon/sticker.svg" /></td>
+                            <td><p class="gray">{% trans 'Watch Sticker' %}</p></td>
+                        </tr>
+                        <tr>
+                            <td><img class="serviceitem" src="/static/img/icon/gift.svg" /></td>
+                            <td><p class="gray">{% trans 'Credit for gift' %}</p></td>
+                        </tr>
+                       
+                    </table> 
+                </div> 
+            </div>
+            <div class="row mb-60">
+                    <div class="col-xs-12 "> 
+                        <div class="table-title gray">{{area.short_name}}&nbsp;·&nbsp;体验店( {{depts|length}} )</div>
+                       <div class="list-warp">
+                            <table class="table gray table-striped">
+                                    {% for dept in depts %} 
+                                                <tr class="tr_dept" >
+                                                    <td  class="col-xs-1 text-center orange">{{forloop.counter}}</td>
+                                                    <td class="col-xs-2 td_title text-left" >
+                                                        <a class="gray" href="{% url "dept:list" %}?detail={{dept.id}}" >{{dept.name}}</a>
+                                                        <br/>
+                                                        <a class="orange" href="{% url "dept:list" %}?detail={{dept.id}}" >点击查看</a>
+                                                    </td>
+                                                    <td class="col-xs-2"><div class="border-div">{{dept.get_dept_type_display}}</div></td> 
+                                                    <td class="col-xs-5"><div class="border-div">{{dept.address}}</div></td>
+                                                    <td class="col-xs-2"><div class="border-div">{{dept.phone}}</div></td>  
+                                                </tr> 
+                                    {% endfor %}
+                                </table>
+                       </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+
+{% endblock %} 
+{% block js %} 
+ 
+<script src="/static/dept/js/list.js " rel="stylesheet "></script>
+ 
+<script>
+    var map = new AMap.Map('mapContainer', {});
+    map.plugin(["AMap.ToolBar"], function() {
+        map.addControl(new AMap.ToolBar());
+    });
+    var infoWindow = new AMap.InfoWindow({});     //创建信息窗口对象  ps.高德目前不支持多信息窗口，即使创建多个窗口对象，也只会显示一个
+
+    var lnglats= [["116.4123","39.906422"],["116.4352","39.906933"],["116.445435","39.9054345"]];
+    var data = [{"id":1,"name":"我是第1个点","type":1},{"id":2,"name":"我是第2个点","type":3},{"id":3,"name":"我是第3个点","type":7}];
+    for(var i= 0;i<lnglats.length;i++){
+        var marker=new AMap.Marker({
+            position:lnglats[i],        //采用默认样式，无需自定义
+            map:map,
+            icon: '/static/img/gaode.png'
+        });
+        content = [];
+        //content.push('ID：'+data[i].id);
+        //content.push('名称：'+data[i].name);
+        marker.content = content;
+        marker.title = data[i].id+"."+data[i].name;     //标记点的title
+
+//        if(data[i].id==2){              //默认打开第二个点的信息窗口
+        infoWindow.setContent(content.join("<br/>"));
+        infoWindow.open(map,lnglats[i]);
+//        }
+
+        marker.on('dblclick',openAmap);     //这里采用调到新页面方式导航，也可直接定义带导航功能的信息窗体，请参考http://lbs.amap.com/api/javascript-api/example/infowindow/infowindow-has-search-function/
+        //给Marker绑定单击事件
+        marker.on('click', markerClick);
+    }
+
+    map.setFitView();
+    //跳至地图当中导航
+    function openAmap(e){
+        e.target.markOnAMAP({
+            name:e.target.title,
+            position:e.target.getPosition()
+        })
+    }
+    //信息窗口
+    function markerClick(e){
+        infoWindow.setContent(e.target.content.join('<br/>'));
+        infoWindow.open(map, e.target.getPosition());
+    }
+
+    //地图加载完成事件
+    map.on('complete', function() {
+        Materialize.toast('地图图块加载完毕！', 4000)
+//        document.getElementById('tip').innerHTML = "地图图块加载完毕！当前地图中心点为：" + data[0].name;
+    });
+</script>
+<script>/*
+    var map = new AMap.Map("mapContainer", {
+        resizeEnable: true
+    });
+    
+    AMap.service(["AMap.PlaceSearch"], function() {
+        var placeSearch = new AMap.PlaceSearch({ //构造地点查询类
+            pageSize: 5,
+            pageIndex: 1,
+            city: "{{area.short_name}}", //城市
+            map: map,
+             
+        });
+        //关键字查询
+        placeSearch.search('一数科技', function(status, result) {
+        });
+    });
+    */
+   
+    {% if storetype  %}
+      $("#storetype").val("{{storetype}}");  
+    {% endif %}
+</script>
+{% endblock %}

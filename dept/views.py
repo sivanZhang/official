@@ -232,7 +232,7 @@ class DeptView(View):
             content['area'] = provice_instance
 
             if isMble:
-                return render(request, 'dept/list.html', content)
+                return render(request, 'dept/m_list.html', content)
             else:
                 return render(request, 'dept/list.html', content)
 
