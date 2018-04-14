@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 
     //隐藏板块点击图标切换图
-    $('.icon-img').on('click', function () {
+    $('.icon-img').on('touchstart',function () {
         var thisIcon = $(this),
             //获取下标
             thisIndex = $('.icon-img').index($(this));
@@ -78,10 +78,10 @@ $(document).ready(function () {
         }
     });
 
-    $('.roll-tip-up').click(function (e) {
+    $('.roll-tip-up').on('touchstart',function (e) {
         /*  $(document).scrollTop(height); */
         //$(this).parent().hide( );
-        $(this).parent().slideToggle();
+        $(this).parent().slideUp();
     });
     var body = $("html, body");
     body.stop().animate({ scrollTop: 0 }, 500, 'swing', function () {
@@ -94,19 +94,19 @@ $(document).ready(function () {
      *回到顶部
      */
     
-    $(document).on('click', '.scroll-up', function () {
+    $(document).on('touchstart', '.scroll-up', function () {
         $('html, body').animate({
             scrollTop: $('body').offset().top
         }, 300);
     })
-    $('#to_next').on('click', function () {
+    $('#to_next').on('touchstart', function () {
         $('html, body').animate({
             scrollTop: $('.container-second-menu').offset().top
         }, 300);
     })
 
     function submenu(selectot) {
-        $(selectot).click(function (e) {
+        $(selectot).on('touchstart',function (e) {
             e.preventDefault();
             var target = $(this).attr('target');
             /* var newPos=new Object();
@@ -124,11 +124,11 @@ $(document).ready(function () {
             }
         });
     };
-    $('.submenu').click(function(e){
+    $('.submenu').on('touchstart',function(e){
         $('#more').slideToggle();
         e.stopPropagation();
     })
-    jQuery(document).click(function () {
+    jQuery(document).on('touchstart',function () {
         jQuery('#more').slideUp();
     })  
     submenu('.product_pic_1');
@@ -172,7 +172,7 @@ $(document).ready(function () {
         }
     }
 
-    $('.a_secondmenu_item').click(function (e) {
+    $('.a_secondmenu_item').on('touchstart',function (e) {
         //
         e.preventDefault();
         var $this = $(this);

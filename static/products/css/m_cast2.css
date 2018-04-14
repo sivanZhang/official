@@ -164,10 +164,10 @@
     color: white;
 }
 .roll-tip-holder{
-    width: 100%;
     position: absolute;
+    left: 50%;
     bottom: 0px;
-    color:#fff;
+    transform: translateX(-50%);
 }
 /* 漂浮动画 */
 .roll-tip
@@ -337,11 +337,7 @@ section,.img360_holder{
     width: 100%;
     margin-bottom: 45px;
 }
-@media screen and (min-width:1500px){
-    .img360-text{
-        margin-bottom: 90px;
-    }
-  }
+
 .fs30{
     font-size: 30px;
 }
@@ -502,11 +498,11 @@ section,.img360_holder{
   .threesixty{
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%,-70%);
+    transform: translateY(-70%);
+    width: 100%;
 }
 .threesixty img{
-    height: 318px;
+    width: 100%;
 }
 .img360_holder .white.text-center img{
     width: auto;
@@ -522,7 +518,7 @@ section,.img360_holder{
 }
 
   .items table td{
-      width: 100px;
+      width: 96px;
       padding: 6px 0; 
   }
   .items table img{
