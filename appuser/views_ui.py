@@ -74,7 +74,11 @@ def login(request):
         else:
             return HttpResponse("用户认证系统异常...") 
     else:
-        return redirect(settings.THIRD_LOGIN_URL )
+        if 'next' in request.GET: 
+            next_url = request.GET.get('next')
+            return redirect(settings.THIRD_LOGIN_URL + '?next=' + next_url)
+        else:
+            return redirect(settings.THIRD_LOGIN_URL)
     # 第三方登录结束
 
     isMble  = dmb.process_request(request)
