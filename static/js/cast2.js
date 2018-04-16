@@ -1,6 +1,7 @@
 
 $(document).ready(function () {
     /* 文字定位 */
+    
     var positionValue = $('.logo').offset().left;
     $('.show1').css('right',  positionValue + 'px');
     $('.show2,.show4,.show3').css('left',  positionValue + 'px');
@@ -187,6 +188,19 @@ $(document).ready(function () {
      */
     var windowHeight = window.innerHeight;
     $('section,.img360_holder').css('height', windowHeight + 'px');
+
+    /* 
+     *直接跳转配件页
+     */
+    var urlStr=window.location.href;
+    if(urlStr.indexOf('fromstore=1')!=-1){//检查链接中是否有此自字符串
+        var $this = $('.a_secondmenu_item[target="fitting"]');
+        var sec = "fitting";
+        console.log(sec);
+        $('.tb_secondmenu_item').removeClass('active');
+        $($this.parent()).addClass('active');
+        sec_menu(sec);
+    }
 });
 /* 内容过渡浮现效果 */
 $(window).scroll(function () {
