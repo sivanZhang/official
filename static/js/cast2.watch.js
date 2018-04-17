@@ -106,7 +106,7 @@ $(document).ready(function () {
     })
     $('#to_next').on('click', function () {
         $('html, body').animate({
-            scrollTop: $('.container-second-menu').offset().top
+            scrollTop: $('.sec1-show').offset().top
         }, 300);
     })
 
