@@ -3,10 +3,23 @@
 {% block css %}
 <link href="/static/products/css/cast2.css"  rel="stylesheet">
 {% endblock %}
-{% block fixed_menu_class %}fixed_menu_class{%endblock%}
 {% block content %}
-     
-    <div class="character">
+<div class="character"></div>
+<div class="img360_holder"> 
+      
+        <div class="threesixty" data-path="/static/img/360pics/watch.{index}.png" data-count="30"></div>
+        <div class="img360-text show360">
+            <div class="white text-center"><img src="/static/img/icon/360.svg"></div>
+            <div class="text-center fs30 image-text white" ><span>Future&nbsp;／&nbsp;One Touch Reality</span>
+            </div> 
+            
+             <p class="p_title_2 text-center">
+               <img id="to_next" src="/static/img/icon/down.svg" />
+              </p>
+        </div>
+      </div>
+    
+      
         <section class="sec1-show items">
             <div class="show1 white show">
                   <div class="image-text show-t">Watch &nbsp;／&nbsp;Projection</div>
@@ -373,6 +386,15 @@
 
     {% block js %}
     <script src="/static/js/cast2.watch.js"></script>
+    <script>
+            $(document).ready(function(){
+                six = $('.threesixty').threeSixty({
+                    dragDirection: 'horizontal',
+                    useKeys: false
+                });
+            });
+          </script>
+    
     <script src="/static/plugins/jquery.threesixty.js"></script>
      <!-- Initialize Swiper -->
     

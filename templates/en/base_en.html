@@ -16,7 +16,9 @@
     <link href="/static/css/footer.css"  rel="stylesheet">
     <link rel="shortcut icon" href="/static/img/logoicon.ico">
     <script type="text/javascript" src="/static/jquery/dist/jquery.min.js"></script>
-    <!--扩展css开始-->
+    <script type="text/javascript">
+      document.getElementById("cnzz_stat_icon_1260421767").style.display = "none";
+      var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1273465908'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1273465908' type='text/javascript'%3E%3C/script%3E"));</script>    <!--扩展css开始-->
     {% block css %}
     {% endblock %}
 
@@ -123,12 +125,11 @@
 </div><!-- end items -->
 <!-- end link footer -->
     {% endblock %}
-   
-    <script type="text/javascript" src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
- 
-    <script type="text/javascript" src="/static/js/base.js"></script>
+<script type="text/javascript" src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/base.js"></script>
     <!--扩展js开始-->
     {% block js %}
+    
     {% endblock %}
     <!---扩展js结束-->
 </body>
