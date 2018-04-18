@@ -19,14 +19,7 @@
 .linkitems{
     padding: 0!important;
 }
-@media screen and (min-width:1500px){
-    .img360-text{
-        margin-bottom: 60px !important;
-    }
-    .img360-text img{
-        margin-bottom: 60px;
-    }
-  }
+
 .show360 .text-center.image-text.white{
       font-size:30px;
       line-height: 1;

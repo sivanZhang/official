@@ -287,7 +287,9 @@ transform-origin: 43% 49%;
 .sider .image-text{
   font-weight: 100;
 }
-
+.mt30{
+  margin-top: 30px;
+}
 
 .sider2 img{
   position: absolute;
