@@ -21,6 +21,9 @@ body{
     }
     
 }
+a[title="站长统计"]{
+    display: none;
+}
 .fs40{
     font-size: 40px;
 }
