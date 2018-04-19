@@ -44,7 +44,7 @@ function isEmail(email) {
     return regex.test(email);
 }
 $('.group-title').each(function(){
-    $(this).on('click',function(){
+    $(this).on('touchstart',function(){
         var display = $(this).next('.footer_links').css('display');
         $(this).next('.footer_links').slideToggle();
         if( display=='none'){
@@ -54,7 +54,7 @@ $('.group-title').each(function(){
         }
     })
 })
-$('#link').click(function(){
+$('#link').on('touchstart',function(){
     $('nav ul').slideToggle();
     if($('nav').hasClass('act')){
         $('nav').removeClass('act');
@@ -65,7 +65,7 @@ $('#link').click(function(){
     }
 })
 //回到顶部
-$('#to_top').on('click',function () {
+$('#to_top').on('touchstart',function () {
     $('html, body').animate({
         scrollTop: $('body').offset().top
     }, 300);
