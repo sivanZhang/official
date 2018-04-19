@@ -13,7 +13,9 @@
     text-decoration: none;
     outline: none;
   }
-
+.fs34{
+  font-size: 34px;
+}
   .aboutuscontent{
     overflow: hidden;
   }
@@ -33,12 +35,12 @@
   }
    /* deteil */
      section.main {
-    height: 616px;
+    height: 611px;
     position: relative;
     background-size: auto 100%!important;
     background-position:center center!important;
     background-repeat: no-repeat!important;
-    background: url(/static/img/idea/main_m.png);
+    background: url(/static/img/idea/main_m.jpg);
     color: #fff;
   }
   section.main>.text-left.image-text.main-text{
@@ -50,7 +52,7 @@
   .down {
     width: 100%;
     position: absolute;
-    bottom: 30px;
+    bottom: 34px;
     text-align: center;
   }
   .down img {
@@ -115,8 +117,7 @@
   }
   .main-text{
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 90px;
   }
   .swiper-slide {
     padding-bottom: 158px;

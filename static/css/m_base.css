@@ -4,7 +4,7 @@
 font-family: lanting;
 src: url('/static/font/lanting.ttf');
 }
-.lanting{
+.lanting,.image-text{
     font-family: lanting; 
 }
 a{
@@ -163,6 +163,9 @@ nav li{
 }
 nav .col-xs-3 img{
     height: 20px;
+}
+a[title="站长统计"]{
+    display: none;
 }
 nav .col-xs-3{
     padding: 18px 15px;
