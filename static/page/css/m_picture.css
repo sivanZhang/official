@@ -73,10 +73,8 @@ img{
     height: 100%;
 }
 span.product {
-    position: relative;
-    left: 46%;
-    top: 135px;
-    z-index: 10;
-    color: white;
-    font-size: 20px;
+    color: gray;
+    font-size: 18px;
+    margin-bottom: 2px;
+    display: inline-block;
 }

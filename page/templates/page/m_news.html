@@ -3,7 +3,7 @@
 {% block pagetitle%}{{contentblock.title}}{% endblock%}
 {% block css %}
 <link href="/static/css/pagination.css"  rel="stylesheet">
-<link href="/static/page/css/pagebase.css" rel="stylesheet">
+<link href="/static/page/css/m_pagebase.css" rel="stylesheet">
 <link href="/static/page/css/active.css" rel="stylesheet">
 <link href="/static/page/css/m_news.css" rel="stylesheet">  
 <link href="/static/page/css/m_report.css" rel="stylesheet">  
@@ -20,7 +20,7 @@
         </div> 
     </div> 
 </div>
-<div class="container new-list mb-60">
+<div class="container new-list m60">
     <div class="row">  
                     {% for page in pages %} 
                         {% if page.mark == 'bigimg' %}
@@ -56,9 +56,7 @@
             {% include 'page/tab.html' %}
          
         {% include 'page/m_label.html' %}
-        <br/><br/><br/>
         </div>
-        <br/><br/><br/>
     </div>
 </div>  
 {% endblock%}

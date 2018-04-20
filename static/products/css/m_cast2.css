@@ -302,7 +302,11 @@ section,.img360_holder{
 .price{
     font-size: 35px;
 }
-
+#more a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
 .btn-learnmore
 {
     background-color: rgb(233,85,19);
@@ -705,6 +709,9 @@ section.sub-item{
 }
 .hide-right table.first-icon img{
     margin-right: 0px; 
+}
+.sub-item table.first-icon tr:last-child td{
+    vertical-align: top;
 }
 .sub-item table tr td{
     width: auto;

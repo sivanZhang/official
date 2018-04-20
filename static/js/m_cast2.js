@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 
     //隐藏板块点击图标切换图
-    $('.icon-img').on('touchstart',function () {
+    $('.icon-img').on('touchstart', function () {
         var thisIcon = $(this),
             //获取下标
             thisIndex = $('.icon-img').index($(this));
@@ -78,7 +78,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.roll-tip-up').on('touchstart',function (e) {
+    $('.roll-tip-up').on('touchstart', function (e) {
         /*  $(document).scrollTop(height); */
         //$(this).parent().hide( );
         $(this).parent().slideUp();
@@ -89,11 +89,11 @@ $(document).ready(function () {
     });
 
 
-    
+
     /* 
      *回到顶部
      */
-    
+
     $(document).on('touchstart', '.scroll-up', function () {
         $('html, body').animate({
             scrollTop: $('body').offset().top
@@ -106,7 +106,7 @@ $(document).ready(function () {
     })
 
     function submenu(selectot) {
-        $(selectot).on('touchstart',function (e) {
+        $(selectot).on('touchstart', function (e) {
             e.preventDefault();
             var target = $(this).attr('target');
             /* var newPos=new Object();
@@ -124,13 +124,17 @@ $(document).ready(function () {
             }
         });
     };
-    $('.submenu').on('touchstart',function(e){
+    $('.submenu').on('touchstart', function (e) {
         $('#more').slideToggle();
         e.stopPropagation();
     })
-    jQuery(document).on('touchstart',function () {
+    jQuery(document).on('touchstart', function () {
         jQuery('#more').slideUp();
-    })  
+    })
+    $('.back').on('touchstart', function() {
+        window.location.href="/product/products/cast2/";
+    })
+
     submenu('.product_pic_1');
     submenu('.product_pic_2');
 
@@ -145,13 +149,13 @@ $(document).ready(function () {
             case 'advice':
                 advice.show();
                 $('html,body').animate({
-                    scrollTop: $('.advice').offset().top-55
+                    scrollTop: $('.advice').offset().top - 55
                 }, 300);
                 break;
             case 'fitting':
                 fitting.show();
                 $('html,body').animate({
-                    scrollTop: $('.fitting').offset().top-55
+                    scrollTop: $('.fitting').offset().top - 55
                 }, 300);
                 break;
             case 'scene':
@@ -161,7 +165,7 @@ $(document).ready(function () {
             case 'parameter':
                 parameter.show();
                 $('html,body').animate({
-                    scrollTop: $('.parameter').offset().top-55
+                    scrollTop: $('.parameter').offset().top - 55
                 }, 300);
                 break;
             case 'character':
@@ -172,7 +176,7 @@ $(document).ready(function () {
         }
     }
 
-    $('.a_secondmenu_item').on('touchstart',function (e) {
+    $('.a_secondmenu_item').on('touchstart', function (e) {
         //
         e.preventDefault();
         var $this = $(this);
@@ -183,6 +187,18 @@ $(document).ready(function () {
         $($this.parent()).addClass('active');
         sec_menu(sec);
     })
+    /* 
+     *直接跳转配件页
+     */
+    var urlStr = window.location.href;
+    if (urlStr.indexOf('fromstore=1') != -1) {//检查链接中是否有此自字符串
+        var $this = $('.a_secondmenu_item[target="fitting"]');
+        var sec = "fitting";
+        console.log(sec);
+        $('.tb_secondmenu_item').removeClass('active');
+        $($this.parent()).addClass('active');
+        sec_menu(sec);
+    }
 });
 /* 内容过渡浮现效果 */
 $(window).scroll(function () {
