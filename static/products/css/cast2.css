@@ -164,6 +164,9 @@
     color:#fff;
 }
 /* 漂浮动画 */
+.a_secondmenu_item{
+    cursor: pointer;
+}
 .roll-tip
 {
    

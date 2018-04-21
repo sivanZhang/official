@@ -1,12 +1,12 @@
 
 $(document).ready(function () {
     /* 文字定位 */
-    
+
     var positionValue = $('.logo').offset().left;
-    $('.show1').css('right',  positionValue + 'px');
-    $('.show2,.show4,.show3').css('left',  positionValue + 'px');
+    $('.show1').css('right', positionValue + 'px');
+    $('.show2,.show4,.show3').css('left', positionValue + 'px');
     transition(360);
-    var height = window.innerHeight;
+    var height = $(window).height();
     var width = window.innerWidth;
 
     $('.icon-img').on('click', function () {
@@ -43,13 +43,10 @@ $(document).ready(function () {
     var parameter = $('.parameter');//技术特性
     var character = $('.character');//特性
 
-
-    $(document).ready(function () {
-        /* 轮播图箭头位置 */
-        var abslut = $('.logo').offset().left;
-        /* 产品页到顶部位置 */
-        $('.scroll-tip').css('right', abslut + 'px')
-    })
+    /* 轮播图箭头位置 */
+    var abslut = $('.logo').offset().left;
+    /* 产品页到顶部位置 */
+    $('.scroll-tip').css('right', abslut + 'px');
 
     $(document).scroll(function () {
 
@@ -63,7 +60,7 @@ $(document).ready(function () {
             $('.scroll-tip').fadeOut('slow');
         }
 
-        if (scrollheight > height - 60) {
+        if (scrollheight > height) {
             //移除 top menu的fix
             $('.menu-holder').addClass('menu-hidden');
             $('.container-second-menu').addClass('second-menu-fixed');
@@ -99,7 +96,7 @@ $(document).ready(function () {
     /* 
      *回到顶部
      */
-    
+
     $(document).on('click', '.scroll-up', function () {
         $('html, body').animate({
             scrollTop: $('body').offset().top
@@ -119,10 +116,10 @@ $(document).ready(function () {
                  newPos.top="0"; */
 
             $('#' + target).fadeToggle(function () {
-                /* 隐藏元素到视口顶部 */
+                /* 隐藏板块到视口顶部 */
                 $('html, body').animate({
-                    scrollTop: $('#' + target).offset().top - 60
-                }, 600);
+                    scrollTop: $('#' + target).offset().top-10
+                }, 300);
             });
             $('#' + target).addClass('move');
             if ($('#' + target).css('display') === 'none') {
@@ -130,9 +127,8 @@ $(document).ready(function () {
             }
         });
     };
-
     submenu('.product_pic_1');
-    submenu('.product_pic_2');
+    submenu('.product_pic_2'); 
 
     function sec_menu(sec) {
         advice.hide();
@@ -144,14 +140,14 @@ $(document).ready(function () {
         switch (sec) {
             case 'advice':
                 advice.show();
-                $('html,body').animate({
-                    scrollTop: $('.advice .second_menu_holder').offset().top-59
+                $('html, body').animate({
+                    scrollTop: advice.offset().top-6
                 }, 300);
                 break;
             case 'fitting':
                 fitting.show();
-                $('html,body').animate({
-                    scrollTop: $('.fitting .second_menu_holder').offset().top-59
+                $('html, body').animate({
+                    scrollTop:fitting.offset().top-6
                 }, 300);
                 break;
             case 'scene':
@@ -160,8 +156,8 @@ $(document).ready(function () {
                 break;
             case 'parameter':
                 parameter.show();
-                $('html,body').animate({
-                    scrollTop: $('.parameter .second_menu_holder').offset().top-59
+                $('html, body').animate({
+                    scrollTop: parameter.offset().top-6
                 }, 300);
                 break;
             case 'character':
@@ -172,13 +168,12 @@ $(document).ready(function () {
         }
     }
 
-    $('.a_secondmenu_item').click(function (e) {
+    $('.a_secondmenu_item').click(function () {
         //
-        e.preventDefault();
+        /* e.preventDefault(); */
         var $this = $(this);
         var sec = $this.attr('target');
-
-        console.log(sec);
+        /* console.log(sec); */
         $('.tb_secondmenu_item').removeClass('active');
         $($this.parent()).addClass('active');
         sec_menu(sec);
@@ -192,11 +187,10 @@ $(document).ready(function () {
     /* 
      *直接跳转配件页
      */
-    var urlStr=window.location.href;
-    if(urlStr.indexOf('fromstore=1')!=-1){//检查链接中是否有此自字符串
+    var urlStr = window.location.href;
+    if (urlStr.indexOf('fromstore=1') != -1) {//检查链接中是否有此自字符串
         var $this = $('.a_secondmenu_item[target="fitting"]');
         var sec = "fitting";
-        console.log(sec);
         $('.tb_secondmenu_item').removeClass('active');
         $($this.parent()).addClass('active');
         sec_menu(sec);
@@ -215,7 +209,7 @@ function transition(nub) {
         elHtight = $('.show' + nub).height();
     elementOffset = $('.show' + nub).offset().top,
         distance = (elementOffset - scrollTop);
-    /* = $(el).offset().top-60*/
+    /* = $(el).offset().top-10*/
     if (distance + elHtight <= windowHeight) {
         $('.show' + nub).parent('section').addClass('move');
     } else {
