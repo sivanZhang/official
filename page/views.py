@@ -122,6 +122,7 @@ class PageView(View):
                 # 说明是在查看职位列表
                 category = request.GET['category']
                 content['page'] = page_item
+                
                 perm = False
                 if request.user:
                     perm = request.user.has_perm('product.manage_product')
@@ -147,6 +148,7 @@ class PageView(View):
 
         if 'policy' == blockname :
             # 保修政策
+            content['servicepage'] = True
             try:
                 block = models.AdaptorBaseBlock.objects.get(mark = blockname)
                 content['pageblock'] = block

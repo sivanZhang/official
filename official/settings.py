@@ -254,7 +254,7 @@ ALIPAY_URL = "https://openapi.alipay.com/gateway.do"
 ALI_PUBLIC_KEY = os.path.join(BASE_DIR, 'official', 'alipay_public.pem')
 PRIVATE_KEY = os.path.join(BASE_DIR, 'official', 'app_private_key.pem')
 
-PAYHOST = 'http://www.asucast.com/'
+PAYHOST = 'http://www.a-su.com.cn/'
 ALIPAY_RETURN_URL = PAYHOST + 'book/alipay_check_pay'
 ALIPAY_NOTIFY_URL = PAYHOST + 'book/alipay_notify'
 """
