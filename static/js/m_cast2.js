@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-    transition(360);
+
     var height = window.innerHeight;
     var width = window.innerWidth;
 
@@ -54,7 +54,7 @@ $(document).ready(function () {
             $('.scroll-tip').fadeOut('slow');
         }
 
-        if (scrollheight > height - 60) {
+        if (scrollheight > height) {
             //移除 top menu的fix
             $('.menu-holder').addClass('menu-hidden');
             $('.container-second-menu').addClass('second-menu-fixed');
@@ -149,13 +149,13 @@ $(document).ready(function () {
             case 'advice':
                 advice.show();
                 $('html,body').animate({
-                    scrollTop: $('.advice').offset().top - 55
+                    scrollTop: advice.offset().top - 55
                 }, 300);
                 break;
             case 'fitting':
                 fitting.show();
-                $('html,body').animate({
-                    scrollTop: $('.fitting').offset().top - 55
+                $('html, body').animate({
+                    scrollTop:fitting.offset().top-55
                 }, 300);
                 break;
             case 'scene':
@@ -165,7 +165,7 @@ $(document).ready(function () {
             case 'parameter':
                 parameter.show();
                 $('html,body').animate({
-                    scrollTop: $('.parameter').offset().top - 55
+                    scrollTop: parameter.offset().top - 55
                 }, 300);
                 break;
             case 'character':
