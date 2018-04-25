@@ -1,0 +1,69 @@
+{% extends 'm_base.html' %}   
+{% block pagetitle%}订单详情{% endblock%} 
+{% block css %}
+<link href="/static/appuser/css/usercenter.css" rel="stylesheet">
+{% endblock %} 
+{% block content %}
+<div class="container m60">
+
+
+    <div class="col-xs-12 gray">
+        <div class="usercentercontent">
+
+            <div>
+                <div class="car-title">支付</div>
+                {% block usercentercontent %}
+
+                <div class="clearfix receipt">
+                    <div class="pull-left">订单号：<span id="billno">{{book.billno}}</span>  
+                        <span class="fs18 orange"> ¥
+                            <span id="all_sum_price" class="price">{{money}}</span>
+                        </span>
+                    </div> 
+                </div>
+            </div>
+            {% endblock %}
+                <div class="item-content sec">
+                    微信支付:请在两小时内支付.
+                </div>
+                <div class="container-fluid sec clearfix text-center">
+                    <div class="pull-left col-xs-12 p-r">
+                         
+                        <img class="qr-code" src="/media/pay/{{book.billno}}weixinqr.png" />
+                        <div class="clearfix orange-bg code-msg">
+                            <div class="pull-left"><img src="/static/img/icon/sao.svg"/></div>
+                            <div class="white pull-left text-left">
+                                请使用微信扫一扫<br>
+                                扫描二维码支付
+                            </div>
+                        </div> 
+                    </div>
+                  
+                </div>
+                <br/>
+            </div>
+
+            
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+{% endblock %}
+{% block js %}
+<script src="/static/appuser/js/usercenter.js"></script>
+<script src="/static/appuser/js/pay.js"></script>
+<script>
+        var sum = 0;
+        var num = 0;
+        {% for item in bill.adaptorbillitem_set.all %}
+        sum += {{ item.rule.price }} * {{ item.num }};
+        num += {{ item.num }};
+        $(".price-sum{{forloop.counter}}").text({{ item.rule.price }} * {{ item.num }});
+        {% endfor %} 
+        $('#all_sum_price').text(sum);
+        $(".sum_num").text(num);
+    </script> 
+{% endblock %}

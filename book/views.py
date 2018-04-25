@@ -41,7 +41,7 @@ class BookView(View):
         content['books'] = books
         content['number'] = len(books) 
         content['goodsName'] = "一数科技预约支付".encode('UTF-8')
-        #return render(request, 'book/success.html', content) 
+        #return render(request, 'book/success.html', content)  
         if 'new' in request.GET:
             if isMble:
                 return render(request, 'book/m_blocknew.html', content)
@@ -132,8 +132,10 @@ class BookView(View):
                         kwargs['goodsName'] = book.billno
                         kwargs['goodsPrice'] = book_money
                         weixinpay_ctl.getWeChatQRCode( **kwargs)
-                    
-                        return render(request, 'pay/weixinpay.html', content)
+                        if isMble:
+                            return render(request, 'pay/m_weixinpay.html', content)
+                        else:
+                            return render(request, 'pay/weixinpay.html', content)
 
                 return redirect (alipay(billno, book_money, subject))
                 
