@@ -1,0 +1,24 @@
+.adress-text{
+    width: 100%;
+    resize: none;
+}
+input,textarea{
+    margin: 15px 15px 15px 0;
+}
+.last-td-pd{
+    margin-bottom: 30px;
+}
+.new-btn{
+    margin-top: 15px;
+}
+.links a+a{
+    display: inline-block;
+    margin-left: 15px;
+}
+button[type=submit]{
+    margin-bottom: 15px;
+}
+hr{
+    margin: 30px auto;
+    border-color: #ddd;
+}

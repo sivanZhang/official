@@ -1,0 +1,150 @@
+{% extends 'base.html' %} 
+{% load areas %}
+{% block fixed_menu_class %}fixed_menu_class{%endblock%}
+{% block pagetitle%}订单详情{% endblock%} 
+{% block css %}
+<link href="/static/appuser/css/usercenter.css" rel="stylesheet">
+{% endblock %} 
+{% block content %}
+<div class="container m60"> 
+    {% if perm %}
+    {% include "usercenter/admin_menu.html" %}
+    {% else %}
+    {% include "usercenter/menu.html" %}
+    {% endif %}
+    
+    <div class="col-xs-10">
+            <div class="usercentercontent">
+       
+            <div  >
+                    <div class="car-title">支付订单</div>
+                    <div class="submit sec text-center"> 
+                           <img src="/media/weixinqr.png" /><span class="show-sucess">订单已支付</span>
+                           <div> 
+                                <br/><span class="deliverytime">72小时内发货</span>
+                               </p> 
+                           </div>
+                           <div>
+                           </div>
+                    </div>
+            </div>
+       
+        {% block usercentercontent %} 
+                <div class="car-title clearfix">
+                        订单详情【{{bill.get_status_display}}】
+                </div>
+                {% if bill.status == 2 %}
+                <div class="submit">
+                    物流跟踪
+                    <div class="tracking">
+                        {% for item in delivery.data %}
+                        <p>{{item.time}}  {{item.context}}</p>
+                        
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            <table class="order-form billdetail">
+                <tr>
+                    <td colspan="5">订单号：1232137218973298173</td>
+                </tr>
+                {% for item in bill.adaptorbillitem_set.all  %}
+                <tr>
+                    <td class="img-wrap"> <img class="img-rounded" src="{{mediaroot}}{{item.rule.product.thumbnail}}"></td>
+                    <td class="w320 text-left">
+                        <a href="javascript:;">
+                            <div class="carlist_name black">
+                                {% if bill.status == 1 or bill.status == 2 %}
+                                {{item.product_title}}
+                                {% else %}
+                                {{item.rule.product.title}}
+                                {% endif %}
+                            </div>
+                            <div class="rule_content grey">规格： {{item.rule_title}} </div>
+                        </a>
+                    </td>
+                    <td class="w200">
+                        ¥&nbsp;<span class="price">{{item.rule.price}}
+                    </td>
+                    <td class="nub">
+                        {{item.num}}
+                    </td>
+                    <td class="w200 text-right">¥&nbsp;<span class=" price-sum{{forloop.counter}}">sss</span></td>
+                </tr>
+                {% endfor %}
+            </table>
+            <div class="clearfix item-content div-sum-money">
+                <div class="pull-right">
+                    <div class="grey  pull-right sum_money">
+                        <div>商品件数：<span class="f16 sum_num">0</span> 件</div>
+                        <!--
+                        <div>金额合计：¥ <span id="sum_price" class="price f16"> 0.00</span> 元</div>
+                        <div>运费：¥ <span class="price f16">0.00</span> 元</div>-->
+                    </div> 
+                      
+                </div>
+            </div>
+            <div class="clearfix submit-holder item-content div-delivery ">
+                    <div class="pull-right">  
+                        <div class="div-submit"> 
+                            <table>
+                                <tr>
+                                    {% if bill.status == -2 %}
+                                    <td><p class="grey" >应付金额：</p></td>
+                                    <td><p class="fs24 orange"> ¥<span id="all_sum_price" class="price"> 0.00</span></p></td>
+                                    {% elif bill.status == 1 %}
+                                    <td><p class="grey" >已支付金额：</p></td>
+                                    <td><p class="fs24 orange"> ¥<span  class="price">{{bill.payed_money}}</span></p></td>
+                                    {% else %}
+                                    <td><p class="grey" >应付金额：</p></td>
+                                    <td><p class="fs24 orange"> ¥<span id="all_sum_price" class="price">{{bill.payed_money}}</span></p></td>
+                                    {% endif %}
+                                </tr> 
+                            </table>
+                                
+                        </div>   
+                    </div>
+            </div>
+
+
+            <!-- 售后信息 -->
+            <div class="billdetail submit gray">
+                <h5 class="black">收货信息</h5>
+                <p>收货人：{{bill.reciever}}</p>
+                <P>联系电话：{{bill.phone}}</P>
+                <p>收货地址：{{bill.address_detail}}</p>
+            </div>
+            {% if bill.invoice %}
+                <div class="submit gray">
+                        <h5 class="black">发票</h5>
+                        <p>发票类型：电子发票</p>
+                        <P>发票抬头：{% if bill.invoice.invoicetype == 1 %}个人{% else %}企业{%endif%}</P>
+                        <p>发票内容：{{bill.invoice.content}}</p>
+                </div>
+            {% endif %}
+            {% endblock %}
+        </div>
+        
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}
+{% block js %}
+<script src="/static/appuser/js/usercenter.js"></script>
+
+<script>
+        var sum = 0;
+        var num = 0;
+        {% for item in bill.adaptorbillitem_set.all %}
+        sum += {{ item.rule.price }} * {{ item.num }};
+        num += {{ item.num }};
+        $(".price-sum{{forloop.counter}}").text({{ item.rule.price }} * {{ item.num }});
+        {% endfor %} 
+        $('#all_sum_price').text(sum);
+        $(".sum_num").text(num);
+        
+    </script> 
+  
+{% endblock %}

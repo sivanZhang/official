@@ -3,7 +3,7 @@ import pdb
 import requests
 from django.conf import settings
 from book.models import AdaptorBook as Book
- 
+from common.e_mail import EmailEx
 
 def pay_book(billno, pay_way, payed_money, trade_no, pay_datetime):
     """
@@ -25,6 +25,24 @@ def pay_book(billno, pay_way, payed_money, trade_no, pay_datetime):
     result['msg'] = "saved" 
     book.save()
     result['book'] = book 
+    #返回成功页面 
+    if 'created' in result:
+        emailex = EmailEx()
+        emailcontent = """
+        您好！
+        <br/>
+        <br/>
+        您已成功预约ASU Watch，预约码为xxx，如有货会第一时间给您发短信/邮件通知。您在购买结算时输入预约码可直接抵扣200元现金。请妥善保留此邮件!
+        <br/>
+        <br/>
+        一数科技商城
+        """
+        smscontent = """您好，您已成功预约ASU Watch，预约码为xxx，如有货会第一时间给您发短信通知。您在购买结算时输入预约码可直接抵扣200元现金。请妥善保留此短信"""
+        emailcontent = emailcontent.replace('xxx', book.billno)
+        smscontent = smscontent.replace('xxx', book.billno)
+    
+        emailex.send_text_email("一数科技预约支付", emailcontent, book.email)
+        sendsms(book.phone, smscontent)
 
     return result
 

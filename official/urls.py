@@ -45,5 +45,7 @@ urlpatterns = [
     url(r'^en/accessories$', en_views.accessories, name='accessories'),
     url(r'^en/parameters$', en_views.parameters, name='parameters'),
 
+    url(r"^pay/", include('pay.urls', namespace="pay")),
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

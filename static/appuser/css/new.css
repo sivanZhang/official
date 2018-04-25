@@ -1,0 +1,28 @@
+
+/* 新建联系人开始 */
+#receiver{
+    width: 150px;
+}
+#phone{
+    width: 300px;
+}
+.new_address select{
+    width:144px
+}
+.new_address input,.new_address select{
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+#detail{
+    width: 469px;
+}
+.default{
+    font-weight: 100;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+input#default[type=checkbox]{
+    vertical-align: text-top;
+    margin-right: 6px;
+}
+/* 新建联系人结束 */

@@ -26,6 +26,7 @@ from book import models
 from book.apis import pay_book, sendsms
 from book.views_pay import alipay
 from common.e_mail import EmailEx
+from pay.controller import MainController
 
 from mobile.detectmobilebrowsermiddleware import DetectMobileBrowser
 dmb     = DetectMobileBrowser()
@@ -39,7 +40,7 @@ class BookView(View):
      
         content['books'] = books
         content['number'] = len(books) 
-        
+        content['goodsName'] = "一数科技预约支付".encode('UTF-8')
         #return render(request, 'book/success.html', content) 
         if 'new' in request.GET:
             if isMble:
@@ -52,6 +53,11 @@ class BookView(View):
                 return render(request, 'book/m_detail.html', content)
             else:
                 return render(request, 'book/m_detail.html', content)
+        if 'done' in request.GET: 
+            if isMble:
+                return render(request, 'book/m_success.html', content)
+            else:
+                return render(request, 'book/success.html', content)
         else:
             if isMble:
                 return render(request, 'book/m_buy.html', content)
@@ -87,7 +93,7 @@ class BookView(View):
             address = request.POST['address'].strip()
             email = request.POST['email'].strip()
             code    = ''.join(random.choice(string.digits) for i in range(4))
-            billno = datetime.now().strftime('%Y%m%d%H%M%S')+str(code) 
+            billno = 'ASU'+ datetime.now().strftime('%Y%m%d%H%M%S')+str(code) 
             
             if name == '' or phone == '': 
                 books = models.AdaptorBook.objects.all()
@@ -114,16 +120,24 @@ class BookView(View):
 
                 # 开始支付
                 book_money  = 0.01
-                subject = "一数预约支付"
+                subject = "一数科技预约支付" 
+                if 'payway' in request.POST:
+                    payway = request.POST['payway']
+                    if payway == 'weixin': # 微信支付
+                        weixinpay_ctl = MainController()
+                        kwargs = {} 
+                        content['book'] = book
+                        content['money'] = book_money
+                        kwargs['order_id'] = book.billno
+                        kwargs['goodsName'] = book.billno
+                        kwargs['goodsPrice'] = book_money
+                        weixinpay_ctl.getWeChatQRCode( **kwargs)
+                    
+                        return render(request, 'pay/weixinpay.html', content)
+
                 return redirect (alipay(billno, book_money, subject))
                 
-                content['billno'] = book.billno
-                result['status'] ='ok'
-                result['msg'] = _('Saved completely!') 
-                if isMble:
-                    return render(request, 'book/m_success.html', content)
-                else:
-                    return render(request, 'book/success.html', content)
+                
         else:
             content['status'] ='error'
             content['msg'] ='Need title  in POST' 

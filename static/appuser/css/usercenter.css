@@ -1,0 +1,613 @@
+/* 初始化 */
+label{
+    margin: 0px;
+}
+body{
+    background-color:#f9f9f8;
+}
+/* 初始化---end */
+
+/* 通用 */
+.last-td-pd tr td:last-child,.last-td-pd tr th:last-child{
+    padding-right: 30px;
+}
+.address-wrap{
+    padding: 20px 30px;
+    background-color:#fff;
+}
+.address{
+    border:1px solid #ddd;
+}
+input[type=file]:focus,、{
+    outline:none;
+}
+
+
+
+.address-wrap>.col-xs-3{
+    margin-right: 30px;
+}
+.new-address{
+    background-color: rgb(247, 247, 247);
+    border:1px solid #ddd;
+}
+.car-title{
+    padding: 20px 30px;
+    background-color: rgb(242, 242, 242);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+#sum_number{
+    color: #777;
+}
+
+
+.header i {
+    height: 100%;
+    line-height: 40px;
+}
+
+
+.thumbnail{
+    padding: 0px;
+    margin-right: 4px;
+    margin-bottom: 0px;
+    width: 18%;
+    border: 0px;
+    display: none;
+}
+
+
+.all_price .pull-right{
+margin-right: 25px;
+}
+
+.item-content{
+    background-color: white;
+    padding: 30px 30px 30px;
+}
+img.delete,img.edit{
+    cursor: pointer;
+    width:16px;
+}
+img.edit{
+    margin-right: 6px;
+}
+.submit-holder{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+table.order-form tr{ 
+    padding-left: 32px; 
+} 
+.order-form td,.order-form th{
+    padding:25px 0;
+}
+table.order-form th{
+    background-color: rgb(247, 247, 247);
+    font-weight: 100;
+}
+.wrap-border{
+    border-bottom: 1px solid #ddd;
+}
+.statistics tr td{
+    border-bottom: 1px solid #ddd;
+}
+.statistics tr:last-child td{
+    border-bottom: 1px solid transparent;
+}
+.img-rounded{
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+    padding:15px;
+    border: 1px solid #ddd;
+    margin-right: 30px;
+}
+.check{
+    width: 73px;
+}
+.img-wrap{
+    width: 100px;
+}
+.shop-msg{
+    width: 520px;
+}
+.shop-msg>div{
+margin-left: 30px;
+}
+.title-name{
+    padding-left: 30px!important;
+}
+.w159{
+    width: 159px;
+}
+.carnum{
+    display: inline-block;
+    width: 30%;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+}
+.r-btn{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    cursor: pointer;
+}
+#all_sum_price{
+    padding:0px;
+}
+
+.car-footer{
+    padding: 30px 15px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+input[type=checkbox], input[type=radio]{
+    margin: 0 ;
+    vertical-align: middle; 
+}
+input[type=checkbox].checked{
+    margin: 0 30px;
+}
+#all-delete{
+    cursor: pointer;
+}
+.col-xs-6.text-right{
+    border-right:1px solid #ddd;
+}
+.sum-price{
+    padding-left: 15px;
+}
+.car-footer .pull-right{
+    padding-right: 15px;
+}
+.cut-off{
+    margin:0 59px 0 0;
+    border-bottom: 1px solid #ddd;
+}
+.p-n{
+    padding:0!important;
+}
+.cut-off-wrap:last-child{
+    display: none;
+}
+.nothing{
+    padding:60px 30px!important;
+    background-color: #fff;
+}
+.return-link {
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    line-height: 50px;
+}
+.product-title{
+    margin-left: 18px;
+}
+.return-shopcar:hover, .return-shopcar:active,.return-shopcar:visited{
+    color:none;
+}
+.return-shopcar{
+    color:black;
+}
+.div-submit{
+    line-height: 40px;
+}
+.submit-btn{
+    margin-left: 20px;
+    padding-left:  30px;
+    padding-right:  30px;
+}
+.sum_money{
+    text-align: right;
+    line-height: 2;
+}
+
+.div-delivery{
+    padding-top: 0px;
+}
+.div-sum-money{
+    padding-bottom: 0px;
+}
+
+.car-list{
+    border-bottom: 1px solid #ddd;
+}
+.car-list:last-child{
+    border-bottom: none;
+}
+.show-sucess{
+    font-size: 25px;
+    margin: 0 ;
+    vertical-align: middle;
+    margin-left: 5px !important; 
+}
+.deliverytime{
+    line-height: 30px;
+}
+.zhifubao, .weixin{
+    margin-right: 10px !important;
+}
+
+.payname-zhifubao{
+    margin-right: 30px;
+}
+.item-pay{
+    padding-top:0px;
+}
+
+.submenu{
+    padding:20px 0 5px;
+    text-align: center;
+    background-color: #fff;
+    border:1px solid #ddd;
+}
+.usercenter-tb{
+    margin-top: 15px;
+}
+table{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.usercenter-tb img{
+    width: 16px;
+    margin-right: 10px;
+}
+.usercenter-tb td{
+    padding: 15px 0 15px 50px;
+    text-align: left;
+    cursor: pointer;
+}
+.usercenter-tb td:hover{
+    background-color: rgba(242, 242, 242,.5);
+}
+ 
+.subactive{
+    background-color: rgb(242, 242, 242);
+}
+ 
+.usercentercontent{
+    border:1px solid #ddd;
+    background-color: #fff;
+    width: 100%;
+}
+ .head_portrait{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+.col-xs-10{
+    padding-left: 30px;
+    padding-right: 0px;
+}
+.car-title .black{
+    margin-left: 10px;
+}
+table.order-form tr td:first-child,table.order-form tr th:first-child{
+padding-left: 30px;
+}
+table.order-form tr td:last-child, table.order-form tr th:last-child{
+    padding-right: 30px;
+}
+.order-form-btn{
+    padding: 4px 12px;
+    display: inline;
+}
+
+.order-form .shop-name{
+    width: auto;
+}
+th{
+    text-align: center;
+}
+.w110{
+    width: 110px;
+}
+.cut_line td[colspan="7"]{
+    padding: 0 30px;
+}
+
+.aggregate .common-btn{
+margin-left: 15px;
+}
+.aggregate>span{
+    margin-right: 15px;
+    }
+.cut_line div{
+    border-top: 1px solid #ddd;
+    content: '';
+    height: 1px;
+}
+.td_line {
+    padding: 0 30px !important;
+}
+
+.td_line div{
+    border-top: 1px solid #ddd;
+    content: '';
+    height: 1px;
+}
+a.apply-for-btn{
+    padding: 2px 12px;
+}
+.usercentercontent>ul{
+    padding: 20px 30px;
+}
+.information,.receipt{
+    padding:30px;
+    border-bottom: 1px solid #ddd;
+}
+.information input.common-inp{
+    margin-right:15px;
+    float: left;
+}
+input[name="address"]{
+    width: 780px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+input[name="name"]{
+    width: 180px;
+}
+input[name="phone"]{
+    width: 200px;
+}
+input[name="email"]{
+    width: 370px;
+}
+input[name="rule"]{
+    width: 240px;
+    margin-bottom: 15px;
+}
+input[name="color"]{
+    width: 160px;
+    margin-bottom: 15px;
+}
+input[name="number"]{
+    width: 350px;
+    margin-bottom: 15px;
+}
+input[name="code"]{
+    width: 400px;
+}
+
+input[name="date"]{
+    width: 160px;
+}
+
+input[name="dealer"]{
+    width: 525px;
+}
+
+/* .picture-warp{
+    display: inline-block;
+    overflow: hidden;
+    vertical-align:middle;
+} */
+#picture{
+    display: none;
+}
+label[for="picture"]{
+    margin:0 0 20px 15px;
+    font-weight: 100;
+    cursor: pointer;
+}
+label.attachment[for="picture"]{
+    margin:0;
+}
+.qr-code{
+    width: 210px;
+}
+#back{
+    margin-top: 60px;
+    cursor: pointer;
+}
+.overdue-msg{
+    position: absolute;
+    top: -50px;
+    width: 100%;
+}
+.code-msg{
+    width: 210px;
+    border-radius: 6px;
+    margin: 20px auto 0;
+    padding: 10px;
+}
+.code-msg img{
+    width: 40px;
+    margin: 0 15px 0 10px;
+}
+.last-btn{
+    margin:0 20px 0px 20px;
+}
+.fa-arrow-circle-up{
+    margin-left: 8px;
+}   
+textarea[rows="4"]{
+    display: block;
+    width: 780px;
+    height: auto;
+    resize: none;
+}
+.w20 td{
+width: 20%;
+}
+input[type="submit"]{
+    min-width: 100px;
+}
+.submit{
+    padding: 30px;
+}
+.search input{
+  width: 190px;
+}
+.genre{
+    margin: 15px 15px 15px auto;
+}
+input[name="logistics_name"],input[name="logistics_nub"]{
+    display: block;
+    width: 50%;
+    margin-bottom: 15px;
+}
+.msg{
+    margin: 20px auto 20px;
+    line-height: 1.6;
+}
+.sec_msg{
+    min-height: 360px;
+    padding-top:90px
+}
+.mt-20{
+    margin-top: 20px;
+}
+.sec_msg .orange.fs16{
+    margin: 20px auto; 
+}
+.fs32{
+    font-size: 32px;
+}
+.pop-box{
+    text-align: center;
+    padding: 60px 0;
+    position: fixed;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    background: #fff;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);z-index: 1001;
+}
+.statistics th{
+    text-align: inherit;
+}
+.statistics.order-form td,.statistics.order-form th{
+    padding:20px 0;
+}
+.pop_wrap{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+   background:rgba(0,0,0,0.5);
+   z-index: 999;
+}
+.pop-box img{
+    height: 18px;
+    margin: 0 8px 5px auto;
+}
+.pop-box .orange,.pop-box p{
+    margin: 15px auto;
+}
+#cancel{
+    margin-right: 10px;
+}
+.serve-none{
+    padding-top: 50px ;
+    min-height: 360px;
+}
+.serve-icon{
+    height:150px ;
+}
+.serve-none .grey{
+    margin: 50px auto 15px;
+}
+.cash-coupon-inp{
+    margin: 0 15px;
+}
+.cash-coupon-btn{
+    padding: 7px 12px;
+}
+
+.cash-coupon{
+    width: 380px;
+    margin-top: 30px;
+    margin-right: 30px;
+    overflow: hidden;
+    position: relative;
+}
+.cash-coupon::before{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ddd;
+    z-index: 10;
+    border-radius: 50%;
+    background: #fff;
+    content: '';
+    position: absolute;
+    transform: translateX(-50%);
+    top: 99px;
+
+}
+.cash-coupon::after{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ddd;
+    z-index: 10;
+    border-radius: 50%;
+    background: #fff;
+    content: '';
+    position: absolute;
+    transform: translateX(50%);
+    top: 99px;
+    right:0;
+}
+.cash-coupon-msg{
+    border-bottom:1px  dashed transparent!important;
+    border: 1px solid #ddd;
+}
+.instructions{
+    background-color: rgb(252, 252, 252);
+    border-top:1px  dashed #ddd!important;
+    border: 1px solid #ddd;
+}
+.instructions p{
+    margin-bottom: 0px;
+}
+.cash-coupon-wrap{
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+}
+.price{
+    padding: 0 10px 0 0px;
+}
+.tracking{
+    margin-top: 10px;
+    padding: 15px 30px;
+    background-color: rgb(249, 249, 248);
+}
+
+.billdetail{
+    border-top:1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+table.billdetail{
+    border-top:none;
+    border-bottom: 1px solid #ddd;
+}
+.billdetail td[colspan="5"]{
+    padding: 15px 0 0 0; 
+}
+.billdetail tr td:last-child,table.order-form.address_list tr td:last-child{
+    padding-right: 30px!important;
+}
+.w320{
+    width: 320px;
+}
+.w200{
+    width: 200px;
+}
+.white-btn{
+    padding:2px 12px;
+    display: inline-block;
+    background-color: #fff;
+    border-color:#ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+table.order-form.address_list th{
+    text-align: left;
+}
