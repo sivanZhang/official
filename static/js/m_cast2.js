@@ -50,7 +50,6 @@ $(document).ready(function () {
             $('.scroll-tip').fadeIn('slow');
         }
         else {
-            ////移除 top menu的fix
             $('.scroll-tip').fadeOut('slow');
         }
 
@@ -58,19 +57,7 @@ $(document).ready(function () {
             //移除 top menu的fix
             $('.menu-holder').addClass('menu-hidden');
             $('.container-second-menu').addClass('second-menu-fixed');
-
-
-            //场景应用菜单
-            if (scrollheight > height) {
-                $('.panel-menu').addClass('panel-menu-fixed');
-                //fitting-panel-menu
-                $('.fitting-panel-menu').addClass('panel-menu-fixed');
-            }
-            else {
-                //移除 top menu的fix 
-                $('.panel-menu').removeClass('panel-menu-fixed');
-                $('.fitting-panel-menu').removeClass('panel-menu-fixed');
-            }
+          
         }
         else {
             $('.menu-holder').removeClass('menu-hidden');
@@ -148,15 +135,15 @@ $(document).ready(function () {
         switch (sec) {
             case 'advice':
                 advice.show();
-                $('html,body').animate({
-                    scrollTop: advice.offset().top - 55
-                }, 300);
+                $('html, body').animate({
+                    scrollTop: $('#to_next').offset().top+55
+                }, 300); 
                 break;
             case 'fitting':
                 fitting.show();
                 $('html, body').animate({
-                    scrollTop:fitting.offset().top-55
-                }, 300);
+                    scrollTop: $('#to_next').offset().top+55
+                }, 300); 
                 break;
             case 'scene':
                 scene.show();
@@ -164,9 +151,9 @@ $(document).ready(function () {
                 break;
             case 'parameter':
                 parameter.show();
-                $('html,body').animate({
-                    scrollTop: parameter.offset().top - 55
-                }, 300);
+                $('html, body').animate({
+                    scrollTop: $('#to_next').offset().top+55
+                }, 300); 
                 break;
             case 'character':
                 character.show();
