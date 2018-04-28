@@ -78,7 +78,7 @@
 	
 	$.message = {};
 	$.message.defaults = {
-		opacity: 0.8,
+		opacity: 1,
 		fadeOutDuration: 500,
 		fadeInDuration: 200,
 		displayDurationPerCharacter: 125,

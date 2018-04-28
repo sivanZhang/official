@@ -11,53 +11,33 @@
  *   http://www.opensource.org/licenses/mit-license.php
  *   http://www.gnu.org/licenses/gpl.html
  */
-.jquery-message {
-    font: normal 14px/150% Helvetica, Arial, Sans-Serif;
+.jquery-message,.jquery-error-message{
     position: fixed;
 	bottom: 100px;
-    left: 10%;
-    width: 80%;
-    padding-top:4px;
-    padding-bottom:4px;
-    color: white;
-    background-color: rgba(0, 128, 0, 0.9);
+    left: 35%;
+    width: 30%;
+    min-height: 100px;
+    padding:15px;
+    color: #ea5014;
+    background-color: #fff;
+    border: 1px solid #ea5014;
     text-align: center;
     display: none;
     opacity: 0; 
-    border-radius: 4px;
-    box-shadow:  12px 0px 20px -2px #003333;
-    -moz-box-shadow:  12px 0px 20px -2px #003333;
-    -webkit-box-shadow:  5px 5px 20px -2px #003333;
+    border-radius: 6px;
     z-index: 100000;
 }
-.jquery-error-message
-{ 
-    font: normal 120%/ 150% Helvetica, Arial, Sans-Serif;
-    position: fixed;
-	bottom: 100px;
-    left: 10%;
-    width: 80%;
-    padding-top:4px;
-    padding-bottom:4px;
-    color: white;
-    background-color: rgba(255, 0, 0, 0.9);
-    text-align: center;
-    display: none;
-    opacity: 0; 
-    border-radius: 4px;
-    box-shadow:  12px 0px 20px -2px #003333;
-    -moz-box-shadow:  12px 0px 20px -2px #003333;
-    -webkit-box-shadow:  5px 5px 20px -2px #003333;
-    z-index: 100000;
-}
+
 .jquery-message .round, .jquery-error-message .round { 
    font-size: 1px;
    height: 1px;
 }
 
 .jquery-message p , .jquery-error-message p{
-   padding: 1em;
-    display: inline;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .jquery-message a, .jquery-error-message a {
