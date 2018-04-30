@@ -41,7 +41,26 @@ class BookView(View):
         content['books'] = books
         content['number'] = len(books) 
         content['goodsName'] = "一数科技预约支付".encode('UTF-8')
-        #return render(request, 'book/success.html', content)  
+        #return render(request, 'book/success.html', content) 
+        if 'api' in request.GET:
+            result = {}
+            api = request.GET['api']
+            if api == settings.OFFCIALAPI:
+                code = request.GET['code']
+                try:
+                    book = models.AdaptorBook.objects.get(
+                        status=models.AdaptorBook.STATUS_PAYED,
+                        billno = code)
+                    if 'used' in request.GET:
+                        # 券已使用，更新之
+                        book.status = models.AdaptorBook.STATUS_USED
+                        book.save()
+                    result['status'] = 'ok'
+                    result['price'] = str(book.payed_money)
+                except models.AdaptorBook.DoesNotExist:
+                    result['status'] = 'error'
+                    result['msg'] = '订单错误...'
+            return self.httpjson(result)
         if 'new' in request.GET:
             if isMble:
                 return render(request, 'book/m_blocknew.html', content)

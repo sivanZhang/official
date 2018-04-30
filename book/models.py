@@ -23,7 +23,7 @@ class Book(models.Model):
     # 2 已完成
     STATUS_CREATED = 0 # 创建成功但未支付
     STATUS_PAYED = 1 # 已支付
-    STATUS_FINISHED = 2 # 已完成
+    STATUS_USED = 2 # 已使用
 
     status = models.SmallIntegerField(default = STATUS_CREATED) 
 

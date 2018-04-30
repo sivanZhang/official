@@ -279,3 +279,5 @@ WEIXIN = {
 'mch_notify_url':'https:#XXX/notify/weixin/', #微信支付异步通知接收URL
 'clientIp':'',#扫码支付时，会使用这个IP地址发送给微信API, 请设置为您服务器的IP 
 }
+
+OFFCIALAPI='54aa6579-b065-4e77-812f-2356942060e654aa6579-b065-4e77-812f-2356942060e6'
