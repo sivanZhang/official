@@ -407,9 +407,7 @@ label.attachment[for="picture"]{
     cursor: pointer;
 }
 .overdue-msg{
-    position: absolute;
-    top: -50px;
-    width: 100%;
+    margin: 56px auto 15px;
 }
 .code-msg{
     width: 210px;

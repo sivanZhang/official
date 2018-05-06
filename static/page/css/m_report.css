@@ -59,12 +59,11 @@ h1.white{
     text-decoration: underline !important;
 }
 .subscribe{
-    padding: 35px;
-   /*  margin-top: 20px; */
+    padding: 30px;
     width: 100%;
 }
 .sub_tb{
-    padding-left: 10px;
+    padding-left: 4px;
 }
 .agreement {
     margin-bottom: 5px  !important;
