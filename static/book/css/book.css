@@ -44,9 +44,7 @@
     display: inline-block;
     margin-bottom: 10px;
 }
-.payname{
-    margin-right: 20px;
-}
+
 
 span.grey{
     line-height: 50px;
@@ -70,9 +68,12 @@ height: 40px;
 input.form-control{
     margin-bottom: 10px;
 }
+.pay-way img.payname{
+    height: 14px;
+    margin-right: 30px;
+}
 .pay-way img{
     height: 16px;
-    margin-right: 30px;
 }
 .form-control:focus{
     border-color: #ddd;
