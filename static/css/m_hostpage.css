@@ -156,9 +156,8 @@ background:url(/static/img/slider/sider2m.png);
      top: 62%;
   }
   .shop-link2{
-    left: 50%;
-    bottom: 20%;
-    transform: translateX(-50%);
+    width: 100%;
+    top: 70%;
   }
   .shop-link3{
     color: #333!important;
@@ -268,10 +267,9 @@ background:url(/static/img/slider/sider2m.png);
         background-color: #cccccc;
     }
 }
-.shop-link2,.block-a{
-  display: block;
-  width: 100%;
-  height: 100%;
+.shop-link2 img{
+  width: 50%;
+  margin-bottom: 10px;
 }
 
 .f-logo{
