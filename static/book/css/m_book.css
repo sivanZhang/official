@@ -25,7 +25,7 @@
 }
 
 .rdo-payway{
-    margin-right: 5px !important;
+    margin:0 5px 0 0!important 
 }
 .h5billno{
     border-bottom: 1px solid rgb(181, 182, 182);
@@ -53,9 +53,7 @@
 .pay-way img{
     height: 16px;
 }
-input[type=checkbox], input[type=radio] {
-    vertical-align: sub;
-}
+
 .buy-form .select-pay-way{
     padding: 15px;
     background-color: rgb(249, 249, 249);
