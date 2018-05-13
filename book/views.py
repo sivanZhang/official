@@ -138,7 +138,7 @@ class BookView(View):
                 book.save()
 
                 # 开始支付
-                book_money  = 0.01
+                book_money  = 200
                 subject = "一数科技预约支付" 
                 if 'payway' in request.POST:
                     payway = request.POST['payway']

@@ -9,3 +9,4 @@ static-/*
 *.pem
 *.json
 *.md
+official/settings.py

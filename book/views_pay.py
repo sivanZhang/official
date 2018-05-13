@@ -59,7 +59,7 @@ def alipay_check_pay(request):
         alipay_public_key_path=settings.ALI_PUBLIC_KEY,
         # 支付宝的公钥，验证支付宝回传消息使用，不是你自己的公钥,
         sign_type="RSA2",  # RSA2,官方推荐，配置公钥的时候能看到
-        debug=False  # 默认False  配合沙箱模式使用
+        debug=True  # 默认False  配合沙箱模式使用
     )
 
     while True:
