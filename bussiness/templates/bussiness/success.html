@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+{% block pagetitle%}提交成功{% endblock%}
+{% block fixed_menu_class %}fixed_menu_class{%endblock%}
+{% load i18n %}
+{% block css %} 
+<link rel="stylesheet" href="/static/book/css/book.css">
+ {% endblock %}
+ {% block content %} 
+<div class="buy-container container p-r">
+    <div class="to-center">
+        <div class="text-center">
+            <h1 class="orange"> 提交成功</h1>
+            <div class="h5billno">
+                 <h5 class="grey "> 您的申请已提交成功...</h5>
+            </div>
+        </div>
+    
+        <div class="text-center ">
+                <span class="grey">我们会尽快跟您联系...</span>
+                <br/>
+                <a href="/"  class="common-btn grey-btn return-btn">返回首页</a>
+        </div> 
+    </div>
+</div>
+{% endblock %} 
+{% block js %} 
+<script>
+    $(document).ready(function(){
+    fixedFooter();
+  })
+</script>
+ {% endblock %}
+ 

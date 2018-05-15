@@ -10,7 +10,6 @@
 </style>
  {% endblock %}
 {% block content%}
-
 <div class="top-pic"> 
     <div class="white text-center">
       <h2>ASU线下体验专区</h2> 
@@ -29,8 +28,7 @@
 </div>
 <div class="container info-form mb-60">
     <div class="row"> 
-      <form class="col-xs-6" method="post">
-            {% csrf_token %}
+      <form class="col-xs-6">
           <label>申请企业基本信息</label>
           <input class="filling" name="trade_name" type="text" autofocus="autofocus" placeholder="公司贸易名称*">
           <input class="filling" name="registered_name" type="text" placeholder="公司注册名称*">
@@ -49,6 +47,7 @@
           <input class="filling" name="phone_number" type="tel" placeholder="电话*">
           <input class="filling" name="telautogram" type="text" placeholder="传真*">
           <input class="filling" name="email" type="email" placeholder="电子邮件*">
+          <input class="filling" name="identifying_code" type="text" placeholder="输入验证码*">
           <div class="text-right"><button class="orange-bg btn-text-white common-btn" type="submit">提交</button></div>
       </form> 
     </div>
