@@ -75,14 +75,13 @@ class BussinessView(View):
         result = {} 
         isMble  = dmb.process_request(request)
         
-        if 'trade_name' in request.POST and  'registered_name' in request.POST  and \
+        if 'registered_name' in request.POST  and \
         'registered_adress' in request.POST and  'bill_adress' in request.POST   and \
         'receiving_adress' in request.POST and  'official_url' in request.POST    and \
-        'surname' in request.POST and  'personal_name' in request.POST   and \
+        'surname' in request.POST   and \
         'position' in request.POST and  'phone_number' in request.POST   and \
-        'telautogram' in request.POST and  'email' in request.POST  : 
+        'email' in request.POST  : 
 
-            trade_name = request.POST['trade_name'].strip() 
             registered_name = request.POST['registered_name'].strip() 
             registered_adress = request.POST['registered_adress'].strip() 
             bill_adress = request.POST['bill_adress'].strip() 
@@ -91,10 +90,8 @@ class BussinessView(View):
             official_url = request.POST['official_url'].strip() 
             surname = request.POST['surname'].strip() 
 
-            personal_name = request.POST['personal_name'].strip() 
             position = request.POST['position'].strip() 
-            phone_number = request.POST['phone_number'].strip() 
-            telautogram = request.POST['telautogram'].strip() 
+            phone_number = request.POST['phone_number'].strip()
             email = request.POST['email'].strip()  
  
             stor_url = ''
@@ -112,15 +109,13 @@ class BussinessView(View):
             <br/>
             <strong>申请企业基本信息</strong>
             <br/>
-            公司贸易名称: trade_name
-            <br/>
             公司注册名称: registered_name
             <br/>
             <strong>申请企业基本信息</strong>
             <br/>
             注册地址: registered_adress
             <br/>
-            账单地址: bill_adress
+            现在办公地址: bill_adress
             <br/>
             收货地址: receiving_adress
             <br/>
@@ -134,14 +129,11 @@ class BussinessView(View):
             <br/>
             <strong>企业网站信息</strong>
             <br/>
-            姓: surname
-            名: personal_name
+            姓名: surname
             <br/>
             职位: position
             <br/>
             电话: phone_number
-            <br/>
-            传真: telautogram
             <br/>
             电子邮件: email
             <br/>
@@ -149,7 +141,6 @@ class BussinessView(View):
             <strong>一数科技</strong>
             
             """
-            emailcontent = emailcontent.replace('trade_name', trade_name)
             emailcontent = emailcontent.replace('registered_name', registered_name)
             emailcontent = emailcontent.replace('registered_adress', registered_adress)
             emailcontent = emailcontent.replace('bill_adress', bill_adress)
@@ -159,11 +150,9 @@ class BussinessView(View):
             emailcontent = emailcontent.replace('stor_url', stor_url)
             emailcontent = emailcontent.replace('other_url', other_url)
             emailcontent = emailcontent.replace('surname', surname)
-            emailcontent = emailcontent.replace('personal_name', personal_name)
 
             emailcontent = emailcontent.replace('position', position)
             emailcontent = emailcontent.replace('phone_number', phone_number)
-            emailcontent = emailcontent.replace('telautogram', telautogram)
             emailcontent = emailcontent.replace('email', email)
              
             emailex.send_text_email("新的经销商申请", emailcontent, 'bjbd001@a-su.com.cn')
